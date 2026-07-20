@@ -330,61 +330,98 @@
     {
       "type": "exercise",
       "id": "exercise-5",
-      "title": "Задание 5. Переведите предложения",
-      "instruction": "Напишите полное предложение по-английски. Следите за Present Simple и написанием чисел.",
+      "title": "Задание 5. Соберите предложения из готовых слов",
+      "instruction": "Составьте правильное английское предложение. Все необходимые слова уже даны — переводить незнакомые слова не нужно.",
       "items": [
         {
           "id": "exercise-5-1",
           "type": "text",
           "prompt": "Я работаю пять дней в неделю.",
+          "wordBank": [
+            "I",
+            "work",
+            "five",
+            "days",
+            "a",
+            "week"
+          ],
           "answers": [
             "I work five days a week"
           ],
-          "placeholder": "I ...",
+          "placeholder": "Составьте предложение из слов выше",
           "explanation": "I work five days a week."
         },
         {
           "id": "exercise-5-2",
           "type": "text",
           "prompt": "Она начинает работу в девять.",
+          "wordBank": [
+            "She",
+            "starts",
+            "work",
+            "at",
+            "nine"
+          ],
           "answers": [
             "She starts work at nine"
           ],
-          "placeholder": "She ...",
+          "placeholder": "Составьте предложение из слов выше",
           "explanation": "She starts work at nine."
         },
         {
           "id": "exercise-5-3",
           "type": "text",
-          "prompt": "Он зарабатывает сто семьдесят три доллара в день.",
+          "prompt": "Он зарабатывает 173 доллара в день.",
+          "wordBank": [
+            "He",
+            "earns",
+            "one hundred and seventy-three",
+            "dollars",
+            "a day"
+          ],
           "answers": [
             "He earns one hundred and seventy-three dollars a day",
             "He earns one hundred and seventy three dollars a day",
             "He earns one hundred seventy-three dollars a day",
             "He earns one hundred seventy three dollars a day"
           ],
-          "placeholder": "He ...",
+          "placeholder": "Составьте предложение из слов выше",
           "explanation": "He earns one hundred and seventy-three dollars a day."
         },
         {
           "id": "exercise-5-4",
           "type": "text",
           "prompt": "Она работает двадцать часов в неделю?",
+          "wordBank": [
+            "Does",
+            "she",
+            "work",
+            "twenty",
+            "hours",
+            "a week"
+          ],
           "answers": [
             "Does she work twenty hours a week"
           ],
-          "placeholder": "Does ...?",
+          "placeholder": "Составьте вопрос из слов выше",
           "explanation": "Does she work twenty hours a week?"
         },
         {
           "id": "exercise-5-5",
           "type": "text",
           "prompt": "Мы не работаем по воскресеньям.",
+          "wordBank": [
+            "We",
+            "don't",
+            "work",
+            "on",
+            "Sundays"
+          ],
           "answers": [
             "We don't work on Sundays",
             "We do not work on Sundays"
           ],
-          "placeholder": "We ...",
+          "placeholder": "Составьте предложение из слов выше",
           "explanation": "We don't work on Sundays."
         }
       ]
