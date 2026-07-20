@@ -263,7 +263,7 @@
       if (!current || !['submitted_pending_report','submitted'].includes(current.status)) { statusBox.innerHTML = ''; return; }
       const sent = current.report_status === 'sent' || current.status === 'submitted';
       const failed = current.report_status === 'failed';
-      statusBox.innerHTML = `<div class="submission-status ${sent ? 'good' : failed ? 'bad' : ''}">${sent ? '✅ Отправлено преподавателю' : failed ? `⚠️ Работа сохранена, но отчёт не доставлен${current.report_error ? `: ${escapeHtml(current.report_error)}` : ''}` : '⏳ Ответы зафиксированы, отчёт отправляется'}${current.submitted_at ? `<br><small>${escapeHtml(formatDate(current.submitted_at))}</small>` : ''}</div>`;
+      statusBox.innerHTML = `<div class="submission-status ${sent ? 'good' : failed ? 'bad' : ''}">${sent ? '✅ Отправлено преподавателю' : failed ? '⚠️ Работа сохранена. Отчёт преподавателю пока не доставлен.' : '⏳ Ответы сохранены, отчёт отправляется'}${current.submitted_at ? `<br><small>${escapeHtml(formatDate(current.submitted_at))}</small>` : ''}</div>`;
     };
 
     const checkAndSave = async () => {
@@ -319,10 +319,10 @@
         await ctx.progress.saveHomework(next, true);
         if (!ctx.cloudConfigured()) {
           record.report_status = 'failed';
-          record.report_error = 'Supabase не настроен';
+          record.report_error = 'Облачное сохранение не настроено';
           await ctx.progress.saveHomework(record);
           renderStatus(record);
-          ctx.toast('Работа сохранена на этом устройстве. Для Telegram-отчёта настройте Supabase.');
+          ctx.toast('Работа сохранена на этом устройстве. Отчёт преподавателю пока не отправлен.');
           return;
         }
         const response = await ctx.sendHomeworkReport(id, submissionId);
@@ -339,7 +339,7 @@
         await ctx.progress.saveHomeworkLocal(record);
         renderStatus(record);
         renderButtons();
-        ctx.toast('Работа сохранена, но Telegram-отчёт не отправлен.');
+        ctx.toast('Работа сохранена, но отчёт преподавателю пока не отправлен.');
       }
     };
 

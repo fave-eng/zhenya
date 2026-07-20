@@ -441,7 +441,7 @@
   function cloudConfigured() { return CloudService.isConfigured(); }
 
   async function sendHomeworkReport(lessonId, submissionId) {
-    if (!CloudService.isConfigured()) throw new Error('Supabase не настроен');
+    if (!CloudService.isConfigured()) throw new Error('Облачное сохранение не настроено');
     const endpoint = `${safeText(config.supabase.url).replace(/\/+$/,'')}/functions/v1/notify-telegram`;
     const anonKey = safeText(config.supabase.anonKey).trim();
     const response = await fetch(endpoint, {
@@ -572,19 +572,19 @@
     if (!card || !title || !text) return;
     card.classList.remove('is-online','is-error');
     if (!CloudService.isConfigured()) {
-      title.textContent = 'Локальное сохранение включено';
-      text.textContent = 'Supabase пока не настроен. Прогресс сохраняется только на этом устройстве.';
+      title.textContent = 'Прогресс сохраняется';
+      text.textContent = 'Изменения сохраняются на этом устройстве.';
       return;
     }
     if (CloudService.lastError) {
       card.classList.add('is-error');
-      title.textContent = 'Ошибка облачной синхронизации';
-      text.textContent = safeText(CloudService.lastError.message,'Проверьте настройки Supabase.');
+      title.textContent = 'Не удалось обновить данные';
+      text.textContent = 'Изменения сохранены на этом устройстве. Повторная попытка произойдёт автоматически.';
       return;
     }
     card.classList.add('is-online');
-    title.textContent = 'Прогресс синхронизирован';
-    text.textContent = 'Данные сохраняются на устройстве и в Supabase.';
+    title.textContent = 'Прогресс сохранён';
+    text.textContent = 'Твои результаты сохранены.';
   }
 
   const context = {
@@ -625,7 +625,7 @@
           CloudService.lastError = error;
           console.error('Ошибка Supabase',error);
           updateSyncStatus();
-          toast('Supabase временно недоступен. Локальные данные сохранены.');
+          toast('Не удалось обновить данные в облаке. Изменения сохранены на этом устройстве.');
         }
       }
     } catch (error) {

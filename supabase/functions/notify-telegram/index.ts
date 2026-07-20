@@ -1,6 +1,6 @@
 import { createClient } from 'npm:@supabase/supabase-js@2'
 
-const FUNCTION_VERSION = 'homework-reports-v1'
+const FUNCTION_VERSION = 'homework-reports-v2'
 const STUDENT_ID = 'zhenya'
 const STUDENT_NAME = 'Женя'
 const TIME_ZONE = 'Asia/Yekaterinburg'
@@ -111,7 +111,7 @@ function homeworkMessage(row: Record<string, any>): string {
     `❌ Ошибок: <b>${mistakes}</b>`,
     `🕒 Отправлено: ${escapeHtml(formatDate(row.submitted_at))}`,
     '',
-    'Ответы зафиксированы в Supabase и больше не могут быть изменены.',
+    'Ответы ученицы зафиксированы и доступны для проверки.',
   ].join('\n')
 }
 
