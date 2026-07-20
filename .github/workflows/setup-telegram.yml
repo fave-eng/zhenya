@@ -51,4 +51,4 @@ jobs:
             --no-verify-jwt
 
       - name: Готово
-        run: echo "Функция notify-telegram версии homework-reports-v1 развёрнута."
+        run: echo "Функция notify-telegram версии homework-reports-v2 развёрнута."

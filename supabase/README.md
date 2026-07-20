@@ -54,7 +54,7 @@ set chat_id = excluded.chat_id,
 ```json
 {
   "ok": true,
-  "functionVersion": "homework-reports-v1"
+  "functionVersion": "homework-reports-v2"
 }
 ```
 

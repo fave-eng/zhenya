@@ -1,0 +1,588 @@
+{
+  "id": "lesson-1",
+  "number": 1,
+  "title": "Numbers & Present Simple",
+  "subtitle": "Числа и базовые предложения о работе, привычках и повседневной жизни",
+  "status": "available",
+  "publishedAt": "2026-07-20",
+  "notification": {
+    "enabled": true,
+    "version": 1
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Перед началом",
+      "text": "Сначала откройте словарь и грамматику по ссылкам выше, затем выполните пять заданий по порядку."
+    },
+    {
+      "type": "content",
+      "title": "Что нужно повторить",
+      "paragraphs": [
+        "Числа 1–10, десятки от 20 до 100, а также one thousand, one million и one billion.",
+        "В числах 21–99 соединяем десяток и единицу: twenty-one, thirty-four, ninety-nine.",
+        "Present Simple используем, когда говорим о работе, привычках, расписании и постоянных фактах."
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Часть 1. Числа",
+      "text": "Вспомните написание и произношение основных чисел."
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1",
+      "title": "Задание 1. Выберите правильное слово",
+      "instruction": "Посмотрите на цифру и выберите её английское название.",
+      "items": [
+        {
+          "id": "exercise-1-1",
+          "type": "single",
+          "prompt": "1",
+          "options": [
+            "one",
+            "two",
+            "ten"
+          ],
+          "answer": "one",
+          "explanation": "1 — one."
+        },
+        {
+          "id": "exercise-1-2",
+          "type": "single",
+          "prompt": "2",
+          "options": [
+            "three",
+            "two",
+            "five"
+          ],
+          "answer": "two",
+          "explanation": "2 — two."
+        },
+        {
+          "id": "exercise-1-3",
+          "type": "single",
+          "prompt": "3",
+          "options": [
+            "six",
+            "four",
+            "three"
+          ],
+          "answer": "three",
+          "explanation": "3 — three."
+        },
+        {
+          "id": "exercise-1-4",
+          "type": "single",
+          "prompt": "4",
+          "options": [
+            "four",
+            "five",
+            "eight"
+          ],
+          "answer": "four",
+          "explanation": "4 — four."
+        },
+        {
+          "id": "exercise-1-5",
+          "type": "single",
+          "prompt": "5",
+          "options": [
+            "nine",
+            "five",
+            "seven"
+          ],
+          "answer": "five",
+          "explanation": "5 — five."
+        },
+        {
+          "id": "exercise-1-6",
+          "type": "single",
+          "prompt": "6",
+          "options": [
+            "six",
+            "seven",
+            "ten"
+          ],
+          "answer": "six",
+          "explanation": "6 — six."
+        },
+        {
+          "id": "exercise-1-7",
+          "type": "single",
+          "prompt": "7",
+          "options": [
+            "eight",
+            "seven",
+            "three"
+          ],
+          "answer": "seven",
+          "explanation": "7 — seven."
+        },
+        {
+          "id": "exercise-1-8",
+          "type": "single",
+          "prompt": "8",
+          "options": [
+            "eight",
+            "nine",
+            "four"
+          ],
+          "answer": "eight",
+          "explanation": "8 — eight."
+        },
+        {
+          "id": "exercise-1-9",
+          "type": "single",
+          "prompt": "9",
+          "options": [
+            "ten",
+            "one",
+            "nine"
+          ],
+          "answer": "nine",
+          "explanation": "9 — nine."
+        },
+        {
+          "id": "exercise-1-10",
+          "type": "single",
+          "prompt": "10",
+          "options": [
+            "two",
+            "ten",
+            "twelve"
+          ],
+          "answer": "ten",
+          "explanation": "10 — ten."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-2",
+      "title": "Задание 2. Напишите число словами",
+      "instruction": "Введите английское название числа. Для чисел 21–99 можно использовать дефис или пробел.",
+      "items": [
+        {
+          "id": "exercise-2-1",
+          "type": "text",
+          "prompt": "20",
+          "answers": [
+            "twenty"
+          ],
+          "explanation": "20 — twenty."
+        },
+        {
+          "id": "exercise-2-2",
+          "type": "text",
+          "prompt": "30",
+          "answers": [
+            "thirty"
+          ],
+          "explanation": "30 — thirty. Обратите внимание на написание: thirty."
+        },
+        {
+          "id": "exercise-2-3",
+          "type": "text",
+          "prompt": "40",
+          "answers": [
+            "forty"
+          ],
+          "explanation": "40 — forty, без буквы u."
+        },
+        {
+          "id": "exercise-2-4",
+          "type": "text",
+          "prompt": "50",
+          "answers": [
+            "fifty"
+          ],
+          "explanation": "50 — fifty."
+        },
+        {
+          "id": "exercise-2-5",
+          "type": "text",
+          "prompt": "80",
+          "answers": [
+            "eighty"
+          ],
+          "explanation": "80 — eighty."
+        },
+        {
+          "id": "exercise-2-6",
+          "type": "text",
+          "prompt": "21",
+          "answers": [
+            "twenty-one",
+            "twenty one"
+          ],
+          "explanation": "21 — twenty-one."
+        },
+        {
+          "id": "exercise-2-7",
+          "type": "text",
+          "prompt": "34",
+          "answers": [
+            "thirty-four",
+            "thirty four"
+          ],
+          "explanation": "34 — thirty-four."
+        },
+        {
+          "id": "exercise-2-8",
+          "type": "text",
+          "prompt": "99",
+          "answers": [
+            "ninety-nine",
+            "ninety nine"
+          ],
+          "explanation": "99 — ninety-nine."
+        },
+        {
+          "id": "exercise-2-9",
+          "type": "text",
+          "prompt": "100",
+          "answers": [
+            "one hundred",
+            "a hundred"
+          ],
+          "explanation": "100 — one hundred или a hundred."
+        },
+        {
+          "id": "exercise-2-10",
+          "type": "text",
+          "prompt": "1,000",
+          "answers": [
+            "one thousand",
+            "a thousand"
+          ],
+          "explanation": "1,000 — one thousand или a thousand."
+        },
+        {
+          "id": "exercise-2-11",
+          "type": "text",
+          "prompt": "1,000,000",
+          "answers": [
+            "one million",
+            "a million"
+          ],
+          "explanation": "1,000,000 — one million или a million."
+        },
+        {
+          "id": "exercise-2-12",
+          "type": "text",
+          "prompt": "1,000,000,000",
+          "answers": [
+            "one billion",
+            "a billion"
+          ],
+          "explanation": "1,000,000,000 — one billion или a billion."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Часть 2. Present Simple",
+      "text": "Используйте обычную форму глагола, а после he, she и it не забывайте окончание."
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3",
+      "title": "Задание 3. Выберите правильную форму глагола",
+      "instruction": "Выберите вариант, который подходит к подлежащему.",
+      "items": [
+        {
+          "id": "exercise-3-1",
+          "type": "single",
+          "prompt": "I ___ in an office.",
+          "options": [
+            "work",
+            "works",
+            "working"
+          ],
+          "answer": "work",
+          "explanation": "После I используем базовую форму: work."
+        },
+        {
+          "id": "exercise-3-2",
+          "type": "single",
+          "prompt": "She ___ at nine o'clock.",
+          "options": [
+            "start",
+            "starts",
+            "starting"
+          ],
+          "answer": "starts",
+          "explanation": "После she добавляем -s: starts."
+        },
+        {
+          "id": "exercise-3-3",
+          "type": "single",
+          "prompt": "We ___ near the city centre.",
+          "options": [
+            "lives",
+            "live",
+            "living"
+          ],
+          "answer": "live",
+          "explanation": "После we используем базовую форму: live."
+        },
+        {
+          "id": "exercise-3-4",
+          "type": "single",
+          "prompt": "My brother ___ English every day.",
+          "options": [
+            "study",
+            "studys",
+            "studies"
+          ],
+          "answer": "studies",
+          "explanation": "После согласной + y: study → studies."
+        },
+        {
+          "id": "exercise-3-5",
+          "type": "single",
+          "prompt": "Anna ___ to work by bus.",
+          "options": [
+            "go",
+            "goes",
+            "gos"
+          ],
+          "answer": "goes",
+          "explanation": "Глагол go после she получает -es: goes."
+        },
+        {
+          "id": "exercise-3-6",
+          "type": "single",
+          "prompt": "They ___ coffee in the morning.",
+          "options": [
+            "drinks",
+            "drink",
+            "drinking"
+          ],
+          "answer": "drink",
+          "explanation": "После they используем базовую форму: drink."
+        },
+        {
+          "id": "exercise-3-7",
+          "type": "single",
+          "prompt": "The shop ___ at ten.",
+          "options": [
+            "open",
+            "opens",
+            "opening"
+          ],
+          "answer": "opens",
+          "explanation": "The shop = it, поэтому opens."
+        },
+        {
+          "id": "exercise-3-8",
+          "type": "single",
+          "prompt": "My parents ___ in a small town.",
+          "options": [
+            "lives",
+            "live",
+            "is live"
+          ],
+          "answer": "live",
+          "explanation": "My parents = they, поэтому live."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-4",
+      "title": "Задание 4. Отрицания и вопросы",
+      "instruction": "Выберите грамматически правильное предложение.",
+      "items": [
+        {
+          "id": "exercise-4-1",
+          "type": "single",
+          "prompt": "Я не работаю по субботам.",
+          "options": [
+            "I don't work on Saturdays.",
+            "I doesn't work on Saturdays.",
+            "I not work on Saturdays."
+          ],
+          "answer": "I don't work on Saturdays.",
+          "explanation": "После I используем don't + базовую форму work."
+        },
+        {
+          "id": "exercise-4-2",
+          "type": "single",
+          "prompt": "Она не пьёт чай.",
+          "options": [
+            "She don't drink tea.",
+            "She doesn't drinks tea.",
+            "She doesn't drink tea."
+          ],
+          "answer": "She doesn't drink tea.",
+          "explanation": "После doesn't глагол остаётся в базовой форме: drink."
+        },
+        {
+          "id": "exercise-4-3",
+          "type": "single",
+          "prompt": "Ты живёшь здесь?",
+          "options": [
+            "Do you live here?",
+            "Does you live here?",
+            "You do live here?"
+          ],
+          "answer": "Do you live here?",
+          "explanation": "Вопрос с you начинается с Do."
+        },
+        {
+          "id": "exercise-4-4",
+          "type": "single",
+          "prompt": "Он работает дома?",
+          "options": [
+            "Do he work at home?",
+            "Does he work at home?",
+            "Does he works at home?"
+          ],
+          "answer": "Does he work at home?",
+          "explanation": "После Does используем базовую форму work."
+        },
+        {
+          "id": "exercise-4-5",
+          "type": "single",
+          "prompt": "Мы не начинаем в восемь.",
+          "options": [
+            "We don't start at eight.",
+            "We doesn't start at eight.",
+            "We don't starts at eight."
+          ],
+          "answer": "We don't start at eight.",
+          "explanation": "После we: don't start."
+        },
+        {
+          "id": "exercise-4-6",
+          "type": "single",
+          "prompt": "Мария говорит по-английски?",
+          "options": [
+            "Do Maria speak English?",
+            "Does Maria speaks English?",
+            "Does Maria speak English?"
+          ],
+          "answer": "Does Maria speak English?",
+          "explanation": "Maria = she: Does Maria speak...?"
+        },
+        {
+          "id": "exercise-4-7",
+          "type": "single",
+          "prompt": "Они не живут в Лондоне.",
+          "options": [
+            "They don't live in London.",
+            "They doesn't live in London.",
+            "They don't lives in London."
+          ],
+          "answer": "They don't live in London.",
+          "explanation": "После they используем don't live."
+        },
+        {
+          "id": "exercise-4-8",
+          "type": "single",
+          "prompt": "Магазин открывается в девять?",
+          "options": [
+            "Do the shop open at nine?",
+            "Does the shop open at nine?",
+            "Does the shop opens at nine?"
+          ],
+          "answer": "Does the shop open at nine?",
+          "explanation": "The shop = it: Does the shop open...?"
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-5",
+      "title": "Задание 5. Переведите предложения",
+      "instruction": "Напишите полное предложение на английском. Используйте слова, а не цифры.",
+      "items": [
+        {
+          "id": "exercise-5-1",
+          "type": "translate",
+          "prompt": "Я работаю пять дней в неделю.",
+          "answers": [
+            "I work five days a week"
+          ],
+          "explanation": "I work five days a week."
+        },
+        {
+          "id": "exercise-5-2",
+          "type": "translate",
+          "prompt": "Она начинает работу в девять.",
+          "answers": [
+            "She starts work at nine",
+            "She starts work at nine o'clock"
+          ],
+          "explanation": "She starts work at nine. После she: starts."
+        },
+        {
+          "id": "exercise-5-3",
+          "type": "translate",
+          "prompt": "Мы не работаем по воскресеньям.",
+          "answers": [
+            "We don't work on Sundays",
+            "We do not work on Sundays"
+          ],
+          "explanation": "We don't work on Sundays."
+        },
+        {
+          "id": "exercise-5-4",
+          "type": "translate",
+          "prompt": "Он не пьёт кофе.",
+          "answers": [
+            "He doesn't drink coffee",
+            "He does not drink coffee"
+          ],
+          "explanation": "He doesn't drink coffee. После doesn't: drink, без -s."
+        },
+        {
+          "id": "exercise-5-5",
+          "type": "translate",
+          "prompt": "Ты живёшь в большом городе?",
+          "answers": [
+            "Do you live in a big city"
+          ],
+          "explanation": "Do you live in a big city?"
+        },
+        {
+          "id": "exercise-5-6",
+          "type": "translate",
+          "prompt": "Она работает в компании?",
+          "answers": [
+            "Does she work for a company",
+            "Does she work in a company"
+          ],
+          "explanation": "Does she work for a company? После Does: work."
+        },
+        {
+          "id": "exercise-5-7",
+          "type": "translate",
+          "prompt": "Этот билет стоит двадцать евро.",
+          "answers": [
+            "This ticket costs twenty euros"
+          ],
+          "explanation": "This ticket costs twenty euros. This ticket = it, поэтому costs."
+        },
+        {
+          "id": "exercise-5-8",
+          "type": "translate",
+          "prompt": "В этой компании работает сто человек.",
+          "answers": [
+            "One hundred people work for this company",
+            "A hundred people work for this company",
+            "One hundred people work at this company",
+            "A hundred people work at this company"
+          ],
+          "explanation": "One hundred people work for this company. People = they, поэтому work."
+        }
+      ]
+    }
+  ],
+  "vocabularyId": "vocab-lesson-1",
+  "grammarIds": [
+    "grammar-1"
+  ]
+}

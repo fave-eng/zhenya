@@ -1,0 +1,17 @@
+{
+  "id": "lesson-2",
+  "number": 2,
+  "title": "Название следующей домашней работы",
+  "subtitle": "Краткое описание задания",
+  "status": "draft",
+  "vocabularyId": "vocab-lesson-2",
+  "grammarIds": [],
+  "publishedAt": "2026-07-27",
+  "totalPoints": 0,
+  "notification": {
+    "enabled": false,
+    "version": 1
+  },
+  "templateNote": "Следующую домашнюю работу нужно сохранить как lesson-2.json. Для каждого нового урока одновременно меняйте номер в имени файла, id, number, vocabularyId и linkedLessonId в словаре.",
+  "blocks": []
+}
