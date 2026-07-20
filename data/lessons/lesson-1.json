@@ -330,99 +330,59 @@
     {
       "type": "exercise",
       "id": "exercise-5",
-      "title": "Задание 5. Соберите предложения из готовых слов",
-      "instruction": "Составьте правильное английское предложение. Все необходимые слова уже даны — переводить незнакомые слова не нужно.",
+      "title": "Задание 5. Найдите и исправьте одну ошибку",
+      "instruction": "В каждом предложении только одна ошибка в Present Simple. Перепишите всё предложение правильно. Числа уже написаны словами.",
       "items": [
         {
           "id": "exercise-5-1",
           "type": "text",
-          "prompt": "Я работаю пять дней в неделю.",
-          "wordBank": [
-            "I",
-            "work",
-            "five",
-            "days",
-            "a",
-            "week"
-          ],
+          "prompt": "She work five days a week. — Она работает пять дней в неделю.",
           "answers": [
-            "I work five days a week"
+            "She works five days a week"
           ],
-          "placeholder": "Составьте предложение из слов выше",
-          "explanation": "I work five days a week."
+          "placeholder": "Перепишите предложение правильно",
+          "explanation": "После she добавляем -s: She works five days a week."
         },
         {
           "id": "exercise-5-2",
           "type": "text",
-          "prompt": "Она начинает работу в девять.",
-          "wordBank": [
-            "She",
-            "starts",
-            "work",
-            "at",
-            "nine"
-          ],
+          "prompt": "He have twenty books. — У него двадцать книг.",
           "answers": [
-            "She starts work at nine"
+            "He has twenty books"
           ],
-          "placeholder": "Составьте предложение из слов выше",
-          "explanation": "She starts work at nine."
+          "placeholder": "Перепишите предложение правильно",
+          "explanation": "После he используем has: He has twenty books."
         },
         {
           "id": "exercise-5-3",
           "type": "text",
-          "prompt": "Он зарабатывает 173 доллара в день.",
-          "wordBank": [
-            "He",
-            "earns",
-            "one hundred and seventy-three",
-            "dollars",
-            "a day"
-          ],
+          "prompt": "We works eight hours a day. — Мы работаем восемь часов в день.",
           "answers": [
-            "He earns one hundred and seventy-three dollars a day",
-            "He earns one hundred and seventy three dollars a day",
-            "He earns one hundred seventy-three dollars a day",
-            "He earns one hundred seventy three dollars a day"
+            "We work eight hours a day"
           ],
-          "placeholder": "Составьте предложение из слов выше",
-          "explanation": "He earns one hundred and seventy-three dollars a day."
+          "placeholder": "Перепишите предложение правильно",
+          "explanation": "После we глагол без -s: We work eight hours a day."
         },
         {
           "id": "exercise-5-4",
           "type": "text",
-          "prompt": "Она работает двадцать часов в неделю?",
-          "wordBank": [
-            "Does",
-            "she",
-            "work",
-            "twenty",
-            "hours",
-            "a week"
-          ],
+          "prompt": "Does Anna works six days a week? — Анна работает шесть дней в неделю?",
           "answers": [
-            "Does she work twenty hours a week"
+            "Does Anna work six days a week"
           ],
-          "placeholder": "Составьте вопрос из слов выше",
-          "explanation": "Does she work twenty hours a week?"
+          "placeholder": "Перепишите вопрос правильно",
+          "explanation": "После does глагол без -s: Does Anna work six days a week?"
         },
         {
           "id": "exercise-5-5",
           "type": "text",
-          "prompt": "Мы не работаем по воскресеньям.",
-          "wordBank": [
-            "We",
-            "don't",
-            "work",
-            "on",
-            "Sundays"
-          ],
+          "prompt": "He doesn't drinks nine cups of coffee a week. — Он не пьёт девять чашек кофе в неделю.",
           "answers": [
-            "We don't work on Sundays",
-            "We do not work on Sundays"
+            "He doesn't drink nine cups of coffee a week",
+            "He does not drink nine cups of coffee a week"
           ],
-          "placeholder": "Составьте предложение из слов выше",
-          "explanation": "We don't work on Sundays."
+          "placeholder": "Перепишите предложение правильно",
+          "explanation": "После doesn't глагол без -s: He doesn't drink nine cups of coffee a week."
         }
       ]
     }
