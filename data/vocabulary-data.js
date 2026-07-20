@@ -5,8 +5,8 @@
 window.VOCABULARY_DATA = [
   {
     "id": "vocab-lesson-1",
-    "title": "Numbers: основные числа",
-    "label": "Урок 1",
+    "title": "Numbers: числа, годы и деньги",
+    "label": "Домашняя работа №1",
     "icon": "🔢",
     "type": "lesson",
     "words": [
@@ -207,6 +207,96 @@ window.VOCABULARY_DATA = [
         "transcription": "/wʌn ˈbɪljən/",
         "exampleEn": "One billion is 1,000,000,000.",
         "exampleRu": "Один миллиард — это 1 000 000 000."
+      },
+      {
+        "id": "number-twenty-two",
+        "uniqueKey": "twenty-two",
+        "en": "twenty-two",
+        "ru": "двадцать два — 22",
+        "transcription": "/ˌtwenti ˈtuː/",
+        "exampleEn": "My office is at number twenty-two.",
+        "exampleRu": "Мой офис находится в доме номер двадцать два."
+      },
+      {
+        "id": "number-one-hundred-five",
+        "uniqueKey": "one hundred and five",
+        "en": "one hundred and five",
+        "ru": "сто пять — 105",
+        "transcription": "/wʌn ˈhʌndrəd ən faɪv/",
+        "exampleEn": "The room costs one hundred and five dollars.",
+        "exampleRu": "Номер стоит сто пять долларов."
+      },
+      {
+        "id": "number-one-hundred-seventy-three",
+        "uniqueKey": "one hundred and seventy-three",
+        "en": "one hundred and seventy-three",
+        "ru": "сто семьдесят три — 173",
+        "transcription": "/wʌn ˈhʌndrəd ən ˌsevənti ˈθriː/",
+        "exampleEn": "The total is one hundred and seventy-three dollars.",
+        "exampleRu": "Итого — сто семьдесят три доллара."
+      },
+      {
+        "id": "number-nineteen-ninety-eight",
+        "uniqueKey": "nineteen ninety-eight",
+        "en": "nineteen ninety-eight",
+        "ru": "тысяча девятьсот девяносто восемь — 1998 (год)",
+        "transcription": "/ˌnaɪntiːn ˌnaɪnti ˈeɪt/",
+        "exampleEn": "She was born in nineteen ninety-eight.",
+        "exampleRu": "Она родилась в 1998 году."
+      },
+      {
+        "id": "number-two-thousand-four-hundred-fifty",
+        "uniqueKey": "two thousand four hundred and fifty",
+        "en": "two thousand four hundred and fifty",
+        "ru": "две тысячи четыреста пятьдесят — 2,450",
+        "transcription": "/tuː ˈθaʊzənd fɔː ˈhʌndrəd ən ˈfɪfti/",
+        "exampleEn": "The company has two thousand four hundred and fifty clients.",
+        "exampleRu": "У компании 2 450 клиентов."
+      },
+      {
+        "id": "money-dollar-dollars",
+        "uniqueKey": "dollar dollars",
+        "en": "one dollar / two dollars",
+        "ru": "один доллар / два доллара",
+        "transcription": "/wʌn ˈdɒlə / tuː ˈdɒləz/",
+        "exampleEn": "It costs twenty-two dollars.",
+        "exampleRu": "Это стоит двадцать два доллара."
+      },
+      {
+        "id": "number-ufa-budget-income-2025",
+        "uniqueKey": "forty-six billion six hundred and sixty-two million",
+        "en": "forty-six billion six hundred and sixty-two million",
+        "ru": "сорок шесть миллиардов шестьсот шестьдесят два миллиона — 46 662 000 000",
+        "transcription": "/ˌfɔːti ˈsɪks ˈbɪljən sɪks ˈhʌndrəd ən ˌsɪksti ˈtuː ˈmɪljən/",
+        "exampleEn": "Ufa budget revenue in 2025 was reported as forty-six billion six hundred and sixty-two million rubles.",
+        "exampleRu": "В официальном отчёте доходы бюджета Уфы за 2025 год указаны как 46 662 млн рублей."
+      },
+      {
+        "id": "number-ufa-road-fund-2025",
+        "uniqueKey": "five billion seven hundred and twenty-eight million two hundred and thirty-eight thousand two hundred and fifty-three",
+        "en": "five billion seven hundred and twenty-eight million two hundred and thirty-eight thousand two hundred and fifty-three",
+        "ru": "пять миллиардов семьсот двадцать восемь миллионов двести тридцать восемь тысяч двести пятьдесят три — 5 728 238 253",
+        "transcription": "",
+        "exampleEn": "The road fund was five billion seven hundred and twenty-eight million two hundred and thirty-eight thousand two hundred and fifty-three rubles and sixty-four kopecks.",
+        "exampleRu": "Дорожный фонд составлял 5 728 238 253 рубля 64 копейки."
+      },
+      {
+        "id": "number-ufa-budget-expenses-plan-2025",
+        "uniqueKey": "forty-nine billion three hundred and ninety-one million seven hundred and forty-one thousand two hundred and thirty-six",
+        "en": "forty-nine billion three hundred and ninety-one million seven hundred and forty-one thousand two hundred and thirty-six",
+        "ru": "сорок девять миллиардов триста девяносто один миллион семьсот сорок одна тысяча двести тридцать шесть — 49 391 741 236",
+        "transcription": "",
+        "exampleEn": "The revised expenditure plan was forty-nine billion three hundred and ninety-one million seven hundred and forty-one thousand two hundred and thirty-six rubles and seventeen kopecks.",
+        "exampleRu": "Уточнённый план расходов составлял 49 391 741 236 рублей 17 копеек."
+      },
+      {
+        "id": "money-ruble-kopeck",
+        "uniqueKey": "ruble kopeck",
+        "en": "one ruble / two rubles; one kopeck / two kopecks",
+        "ru": "один рубль / два рубля; одна копейка / две копейки",
+        "transcription": "/ˈruːbəl / ˈkoʊpek/",
+        "exampleEn": "The total is five billion rubles and sixty-four kopecks.",
+        "exampleRu": "Итого — пять миллиардов рублей и шестьдесят четыре копейки."
       }
     ],
     "linkedLessonId": "lesson-1",

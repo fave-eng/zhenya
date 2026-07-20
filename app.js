@@ -17,6 +17,11 @@
 
   const asArray = (value) => Array.isArray(value) ? value : value === undefined || value === null ? [] : [value];
   const taskId = (item, fallback) => safeText(item?.id, fallback).trim() || fallback;
+  const cleanNumberedTitle = (value, fallback = '') => safeText(value, fallback)
+    .replace(/^\s*(?:задание|упражнение)\s*№?\s*\d+\s*[.:—-]?\s*/i, '')
+    .replace(/^\s*\d+\s*[.:—-]\s*/, '')
+    .trim() || fallback;
+  const toneClass = (number) => `exercise-tone-${((Math.max(1, Number(number) || 1) - 1) % 5) + 1}`;
 
   function questionType(item) {
     const type = safeText(item?.type, 'text').toLowerCase();
@@ -76,7 +81,7 @@
     const type = safeText(block?.type, 'content').toLowerCase();
     if (type === 'section') {
       sectionState.value += 1;
-      return `<section class="lesson-section-heading" id="lesson-section-${index}"><span class="section-number">${sectionState.value}</span><h2>${escapeHtml(block.title || `Часть ${sectionState.value}`)}</h2>${block.text ? `<p>${escapeHtml(block.text)}</p>` : ''}</section>`;
+      return `<section class="lesson-section-heading" id="lesson-section-${index}"><span class="section-number">${sectionState.value}</span><div><span class="section-label">Раздел ${sectionState.value}</span><h2>${escapeHtml(block.title || `Часть ${sectionState.value}`)}</h2>${block.text ? `<p>${escapeHtml(block.text)}</p>` : ''}</div></section>`;
     }
     if (type === 'image') {
       return `<article class="card lesson-block"><img class="lesson-image" src="${escapeHtml(block.src)}" alt="${escapeHtml(block.alt || '')}">${block.caption ? `<p class="image-caption">${escapeHtml(block.caption)}</p>` : ''}</article>`;
@@ -85,11 +90,16 @@
       return `<article class="card lesson-block content-block"><h3>${escapeHtml(block.title || 'Аудио')}</h3>${block.instruction ? `<p class="muted">${escapeHtml(block.instruction)}</p>` : ''}<audio controls preload="metadata" src="${escapeHtml(block.src)}">Ваш браузер не поддерживает аудио.</audio></article>`;
     }
     if (type === 'exercise') {
+      sectionState.exercise = Number(sectionState.exercise || 0) + 1;
+      const exerciseNumber = Number(block.number || sectionState.exercise);
       const items = asArray(block.items);
-      return `<article class="card lesson-block exercise-card" data-exercise-id="${escapeHtml(taskId(block, `exercise-${index + 1}`))}"><h3>${escapeHtml(block.title || `Задание ${index + 1}`)}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, `exercise-${index + 1}`))).join('')}</article>`;
+      const title = cleanNumberedTitle(block.title, `Упражнение ${exerciseNumber}`);
+      return `<article class="card lesson-block exercise-card ${toneClass(exerciseNumber)}" id="lesson-exercise-${exerciseNumber}" data-exercise-id="${escapeHtml(taskId(block, `exercise-${index + 1}`))}"><header class="exercise-card-header"><span class="exercise-kicker">Задание ${exerciseNumber} из ${Number(sectionState.totalExercises || exerciseNumber)}</span><h3>${escapeHtml(title)}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}</header><div class="exercise-card-body">${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, `exercise-${index + 1}`))).join('')}</div></article>`;
     }
     if (['text','textarea','select','single','multiple','reorder','translate','manual'].includes(type)) {
-      return `<article class="card lesson-block exercise-card">${renderQuestion(block, 0, `task-${index + 1}`)}</article>`;
+      sectionState.exercise = Number(sectionState.exercise || 0) + 1;
+      const exerciseNumber = sectionState.exercise;
+      return `<article class="card lesson-block exercise-card ${toneClass(exerciseNumber)}" id="lesson-exercise-${exerciseNumber}"><header class="exercise-card-header"><span class="exercise-kicker">Задание ${exerciseNumber}</span></header><div class="exercise-card-body">${renderQuestion(block, 0, `task-${index + 1}`)}</div></article>`;
     }
     const paragraphs = asArray(block.paragraphs || block.text).filter(Boolean);
     return `<article class="card lesson-block content-block">${block.title ? `<h3>${escapeHtml(block.title)}</h3>` : ''}${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}</article>`;
@@ -209,12 +219,12 @@
       item.id === lesson?.vocabularyId || item.linkedLessonId === lesson?.id
     );
     if (vocabularyTopic) {
-      links.push(`<a class="card interactive material-link" href="vocabulary.html?id=${encodeURIComponent(vocabularyTopic.id)}"><div><strong>💥 Словарь урока</strong><p>${escapeHtml(vocabularyTopic.title || 'Новые слова')}</p></div><span class="arrow">→</span></a>`);
+      links.push(`<a class="card interactive material-link material-vocab" href="vocabulary.html?id=${encodeURIComponent(vocabularyTopic.id)}"><div><strong>💥 Словарь урока</strong><p>${escapeHtml(vocabularyTopic.title || 'Новые слова')}</p></div><span class="arrow">→</span></a>`);
     }
     const grammarIds = asArray(lesson?.grammarIds || lesson?.grammarTopicIds || lesson?.grammarTopics);
     grammarIds.forEach((id) => {
       const topic = content.grammar.find((item) => item.id === id);
-      if (topic) links.push(`<a class="card interactive material-link" href="grammar-topic.html?id=${encodeURIComponent(topic.id)}"><div><strong>📐 Грамматика</strong><p>${escapeHtml(topic.title)}</p></div><span class="arrow">→</span></a>`);
+      if (topic) links.push(`<a class="card interactive material-link material-grammar" href="grammar-topic.html?id=${encodeURIComponent(topic.id)}"><div><strong>📐 Грамматика</strong><p>${escapeHtml(topic.title)}</p></div><span class="arrow">→</span></a>`);
     });
     return links.length ? `<div class="material-links">${links.join('')}</div>` : '';
   }
@@ -228,8 +238,8 @@
       root.innerHTML = ctx.emptyState('📝','Домашняя работа не найдена','Проверьте ссылку или вернитесь к списку заданий.');
       return;
     }
-    document.getElementById('lesson-hero-title').textContent = lesson.title || `Домашняя работа №${lesson.number || ''}`;
-    document.getElementById('lesson-hero-subtitle').textContent = lesson.subtitle || 'Интерактивное задание';
+    document.getElementById('lesson-hero-title').textContent = `Домашняя работа №${Number(lesson.number || 0)}`;
+    document.getElementById('lesson-hero-subtitle').textContent = `${lesson.title || 'Интерактивное задание'} · ${lesson.subtitle || ''}`;
     if (lesson.status === 'locked') {
       root.innerHTML = ctx.emptyState('🔒','Задание пока закрыто','Coming soon');
       return;
@@ -240,15 +250,15 @@
       return;
     }
     const questions = flattenQuestions(blocks);
-    const sectionState = { value: 0 };
-    const roadmapSections = blocks.map((block,index) => safeText(block.type).toLowerCase() === 'section' ? { block,index } : null).filter(Boolean);
+    const roadmapExercises = blocks.map((block,index) => safeText(block.type).toLowerCase() === 'exercise' ? { block,index } : null).filter(Boolean);
+    const sectionState = { value: 0, exercise: 0, totalExercises: roadmapExercises.length };
     const record = ctx.progress.getHomework(id) || {};
     const finalStatus = ['submitted_pending_report','submitted'].includes(record.status);
     const reviewed = Boolean(record.checked_at);
 
     root.innerHTML = `<article class="card lesson-intro"><div><span class="eyebrow">Домашняя работа №${Number(lesson.number || 0)}</span><h2>${escapeHtml(lesson.title)}</h2><p>${escapeHtml(lesson.subtitle || '')}</p></div><span class="lesson-points">${questions.filter(({item}) => item.scored !== false && questionType(item) !== 'manual').length} проверяемых ответов</span></article>
       ${materialLinks(lesson, ctx.content)}
-      ${roadmapSections.length ? `<nav class="card lesson-roadmap" aria-label="План домашней работы"><strong>План задания</strong><ol>${roadmapSections.map(({block,index},sectionIndex) => `<li><a href="#lesson-section-${index}"><span>${sectionIndex + 1}</span><strong>${escapeHtml(block.title || `Часть ${sectionIndex + 1}`)}</strong></a></li>`).join('')}</ol></nav>` : ''}
+      ${roadmapExercises.length ? `<nav class="card lesson-roadmap" aria-label="План домашней работы"><div class="roadmap-heading"><div><span class="eyebrow">Маршрут</span><strong>Задания по порядку</strong></div><span class="roadmap-count">${roadmapExercises.length}</span></div><ol>${roadmapExercises.map(({block},exerciseIndex) => `<li><a href="#lesson-exercise-${exerciseIndex + 1}"><span>${exerciseIndex + 1}</span><strong>${escapeHtml(cleanNumberedTitle(block.title, `Задание ${exerciseIndex + 1}`))}</strong></a></li>`).join('')}</ol></nav>` : ''}
       <div id="lesson-blocks">${blocks.map((block,index) => renderBlock(block,index,sectionState)).join('')}</div>
       ${finalStatus ? `<div class="locked-note">🔒 Ответы отправлены и доступны только для просмотра.</div>` : ''}
       <article class="card lesson-actions"><div class="lesson-result" id="lesson-result" aria-live="polite"></div><div class="button-row" id="lesson-buttons"></div><div id="submission-status"></div></article>`;
@@ -404,9 +414,12 @@
 
   function grammarExplanation(topic) {
     const explanation = asArray(topic.explanation || topic.sections);
-    const cards = explanation.map((section) => `<article class="card explanation-card"><h3>${escapeHtml(section.title || '')}</h3>${asArray(section.text || section.paragraphs).map((text) => `<p>${escapeHtml(text)}</p>`).join('')}${asArray(section.examples).length ? `<div class="example-list">${asArray(section.examples).map((example) => `<div class="example-row"><strong>${escapeHtml(example.en || example.example || '')}</strong>${example.ru ? `<span>${escapeHtml(example.ru)}</span>` : ''}</div>`).join('')}</div>` : ''}${section.table ? `<div class="table-wrap"><table><thead><tr>${asArray(section.table.headers).map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${asArray(section.table.rows).map((row) => `<tr>${asArray(row).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}</article>`).join('');
+    const cards = explanation.map((section, index) => {
+      const title = cleanNumberedTitle(section.title, `Шаг ${index + 1}`);
+      return `<article class="card explanation-card explanation-tone-${(index % 4) + 1}"><header class="explanation-heading"><span class="explanation-number">${index + 1}</span><div><span class="explanation-label">Понятное правило</span><h3>${escapeHtml(title)}</h3></div></header>${asArray(section.text || section.paragraphs).map((text) => `<p>${escapeHtml(text)}</p>`).join('')}${asArray(section.examples).length ? `<div class="example-list">${asArray(section.examples).map((example) => `<div class="example-row"><strong>${escapeHtml(example.en || example.example || '')}</strong>${example.ru ? `<span>${escapeHtml(example.ru)}</span>` : ''}</div>`).join('')}</div>` : ''}${section.table ? `<div class="table-wrap"><table><thead><tr>${asArray(section.table.headers).map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${asArray(section.table.rows).map((row) => `<tr>${asArray(row).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}</article>`;
+    }).join('');
     const mistakes = asArray(topic.commonMistakes || topic.mistakes);
-    return `<div class="grammar-explanation">${cards}${mistakes.length ? `<article class="card explanation-card mistakes-card"><h3>Частые ошибки</h3><ul>${mistakes.map((mistake) => `<li>${escapeHtml(mistake)}</li>`).join('')}</ul></article>` : ''}</div>`;
+    return `<div class="grammar-intro-note"><span>💡</span><div><strong>Как работать с темой</strong><p>Сначала прочитайте правила сверху вниз, затем выполните пять заданий. Первое — самое простое, пятое — самостоятельное.</p></div></div><div class="grammar-explanation">${cards}${mistakes.length ? `<article class="card explanation-card mistakes-card"><header class="explanation-heading"><span class="explanation-number">!</span><div><span class="explanation-label">Обратите внимание</span><h3>Частые ошибки</h3></div></header><ul>${mistakes.map((mistake) => `<li>${escapeHtml(mistake)}</li>`).join('')}</ul></article>` : ''}</div>`;
   }
 
   async function renderGrammarTopicPage(ctx) {
@@ -421,7 +434,7 @@
     const blocks = exercises.map((exercise,index) => ({ type:'exercise', id: exercise.id || `grammar-exercise-${index+1}`, title: exercise.title || `Задание ${index+1}`, instruction: exercise.instruction, items: asArray(exercise.items).map((item) => ({...item, id: item.id || `${exercise.id || `grammar-exercise-${index+1}`}-${taskId(item, index+1)}`})), difficulty: exercise.difficulty }));
     const questions = flattenQuestions(blocks);
     const local = ctx.progress.getGrammarLocal(id) || {};
-    root.innerHTML = `${grammarExplanation(topic)}<div class="grammar-exercises">${blocks.map((block,index) => `<article class="card lesson-block exercise-card"><span class="difficulty">${escapeHtml(block.difficulty || `Уровень ${index+1}`)}</span><h3>${escapeHtml(block.title)}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}${block.items.map((item,itemIndex) => renderQuestion(item,itemIndex,block.id)).join('')}</article>`).join('')}</div><article class="card lesson-actions"><div class="lesson-result" id="grammar-result"></div><div class="button-row"><button class="btn btn-primary" id="check-grammar" type="button">Проверить знания</button><a class="btn btn-ghost" href="grammar.html">К списку тем</a></div></article>`;
+    root.innerHTML = `${grammarExplanation(topic)}<section class="grammar-practice-heading"><span class="eyebrow">Практика</span><h2>Проверьте, как вы поняли тему</h2><p>Выполняйте задания по порядку: сложность постепенно увеличивается.</p></section><div class="grammar-exercises">${blocks.map((block,index) => `<article class="card lesson-block exercise-card ${toneClass(index + 1)}" id="grammar-exercise-${index + 1}"><header class="exercise-card-header"><div class="grammar-exercise-top"><span class="exercise-kicker">Задание ${index + 1} из ${blocks.length}</span><span class="difficulty">${escapeHtml(block.difficulty || `Уровень ${index+1}`)}</span></div><h3>${escapeHtml(cleanNumberedTitle(block.title, `Задание ${index + 1}`))}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}</header><div class="exercise-card-body">${block.items.map((item,itemIndex) => renderQuestion(item,itemIndex,block.id)).join('')}</div></article>`).join('')}</div><article class="card lesson-actions"><div class="lesson-result" id="grammar-result"></div><div class="button-row"><button class="btn btn-primary" id="check-grammar" type="button">Проверить знания</button><a class="btn btn-ghost" href="grammar.html">К списку тем</a></div></article>`;
     restoreAnswers(root, questions, local.lastAnswers || {});
     if (local.lastCheckedAt) {
       const result = evaluate(root, questions, { apply: true });
@@ -1138,7 +1151,15 @@
     const result = Number(record?.score_total || 0) > 0 ? `<span class="badge info">${Number(record.score_correct || 0)} из ${Number(record.score_total || 0)} · ${Number(record.score_percent || 0)}%</span>` : '';
     const date = record?.submitted_at ? `<span class="badge">${escapeHtml(new Date(record.submitted_at).toLocaleString('ru-RU'))}</span>` : '';
     const locked = lesson.status === 'locked';
-    return `<article class="card list-card"><div class="list-card-main"><span class="eyebrow">Домашняя работа №${Number(lesson.number || 0)}</span><h3>${escapeHtml(lesson.title)}</h3><p class="muted">${escapeHtml(lesson.subtitle)}</p><div class="list-card-meta"><span class="badge ${status.tone}">${escapeHtml(locked ? '🔒 Coming soon' : status.label)}</span>${result}${date}</div></div><div class="list-card-actions">${locked ? '<button class="btn btn-ghost" disabled>Закрыто</button>' : `<a class="btn ${completed ? 'btn-ghost' : 'btn-primary'}" href="lesson.html?id=${encodeURIComponent(lesson.id)}">${completed ? 'Посмотреть' : 'Открыть'}</a>`}</div></article>`;
+    const vocabularyTopic = ContentService.vocabulary.find((item) => item.id === lesson.vocabularyId || item.linkedLessonId === lesson.id);
+    const grammarTopic = asArray(lesson.grammarIds || lesson.grammarTopicIds || lesson.grammarTopics)
+      .map((id) => ContentService.grammar.find((item) => item.id === id))
+      .find(Boolean);
+    const materials = [
+      vocabularyTopic ? `<a class="lesson-mini-link vocab" href="vocabulary.html?id=${encodeURIComponent(vocabularyTopic.id)}"><span>🔢</span><strong>Словарь</strong></a>` : '',
+      grammarTopic ? `<a class="lesson-mini-link grammar" href="grammar-topic.html?id=${encodeURIComponent(grammarTopic.id)}"><span>📘</span><strong>Грамматика</strong></a>` : ''
+    ].filter(Boolean).join('');
+    return `<article class="card homework-card"><div class="homework-number" aria-label="Домашняя работа номер ${Number(lesson.number || 0)}"><span>№</span><strong>${Number(lesson.number || 0)}</strong></div><div class="list-card-main homework-card-main"><span class="eyebrow">Домашняя работа №${Number(lesson.number || 0)}</span><h3>${escapeHtml(lesson.title)}</h3><p class="muted">${escapeHtml(lesson.subtitle)}</p><div class="list-card-meta"><span class="badge ${status.tone}">${escapeHtml(locked ? '🔒 Скоро' : status.label)}</span>${result}${date}</div>${materials ? `<div class="lesson-card-materials">${materials}</div>` : ''}</div><div class="list-card-actions homework-open-action">${locked ? '<button class="btn btn-ghost" disabled>Закрыто</button>' : `<a class="btn ${completed ? 'btn-ghost' : 'btn-primary'}" href="lesson.html?id=${encodeURIComponent(lesson.id)}">${completed ? 'Посмотреть работу' : 'Начать работу'}</a>`}</div></article>`;
   }
 
   function renderHomework() {
