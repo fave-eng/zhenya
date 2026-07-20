@@ -507,11 +507,59 @@
     return 'Новое';
   }
 
-  function renderAllWords(root, topic, ctx) {
-    root.innerHTML = `<div class="words-grid">${topic.words.map((word) => {
-      const state = ctx.progress.getVocabularyWord(word.wordKey) || {};
-      return `<article class="card word-card ${statusClass(state.status)}" data-word-key="${escapeHtml(word.wordKey)}"><button class="pronounce-btn" type="button" data-speak="${escapeHtml(word.en)}" aria-label="Прослушать произношение">🔊</button><strong>${escapeHtml(word.en)}</strong><span class="translation">${escapeHtml(word.ru)}</span>${word.transcription ? `<span class="transcription">${escapeHtml(word.transcription)}</span>` : ''}${word.exampleEn ? `<p class="muted">${escapeHtml(word.exampleEn)}${word.exampleRu ? ` — ${escapeHtml(word.exampleRu)}` : ''}</p>` : ''}<div class="word-actions"><button class="word-action ${state.status === 'known' ? 'active-known' : ''}" type="button" data-status="known">✓ Знаю</button><button class="word-action ${state.status === 'difficult' ? 'active-difficult' : ''}" type="button" data-status="difficult">★ Трудное</button></div></article>`;
-    }).join('')}</div>`;
+  function getTopicSections(topic) {
+    const sections = [];
+    const seen = new Set();
+    const declared = Array.isArray(topic.sections) ? topic.sections : [];
+
+    declared.forEach((section, index) => {
+      const id = String(section?.id || `section-${index + 1}`).trim();
+      if (!id || seen.has(id)) return;
+      seen.add(id);
+      sections.push({
+        id,
+        title: String(section?.title || `Раздел ${index + 1}`),
+        icon: String(section?.icon || '📚')
+      });
+    });
+
+    topic.words.forEach((word) => {
+      const id = String(word.section || 'general').trim() || 'general';
+      if (seen.has(id)) return;
+      seen.add(id);
+      sections.push({
+        id,
+        title: id === 'general' ? 'Другие слова' : id,
+        icon: '📚'
+      });
+    });
+
+    return sections;
+  }
+
+  function wordsForSection(topic, sectionId = 'all') {
+    if (!sectionId || sectionId === 'all') return topic.words;
+    return topic.words.filter((word) => String(word.section || 'general') === sectionId);
+  }
+
+  function wordCardMarkup(word, ctx) {
+    const state = ctx.progress.getVocabularyWord(word.wordKey) || {};
+    return `<article class="card word-card ${statusClass(state.status)}" data-word-key="${escapeHtml(word.wordKey)}"><button class="pronounce-btn" type="button" data-speak="${escapeHtml(word.en)}" aria-label="Прослушать произношение">🔊</button><strong>${escapeHtml(word.en)}</strong><span class="translation">${escapeHtml(word.ru)}</span>${word.transcription ? `<span class="transcription">${escapeHtml(word.transcription)}</span>` : ''}${word.exampleEn ? `<p class="muted">${escapeHtml(word.exampleEn)}${word.exampleRu ? ` — ${escapeHtml(word.exampleRu)}` : ''}</p>` : ''}<div class="word-actions"><button class="word-action ${state.status === 'known' ? 'active-known' : ''}" type="button" data-status="known">✓ Знаю</button><button class="word-action ${state.status === 'difficult' ? 'active-difficult' : ''}" type="button" data-status="difficult">★ Трудное</button></div></article>`;
+  }
+
+  function renderAllWords(root, topic, ctx, sectionId = 'all') {
+    const sections = getTopicSections(topic);
+    const groups = sectionId === 'all'
+      ? sections.map((section) => ({ ...section, words: wordsForSection(topic, section.id) })).filter((section) => section.words.length)
+      : sections.filter((section) => section.id === sectionId).map((section) => ({ ...section, words: wordsForSection(topic, section.id) }));
+
+    if (!groups.length) {
+      root.innerHTML = ctx.emptyState('📚', 'В разделе пока нет слов', 'Добавьте слова в файл data/vocabulary-data.js.');
+      return;
+    }
+
+    const showHeadings = sections.length > 1;
+    root.innerHTML = groups.map((group) => `<section class="vocab-section-block" data-vocab-section-block="${escapeHtml(group.id)}">${showHeadings ? `<div class="vocab-section-heading"><span class="vocab-section-heading-icon">${escapeHtml(group.icon)}</span><div><h2>${escapeHtml(group.title)}</h2><p>${group.words.length} слов</p></div></div>` : ''}<div class="words-grid">${group.words.map((word) => wordCardMarkup(word, ctx)).join('')}</div></section>`).join('');
 
     root.querySelectorAll('[data-speak]').forEach((button) => button.addEventListener('click', () => speak(button.dataset.speak, ctx)));
     root.querySelectorAll('[data-word-key]').forEach((card) => {
@@ -522,16 +570,17 @@
           const requested = button.dataset.status;
           const status = current.status === requested ? 'new' : requested;
           await ctx.progress.saveVocabularyWord({ word_key: wordKey, status, learned_at: status === 'known' ? (current.learned_at || new Date().toISOString()) : null, updated_at: new Date().toISOString() });
-          renderAllWords(root, topic, ctx);
+          renderAllWords(root, topic, ctx, sectionId);
         });
       });
     });
   }
 
-  function renderFlashcards(root, topic, ctx, difficultOnly = false) {
-    const source = difficultOnly ? topic.words.filter((word) => ctx.progress.getVocabularyWord(word.wordKey)?.status === 'difficult') : topic.words;
+  function renderFlashcards(root, topic, ctx, difficultOnly = false, sectionId = 'all') {
+    const sectionWords = wordsForSection(topic, sectionId);
+    const source = difficultOnly ? sectionWords.filter((word) => ctx.progress.getVocabularyWord(word.wordKey)?.status === 'difficult') : sectionWords;
     if (!source.length) {
-      root.innerHTML = ctx.emptyState('✨', difficultOnly ? 'Трудных слов пока нет' : 'В теме пока нет слов', difficultOnly ? 'Отмечайте сложные слова кнопкой «Трудное».' : 'Слова появятся после урока.');
+      root.innerHTML = ctx.emptyState('✨', difficultOnly ? 'Трудных слов в этом разделе пока нет' : 'В разделе пока нет слов', difficultOnly ? 'Отмечайте сложные слова кнопкой «Трудное».' : 'Слова появятся после добавления в словарь.');
       return;
     }
     const queue = shuffled(source);
@@ -557,12 +606,13 @@
     draw();
   }
 
-  function renderTest(root, topic, ctx) {
-    if (topic.words.length < 2) {
-      root.innerHTML = ctx.emptyState('🧩','Для теста пока мало слов','Добавьте в тему минимум два слова.');
+  function renderTest(root, topic, ctx, sectionId = 'all') {
+    const sectionWords = wordsForSection(topic, sectionId);
+    if (sectionWords.length < 2) {
+      root.innerHTML = ctx.emptyState('🧩','Для теста в этом разделе пока мало слов','Добавьте в раздел минимум два слова.');
       return;
     }
-    const queue = shuffled(topic.words);
+    const queue = shuffled(sectionWords);
     let index = 0;
     let correct = 0;
     const answers = {};
@@ -570,13 +620,13 @@
       if (index >= queue.length) {
         const percent = Math.round((correct / queue.length) * 100);
         const completedAt = new Date().toISOString();
-        ctx.progress.saveVocabularyTest(topic.id, { score: correct, total: queue.length, percent, answers, completedAt });
+        ctx.progress.saveVocabularyTest(topic.id, { score: correct, total: queue.length, percent, answers, completedAt, sectionId });
         root.innerHTML = `<article class="card empty-state"><div class="empty-state-icon">🏁</div><h3>Тест завершён</h3><p>Правильно: ${correct} из ${queue.length} (${percent}%).</p><div class="button-row" style="justify-content:center;margin-top:16px"><button class="btn btn-primary" id="restart-vocab-test" type="button">Пройти ещё раз</button></div></article>`;
-        document.getElementById('restart-vocab-test').addEventListener('click', () => renderTest(root,topic,ctx));
+        document.getElementById('restart-vocab-test').addEventListener('click', () => renderTest(root,topic,ctx,sectionId));
         return;
       }
       const word = queue[index];
-      const distractors = shuffled(topic.words.filter((item) => item.wordKey !== word.wordKey)).slice(0,3);
+      const distractors = shuffled(sectionWords.filter((item) => item.wordKey !== word.wordKey)).slice(0,3);
       const options = shuffled([word,...distractors]);
       root.innerHTML = `<div class="flash-counter">Вопрос ${index + 1} из ${queue.length}</div><article class="card flashcard"><div><div class="flash-word">${escapeHtml(word.en)}</div>${word.transcription ? `<p class="muted">${escapeHtml(word.transcription)}</p>` : ''}<div class="option-list" style="margin-top:20px">${options.map((option) => `<button class="quiz-option" type="button" data-answer="${escapeHtml(option.wordKey)}">${escapeHtml(option.ru)}</button>`).join('')}</div><div class="feedback" id="vocab-test-feedback"></div><div class="button-row" style="justify-content:center;margin-top:14px"><button class="btn btn-primary" id="next-vocab-question" type="button" disabled>Следующее слово</button></div></div></article>`;
       let answered = false;
@@ -613,23 +663,49 @@
       root.innerHTML = ctx.emptyState('💥','Словарная тема не найдена','Вернитесь к списку тем.');
       return;
     }
-    document.getElementById('vocabulary-hero-title').textContent = topic.title || 'Словарь';
-    document.getElementById('vocabulary-hero-subtitle').textContent = `${topic.words.length} слов · ${topic.label || 'Тема урока'}`;
-    root.innerHTML = `<div class="vocab-modes" id="vocab-modes"><button class="vocab-mode active" type="button" data-mode="all">Все слова</button><button class="vocab-mode" type="button" data-mode="cards">Карточки</button><button class="vocab-mode" type="button" data-mode="difficult">Трудные</button><button class="vocab-mode" type="button" data-mode="test">Тест</button></div><div id="vocab-mode-root"></div>`;
+
+    const sections = getTopicSections(topic);
+    const heroTitle = document.getElementById('vocabulary-hero-title');
+    const heroSubtitle = document.getElementById('vocabulary-hero-subtitle');
+    if (heroTitle) heroTitle.textContent = topic.title || 'Словарь';
+    if (heroSubtitle) heroSubtitle.textContent = `${topic.words.length} слов${sections.length > 1 ? ` · Разделов: ${sections.length}` : ''} · ${topic.label || 'Тема урока'}`;
+
+    const sectionButtons = sections.length > 1
+      ? `<div class="vocab-sections" id="vocab-sections" aria-label="Разделы словаря"><button class="vocab-section active" type="button" data-section="all"><span>📚</span><strong>Все</strong><small>${topic.words.length}</small></button>${sections.map((section) => { const count = wordsForSection(topic, section.id).length; return `<button class="vocab-section" type="button" data-section="${escapeHtml(section.id)}"><span>${escapeHtml(section.icon)}</span><strong>${escapeHtml(section.title)}</strong><small>${count}</small></button>`; }).join('')}</div>`
+      : '';
+
+    root.innerHTML = `<div class="vocab-modes" id="vocab-modes"><button class="vocab-mode active" type="button" data-mode="all">Все слова</button><button class="vocab-mode" type="button" data-mode="cards">Карточки</button><button class="vocab-mode" type="button" data-mode="difficult">Трудные</button><button class="vocab-mode" type="button" data-mode="test">Тест</button></div>${sectionButtons}<div id="vocab-mode-root"></div>`;
     const modeRoot = document.getElementById('vocab-mode-root');
-    const draw = (mode) => {
-      if (mode === 'cards') renderFlashcards(modeRoot,topic,ctx,false);
-      else if (mode === 'difficult') renderFlashcards(modeRoot,topic,ctx,true);
-      else if (mode === 'test') renderTest(modeRoot,topic,ctx);
-      else renderAllWords(modeRoot,topic,ctx);
+    let activeMode = 'all';
+    let activeSection = 'all';
+
+    const draw = () => {
+      if (activeMode === 'cards') renderFlashcards(modeRoot,topic,ctx,false,activeSection);
+      else if (activeMode === 'difficult') renderFlashcards(modeRoot,topic,ctx,true,activeSection);
+      else if (activeMode === 'test') renderTest(modeRoot,topic,ctx,activeSection);
+      else renderAllWords(modeRoot,topic,ctx,activeSection);
     };
+
     document.getElementById('vocab-modes').addEventListener('click', (event) => {
       const button = event.target.closest('[data-mode]');
       if (!button) return;
-      document.querySelectorAll('.vocab-mode').forEach((item) => item.classList.toggle('active', item === button));
-      draw(button.dataset.mode);
+      activeMode = button.dataset.mode;
+      root.querySelectorAll('.vocab-mode').forEach((item) => item.classList.toggle('active', item === button));
+      draw();
     });
-    draw('all');
+
+    const sectionsRoot = document.getElementById('vocab-sections');
+    if (sectionsRoot) {
+      sectionsRoot.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-section]');
+        if (!button) return;
+        activeSection = button.dataset.section;
+        sectionsRoot.querySelectorAll('.vocab-section').forEach((item) => item.classList.toggle('active', item === button));
+        draw();
+      });
+    }
+
+    draw();
   }
 
   window.VocabularyEngine = { renderVocabularyPage, speak, statusLabel };
