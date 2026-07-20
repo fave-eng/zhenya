@@ -958,3 +958,71 @@ body[data-view="grammar-topic"] .lesson-actions { padding: 11px 15px; }
   .bottom-nav { border-radius: 16px; }
   .nav-link { min-height: 50px; font-size: .58rem; }
 }
+
+/* ===== v5: clearly separate the question number from the number being studied ===== */
+.exercise-prompt-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.exercise-question-number {
+  display: inline-flex;
+  flex: 0 0 27px;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  margin-top: 1px;
+  border: 1px solid #c7d2fe;
+  border-radius: 9px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: .76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.exercise-prompt {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding-top: 3px;
+  line-height: 1.38;
+}
+
+.exercise-prompt.is-number-target {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  padding-top: 0;
+}
+
+.exercise-prompt-label {
+  color: #64748b;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.exercise-prompt-value {
+  color: #111827;
+  font-size: 1.16rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+
+@media (max-width: 640px) {
+  .exercise-prompt-row { gap: 8px; }
+  .exercise-question-number {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    font-size: .72rem;
+  }
+  .exercise-prompt.is-number-target { gap: 7px; }
+  .exercise-prompt-value { font-size: 1.08rem; }
+}

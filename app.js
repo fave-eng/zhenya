@@ -57,8 +57,17 @@
       control = `<input type="text" data-answer-control placeholder="${placeholder}" autocomplete="off">`;
     }
 
+    const rawPrompt = safeText(item.prompt || item.question || `Задание ${index + 1}`).trim();
+    const isStandaloneNumber = /^[€$£₽]?\s*\d[\d\s,.]*$/.test(rawPrompt);
+    const promptContent = isStandaloneNumber
+      ? `<span class="exercise-prompt-label">Число</span><strong class="exercise-prompt-value">${prompt}</strong>`
+      : prompt;
+
     return `<div class="exercise-item" data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">
-      <span class="exercise-prompt">${index + 1}. ${prompt}</span>
+      <div class="exercise-prompt-row">
+        <span class="exercise-question-number" aria-label="Пункт ${index + 1}">${index + 1}</span>
+        <span class="exercise-prompt${isStandaloneNumber ? ' is-number-target' : ''}">${promptContent}</span>
+      </div>
       ${Array.isArray(item.wordBank) && item.wordBank.length ? `<div class="word-bank">${item.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>` : ''}
       <div class="exercise-control">${control}</div>
       <div class="feedback" data-feedback></div>
