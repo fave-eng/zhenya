@@ -613,8 +613,10 @@
       root.innerHTML = ctx.emptyState('💥','Словарная тема не найдена','Вернитесь к списку тем.');
       return;
     }
-    document.getElementById('vocabulary-hero-title').textContent = topic.title || 'Словарь';
-    document.getElementById('vocabulary-hero-subtitle').textContent = `${topic.words.length} слов · ${topic.label || 'Тема урока'}`;
+    const heroTitle = document.getElementById('vocabulary-hero-title');
+    const heroSubtitle = document.getElementById('vocabulary-hero-subtitle');
+    if (heroTitle) heroTitle.textContent = topic.title || 'Словарь';
+    if (heroSubtitle) heroSubtitle.textContent = `${topic.words.length} слов · ${topic.label || 'Тема урока'}`;
     root.innerHTML = `<div class="vocab-modes" id="vocab-modes"><button class="vocab-mode active" type="button" data-mode="all">Все слова</button><button class="vocab-mode" type="button" data-mode="cards">Карточки</button><button class="vocab-mode" type="button" data-mode="difficult">Трудные</button><button class="vocab-mode" type="button" data-mode="test">Тест</button></div><div id="vocab-mode-root"></div>`;
     const modeRoot = document.getElementById('vocab-mode-root');
     const draw = (mode) => {
@@ -996,7 +998,6 @@
         report_error: record.report_error || null
       };
     },
-
     async upsertHomework(record) {
       const client = await CloudService.init();
       if (!client) return false;
