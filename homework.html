@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Домашние работы ученика">
+  <title>Домашние работы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="lesson.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script><script src="config.js" defer></script><script src="lesson-engine.js" defer></script><script src="vocabulary-engine.js" defer></script><script src="app.js" defer></script>
+</head>
+<body class="has-bottom-nav" data-view="homework" data-page="homework">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="hero hero-compact"><span class="star star-one">✦</span><span class="star star-two">✦</span><div class="container hero-content"><span class="hero-badge">✦ <span data-config="level"></span> уровень · Индивидуальный курс</span><h1>Домашние работы</h1><p>Задания после каждого урока.</p></div><svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#f8fafc" d="M0,66 C220,102 410,10 696,52 C963,91 1115,99 1440,35 L1440,100 L0,100 Z"></path></svg></header>
+  <main id="main" class="main-content container">
+    <section class="section"><div class="summary-grid"><article class="card summary-card"><strong id="hw-completed">0</strong><span>Завершено</span></article><article class="card summary-card"><strong id="hw-total">0</strong><span>Всего</span></article><article class="card summary-card"><strong id="hw-percent">0%</strong><span>Прогресс</span></article></div><div class="card progress-card" id="hw-overall-progress"></div></section>
+    <section class="section" aria-labelledby="homework-list-title"><div class="section-heading"><div><span class="eyebrow">Материалы</span><h2 id="homework-list-title">Домашние работы</h2></div></div><div id="homework-list"></div></section>
+  </main>
+  <nav class="bottom-nav" aria-label="Основная навигация"><a class="nav-link" data-nav="home" href="index.html"><span class="nav-icon">🏠</span><span>Главная</span></a><a class="nav-link" data-nav="homework" href="homework.html"><span class="nav-icon">📝</span><span>Домашние работы</span></a><a class="nav-link" data-nav="grammar" href="grammar.html"><span class="nav-icon">📐</span><span>Грамматика</span></a><a class="nav-link" data-nav="vocabulary" href="vocabulary-hub.html"><span class="nav-icon">💥</span><span>Словарь</span></a></nav>
+  <div class="toast" id="app-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Персональное пространство для изучения английского языка">
+  <title>English Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="config.js" defer></script>
+  <script src="lesson-engine.js" defer></script>
+  <script src="vocabulary-engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="has-bottom-nav" data-view="home" data-page="home">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="hero hero-home">
+    <span class="star star-one">✦</span><span class="star star-two">✦</span><span class="star star-three">✦</span>
+    <div class="container hero-content">
+      <span class="hero-badge">✦ <span data-config="level"></span> уровень · Индивидуальный курс</span>
+      <h1><span data-config="nameEn"></span>’s English Space 🚀</h1>
+      <p>Твоё личное пространство для роста в английском</p>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#f8fafc" d="M0,66 C220,102 410,10 696,52 C963,91 1115,99 1440,35 L1440,100 L0,100 Z"></path></svg>
+  </header>
+  <main id="main" class="main-content container">
+    <section class="section" aria-labelledby="progress-title">
+      <div class="section-heading"><div><span class="eyebrow">Начало</span><h2 id="progress-title">Мой прогресс</h2></div></div>
+      <div class="stats-grid">
+        <article class="card stat-card"><strong id="home-stat-completed">0</strong><span>ДЗ выполнено</span></article>
+        <article class="card stat-card"><strong id="vocab-stat-known">0</strong><span>Слов выучено</span></article>
+        <article class="card stat-card"><strong id="grammar-stat-passed">0</strong><span>Тем грамматики</span></article>
+        <article class="card stat-card"><strong data-config="level">A1</strong><span>Уровень</span></article>
+      </div>
+      <div class="card progress-card" id="home-progress-list"></div>
+    </section>
+
+    <section class="section" aria-labelledby="quick-title">
+      <div class="section-heading"><div><span class="eyebrow">Навигация</span><h2 id="quick-title">Быстрый доступ</h2></div></div>
+      <div class="quick-grid">
+        <a class="card interactive quick-card" href="homework.html"><div><div class="icon-box icon-indigo">📝</div><h3>Домашние работы</h3><p>Задания после каждого урока.</p></div><span class="arrow">→</span></a>
+        <a class="card interactive quick-card" href="vocabulary-hub.html"><div><div class="icon-box icon-rose">💥</div><h3>Словарь</h3><p>Карточки и тренажёры для новых слов.</p></div><span class="arrow">→</span></a>
+        <a class="card interactive quick-card wide" href="grammar.html"><div><div class="icon-box icon-sky">📐</div><h3>Грамматика</h3><p>Понятные объяснения и упражнения.</p></div><span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="current-title">
+      <div class="section-heading"><div><span class="eyebrow">Продолжить</span><h2 id="current-title">Текущий материал</h2></div></div>
+      <div id="current-material"></div>
+    </section>
+
+    <section class="section" aria-labelledby="knowledge-title">
+      <div class="section-heading"><div><span class="eyebrow">Справочник</span><h2 id="knowledge-title">База знаний</h2></div></div>
+      <div class="card empty-state compact-empty"><div class="empty-state-icon">🧠</div><h3>Материалы будут добавляться постепенно</h3><p>Здесь появятся правила, заметки и материалы для повторения.</p></div>
+    </section>
+
+    <section class="section" aria-labelledby="book-title">
+      <article class="card book-card"><div class="book-cover">📘</div><div><span class="eyebrow">Учебник</span><h3 id="book-title" data-config="textbook"></h3><p class="muted" data-config="textbookEdition"></p></div></article>
+    </section>
+
+    <section class="section" aria-labelledby="sync-title">
+      <div class="section-heading"><div><span class="eyebrow">Сохранение</span><h2 id="sync-title">Статус синхронизации</h2></div></div>
+      <div class="card sync-card" id="sync-status-card"><span class="sync-dot"></span><div><strong id="sync-status-title">Проверяем настройки…</strong><p id="sync-status-text" class="muted">Подождите несколько секунд.</p></div></div>
+    </section>
+  </main>
+  <nav class="bottom-nav" aria-label="Основная навигация">
+    <a class="nav-link" data-nav="home" href="index.html"><span class="nav-icon">🏠</span><span>Главная</span></a>
+    <a class="nav-link" data-nav="homework" href="homework.html"><span class="nav-icon">📝</span><span>Домашние работы</span></a>
+    <a class="nav-link" data-nav="grammar" href="grammar.html"><span class="nav-icon">📐</span><span>Грамматика</span></a>
+    <a class="nav-link" data-nav="vocabulary" href="vocabulary-hub.html"><span class="nav-icon">💥</span><span>Словарь</span></a>
+  </nav>
+  <div class="toast" id="app-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

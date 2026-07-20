@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проверка Telegram-отчёта</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <style>
+    body { padding: 30px 0 60px; }
+    .test-shell { display: grid; gap: 16px; }
+    .test-card { padding: 22px; }
+    .test-card h1 { font-size: clamp(1.7rem,7vw,2.5rem); }
+    .test-card p { margin-top: 10px; color: var(--muted); }
+    .check-row { display: flex; gap: 10px; align-items: flex-start; margin: 15px 0; }
+    .log { min-height: 210px; max-height: 440px; overflow: auto; margin: 0; padding: 15px; border-radius: 14px; background: #0f172a; color: #e2e8f0; font: 13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace; white-space: pre-wrap; word-break: break-word; }
+    .test-status { padding: 14px; border-radius: 13px; background: #f1f5f9; font-weight: 700; }
+    .test-status.good { color: #166534; background: #f0fdf4; }
+    .test-status.bad { color: #991b1b; background: #fef2f2; }
+  </style>
+</head>
+<body>
+  <main class="container test-shell">
+    <section class="card test-card">
+      <span class="eyebrow">Служебная проверка · v1</span>
+      <h1>Проверка Telegram-отчёта</h1>
+      <p>Страница проверяет Supabase, создаёт отдельную тестовую запись и вызывает Edge Function. Реальные ответы Жени не изменяются.</p>
+      <div class="button-row" style="margin-top:16px"><button class="btn btn-secondary" id="check-connection" type="button">Проверить подключение</button></div>
+      <label class="check-row"><input type="checkbox" id="confirm-test"><span>Я понимаю, что в Supabase появится отдельная служебная строка, а в Telegram придёт тестовый отчёт.</span></label>
+      <div class="button-row"><button class="btn btn-primary" id="send-test" type="button" disabled>Отправить тестовый отчёт</button></div>
+    </section>
+    <div class="test-status" id="test-status">Проверка ещё не запускалась.</div>
+    <section class="card test-card"><h2>Технический журнал</h2><p>Ключи, токены и chat ID в журнале не показываются.</p><pre class="log" id="test-log"></pre></section>
+    <section class="card test-card"><h2>После успешной проверки</h2><p>Удалите эту страницу из публичного репозитория. Тестовые строки можно удалить через SQL Editor командой из README.</p></section>
+  </main>
+
+  <script>
+    (() => {
+      'use strict';
+      const config = window.APP_CONFIG || {};
+      const status = document.getElementById('test-status');
+      const logNode = document.getElementById('test-log');
+      const checkButton = document.getElementById('check-connection');
+      const sendButton = document.getElementById('send-test');
+      const confirm = document.getElementById('confirm-test');
+      let client = null;
+      let connectionReady = false;
+
+      function log(message, data) {
+        const time = new Date().toLocaleTimeString('ru-RU');
+        let line = `[${time}] ${message}`;
+        if (data !== undefined) line += `\n${JSON.stringify(data, null, 2)}`;
+        logNode.textContent += `${line}\n`;
+        logNode.scrollTop = logNode.scrollHeight;
+      }
+      function setStatus(message, kind = '') {
+        status.textContent = message;
+        status.className = `test-status ${kind}`.trim();
+      }
+      function configured() {
+        return Boolean(config.supabase?.url && config.supabase?.anonKey && window.supabase?.createClient);
+      }
+      function safeResponse(body) {
+        if (!body || typeof body !== 'object') return body;
+        const copy = { ...body };
+        delete copy.anonKey;
+        delete copy.token;
+        delete copy.chat_id;
+        delete copy.chatId;
+        return copy;
+      }
+
+      confirm.addEventListener('change', () => { sendButton.disabled = !(connectionReady && confirm.checked); });
+
+      checkButton.addEventListener('click', async () => {
+        logNode.textContent = '';
+        connectionReady = false;
+        sendButton.disabled = true;
+        try {
+          log('Проверяем config.js');
+          if (!configured()) throw new Error('В config.js не заполнены Supabase URL или public anon key.');
+          log('Настройки найдены', { studentId: config.student?.id, projectHost: new URL(config.supabase.url).host });
+          client = window.supabase.createClient(config.supabase.url, config.supabase.anonKey, { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } });
+          const { error } = await client.from(config.supabase.tables.homework).select('lesson_id').eq('student_id', config.student.id).limit(1);
+          if (error) throw error;
+          connectionReady = true;
+          sendButton.disabled = !confirm.checked;
+          setStatus('Подключение к Supabase работает. Можно отправлять тестовый отчёт.', 'good');
+          log('Таблица homework_progress доступна роли anon.');
+        } catch (error) {
+          setStatus(`Ошибка подключения: ${error.message}`, 'bad');
+          log('Проверка подключения завершилась ошибкой', { message: error.message, details: error.details || null, hint: error.hint || null });
+        }
+      });
+
+      sendButton.addEventListener('click', async () => {
+        if (!client || !connectionReady || !confirm.checked) return;
+        sendButton.disabled = true;
+        const now = new Date();
+        const nowIso = now.toISOString();
+        const lessonId = `telegram-report-test-${Date.now()}`;
+        const submissionId = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        try {
+          setStatus('Создаём тестовую запись…');
+          log('Создаём отдельную тестовую строку', { lessonId, result: '4 из 5 — 80%' });
+          const row = {
+            submission_id: submissionId,
+            student_id: config.student.id,
+            lesson_id: lessonId,
+            status: 'submitted_pending_report',
+            answers: { test: 'Служебная проверка' },
+            score_correct: 4,
+            score_total: 5,
+            score_percent: 80,
+            checked_at: nowIso,
+            submitted_at: nowIso,
+            locked_at: nowIso,
+            report_status: 'pending'
+          };
+          const { data: saved, error: saveError } = await client.from(config.supabase.tables.homework).insert(row).select('*').single();
+          if (saveError) throw saveError;
+          log('Тестовая строка сохранена.');
+
+          const { data: readBack, error: readError } = await client.from(config.supabase.tables.homework).select('*').eq('submission_id', submissionId).single();
+          if (readError) throw readError;
+          const sentTime = new Date(nowIso).getTime();
+          const returnedTime = new Date(readBack.submitted_at).getTime();
+          if (!Number.isFinite(returnedTime) || Math.abs(sentTime - returnedTime) > 1500) throw new Error('Тестовая запись сохранилась не полностью: время не совпало.');
+          log('Запись прочитана обратно. Форматы Z и +00:00 сравниваются как даты.');
+
+          const endpoint = `${config.supabase.url.replace(/\/+$/, '')}/functions/v1/notify-telegram`;
+          log('Вызываем Edge Function notify-telegram.');
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json', apikey: config.supabase.anonKey, authorization: `Bearer ${config.supabase.anonKey}` },
+            body: JSON.stringify({ action: 'homework_report', studentId: config.student.id, lessonId, submissionId })
+          });
+          const body = await response.json().catch(() => ({}));
+          log(`Edge Function ответила: HTTP ${response.status}`, safeResponse(body));
+          if (response.status === 401) throw new Error('HTTP 401: режим домашнего отчёта ошибочно требует секрет или в Supabase развёрнута старая версия функции.');
+          if (!response.ok || !body.ok) throw new Error(body.error || `HTTP ${response.status}`);
+          if (!body.functionVersion) throw new Error('Функция ответила без functionVersion. Возможно, развёрнута старая версия.');
+
+          const { data: finalRow, error: finalError } = await client.from(config.supabase.tables.homework).select('status,report_status,report_sent_at,report_error').eq('submission_id', submissionId).single();
+          if (finalError) throw finalError;
+          log('Финальный статус строки', finalRow);
+          if (finalRow.report_status !== 'sent') throw new Error('Telegram принял запрос, но report_status не стал sent.');
+          setStatus(`Готово! Тестовый отчёт отправлен. Версия функции: ${body.functionVersion}`, 'good');
+          log('Telegram принял отчёт. Проверка успешно завершена.');
+        } catch (error) {
+          setStatus(`Ошибка: ${error.message}`, 'bad');
+          log('Проверка завершилась ошибкой', { message: error.message, details: error.details || null, hint: error.hint || null });
+        } finally {
+          sendButton.disabled = !(connectionReady && confirm.checked);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

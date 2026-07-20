@@ -1,0 +1,29 @@
+.vocab-modes { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; margin-bottom: 14px; padding: 6px; border-radius: 16px; background: #eef2ff; }
+.vocab-mode { min-height: 42px; padding: 8px; border: 0; border-radius: 12px; background: transparent; color: #4f46e5; font-size: .78rem; font-weight: 800; }
+.vocab-mode.active { background: #fff; box-shadow: 0 6px 14px rgba(79,70,229,.12); }
+.words-grid { display: grid; gap: 10px; }
+.word-card { position: relative; display: grid; gap: 5px; padding: 17px 58px 17px 17px; }
+.word-card strong { font: 800 1.08rem/1.25 "Plus Jakarta Sans",sans-serif; }
+.word-card .translation { color: #334155; }
+.word-card .transcription { color: var(--muted); font-size: .84rem; }
+.word-card.known { border-color: #86efac; }
+.word-card.difficult { border-color: #fda4af; }
+.pronounce-btn { width: 40px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 12px; background: #eef2ff; font-size: 1.05rem; }
+.word-card .pronounce-btn { position: absolute; right: 12px; top: 12px; }
+.word-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.word-action { padding: 7px 10px; border: 1px solid var(--border); border-radius: 10px; background: #fff; color: #475569; font-size: .77rem; font-weight: 700; }
+.word-action.active-known { border-color: #86efac; background: #f0fdf4; color: #15803d; }
+.word-action.active-difficult { border-color: #fda4af; background: #fff1f2; color: #be123c; }
+.flashcard { min-height: 330px; display: grid; place-items: center; padding: 26px; text-align: center; }
+.flash-word { font: 800 clamp(2rem,9vw,3.2rem)/1.1 "Plus Jakarta Sans",sans-serif; }
+.flash-translation { margin-top: 13px; color: #334155; font-size: 1.1rem; }
+.flash-example { max-width: 520px; margin-top: 18px; color: var(--muted); }
+.flash-counter { margin-bottom: 10px; color: var(--muted); font-size: .83rem; text-align: center; }
+.flash-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 15px; }
+.quiz-option { width: 100%; min-height: 46px; padding: 11px 13px; border: 1px solid var(--border); border-radius: 13px; background: #fff; text-align: left; font-weight: 700; }
+.quiz-option.correct { border-color: #22c55e; background: #f0fdf4; }
+.quiz-option.wrong { border-color: #ef4444; background: #fef2f2; }
+
+@media (max-width: 520px) {
+  .vocab-modes { grid-template-columns: repeat(2,1fr); }
+}
