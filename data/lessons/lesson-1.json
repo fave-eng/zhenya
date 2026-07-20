@@ -90,42 +90,6 @@
           "explanation": "40 — forty. Буквы u нет."
         },
         {
-          "id": "exercise-1-5",
-          "type": "single",
-          "prompt": "50",
-          "options": [
-            "fivety",
-            "fifty",
-            "fifteen"
-          ],
-          "answer": "fifty",
-          "explanation": "50 — fifty."
-        },
-        {
-          "id": "exercise-1-6",
-          "type": "single",
-          "prompt": "80",
-          "options": [
-            "eighty",
-            "eightty",
-            "eighteen"
-          ],
-          "answer": "eighty",
-          "explanation": "80 — eighty."
-        },
-        {
-          "id": "exercise-1-7",
-          "type": "single",
-          "prompt": "90",
-          "options": [
-            "nineteen",
-            "ninty",
-            "ninety"
-          ],
-          "answer": "ninety",
-          "explanation": "90 — ninety."
-        },
-        {
           "id": "exercise-1-8",
           "type": "single",
           "prompt": "100",
@@ -157,17 +121,6 @@
           "explanation": "22 — twenty-two."
         },
         {
-          "id": "exercise-2-2",
-          "type": "text",
-          "prompt": "31",
-          "answers": [
-            "thirty-one",
-            "thirty one"
-          ],
-          "placeholder": "Напишите словами",
-          "explanation": "31 — thirty-one."
-        },
-        {
           "id": "exercise-2-3",
           "type": "text",
           "prompt": "47",
@@ -177,28 +130,6 @@
           ],
           "placeholder": "Напишите словами",
           "explanation": "47 — forty-seven."
-        },
-        {
-          "id": "exercise-2-4",
-          "type": "text",
-          "prompt": "68",
-          "answers": [
-            "sixty-eight",
-            "sixty eight"
-          ],
-          "placeholder": "Напишите словами",
-          "explanation": "68 — sixty-eight."
-        },
-        {
-          "id": "exercise-2-5",
-          "type": "text",
-          "prompt": "95",
-          "answers": [
-            "ninety-five",
-            "ninety five"
-          ],
-          "placeholder": "Напишите словами",
-          "explanation": "95 — ninety-five."
         },
         {
           "id": "exercise-2-6",
@@ -227,30 +158,6 @@
           ],
           "placeholder": "Напишите словами",
           "explanation": "173 — one hundred and seventy-three."
-        },
-        {
-          "id": "exercise-2-8",
-          "type": "text",
-          "prompt": "999",
-          "answers": [
-            "nine hundred and ninety-nine",
-            "nine hundred and ninety nine",
-            "nine hundred ninety-nine",
-            "nine hundred ninety nine"
-          ],
-          "placeholder": "Напишите словами",
-          "explanation": "999 — nine hundred and ninety-nine."
-        },
-        {
-          "id": "exercise-2-9",
-          "type": "text",
-          "prompt": "1,000",
-          "answers": [
-            "one thousand",
-            "a thousand"
-          ],
-          "placeholder": "Напишите словами",
-          "explanation": "1,000 — one thousand."
         },
         {
           "id": "exercise-2-10",
@@ -324,19 +231,6 @@
           "explanation": "47 654 621 044,80 рубля — forty-seven billion six hundred and fifty-four million six hundred and twenty-one thousand and forty-four rubles and eighty kopecks."
         },
         {
-          "id": "exercise-3-5",
-          "type": "text",
-          "prompt": "Уточнённый план расходов бюджета Уфы на конец 2025 года: 49 391 741 236 рублей 17 копеек",
-          "answers": [
-            "forty-nine billion three hundred and ninety-one million seven hundred and forty-one thousand two hundred and thirty-six rubles and seventeen kopecks",
-            "forty nine billion three hundred and ninety one million seven hundred and forty one thousand two hundred and thirty six rubles and seventeen kopecks",
-            "forty-nine billion three hundred ninety-one million seven hundred forty-one thousand two hundred thirty-six rubles and seventeen kopecks",
-            "forty nine billion three hundred ninety one million seven hundred forty one thousand two hundred thirty six rubles and seventeen kopecks"
-          ],
-          "placeholder": "forty-nine billion ...",
-          "explanation": "49 391 741 236,17 рубля — forty-nine billion three hundred and ninety-one million seven hundred and forty-one thousand two hundred and thirty-six rubles and seventeen kopecks."
-        },
-        {
           "id": "exercise-3-6",
           "type": "text",
           "prompt": "Публичные нормативные обязательства в бюджете Уфы на 25 июня 2025 года: 339 072 000 рублей",
@@ -396,18 +290,6 @@
           "explanation": "После she добавляем -s: starts."
         },
         {
-          "id": "exercise-4-3",
-          "type": "single",
-          "prompt": "My brother ___ in London.",
-          "options": [
-            "live",
-            "lives",
-            "living"
-          ],
-          "answer": "lives",
-          "explanation": "My brother = he, поэтому lives."
-        },
-        {
           "id": "exercise-4-4",
           "type": "single",
           "prompt": "We ___ on Sundays.",
@@ -432,18 +314,6 @@
           "explanation": "После doesn't глагол без -s: drink."
         },
         {
-          "id": "exercise-4-6",
-          "type": "single",
-          "prompt": "___ you study English?",
-          "options": [
-            "Do",
-            "Does",
-            "Are"
-          ],
-          "answer": "Do",
-          "explanation": "С you используем Do."
-        },
-        {
           "id": "exercise-4-7",
           "type": "single",
           "prompt": "___ Anna work from home?",
@@ -454,42 +324,6 @@
           ],
           "answer": "Does",
           "explanation": "Anna = she, поэтому Does."
-        },
-        {
-          "id": "exercise-4-8",
-          "type": "single",
-          "prompt": "The shop ___ at eight.",
-          "options": [
-            "open",
-            "opens",
-            "is openning"
-          ],
-          "answer": "opens",
-          "explanation": "The shop = it, поэтому opens."
-        },
-        {
-          "id": "exercise-4-9",
-          "type": "single",
-          "prompt": "They ___ two children.",
-          "options": [
-            "has",
-            "have",
-            "haves"
-          ],
-          "answer": "have",
-          "explanation": "После they: have."
-        },
-        {
-          "id": "exercise-4-10",
-          "type": "single",
-          "prompt": "She ___ a car.",
-          "options": [
-            "have",
-            "has",
-            "haves"
-          ],
-          "answer": "has",
-          "explanation": "После she особая форма has."
         }
       ]
     },
@@ -552,59 +386,6 @@
           ],
           "placeholder": "We ...",
           "explanation": "We don't work on Sundays."
-        },
-        {
-          "id": "exercise-5-6",
-          "type": "text",
-          "prompt": "В компании одна тысяча сотрудников.",
-          "answers": [
-            "The company has one thousand employees",
-            "The company has a thousand employees"
-          ],
-          "placeholder": "The company ...",
-          "explanation": "The company has one thousand employees."
-        },
-        {
-          "id": "exercise-5-7",
-          "type": "text",
-          "prompt": "Мой брат живёт в доме номер двадцать два.",
-          "answers": [
-            "My brother lives at number twenty-two",
-            "My brother lives at number twenty two"
-          ],
-          "placeholder": "My brother ...",
-          "explanation": "My brother lives at number twenty-two."
-        },
-        {
-          "id": "exercise-5-8",
-          "type": "text",
-          "prompt": "Магазин открывается в восемь и закрывается в шесть.",
-          "answers": [
-            "The shop opens at eight and closes at six"
-          ],
-          "placeholder": "The shop ...",
-          "explanation": "The shop opens at eight and closes at six."
-        },
-        {
-          "id": "exercise-5-9",
-          "type": "text",
-          "prompt": "Этот курс стоит девяносто девять долларов?",
-          "answers": [
-            "Does this course cost ninety-nine dollars",
-            "Does this course cost ninety nine dollars"
-          ],
-          "placeholder": "Does ...?",
-          "explanation": "Does this course cost ninety-nine dollars?"
-        },
-        {
-          "id": "exercise-5-10",
-          "type": "text",
-          "prompt": "Они изучают английский три раза в неделю.",
-          "answers": [
-            "They study English three times a week"
-          ],
-          "placeholder": "They ...",
-          "explanation": "They study English three times a week."
         }
       ]
     }
