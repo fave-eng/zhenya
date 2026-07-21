@@ -423,12 +423,83 @@
 
   function grammarExplanation(topic) {
     const explanation = asArray(topic.explanation || topic.sections);
+    const overview = asArray(topic.overview);
+
+    const overviewHtml = overview.length
+      ? `<section class="grammar-overview" aria-labelledby="grammar-overview-title"><div class="grammar-overview-heading"><span class="eyebrow">Главное за минуту</span><h2 id="grammar-overview-title">Карта темы</h2></div><div class="grammar-overview-grid">${overview.map((item) => `<div class="grammar-overview-item"><span>${escapeHtml(item.label || '')}</span><strong>${escapeHtml(item.value || item.text || '')}</strong></div>`).join('')}</div></section>`
+      : '';
+
+    const navigation = explanation.length > 1
+      ? `<nav class="grammar-topic-nav" aria-label="Содержание темы"><span>Быстрый переход:</span><div>${explanation.map((section, index) => `<a href="#grammar-rule-${index + 1}">${index + 1}. ${escapeHtml(cleanNumberedTitle(section.title, `Правило ${index + 1}`))}</a>`).join('')}</div></nav>`
+      : '';
+
     const cards = explanation.map((section, index) => {
       const title = cleanNumberedTitle(section.title, `Шаг ${index + 1}`);
-      return `<article class="card explanation-card explanation-tone-${(index % 4) + 1}"><header class="explanation-heading"><span class="explanation-number">${index + 1}</span><div><span class="explanation-label">Понятное правило</span><h3>${escapeHtml(title)}</h3></div></header>${asArray(section.text || section.paragraphs).map((text) => `<p>${escapeHtml(text)}</p>`).join('')}${asArray(section.examples).length ? `<div class="example-list">${asArray(section.examples).map((example) => `<div class="example-row"><strong>${escapeHtml(example.en || example.example || '')}</strong>${example.ru ? `<span>${escapeHtml(example.ru)}</span>` : ''}</div>`).join('')}</div>` : ''}${section.table ? `<div class="table-wrap"><table><thead><tr>${asArray(section.table.headers).map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${asArray(section.table.rows).map((row) => `<tr>${asArray(row).map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}</article>`;
+      const rawText = asArray(section.text || section.paragraphs).filter(Boolean);
+      const summary = section.summary || rawText[0] || '';
+      const points = asArray(section.points).length
+        ? asArray(section.points)
+        : rawText.slice(summary ? 1 : 0);
+      const formulas = asArray(section.formula).filter(Boolean);
+      const steps = asArray(section.steps).filter(Boolean);
+      const examples = asArray(section.examples);
+      const headers = asArray(section.table?.headers);
+      const rows = asArray(section.table?.rows);
+
+      const formulaHtml = formulas.length
+        ? `<div class="grammar-formula" aria-label="Формула правила"><span>Схема</span>${formulas.map((formula) => `<strong>${escapeHtml(formula)}</strong>`).join('')}</div>`
+        : '';
+
+      const pointsHtml = points.length
+        ? `<ul class="grammar-points">${points.map((point) => `<li>${escapeHtml(point)}</li>`).join('')}</ul>`
+        : '';
+
+      const stepsHtml = steps.length
+        ? `<ol class="grammar-steps">${steps.map((step, stepIndex) => {
+            const stepTitle = typeof step === 'object' ? (step.title || `Шаг ${stepIndex + 1}`) : `Шаг ${stepIndex + 1}`;
+            const stepText = typeof step === 'object' ? (step.text || step.value || '') : step;
+            return `<li><span>${stepIndex + 1}</span><div><strong>${escapeHtml(stepTitle)}</strong><p>${escapeHtml(stepText)}</p></div></li>`;
+          }).join('')}</ol>`
+        : '';
+
+      const tableHtml = rows.length
+        ? `<div class="grammar-table-block"><span class="grammar-block-label">Сравните формы</span><div class="table-wrap"><table><thead><tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${asArray(row).map((cell, cellIndex) => `<td data-label="${escapeHtml(headers[cellIndex] || '')}">${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`
+        : '';
+
+      const examplesHtml = examples.length
+        ? `<div class="grammar-examples"><span class="grammar-block-label">Примеры</span><div class="example-list">${examples.map((example) => `<div class="example-row"><span class="example-language">EN</span><strong>${escapeHtml(example.en || example.example || '')}</strong>${example.ru ? `<span class="example-translation"><b>RU</b>${escapeHtml(example.ru)}</span>` : ''}</div>`).join('')}</div></div>`
+        : '';
+
+      const tipHtml = section.tip
+        ? `<aside class="grammar-callout grammar-tip"><span>Подсказка</span><p>${escapeHtml(section.tip)}</p></aside>`
+        : '';
+      const warningHtml = section.warning
+        ? `<aside class="grammar-callout grammar-warning"><span>Важно</span><p>${escapeHtml(section.warning)}</p></aside>`
+        : '';
+
+      return `<article class="card explanation-card" id="grammar-rule-${index + 1}"><header class="explanation-heading"><span class="explanation-number">${index + 1}</span><div><span class="explanation-label">${escapeHtml(section.label || 'Правило')}</span><h3>${escapeHtml(title)}</h3></div></header>${summary ? `<p class="grammar-summary">${escapeHtml(summary)}</p>` : ''}${formulaHtml}${pointsHtml}${stepsHtml}${tableHtml}${examplesHtml}${tipHtml}${warningHtml}</article>`;
     }).join('');
+
     const mistakes = asArray(topic.commonMistakes || topic.mistakes);
-    return `<div class="grammar-intro-note"><span>💡</span><div><strong>Как работать с темой</strong><p>Сначала прочитайте правила сверху вниз, затем выполните пять заданий. Первое — самое простое, пятое — самостоятельное.</p></div></div><div class="grammar-explanation">${cards}${mistakes.length ? `<article class="card explanation-card mistakes-card"><header class="explanation-heading"><span class="explanation-number">!</span><div><span class="explanation-label">Обратите внимание</span><h3>Частые ошибки</h3></div></header><ul>${mistakes.map((mistake) => `<li>${escapeHtml(mistake)}</li>`).join('')}</ul></article>` : ''}</div>`;
+    const mistakesHtml = mistakes.length
+      ? `<article class="card explanation-card mistakes-card" id="grammar-mistakes"><header class="explanation-heading"><span class="explanation-number">!</span><div><span class="explanation-label">Самопроверка</span><h3>Частые ошибки</h3></div></header><p class="grammar-summary">Сравните неправильную и правильную формы. В каждой строке меняется только одна грамматическая деталь.</p><div class="mistake-grid">${mistakes.map((mistake) => {
+          let wrong = '';
+          let right = '';
+          let reason = '';
+          if (mistake && typeof mistake === 'object') {
+            wrong = safeText(mistake.wrong);
+            right = safeText(mistake.right);
+            reason = safeText(mistake.reason);
+          } else {
+            const parts = safeText(mistake).split('→');
+            wrong = safeText(parts[0]).trim();
+            right = safeText(parts.slice(1).join('→')).trim();
+          }
+          return `<div class="mistake-row"><div class="mistake-side mistake-wrong"><span>Неверно</span><s>${escapeHtml(wrong)}</s></div><div class="mistake-arrow" aria-hidden="true">→</div><div class="mistake-side mistake-right"><span>Верно</span><strong>${escapeHtml(right)}</strong></div>${reason ? `<p>${escapeHtml(reason)}</p>` : ''}</div>`;
+        }).join('')}</div></article>`
+      : '';
+
+    return `${overviewHtml}<div class="grammar-intro-note"><span>✓</span><div><strong>Как изучать тему</strong><p>Сначала прочитайте карту темы. Затем разберите правила по порядку и после каждого правила проговорите примеры вслух. В конце проверьте себя по блоку ошибок и выполните задания.</p></div></div>${navigation}<div class="grammar-explanation">${cards}${mistakesHtml}</div>`;
   }
 
   async function renderGrammarTopicPage(ctx) {
