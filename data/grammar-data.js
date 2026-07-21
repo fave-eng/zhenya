@@ -7,7 +7,7 @@ window.GRAMMAR_DATA = [
     "id": "grammar-1",
     "number": 1,
     "title": "Present Simple",
-    "subtitle": "Как говорить о работе, привычках, расписании и постоянных фактах",
+    "subtitle": "Регулярные действия, факты, расписание, вопросы и отрицания",
     "status": "available",
     "linkedLessonId": "lesson-1",
     "notification": {
@@ -16,37 +16,45 @@ window.GRAMMAR_DATA = [
     },
     "explanation": [
       {
-        "title": "1. Когда нужен Present Simple",
-        "text": [
-          "Present Simple — это настоящее простое время. Оно помогает спокойно описывать то, что происходит регулярно или является постоянным фактом.",
-          "Для взрослого человека это прежде всего работа, расписание, привычки, место жительства, предпочтения и обычный распорядок дня."
+        "label": "Смысл времени",
+        "title": "Когда использовать Present Simple",
+        "summary": "Используйте Present Simple, когда говорите не о моменте «прямо сейчас», а о том, что происходит обычно, регулярно, всегда или по расписанию.",
+        "formula": "обычно / регулярно / факт / расписание → Present Simple",
+        "points": [
+          "Привычка или повторяющееся действие: каждый день, по понедельникам, часто.",
+          "Постоянный факт или состояние: место работы, место жительства, предпочтение.",
+          "Расписание или установленное время: начало работы, отправление поезда, часы работы."
         ],
         "examples": [
           {
-            "en": "I work in an office.",
-            "ru": "Я работаю в офисе."
+            "en": "I work from home on Fridays.",
+            "ru": "Я работаю из дома по пятницам."
           },
           {
-            "en": "She starts work at nine.",
-            "ru": "Она начинает работу в девять."
+            "en": "She lives in Riga.",
+            "ru": "Она живёт в Риге."
           },
           {
-            "en": "We live near the city centre.",
-            "ru": "Мы живём рядом с центром города."
+            "en": "The train leaves at eight.",
+            "ru": "Поезд отправляется в восемь."
           }
-        ]
+        ],
+        "tip": "Если действие происходит именно сейчас, для обычного действия чаще нужен Present Continuous: I am working now."
       },
       {
-        "title": "2. Утверждение: I / you / we / they",
-        "text": [
-          "После I, you, we и they используем обычную форму глагола без окончаний.",
-          "Удобная формула: кто? + действие."
+        "label": "Утверждение",
+        "title": "I / you / we / they: глагол без окончания",
+        "summary": "После I, you, we и they используйте базовую форму смыслового глагола — такую, как в словаре.",
+        "formula": "I / You / We / They + verb",
+        "points": [
+          "Перед смысловым глаголом не нужны am или are: I work, а не I am work.",
+          "Форма глагола не меняется: work, live, start, speak."
         ],
         "table": {
           "headers": [
-            "Кто?",
-            "Форма глагола",
-            "Пример"
+            "Подлежащее",
+            "Глагол",
+            "Готовое предложение"
           ],
           "rows": [
             [
@@ -57,7 +65,7 @@ window.GRAMMAR_DATA = [
             [
               "you",
               "live",
-              "You live in London."
+              "You live near the office."
             ],
             [
               "we",
@@ -83,16 +91,20 @@ window.GRAMMAR_DATA = [
         ]
       },
       {
-        "title": "3. He / she / it: добавляем окончание",
-        "text": [
-          "После he, she и it глагол обычно получает окончание -s.",
-          "Сюда же относятся имена людей и названия одного предмета или организации: Anna = she, my brother = he, the shop = it."
+        "label": "Утверждение",
+        "title": "He / she / it: добавляем окончание",
+        "summary": "В утвердительном предложении после he, she, it или одного человека/предмета глагол получает окончание -s, -es или -ies.",
+        "formula": "He / She / It + verb-s",
+        "points": [
+          "Имя одного человека работает так же, как he или she: Anna works.",
+          "Один предмет, магазин или организация работают как it: The shop closes.",
+          "Форма have — исключение: he/she/it has."
         ],
         "table": {
           "headers": [
-            "Правило",
-            "Глагол",
-            "Форма после he / she / it"
+            "Когда",
+            "Базовая форма",
+            "Форма с he / she / it"
           ],
           "rows": [
             [
@@ -106,12 +118,12 @@ window.GRAMMAR_DATA = [
               "goes"
             ],
             [
-              "Согласная + y: y меняется на ies",
+              "Согласная + y: y → ies",
               "study",
               "studies"
             ],
             [
-              "Особая форма",
+              "Исключение",
               "have",
               "has"
             ]
@@ -130,103 +142,137 @@ window.GRAMMAR_DATA = [
             "en": "The shop closes at ten.",
             "ru": "Магазин закрывается в десять."
           }
-        ]
+        ],
+        "warning": "Окончание добавляется только в утвердительном предложении. После does или doesn’t основной глагол снова будет без -s."
       },
       {
-        "title": "4. Отрицание: don't и doesn't",
-        "text": [
-          "Чтобы сказать «не делаю», используем don't или doesn't.",
-          "После don't и doesn't всегда ставим базовую форму глагола. Окончание -s больше не нужно, потому что грамматическую работу уже выполняет does."
+        "label": "Отрицание",
+        "title": "Как сказать «не делаю»",
+        "summary": "Для отрицания используйте don’t или doesn’t. После них всегда ставьте базовую форму глагола без окончания.",
+        "formula": [
+          "I / You / We / They + don’t + verb",
+          "He / She / It + doesn’t + verb"
+        ],
+        "points": [
+          "don’t = do not; doesn’t = does not.",
+          "Doesn’t уже показывает форму he/she/it, поэтому второй раз окончание -s не добавляется."
         ],
         "table": {
           "headers": [
-            "Кто?",
-            "Формула",
+            "Подлежащее",
+            "Помощник",
             "Пример"
           ],
           "rows": [
             [
               "I / you / we / they",
-              "don't + verb",
-              "We don't work on Sundays."
+              "don’t + verb",
+              "We don’t work on Sundays."
             ],
             [
               "he / she / it",
-              "doesn't + verb",
-              "She doesn't work on Sundays."
+              "doesn’t + verb",
+              "She doesn’t work on Sundays."
             ]
           ]
         },
         "examples": [
           {
-            "en": "I don't drink tea.",
+            "en": "I don’t drink tea.",
             "ru": "Я не пью чай."
           },
           {
-            "en": "He doesn't drive to work.",
+            "en": "He doesn’t drive to work.",
             "ru": "Он не ездит на работу на машине."
           }
-        ]
+        ],
+        "warning": "Правильно: He doesn’t work. Неправильно: He doesn’t works."
       },
       {
-        "title": "5. Вопрос: Do или Does в начале",
-        "text": [
-          "В вопросе Do или Does ставим перед человеком или предметом.",
-          "После Does основной глагол снова используется без -s."
+        "label": "Вопрос",
+        "title": "Do или Does ставим в начало",
+        "summary": "В общем вопросе сначала ставьте Do или Does, затем подлежащее и базовую форму смыслового глагола.",
+        "formula": [
+          "Do + I / you / we / they + verb?",
+          "Does + he / she / it + verb?"
+        ],
+        "points": [
+          "Do используйте с I, you, we, they.",
+          "Does используйте с he, she, it и с одним человеком или предметом.",
+          "После Does глагол используется без -s: Does she work?"
         ],
         "table": {
           "headers": [
-            "Кто?",
-            "Формула вопроса",
+            "Подлежащее",
+            "Вопрос",
             "Короткий ответ"
           ],
           "rows": [
             [
               "I / you / we / they",
-              "Do + subject + verb?",
-              "Yes, I do. / No, I don't."
+              "Do you work here?",
+              "Yes, I do. / No, I don’t."
             ],
             [
               "he / she / it",
-              "Does + subject + verb?",
-              "Yes, she does. / No, she doesn't."
+              "Does she work here?",
+              "Yes, she does. / No, she doesn’t."
             ]
           ]
         },
         "examples": [
           {
             "en": "Do you work from home?",
-            "ru": "Ты работаешь из дома?"
+            "ru": "Вы работаете из дома?"
           },
           {
             "en": "Does Anna speak English?",
             "ru": "Анна говорит по-английски?"
           }
-        ]
-      },
-      {
-        "title": "6. Как быстро выбрать форму",
-        "text": [
-          "Шаг 1. Найдите, кто выполняет действие.",
-          "Шаг 2. Если это he, she, it или один человек — в утверждении добавьте -s / -es / -ies.",
-          "Шаг 3. Если есть don't, doesn't, Do или Does — основной глагол используйте без окончания.",
-          "Глагол be — am, is, are — работает по отдельным правилам. Не добавляйте do или does к am, is и are."
         ],
-        "examples": [
-          {
-            "en": "She works. → She doesn't work. → Does she work?",
-            "ru": "Она работает. → Она не работает. → Она работает?"
-          }
-        ]
+        "tip": "В коротком ответе не повторяйте смысловой глагол: Yes, she does. Не Yes, she works."
       },
       {
-        "title": "7. Слова, которые часто встречаются с Present Simple",
-        "text": [
-          "Эти слова показывают регулярность. На первом этапе достаточно узнавать их и видеть в предложениях."
+        "label": "Алгоритм",
+        "title": "Как быстро выбрать правильную форму",
+        "summary": "Не пытайтесь запомнить все предложения. Каждый раз проходите одну и ту же короткую проверку.",
+        "steps": [
+          {
+            "title": "Определите тип предложения",
+            "text": "Это утверждение, отрицание или вопрос?"
+          },
+          {
+            "title": "Найдите подлежащее",
+            "text": "Кто выполняет действие: I/you/we/they или he/she/it?"
+          },
+          {
+            "title": "Проверьте помощник",
+            "text": "Есть do, does, don’t или doesn’t? Тогда основной глагол берите без -s."
+          },
+          {
+            "title": "Добавьте окончание только при необходимости",
+            "text": "В утверждении с he/she/it добавьте -s, -es или -ies."
+          },
+          {
+            "title": "Отдельно проверьте be",
+            "text": "Глагол be имеет формы am/is/are и не требует do или does."
+          }
+        ],
+        "formula": "She works. → She doesn’t work. → Does she work?",
+        "warning": "С am, is, are не используйте do/does: Is she at work? She isn’t at work."
+      },
+      {
+        "label": "Маркеры времени",
+        "title": "Слова, которые часто сопровождают Present Simple",
+        "summary": "Эти слова помогают увидеть регулярность, но сначала всегда проверяйте смысл предложения.",
+        "points": [
+          "Usually, often, sometimes и never обычно стоят перед смысловым глаголом: She often works from home.",
+          "После am/is/are эти слова стоят после формы be: She is often busy.",
+          "Every day, on Mondays и похожие фразы часто стоят в конце предложения."
         ],
         "table": {
           "headers": [
-            "Слово или фраза",
+            "Маркер",
             "Перевод",
             "Пример"
           ],
@@ -262,15 +308,36 @@ window.GRAMMAR_DATA = [
               "The shop closes early on Mondays."
             ]
           ]
-        }
+        },
+        "tip": "Never уже содержит отрицательный смысл. Не добавляйте don’t/doesn’t: He never drinks coffee."
       }
     ],
     "commonMistakes": [
-      "He work in an office. → He works in an office.",
-      "She don't drink coffee. → She doesn't drink coffee.",
-      "He doesn't works here. → He doesn't work here.",
-      "Does Anna lives in London? → Does Anna live in London?",
-      "I am work in a bank. → I work in a bank."
+      {
+        "wrong": "He work in an office.",
+        "right": "He works in an office.",
+        "reason": "Утверждение с he: добавляем -s."
+      },
+      {
+        "wrong": "She don’t drink coffee.",
+        "right": "She doesn’t drink coffee.",
+        "reason": "С she нужен doesn’t."
+      },
+      {
+        "wrong": "He doesn’t works here.",
+        "right": "He doesn’t work here.",
+        "reason": "После doesn’t используется базовая форма."
+      },
+      {
+        "wrong": "Does Anna lives in London?",
+        "right": "Does Anna live in London?",
+        "reason": "После Does используется базовая форма."
+      },
+      {
+        "wrong": "I am work in a bank.",
+        "right": "I work in a bank.",
+        "reason": "Перед смысловым глаголом work форма am не нужна."
+      }
     ],
     "exercises": [
       {
@@ -663,6 +730,24 @@ window.GRAMMAR_DATA = [
         ]
       }
     ],
-    "page": "grammar-topic.html?id=grammar-1"
+    "page": "grammar-topic.html?id=grammar-1",
+    "overview": [
+      {
+        "label": "Когда",
+        "value": "Привычки, регулярные действия, факты и расписание"
+      },
+      {
+        "label": "Утверждение",
+        "value": "I/you/we/they work · he/she/it works"
+      },
+      {
+        "label": "Отрицание",
+        "value": "don’t / doesn’t + глагол без -s"
+      },
+      {
+        "label": "Вопрос",
+        "value": "Do / Does + подлежащее + глагол?"
+      }
+    ]
   }
 ];
