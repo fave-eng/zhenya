@@ -266,5 +266,334 @@ window.VOCABULARY_DATA = [
         "icon": "💰"
       }
     ]
+  },
+  {
+    "id": "vocab-lesson-2",
+    "number": 2,
+    "title": "Unit 1B — Countries and places",
+    "label": "Домашняя работа №2",
+    "icon": "🌍",
+    "type": "lesson",
+    "linkedLessonId": "lesson-2",
+    "page": "vocabulary.html?id=vocab-lesson-2",
+    "sections": [
+      {
+        "id": "countries",
+        "title": "Countries",
+        "icon": "🌍"
+      },
+      {
+        "id": "cities",
+        "title": "Cities and places",
+        "icon": "📍"
+      },
+      {
+        "id": "useful",
+        "title": "Useful language",
+        "icon": "💬"
+      }
+    ],
+    "words": [
+      {
+        "id": "unit1b-brazil",
+        "uniqueKey": "Brazil",
+        "en": "Brazil",
+        "ru": "Бразилия",
+        "transcription": "/brəˈzɪl/",
+        "exampleEn": "Copacabana is in Brazil.",
+        "exampleRu": "Копакабана находится в Бразилии.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-japan",
+        "uniqueKey": "Japan",
+        "en": "Japan",
+        "ru": "Япония",
+        "transcription": "/dʒəˈpæn/",
+        "exampleEn": "Kobe is in Japan.",
+        "exampleRu": "Кобе находится в Японии.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-england",
+        "uniqueKey": "England",
+        "en": "England",
+        "ru": "Англия",
+        "transcription": "/ˈɪŋɡlənd/",
+        "exampleEn": "London is in England.",
+        "exampleRu": "Лондон находится в Англии.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-china",
+        "uniqueKey": "China",
+        "en": "China",
+        "ru": "Китай",
+        "transcription": "/ˈtʃaɪnə/",
+        "exampleEn": "This picture is from China.",
+        "exampleRu": "Эта фотография из Китая.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-spain",
+        "uniqueKey": "Spain",
+        "en": "Spain",
+        "ru": "Испания",
+        "transcription": "/speɪn/",
+        "exampleEn": "Javier Bardem is from Spain.",
+        "exampleRu": "Хавьер Бардем из Испании.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-france",
+        "uniqueKey": "France",
+        "en": "France",
+        "ru": "Франция",
+        "transcription": "/frɑːns/",
+        "exampleEn": "The Louvre is in France.",
+        "exampleRu": "Лувр находится во Франции.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-italy",
+        "uniqueKey": "Italy",
+        "en": "Italy",
+        "ru": "Италия",
+        "transcription": "/ˈɪtəli/",
+        "exampleEn": "Naples is in Italy.",
+        "exampleRu": "Неаполь находится в Италии.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-united-states",
+        "uniqueKey": "the United States",
+        "en": "the United States",
+        "ru": "Соединённые Штаты, США",
+        "transcription": "/ðə juˌnaɪtɪd ˈsteɪts/",
+        "exampleEn": "New York is in the United States.",
+        "exampleRu": "Нью-Йорк находится в Соединённых Штатах.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-russia",
+        "uniqueKey": "Russia",
+        "en": "Russia",
+        "ru": "Россия",
+        "transcription": "/ˈrʌʃə/",
+        "exampleEn": "Moscow is in Russia.",
+        "exampleRu": "Москва находится в России.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-turkey",
+        "uniqueKey": "Turkey",
+        "en": "Turkey",
+        "ru": "Турция",
+        "transcription": "/ˈtɜːki/",
+        "exampleEn": "Istanbul is in Turkey.",
+        "exampleRu": "Стамбул находится в Турции.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-poland",
+        "uniqueKey": "Poland",
+        "en": "Poland",
+        "ru": "Польша",
+        "transcription": "/ˈpəʊlənd/",
+        "exampleEn": "Warsaw is in Poland.",
+        "exampleRu": "Варшава находится в Польше.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-egypt",
+        "uniqueKey": "Egypt",
+        "en": "Egypt",
+        "ru": "Египет",
+        "transcription": "/ˈiːdʒɪpt/",
+        "exampleEn": "Cairo is in Egypt.",
+        "exampleRu": "Каир находится в Египте.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-germany",
+        "uniqueKey": "Germany",
+        "en": "Germany",
+        "ru": "Германия",
+        "transcription": "/ˈdʒɜːməni/",
+        "exampleEn": "Berlin is in Germany.",
+        "exampleRu": "Берлин находится в Германии.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-mexico",
+        "uniqueKey": "Mexico",
+        "en": "Mexico",
+        "ru": "Мексика",
+        "transcription": "/ˈmeksɪkəʊ/",
+        "exampleEn": "Oaxaca is in Mexico.",
+        "exampleRu": "Оахака находится в Мексике.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-switzerland",
+        "uniqueKey": "Switzerland",
+        "en": "Switzerland",
+        "ru": "Швейцария",
+        "transcription": "/ˈswɪtsələnd/",
+        "exampleEn": "Zurich is in Switzerland.",
+        "exampleRu": "Цюрих находится в Швейцарии.",
+        "section": "countries"
+      },
+      {
+        "id": "unit1b-zurich",
+        "uniqueKey": "Zurich",
+        "en": "Zurich",
+        "ru": "Цюрих",
+        "transcription": "/ˈzjʊərɪk/",
+        "exampleEn": "Zurich is in Switzerland.",
+        "exampleRu": "Цюрих находится в Швейцарии.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-paris",
+        "uniqueKey": "Paris",
+        "en": "Paris",
+        "ru": "Париж",
+        "transcription": "/ˈpærɪs/",
+        "exampleEn": "Paris is in France.",
+        "exampleRu": "Париж находится во Франции.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-rome",
+        "uniqueKey": "Rome",
+        "en": "Rome",
+        "ru": "Рим",
+        "transcription": "/rəʊm/",
+        "exampleEn": "Rome is in Italy.",
+        "exampleRu": "Рим находится в Италии.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-miami",
+        "uniqueKey": "Miami",
+        "en": "Miami",
+        "ru": "Майами",
+        "transcription": "/maɪˈæmi/",
+        "exampleEn": "Miami is in the United States.",
+        "exampleRu": "Майами находится в Соединённых Штатах.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-moscow",
+        "uniqueKey": "Moscow",
+        "en": "Moscow",
+        "ru": "Москва",
+        "transcription": "/ˈmɒskəʊ/",
+        "exampleEn": "Moscow is in Russia.",
+        "exampleRu": "Москва находится в России.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-istanbul",
+        "uniqueKey": "Istanbul",
+        "en": "Istanbul",
+        "ru": "Стамбул",
+        "transcription": "/ˌɪstænˈbʊl/",
+        "exampleEn": "Istanbul is in Turkey.",
+        "exampleRu": "Стамбул находится в Турции.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-warsaw",
+        "uniqueKey": "Warsaw",
+        "en": "Warsaw",
+        "ru": "Варшава",
+        "transcription": "/ˈwɔːsɔː/",
+        "exampleEn": "Warsaw is in Poland.",
+        "exampleRu": "Варшава находится в Польше.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-cairo",
+        "uniqueKey": "Cairo",
+        "en": "Cairo",
+        "ru": "Каир",
+        "transcription": "/ˈkaɪrəʊ/",
+        "exampleEn": "Cairo is in Egypt.",
+        "exampleRu": "Каир находится в Египте.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-berlin",
+        "uniqueKey": "Berlin",
+        "en": "Berlin",
+        "ru": "Берлин",
+        "transcription": "/bɜːˈlɪn/",
+        "exampleEn": "Berlin is in Germany.",
+        "exampleRu": "Берлин находится в Германии.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-new-york",
+        "uniqueKey": "New York",
+        "en": "New York",
+        "ru": "Нью-Йорк",
+        "transcription": "/ˌnjuː ˈjɔːk/",
+        "exampleEn": "New York is in the United States.",
+        "exampleRu": "Нью-Йорк находится в Соединённых Штатах.",
+        "section": "cities"
+      },
+      {
+        "id": "unit1b-from",
+        "uniqueKey": "from",
+        "en": "from",
+        "ru": "из; родом из",
+        "transcription": "/frɒm/",
+        "exampleEn": "She is from Spain.",
+        "exampleRu": "Она из Испании.",
+        "section": "useful"
+      },
+      {
+        "id": "unit1b-in",
+        "uniqueKey": "in",
+        "en": "in",
+        "ru": "в; внутри; находится в",
+        "transcription": "/ɪn/",
+        "exampleEn": "Rome is in Italy.",
+        "exampleRu": "Рим находится в Италии.",
+        "section": "useful"
+      },
+      {
+        "id": "unit1b-where-are-you-from",
+        "uniqueKey": "Where are you from?",
+        "en": "Where are you from?",
+        "ru": "Откуда ты? / Откуда вы?",
+        "transcription": "/weər ɑː juː frɒm/",
+        "exampleEn": "Where are you from? — I’m from Russia.",
+        "exampleRu": "Откуда ты? — Я из России.",
+        "section": "useful"
+      },
+      {
+        "id": "unit1b-is-person-from",
+        "uniqueKey": "Is he / she from ...?",
+        "en": "Is he / she from ...?",
+        "ru": "Он / она из…?",
+        "transcription": "/ɪz hiː, ʃiː frɒm/",
+        "exampleEn": "Is she from Mexico?",
+        "exampleRu": "Она из Мексики?",
+        "section": "useful"
+      },
+      {
+        "id": "unit1b-is-it-in",
+        "uniqueKey": "Is it in ...?",
+        "en": "Is it in ...?",
+        "ru": "Это находится в…?",
+        "transcription": "/ɪz ɪt ɪn/",
+        "exampleEn": "Is it in France?",
+        "exampleRu": "Это находится во Франции?",
+        "section": "useful"
+      }
+    ]
   }
 ];

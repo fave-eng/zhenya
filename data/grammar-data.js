@@ -749,5 +749,848 @@ window.GRAMMAR_DATA = [
         "value": "Do / Does + подлежащее + глагол?"
       }
     ]
+  },
+  {
+    "id": "grammar-2",
+    "number": 2,
+    "title": "Verb be: he, she, it — statements and questions",
+    "subtitle": "He’s, she’s, it’s, isn’t, Is…? and short answers",
+    "status": "available",
+    "linkedLessonId": "lesson-2",
+    "notification": {
+      "enabled": false,
+      "version": 1
+    },
+    "overview": [
+      {
+        "label": "Утверждение",
+        "value": "He is / She is / It is → He’s / She’s / It’s"
+      },
+      {
+        "label": "Отрицание",
+        "value": "He isn’t / She isn’t / It isn’t"
+      },
+      {
+        "label": "Вопрос",
+        "value": "Is + he / she / it + … ?"
+      },
+      {
+        "label": "Короткий ответ",
+        "value": "Yes, … is. / No, … isn’t."
+      }
+    ],
+    "explanation": [
+      {
+        "label": "Главная идея",
+        "title": "Глагол be связывает человека или место с информацией",
+        "summary": "В этом уроке форма is помогает сказать, кто человек, откуда он или где находится место. В русском языке слово «есть» обычно не произносится, а в английском is обязательно.",
+        "formula": "he / she / it + is + information",
+        "points": [
+          "He и she используем для людей: he — он, she — она.",
+          "It используем для города, страны, предмета или животного, когда пол не важен.",
+          "После имени человека или названия места также используем is: Paulo is…, Naples is…"
+        ],
+        "examples": [
+          {
+            "en": "He is from Brazil.",
+            "ru": "Он из Бразилии."
+          },
+          {
+            "en": "She is in the Monday class.",
+            "ru": "Она в группе по понедельникам."
+          },
+          {
+            "en": "It is in Switzerland.",
+            "ru": "Это находится в Швейцарии."
+          }
+        ],
+        "tip": "Сначала определите, о ком или о чём говорится: мужчина → he, женщина → she, место или предмет → it."
+      },
+      {
+        "label": "Местоимения",
+        "title": "Как выбрать he, she или it",
+        "summary": "Правильное местоимение помогает выбрать форму ответа и не повторять имя или название несколько раз.",
+        "table": {
+          "headers": [
+            "О ком / о чём",
+            "Местоимение",
+            "Пример"
+          ],
+          "rows": [
+            [
+              "мужчина или мальчик",
+              "he",
+              "Paulo → he"
+            ],
+            [
+              "женщина или девочка",
+              "she",
+              "Yasmin → she"
+            ],
+            [
+              "город, страна, место или предмет",
+              "it",
+              "Oaxaca → it"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "Paulo is from Spain. He is from Spain.",
+            "ru": "Пауло из Испании. Он из Испании."
+          },
+          {
+            "en": "Yasmin is in the class. She is in the class.",
+            "ru": "Ясмин в группе. Она в группе."
+          },
+          {
+            "en": "Oaxaca is in Mexico. It is in Mexico.",
+            "ru": "Оахака находится в Мексике. Она находится в Мексике."
+          }
+        ],
+        "warning": "Для города по-английски используем it, а не he или she."
+      },
+      {
+        "label": "Утверждение",
+        "title": "Полная и короткая формы: is и ’s",
+        "summary": "В разговоре и обычном тексте is часто сокращается до ’s. Смысл не меняется.",
+        "formula": [
+          "He is → He’s",
+          "She is → She’s",
+          "It is → It’s",
+          "Paulo is → Paulo’s"
+        ],
+        "table": {
+          "headers": [
+            "Полная форма",
+            "Сокращённая форма",
+            "Пример"
+          ],
+          "rows": [
+            [
+              "He is",
+              "He’s",
+              "He’s from Germany."
+            ],
+            [
+              "She is",
+              "She’s",
+              "She’s from Japan."
+            ],
+            [
+              "It is",
+              "It’s",
+              "It’s in France."
+            ],
+            [
+              "Anna is",
+              "Anna’s",
+              "Anna’s in the Tuesday class."
+            ]
+          ]
+        },
+        "points": [
+          "’s в этих предложениях означает is.",
+          "Апостроф ставится на месте пропущенной буквы i: is → ’s.",
+          "Полная и сокращённая формы одинаково правильные."
+        ],
+        "tip": "Чтобы проверить ’s, раскройте сокращение: She’s from Italy → She is from Italy."
+      },
+      {
+        "label": "Отрицание",
+        "title": "Как сказать «не»: is not и isn’t",
+        "summary": "Для отрицания добавьте not после is. Обычная короткая форма — isn’t.",
+        "formula": "he / she / it + isn’t + information",
+        "table": {
+          "headers": [
+            "Утверждение",
+            "Отрицание"
+          ],
+          "rows": [
+            [
+              "She is from Mexico.",
+              "She isn’t from Mexico."
+            ],
+            [
+              "He is in the Monday class.",
+              "He isn’t in the Monday class."
+            ],
+            [
+              "It is in Turkey.",
+              "It isn’t in Turkey."
+            ]
+          ]
+        },
+        "points": [
+          "isn’t = is not.",
+          "После isn’t не добавляйте ещё одно is.",
+          "В отрицательных пропусках этого урока используйте isn’t. Форма She’s not тоже возможна в английском, но она не подходит к пропуску, где требуется isn’t."
+        ],
+        "warning": "Неправильно: It isn’t is in France. Правильно: It isn’t in France."
+      },
+      {
+        "label": "Вопрос",
+        "title": "В вопросе поставьте Is в начало",
+        "summary": "Чтобы сделать общий вопрос, поменяйте местами is и подлежащее.",
+        "formula": "Is + he / she / it / name / place + information?",
+        "table": {
+          "headers": [
+            "Утверждение",
+            "Вопрос"
+          ],
+          "rows": [
+            [
+              "She is from Mexico.",
+              "Is she from Mexico?"
+            ],
+            [
+              "He is from England.",
+              "Is he from England?"
+            ],
+            [
+              "Naples is in Turkey.",
+              "Is Naples in Turkey?"
+            ]
+          ]
+        },
+        "steps": [
+          {
+            "title": "Найдите is",
+            "text": "В утверждении is стоит после человека или места."
+          },
+          {
+            "title": "Перенесите is в начало",
+            "text": "Is she…? Is Naples…?"
+          },
+          {
+            "title": "Оставьте остальную часть без изменений",
+            "text": "from Mexico / in Turkey."
+          },
+          {
+            "title": "Поставьте вопросительный знак",
+            "text": "Is she from Mexico?"
+          }
+        ],
+        "tip": "В вопросе не используйте do или does: Is he from Spain?"
+      },
+      {
+        "label": "Короткий ответ",
+        "title": "Yes, she is. / No, she isn’t.",
+        "summary": "В коротком ответе повторите местоимение и форму be. Полное предложение повторять не нужно.",
+        "table": {
+          "headers": [
+            "Вопрос",
+            "Положительный ответ",
+            "Отрицательный ответ"
+          ],
+          "rows": [
+            [
+              "Is he from Spain?",
+              "Yes, he is.",
+              "No, he isn’t."
+            ],
+            [
+              "Is she from Mexico?",
+              "Yes, she is.",
+              "No, she isn’t."
+            ],
+            [
+              "Is it in France?",
+              "Yes, it is.",
+              "No, it isn’t."
+            ]
+          ]
+        },
+        "points": [
+          "В положительном коротком ответе is не сокращается.",
+          "Правильно: Yes, she is. Неправильно: Yes, she’s.",
+          "В отрицательном ответе удобно использовать isn’t."
+        ],
+        "warning": "Имя заменяйте местоимением: Is Paulo from Spain? — Yes, he is."
+      },
+      {
+        "label": "Предлоги",
+        "title": "From — откуда; in — где находится",
+        "summary": "From обычно связывает человека с его страной или городом. In показывает местонахождение города, места или предмета.",
+        "table": {
+          "headers": [
+            "Слово",
+            "Вопрос",
+            "Пример"
+          ],
+          "rows": [
+            [
+              "from",
+              "Откуда?",
+              "She is from Italy."
+            ],
+            [
+              "in",
+              "Где?",
+              "Rome is in Italy."
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "Is Gary Oldman from England?",
+            "ru": "Гэри Олдман из Англии?"
+          },
+          {
+            "en": "Is Geneva in France?",
+            "ru": "Женева находится во Франции?"
+          }
+        ],
+        "tip": "Человек is from a place. Город или место is in a country."
+      },
+      {
+        "label": "О себе",
+        "title": "Are you from…? и Where are you from?",
+        "summary": "В последней части упражнения нужно ответить о себе. С you используется are, а не is.",
+        "formula": [
+          "Are you from England?",
+          "Where are you from?",
+          "Where is it?"
+        ],
+        "table": {
+          "headers": [
+            "Вопрос",
+            "Пример ответа"
+          ],
+          "rows": [
+            [
+              "Are you from England?",
+              "No, I’m not."
+            ],
+            [
+              "Where are you from?",
+              "I’m from Russia."
+            ],
+            [
+              "Where is it?",
+              "It’s in Europe."
+            ]
+          ]
+        },
+        "points": [
+          "Are you…? — вопрос к собеседнику.",
+          "Where are you from? — вопрос о городе или стране происхождения.",
+          "Where is it? — вопрос о местонахождении города или страны."
+        ],
+        "warning": "С you используйте are: Where are you from? Не Where is you from?"
+      },
+      {
+        "label": "Алгоритм",
+        "title": "Как выполнить задания 2a–2d",
+        "summary": "Для каждого пропуска или вопроса проходите одну короткую проверку.",
+        "steps": [
+          {
+            "title": "Определите, кто или что",
+            "text": "Мужчина — he, женщина — she, место или предмет — it."
+          },
+          {
+            "title": "Определите тип предложения",
+            "text": "Это утверждение, отрицание или вопрос?"
+          },
+          {
+            "title": "Выберите форму",
+            "text": "is / ’s для утверждения, isn’t для отрицания, Is…? для вопроса."
+          },
+          {
+            "title": "Проверьте from или in",
+            "text": "Человек from a place; место in a country."
+          },
+          {
+            "title": "Для короткого ответа замените имя",
+            "text": "Paulo → he, Yasmin → she, Oaxaca → it."
+          }
+        ],
+        "formula": "She’s from Spain. → Is she from Spain? → Yes, she is. / No, she isn’t."
+      }
+    ],
+    "commonMistakes": [
+      {
+        "wrong": "She from Italy.",
+        "right": "She is from Italy.",
+        "reason": "В английском предложении нужна форма be."
+      },
+      {
+        "wrong": "He’s is from Germany.",
+        "right": "He’s from Germany.",
+        "reason": "He’s уже означает He is."
+      },
+      {
+        "wrong": "It don’t in France.",
+        "right": "It isn’t in France.",
+        "reason": "С глаголом be используем isn’t, а не don’t."
+      },
+      {
+        "wrong": "Does she from Mexico?",
+        "right": "Is she from Mexico?",
+        "reason": "Вопрос с be начинается с Is."
+      },
+      {
+        "wrong": "Yes, she’s.",
+        "right": "Yes, she is.",
+        "reason": "В положительном коротком ответе is не сокращается."
+      },
+      {
+        "wrong": "Is Naples from Italy?",
+        "right": "Is Naples in Italy?",
+        "reason": "Город находится in a country; человек is from a place."
+      },
+      {
+        "wrong": "Where is you from?",
+        "right": "Where are you from?",
+        "reason": "С you используется are."
+      }
+    ],
+    "exercises": [
+      {
+        "id": "grammar-2-exercise-1",
+        "difficulty": "1 · Очень легко",
+        "title": "He, she или it",
+        "instruction": "Выберите правильное местоимение.",
+        "items": [
+          {
+            "id": "g2-1-1",
+            "type": "single",
+            "prompt": "Paulo → ___",
+            "options": [
+              "he",
+              "she",
+              "it"
+            ],
+            "answer": "he",
+            "explanation": "Paulo — мужчина: he."
+          },
+          {
+            "id": "g2-1-2",
+            "type": "single",
+            "prompt": "Yasmin → ___",
+            "options": [
+              "he",
+              "she",
+              "it"
+            ],
+            "answer": "she",
+            "explanation": "Yasmin — женщина: she."
+          },
+          {
+            "id": "g2-1-3",
+            "type": "single",
+            "prompt": "Oaxaca → ___",
+            "options": [
+              "he",
+              "she",
+              "it"
+            ],
+            "answer": "it",
+            "explanation": "Oaxaca — город: it."
+          },
+          {
+            "id": "g2-1-4",
+            "type": "single",
+            "prompt": "Robert Downey Jr → ___",
+            "options": [
+              "he",
+              "she",
+              "it"
+            ],
+            "answer": "he",
+            "explanation": "Robert Downey Jr — мужчина: he."
+          },
+          {
+            "id": "g2-1-5",
+            "type": "single",
+            "prompt": "Salma Hayek → ___",
+            "options": [
+              "he",
+              "she",
+              "it"
+            ],
+            "answer": "she",
+            "explanation": "Salma Hayek — женщина: she."
+          },
+          {
+            "id": "g2-1-6",
+            "type": "single",
+            "prompt": "the Louvre → ___",
+            "options": [
+              "he",
+              "she",
+              "it"
+            ],
+            "answer": "it",
+            "explanation": "The Louvre — место: it."
+          }
+        ]
+      },
+      {
+        "id": "grammar-2-exercise-2",
+        "difficulty": "2 · Легко",
+        "title": "Is, ’s или isn’t",
+        "instruction": "Выберите форму, которая правильно завершает предложение.",
+        "items": [
+          {
+            "id": "g2-2-1",
+            "type": "single",
+            "prompt": "She ___ from Japan.",
+            "options": [
+              "is",
+              "isn’t",
+              "are"
+            ],
+            "answer": "is",
+            "explanation": "Утверждение с she: is."
+          },
+          {
+            "id": "g2-2-2",
+            "type": "single",
+            "prompt": "He___ from Germany.",
+            "options": [
+              "'s",
+              "'re",
+              "n't"
+            ],
+            "answer": "'s",
+            "explanation": "He’s = He is."
+          },
+          {
+            "id": "g2-2-3",
+            "type": "single",
+            "prompt": "It ___ in France.",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "answer": "is",
+            "explanation": "С it используется is."
+          },
+          {
+            "id": "g2-2-4",
+            "type": "single",
+            "prompt": "No, she ___.",
+            "options": [
+              "is",
+              "isn’t",
+              "'s"
+            ],
+            "answer": "isn’t",
+            "explanation": "Отрицательный короткий ответ: she isn’t."
+          },
+          {
+            "id": "g2-2-5",
+            "type": "single",
+            "prompt": "Paulo___ from Spain.",
+            "options": [
+              "'s",
+              "'m",
+              "'re"
+            ],
+            "answer": "'s",
+            "explanation": "Paulo’s = Paulo is."
+          },
+          {
+            "id": "g2-2-6",
+            "type": "single",
+            "prompt": "No, it ___. It’s in Italy.",
+            "options": [
+              "is",
+              "isn’t",
+              "'s"
+            ],
+            "answer": "isn’t",
+            "explanation": "Отрицание с it: isn’t."
+          },
+          {
+            "id": "g2-2-7",
+            "type": "single",
+            "prompt": "She___ in the Tuesday class.",
+            "options": [
+              "'s",
+              "'re",
+              "'m"
+            ],
+            "answer": "'s",
+            "explanation": "She’s = She is."
+          },
+          {
+            "id": "g2-2-8",
+            "type": "single",
+            "prompt": "It___ Anna.",
+            "options": [
+              "'s",
+              "'re",
+              "'m"
+            ],
+            "answer": "'s",
+            "explanation": "It’s = It is."
+          }
+        ]
+      },
+      {
+        "id": "grammar-2-exercise-3",
+        "difficulty": "3 · Средне",
+        "title": "Составьте вопрос и короткий ответ",
+        "instruction": "Выберите правильный вариант.",
+        "items": [
+          {
+            "id": "g2-3-1",
+            "type": "single",
+            "prompt": "___ she from Mexico?",
+            "options": [
+              "Is",
+              "Does",
+              "Are"
+            ],
+            "answer": "Is",
+            "explanation": "Вопрос с she и be начинается с Is."
+          },
+          {
+            "id": "g2-3-2",
+            "type": "single",
+            "prompt": "Is Gary Oldman from England? — Yes, ___.",
+            "options": [
+              "he is",
+              "he’s",
+              "he does"
+            ],
+            "answer": "he is",
+            "explanation": "Положительный короткий ответ: he is."
+          },
+          {
+            "id": "g2-3-3",
+            "type": "single",
+            "prompt": "___ Naples in Turkey?",
+            "options": [
+              "Is",
+              "Does",
+              "Are"
+            ],
+            "answer": "Is",
+            "explanation": "Naples = it; вопрос начинается с Is."
+          },
+          {
+            "id": "g2-3-4",
+            "type": "single",
+            "prompt": "Is Geneva in France? — No, ___.",
+            "options": [
+              "it isn’t",
+              "it’s",
+              "it doesn’t"
+            ],
+            "answer": "it isn’t",
+            "explanation": "Отрицательный короткий ответ: it isn’t."
+          },
+          {
+            "id": "g2-3-5",
+            "type": "single",
+            "prompt": "Is Javier Bardem from Spain? — Yes, ___.",
+            "options": [
+              "he is",
+              "she is",
+              "it is"
+            ],
+            "answer": "he is",
+            "explanation": "Javier Bardem = he."
+          },
+          {
+            "id": "g2-3-6",
+            "type": "single",
+            "prompt": "Is Salma Hayek from Mexico? — Yes, ___.",
+            "options": [
+              "she is",
+              "he is",
+              "it is"
+            ],
+            "answer": "she is",
+            "explanation": "Salma Hayek = she."
+          },
+          {
+            "id": "g2-3-7",
+            "type": "single",
+            "prompt": "___ the Louvre in Italy?",
+            "options": [
+              "Is",
+              "Are",
+              "Does"
+            ],
+            "answer": "Is",
+            "explanation": "The Louvre = it; используем Is."
+          },
+          {
+            "id": "g2-3-8",
+            "type": "single",
+            "prompt": "Is Lublin in Russia? — No, ___.",
+            "options": [
+              "it isn’t",
+              "he isn’t",
+              "she isn’t"
+            ],
+            "answer": "it isn’t",
+            "explanation": "Lublin — город: it isn’t."
+          }
+        ]
+      },
+      {
+        "id": "grammar-2-exercise-4",
+        "difficulty": "4 · Сложнее",
+        "title": "From или in",
+        "instruction": "Выберите правильный предлог.",
+        "items": [
+          {
+            "id": "g2-4-1",
+            "type": "single",
+            "prompt": "She is ___ Brazil.",
+            "options": [
+              "from",
+              "in"
+            ],
+            "answer": "from",
+            "explanation": "Человек is from a country."
+          },
+          {
+            "id": "g2-4-2",
+            "type": "single",
+            "prompt": "Rio is ___ Brazil.",
+            "options": [
+              "from",
+              "in"
+            ],
+            "answer": "in",
+            "explanation": "Город is in a country."
+          },
+          {
+            "id": "g2-4-3",
+            "type": "single",
+            "prompt": "He is ___ England.",
+            "options": [
+              "from",
+              "in"
+            ],
+            "answer": "from",
+            "explanation": "Человек is from a place."
+          },
+          {
+            "id": "g2-4-4",
+            "type": "single",
+            "prompt": "London is ___ England.",
+            "options": [
+              "from",
+              "in"
+            ],
+            "answer": "in",
+            "explanation": "Город is in a country."
+          },
+          {
+            "id": "g2-4-5",
+            "type": "single",
+            "prompt": "Is she ___ Mexico?",
+            "options": [
+              "from",
+              "in"
+            ],
+            "answer": "from",
+            "explanation": "Вопрос о происхождении человека: from."
+          },
+          {
+            "id": "g2-4-6",
+            "type": "single",
+            "prompt": "Is it ___ Switzerland?",
+            "options": [
+              "from",
+              "in"
+            ],
+            "answer": "in",
+            "explanation": "Вопрос о местонахождении: in."
+          }
+        ]
+      },
+      {
+        "id": "grammar-2-exercise-5",
+        "difficulty": "5 · Самостоятельно",
+        "title": "Напишите полное предложение",
+        "instruction": "Напишите вопрос, ответ или исправленное предложение.",
+        "items": [
+          {
+            "id": "g2-5-1",
+            "type": "text",
+            "prompt": "Сделайте сокращение: She is from Italy.",
+            "answers": [
+              "She's from Italy"
+            ],
+            "explanation": "She’s from Italy."
+          },
+          {
+            "id": "g2-5-2",
+            "type": "text",
+            "prompt": "Сделайте отрицание: It is in Turkey.",
+            "answers": [
+              "It isn't in Turkey",
+              "It is not in Turkey"
+            ],
+            "explanation": "It isn’t in Turkey."
+          },
+          {
+            "id": "g2-5-3",
+            "type": "text",
+            "prompt": "Составьте вопрос: He is from England.",
+            "answers": [
+              "Is he from England"
+            ],
+            "explanation": "Is he from England?"
+          },
+          {
+            "id": "g2-5-4",
+            "type": "text",
+            "prompt": "Дайте короткий ответ: Is she from Mexico? (да)",
+            "answers": [
+              "Yes, she is"
+            ],
+            "explanation": "Yes, she is."
+          },
+          {
+            "id": "g2-5-5",
+            "type": "text",
+            "prompt": "Дайте короткий ответ: Is it in France? (нет)",
+            "answers": [
+              "No, it isn't",
+              "No, it is not"
+            ],
+            "explanation": "No, it isn’t."
+          },
+          {
+            "id": "g2-5-6",
+            "type": "text",
+            "prompt": "Исправьте: Does he from Spain?",
+            "answers": [
+              "Is he from Spain"
+            ],
+            "explanation": "Is he from Spain?"
+          },
+          {
+            "id": "g2-5-7",
+            "type": "text",
+            "prompt": "Исправьте: Yes, she’s.",
+            "answers": [
+              "Yes, she is"
+            ],
+            "explanation": "Yes, she is."
+          },
+          {
+            "id": "g2-5-8",
+            "type": "text",
+            "prompt": "Напишите вопрос: Откуда ты?",
+            "answers": [
+              "Where are you from"
+            ],
+            "explanation": "Where are you from?"
+          }
+        ]
+      }
+    ],
+    "page": "grammar-topic.html?id=grammar-2"
   }
 ];

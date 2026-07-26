@@ -893,5 +893,9 @@
         }
       ]
     }
+  ],
+  "vocabularyId": "vocab-lesson-2",
+  "grammarIds": [
+    "grammar-2"
   ]
 }
