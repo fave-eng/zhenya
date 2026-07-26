@@ -5,3 +5,5 @@ Thumbs.db
 !.env.example
 supabase/.temp/
 node_modules/
+
+migration/backups/
