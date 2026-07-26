@@ -1628,3 +1628,281 @@ body[data-view="grammar-topic"] .grammar-practice-heading {
     text-transform: uppercase;
   }
 }
+
+
+/* Unit 1B: preserve the workbook layout and visual cues. */
+.book-examples {
+  display: grid;
+  gap: 9px;
+  margin: 16px 0 4px;
+}
+.book-example {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  background: #f8fbff;
+}
+.book-example strong { font-size: .92rem; }
+.book-example span { color: #475569; }
+
+.crossword-work { padding: 18px 0 20px; }
+.crossword-photo-section + .crossword-grid-wrap,
+.crossword-grid-wrap + .crossword-photo-section { margin-top: 18px; }
+.crossword-direction,
+.crossword-answer-heading {
+  margin-bottom: 10px;
+  color: #334155;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+.crossword-photos {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+  align-items: end;
+}
+.crossword-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #dbe3ef;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+.crossword-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.15 / 1;
+  object-fit: cover;
+}
+.crossword-grid-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 18px 4px;
+  overflow: hidden;
+}
+.crossword-grid {
+  --cw-size: clamp(24px, 5.4vw, 39px);
+  display: grid;
+  grid-template-columns: repeat(var(--cw-cols), var(--cw-size));
+  grid-template-rows: repeat(var(--cw-rows), var(--cw-size));
+  align-items: stretch;
+  justify-items: stretch;
+}
+.crossword-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 1px solid #94a3b8;
+  margin: -1px 0 0 -1px;
+  background: #fff;
+}
+.crossword-cell small {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  font-size: clamp(.48rem,1.4vw,.62rem);
+  line-height: 1;
+  color: #334155;
+}
+.crossword-cell b {
+  font-size: clamp(.72rem,2.2vw,1rem);
+  text-transform: uppercase;
+}
+.crossword-cell.is-fixed { background: #f8fafc; }
+.crossword-answers {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+.crossword-answer-list { display: grid; gap: 9px; align-content: start; }
+.crossword-answer-row,
+.crossword-fixed-answer {
+  padding: 10px 12px;
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+  background: #fff;
+}
+.crossword-answer-row label,
+.crossword-fixed-answer {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 9px;
+  align-items: center;
+}
+.crossword-answer-row input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+}
+.crossword-fixed-answer span { font-weight: 700; letter-spacing: .05em; }
+.crossword-answer-row .feedback { margin-left: 37px; }
+
+.picture-exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
+  padding: 18px 0;
+}
+.picture-exercise-card {
+  position: relative;
+  padding: 12px;
+  border: 1px solid #dbe3ef;
+  border-radius: 16px;
+  background: #fff;
+}
+.picture-exercise-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  object-fit: cover;
+  border-radius: 11px;
+}
+.picture-number {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 999px;
+  background: rgba(15,23,42,.82);
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 900;
+}
+.picture-exercise-card p,
+.picture-sentence {
+  margin-top: 10px;
+  font-weight: 700;
+}
+.picture-sentence {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.picture-sentence select {
+  min-width: 92px;
+  min-height: 40px;
+  padding: 7px 9px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #fff;
+}
+.picture-exercise-card .feedback { margin-top: 7px; }
+
+.conversation-list {
+  display: grid;
+  gap: 14px;
+  padding: 18px 0;
+}
+.conversation-card {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 15px;
+  background: #f8fafc;
+}
+.conversation-number {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: #e2e8f0;
+  font-weight: 900;
+}
+.conversation-card p { margin: 0; line-height: 2.35; }
+.conversation-card p + p { margin-top: 2px; }
+.conversation-card p > strong {
+  display: inline-block;
+  width: 22px;
+}
+.inline-question {
+  display: inline-flex;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+.inline-question input {
+  width: 74px;
+  min-height: 34px;
+  padding: 4px 7px;
+  border: 0;
+  border-bottom: 2px solid #94a3b8;
+  border-radius: 0;
+  background: transparent;
+  text-align: center;
+}
+.inline-question .feedback {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 1px);
+  z-index: 2;
+  min-width: 90px;
+  padding: 2px 5px;
+  border-radius: 6px;
+  background: #fff;
+  font-size: .68rem;
+  line-height: 1.2;
+}
+
+.qa-pair-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+  padding-bottom: 18px;
+}
+.qa-pair {
+  padding: 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 15px;
+  background: #fff;
+}
+.qa-source {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.qa-input-line + .qa-input-line { margin-top: 8px; }
+.qa-input-line > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.qa-input-line input {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 0;
+  border-bottom: 1px solid #94a3b8;
+  border-radius: 0;
+  background: transparent;
+}
+.qa-input-line > div:first-child > span { font-weight: 800; }
+.qa-input-line .feedback { margin-top: 4px; }
+
+@media (max-width: 620px) {
+  .crossword-photos { gap: 7px; }
+  .crossword-photo { border-radius: 10px; }
+  .crossword-answers { grid-template-columns: 1fr; gap: 14px; }
+  .picture-exercise-grid { gap: 10px; }
+  .picture-exercise-card { padding: 8px; border-radius: 13px; }
+  .picture-number { top: 12px; left: 12px; }
+  .picture-sentence { align-items: flex-start; }
+  .picture-sentence select { width: 100%; }
+  .conversation-card { grid-template-columns: 28px 1fr; padding: 11px; }
+  .conversation-card p { line-height: 2.6; }
+  .inline-question input { width: 62px; }
+}

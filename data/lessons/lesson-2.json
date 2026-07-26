@@ -2,7 +2,7 @@
   "id": "lesson-2",
   "number": 2,
   "title": "Unit 1B — World music",
-  "subtitle": "Countries and verb be: he, she, it · exercises 1–2",
+  "subtitle": "Vocabulary: countries · Grammar: verb be (singular): he, she, it",
   "status": "available",
   "publishedAt": "2026-07-26",
   "notification": {
@@ -12,586 +12,884 @@
   "blocks": [
     {
       "type": "section",
-      "title": "1. Vocabulary — countries",
-      "text": "Повторите названия стран и выполните обе части задания 1."
+      "title": "VOCABULARY — countries"
     },
     {
       "type": "exercise",
-      "id": "exercise-1",
-      "title": "Задание 1. Countries",
-      "instruction": "Часть a: впишите страны из кроссворда. Пример: 1 — Mexico. Часть b: дополните предложения названием страны. Пример: She's from Zurich. She's from Switzerland.",
+      "id": "exercise-1a",
+      "label": "1a",
+      "title": "Complete the crossword.",
+      "layout": "crossword",
       "items": [
-        {
-          "id": "exercise-1-a-2",
-          "type": "text",
-          "prompt": "1a · Down 2 — Big Ben and London",
-          "answers": [
-            "England"
-          ],
-          "placeholder": "Country",
-          "explanation": "England."
-        },
-        {
-          "id": "exercise-1-a-3",
-          "type": "text",
-          "prompt": "1a · Down 3 — the Great Wall",
-          "answers": [
-            "China"
-          ],
-          "placeholder": "Country",
-          "explanation": "China."
-        },
-        {
-          "id": "exercise-1-a-4",
-          "type": "text",
-          "prompt": "1a · Down 4 — a Spanish castle",
-          "answers": [
-            "Spain"
-          ],
-          "placeholder": "Country",
-          "explanation": "Spain."
-        },
         {
           "id": "exercise-1-a-5",
           "type": "text",
-          "prompt": "1a · Across 5 — Rio de Janeiro",
+          "prompt": "5 Across",
           "answers": [
             "Brazil"
           ],
-          "placeholder": "Country",
-          "explanation": "Brazil."
+          "placeholder": "",
+          "explanation": "Brazil"
         },
         {
           "id": "exercise-1-a-6",
           "type": "text",
-          "prompt": "1a · Across 6 — a Japanese temple",
+          "prompt": "6 Across",
           "answers": [
             "Japan"
           ],
-          "placeholder": "Country",
-          "explanation": "Japan."
+          "placeholder": "",
+          "explanation": "Japan"
         },
+        {
+          "id": "exercise-1-a-2",
+          "type": "text",
+          "prompt": "2 Down",
+          "answers": [
+            "England"
+          ],
+          "placeholder": "",
+          "explanation": "England"
+        },
+        {
+          "id": "exercise-1-a-3",
+          "type": "text",
+          "prompt": "3 Down",
+          "answers": [
+            "China"
+          ],
+          "placeholder": "",
+          "explanation": "China"
+        },
+        {
+          "id": "exercise-1-a-4",
+          "type": "text",
+          "prompt": "4 Down",
+          "answers": [
+            "Spain"
+          ],
+          "placeholder": "",
+          "explanation": "Spain"
+        }
+      ],
+      "crossword": {
+        "rows": 7,
+        "cols": 12,
+        "entries": [
+          {
+            "number": 1,
+            "direction": "across",
+            "answer": "MEXICO",
+            "row": 1,
+            "col": 5,
+            "fixed": true
+          },
+          {
+            "number": 5,
+            "direction": "across",
+            "answer": "BRAZIL",
+            "row": 4,
+            "col": 1,
+            "itemId": "exercise-1-a-5"
+          },
+          {
+            "number": 6,
+            "direction": "across",
+            "answer": "JAPAN",
+            "row": 5,
+            "col": 8,
+            "itemId": "exercise-1-a-6"
+          },
+          {
+            "number": 2,
+            "direction": "down",
+            "answer": "ENGLAND",
+            "row": 1,
+            "col": 6,
+            "itemId": "exercise-1-a-2"
+          },
+          {
+            "number": 3,
+            "direction": "down",
+            "answer": "CHINA",
+            "row": 1,
+            "col": 9,
+            "itemId": "exercise-1-a-3"
+          },
+          {
+            "number": 4,
+            "direction": "down",
+            "answer": "SPAIN",
+            "row": 2,
+            "col": 3,
+            "itemId": "exercise-1-a-4"
+          }
+        ],
+        "photos": {
+          "across": [
+            {
+              "number": 1,
+              "src": "images/lesson-2/country-1-mexico.png",
+              "alt": "Mexico"
+            },
+            {
+              "number": 5,
+              "src": "images/lesson-2/country-5-brazil.png",
+              "alt": "Brazil"
+            },
+            {
+              "number": 6,
+              "src": "images/lesson-2/country-6-japan.png",
+              "alt": "Japan"
+            }
+          ],
+          "down": [
+            {
+              "number": 2,
+              "src": "images/lesson-2/country-2-england.png",
+              "alt": "England"
+            },
+            {
+              "number": 3,
+              "src": "images/lesson-2/country-3-china.png",
+              "alt": "China"
+            },
+            {
+              "number": 4,
+              "src": "images/lesson-2/country-4-spain.png",
+              "alt": "Spain"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1b",
+      "label": "1b",
+      "title": "Complete the sentences with a country.",
+      "examples": [
+        "1 She's from Zurich. She's from Switzerland."
+      ],
+      "items": [
         {
           "id": "exercise-1-b-2",
           "type": "text",
-          "prompt": "1b · He's from Paris. He's from F____.",
+          "prompt": "He's from Paris. He's from F__________.",
           "answers": [
             "France"
           ],
-          "placeholder": "France",
-          "explanation": "France."
+          "placeholder": "",
+          "explanation": "France",
+          "number": 2
         },
         {
           "id": "exercise-1-b-3",
           "type": "text",
-          "prompt": "1b · I'm from Rome. I'm from I____.",
+          "prompt": "I'm from Rome. I'm from I__________.",
           "answers": [
             "Italy"
           ],
-          "placeholder": "Country",
-          "explanation": "Italy."
+          "placeholder": "",
+          "explanation": "Italy",
+          "number": 3
         },
         {
           "id": "exercise-1-b-4",
           "type": "text",
-          "prompt": "1b · You're from Miami. You're from the U____ S____.",
+          "prompt": "You're from Miami. You're from the U__________ S__________.",
           "answers": [
-            "United States",
             "the United States",
-            "USA",
-            "the USA"
+            "United States"
           ],
-          "placeholder": "the United States",
-          "explanation": "The United States."
+          "placeholder": "",
+          "explanation": "the United States",
+          "number": 4
         },
         {
           "id": "exercise-1-b-5",
           "type": "text",
-          "prompt": "1b · She's from Moscow. She's from R____.",
+          "prompt": "She's from Moscow. She's from R__________.",
           "answers": [
             "Russia"
           ],
-          "placeholder": "Country",
-          "explanation": "Russia."
+          "placeholder": "",
+          "explanation": "Russia",
+          "number": 5
         },
         {
           "id": "exercise-1-b-6",
           "type": "text",
-          "prompt": "1b · He's from Istanbul. He's from T____.",
+          "prompt": "He's from Istanbul. He's from T__________.",
           "answers": [
             "Turkey",
             "Türkiye"
           ],
-          "placeholder": "Country",
-          "explanation": "Turkey."
+          "placeholder": "",
+          "explanation": "Turkey",
+          "number": 6
         },
         {
           "id": "exercise-1-b-7",
           "type": "text",
-          "prompt": "1b · I'm from Warsaw. I'm from P____.",
+          "prompt": "I'm from Warsaw. I'm from P__________.",
           "answers": [
             "Poland"
           ],
-          "placeholder": "Country",
-          "explanation": "Poland."
+          "placeholder": "",
+          "explanation": "Poland",
+          "number": 7
         },
         {
           "id": "exercise-1-b-8",
           "type": "text",
-          "prompt": "1b · You're from Cairo. You're from E____.",
+          "prompt": "You're from Cairo. You're from E__________.",
           "answers": [
             "Egypt"
           ],
-          "placeholder": "Country",
-          "explanation": "Egypt."
+          "placeholder": "",
+          "explanation": "Egypt",
+          "number": 8
         },
         {
           "id": "exercise-1-b-9",
           "type": "text",
-          "prompt": "1b · She's from Berlin. She's from G____.",
+          "prompt": "She's from Berlin. She's from G__________.",
           "answers": [
             "Germany"
           ],
-          "placeholder": "Country",
-          "explanation": "Germany."
+          "placeholder": "",
+          "explanation": "Germany",
+          "number": 9
         }
       ]
     },
     {
       "type": "section",
-      "title": "2. Grammar — verb be",
-      "text": "Используйте he, she и it с формами is, isn't, He's, She's и It's."
+      "title": "GRAMMAR — verb be (singular): he, she, it"
     },
     {
       "type": "exercise",
-      "id": "exercise-2a-2b",
-      "title": "Задание 2a–b. Complete the sentences and conversations",
-      "instruction": "В части a выберите He's, She's или It's. Примеры: She's from the United States. It's from China. В части b впишите только 's, is или isn't.",
+      "id": "exercise-2a",
+      "label": "2a",
+      "title": "Complete the sentences with He's, She's, or It's.",
+      "layout": "picture-grid",
       "items": [
         {
           "id": "exercise-2-a-3",
-          "type": "single",
-          "prompt": "2a · A woman ___ from Italy.",
+          "type": "select",
+          "prompt": "3 ___ from Italy.",
           "options": [
             "He's",
             "She's",
             "It's"
           ],
           "answer": "She's",
-          "explanation": "She's from Italy."
+          "explanation": "She's"
         },
         {
           "id": "exercise-2-a-4",
-          "type": "single",
-          "prompt": "2a · A man ___ from Germany.",
+          "type": "select",
+          "prompt": "4 ___ from Germany.",
           "options": [
             "He's",
             "She's",
             "It's"
           ],
           "answer": "He's",
-          "explanation": "He's from Germany."
+          "explanation": "He's"
         },
         {
           "id": "exercise-2-a-5",
-          "type": "single",
-          "prompt": "2a · The object ___ from Mexico.",
+          "type": "select",
+          "prompt": "5 ___ from Mexico.",
           "options": [
             "He's",
             "She's",
             "It's"
           ],
           "answer": "It's",
-          "explanation": "It's from Mexico."
+          "explanation": "It's"
         },
         {
           "id": "exercise-2-a-6",
-          "type": "single",
-          "prompt": "2a · A woman ___ from Japan.",
+          "type": "select",
+          "prompt": "6 ___ from Japan.",
           "options": [
             "He's",
             "She's",
             "It's"
           ],
           "answer": "She's",
-          "explanation": "She's from Japan."
+          "explanation": "She's"
         },
         {
           "id": "exercise-2-a-7",
-          "type": "single",
-          "prompt": "2a · A man ___ from Spain.",
+          "type": "select",
+          "prompt": "7 ___ from Spain.",
           "options": [
             "He's",
             "She's",
             "It's"
           ],
           "answer": "He's",
-          "explanation": "He's from Spain."
+          "explanation": "He's"
         },
         {
           "id": "exercise-2-a-8",
-          "type": "single",
-          "prompt": "2a · The object ___ from Switzerland.",
+          "type": "select",
+          "prompt": "8 ___ from Switzerland.",
           "options": [
             "He's",
             "She's",
             "It's"
           ],
           "answer": "It's",
-          "explanation": "It's from Switzerland."
+          "explanation": "It's"
+        }
+      ],
+      "cards": [
+        {
+          "number": 1,
+          "src": "images/lesson-2/grammar-1-usa.png",
+          "alt": "United States",
+          "example": "She's from the United States."
         },
+        {
+          "number": 2,
+          "src": "images/lesson-2/grammar-2-china.png",
+          "alt": "China",
+          "example": "It's from China."
+        },
+        {
+          "number": 3,
+          "src": "images/lesson-2/grammar-3-italy.png",
+          "alt": "Italy",
+          "itemId": "exercise-2-a-3",
+          "tail": "from Italy."
+        },
+        {
+          "number": 4,
+          "src": "images/lesson-2/grammar-4-germany.png",
+          "alt": "Germany",
+          "itemId": "exercise-2-a-4",
+          "tail": "from Germany."
+        },
+        {
+          "number": 5,
+          "src": "images/lesson-2/grammar-5-mexico.png",
+          "alt": "Mexico",
+          "itemId": "exercise-2-a-5",
+          "tail": "from Mexico."
+        },
+        {
+          "number": 6,
+          "src": "images/lesson-2/grammar-6-japan.png",
+          "alt": "Japan",
+          "itemId": "exercise-2-a-6",
+          "tail": "from Japan."
+        },
+        {
+          "number": 7,
+          "src": "images/lesson-2/grammar-7-spain.png",
+          "alt": "Spain",
+          "itemId": "exercise-2-a-7",
+          "tail": "from Spain."
+        },
+        {
+          "number": 8,
+          "src": "images/lesson-2/grammar-8-switzerland.png",
+          "alt": "Switzerland",
+          "itemId": "exercise-2-a-8",
+          "tail": "from Switzerland."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-2b",
+      "label": "2b",
+      "title": "Complete the conversations with 's, is, or isn't.",
+      "layout": "conversations",
+      "items": [
         {
           "id": "exercise-2-b-1",
           "type": "text",
-          "prompt": "2b · Is Paulo from Spain? — No, he isn't. He ___ from Brazil.",
           "answers": [
             "'s"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "He’s from Brazil: 's."
+          "placeholder": "",
+          "explanation": "'s"
         },
         {
           "id": "exercise-2-b-2a",
           "type": "text",
-          "prompt": "2b · Where ___ Oaxaca?",
           "answers": [
             "'s"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "Where’s Oaxaca? — 's."
+          "placeholder": "",
+          "explanation": "'s"
         },
         {
           "id": "exercise-2-b-2b",
           "type": "text",
-          "prompt": "2b · ___ it in Mexico?",
           "answers": [
-            "is"
+            "Is"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "Is it in Mexico?"
+          "placeholder": "",
+          "explanation": "Is"
         },
         {
           "id": "exercise-2-b-2c",
           "type": "text",
-          "prompt": "2b · Yes, it ___.",
           "answers": [
             "is"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "Yes, it is."
+          "placeholder": "",
+          "explanation": "is"
         },
         {
           "id": "exercise-2-b-3a",
           "type": "text",
-          "prompt": "2b · ___ Yasmin in the Monday class?",
           "answers": [
-            "is"
+            "Is"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "Is Yasmin in the Monday class?"
+          "placeholder": "",
+          "explanation": "Is"
         },
         {
           "id": "exercise-2-b-3b",
           "type": "text",
-          "prompt": "2b · No, she ___.",
           "answers": [
             "isn't"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "No, she isn't."
+          "placeholder": "",
+          "explanation": "isn't"
         },
         {
           "id": "exercise-2-b-3c",
           "type": "text",
-          "prompt": "2b · She ___ in the Tuesday class.",
           "answers": [
             "'s"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "She’s in the Tuesday class: 's."
+          "placeholder": "",
+          "explanation": "'s"
         },
         {
           "id": "exercise-2-b-4a",
           "type": "text",
-          "prompt": "2b · ___ your name Annie?",
           "answers": [
-            "is"
+            "Is"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "Is your name Annie?"
+          "placeholder": "",
+          "explanation": "Is"
         },
         {
           "id": "exercise-2-b-4b",
           "type": "text",
-          "prompt": "2b · No, it ___.",
           "answers": [
             "isn't"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "No, it isn't."
+          "placeholder": "",
+          "explanation": "isn't"
         },
         {
           "id": "exercise-2-b-4c",
           "type": "text",
-          "prompt": "2b · It ___ Anna.",
           "answers": [
             "'s"
           ],
-          "placeholder": "'s / is / isn't",
-          "explanation": "It’s Anna: 's."
+          "placeholder": "",
+          "explanation": "'s"
+        }
+      ],
+      "conversations": [
+        {
+          "number": 1,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Is Paulo from Spain?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "No, he isn't. He "
+                },
+                {
+                  "blank": "exercise-2-b-1"
+                },
+                {
+                  "text": " from Brazil."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Where "
+                },
+                {
+                  "blank": "exercise-2-b-2a"
+                },
+                {
+                  "text": " Oaxaca? "
+                },
+                {
+                  "blank": "exercise-2-b-2b"
+                },
+                {
+                  "text": " it in Mexico?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Yes, it "
+                },
+                {
+                  "blank": "exercise-2-b-2c"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-2-b-3a"
+                },
+                {
+                  "text": " Yasmin in the Monday class?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "No, she "
+                },
+                {
+                  "blank": "exercise-2-b-3b"
+                },
+                {
+                  "text": ". She "
+                },
+                {
+                  "blank": "exercise-2-b-3c"
+                },
+                {
+                  "text": " in the Tuesday class."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-2-b-4a"
+                },
+                {
+                  "text": " your name Annie?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "No, it "
+                },
+                {
+                  "blank": "exercise-2-b-4b"
+                },
+                {
+                  "text": ". It "
+                },
+                {
+                  "blank": "exercise-2-b-4c"
+                },
+                {
+                  "text": " Anna."
+                }
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "type": "exercise",
       "id": "exercise-2c",
-      "title": "Задание 2c. Write the questions and answers",
-      "instruction": "Для каждого пункта сначала напишите вопрос, затем полный ответ. Примеры: Is Robert Downey Jr from the USA? — Yes, he is. He's from New York. Is Kobe in China? — No, it isn't. It's in Japan.",
+      "label": "2c",
+      "title": "Write the questions. Then answer with the information in brackets.",
+      "layout": "qa-pairs",
+      "examples": [
+        {
+          "number": 1,
+          "source": "Robert Downey Jr / from the USA? (✓ New York)",
+          "question": "Is Robert Downey Jr from the USA?",
+          "answer": "Yes, he is. He's from New York."
+        },
+        {
+          "number": 2,
+          "source": "Kobe / in China? (✗ Japan)",
+          "question": "Is Kobe in China?",
+          "answer": "No, it isn't. It's in Japan."
+        }
+      ],
       "items": [
         {
           "id": "exercise-2-c-3-question",
           "type": "text",
-          "prompt": "2c · 3. Salma Hayek / from Mexico? (✓ Veracruz) — Write the question.",
           "answers": [
             "Is Salma Hayek from Mexico?"
           ],
-          "placeholder": "Is ...?",
+          "placeholder": "",
           "explanation": "Is Salma Hayek from Mexico?"
         },
         {
           "id": "exercise-2-c-3-answer",
           "type": "text",
-          "prompt": "2c · 3. Write the full answer.",
           "answers": [
-            "Yes she is She is from Veracruz",
-            "Yes she is She's from Veracruz",
-            "Yes she is. She is from Veracruz",
-            "Yes she is. She's from Veracruz",
-            "Yes, she is She is from Veracruz",
-            "Yes, she is She's from Veracruz",
-            "Yes, she is. She is from Veracruz",
-            "Yes, she is. She's from Veracruz"
+            "Yes, she is. She's from Veracruz."
           ],
-          "placeholder": "Yes, ... / No, ...",
+          "placeholder": "",
           "explanation": "Yes, she is. She's from Veracruz."
         },
         {
           "id": "exercise-2-c-4-question",
           "type": "text",
-          "prompt": "2c · 4. Naples / in Turkey? (✗ Italy) — Write the question.",
           "answers": [
             "Is Naples in Turkey?"
           ],
-          "placeholder": "Is ...?",
+          "placeholder": "",
           "explanation": "Is Naples in Turkey?"
         },
         {
           "id": "exercise-2-c-4-answer",
           "type": "text",
-          "prompt": "2c · 4. Write the full answer.",
           "answers": [
-            "No it is not It is in Italy",
-            "No it is not. It is in Italy",
-            "No it isn't It's in Italy",
-            "No it isn't. It's in Italy",
-            "No, it is not It is in Italy",
-            "No, it is not. It is in Italy",
-            "No, it isn't It's in Italy",
-            "No, it isn't. It's in Italy"
+            "No, it isn't. It's in Italy."
           ],
-          "placeholder": "Yes, ... / No, ...",
+          "placeholder": "",
           "explanation": "No, it isn't. It's in Italy."
         },
         {
           "id": "exercise-2-c-5-question",
           "type": "text",
-          "prompt": "2c · 5. Copacabana / in Brazil? (✓ Rio) — Write the question.",
           "answers": [
             "Is Copacabana in Brazil?"
           ],
-          "placeholder": "Is ...?",
+          "placeholder": "",
           "explanation": "Is Copacabana in Brazil?"
         },
         {
           "id": "exercise-2-c-5-answer",
           "type": "text",
-          "prompt": "2c · 5. Write the full answer.",
           "answers": [
-            "Yes it is It is in Rio",
-            "Yes it is It's in Rio",
-            "Yes it is. It is in Rio",
-            "Yes it is. It's in Rio",
-            "Yes, it is It is in Rio",
-            "Yes, it is It's in Rio",
-            "Yes, it is. It is in Rio",
-            "Yes, it is. It's in Rio"
+            "Yes, it is. It's in Rio."
           ],
-          "placeholder": "Yes, ... / No, ...",
+          "placeholder": "",
           "explanation": "Yes, it is. It's in Rio."
         },
         {
           "id": "exercise-2-c-6-question",
           "type": "text",
-          "prompt": "2c · 6. Lublin / in Russia? (✗ Poland) — Write the question.",
           "answers": [
             "Is Lublin in Russia?"
           ],
-          "placeholder": "Is ...?",
+          "placeholder": "",
           "explanation": "Is Lublin in Russia?"
         },
         {
           "id": "exercise-2-c-6-answer",
           "type": "text",
-          "prompt": "2c · 6. Write the full answer.",
           "answers": [
-            "No it is not It is in Poland",
-            "No it is not. It is in Poland",
-            "No it isn't It's in Poland",
-            "No it isn't. It's in Poland",
-            "No, it is not It is in Poland",
-            "No, it is not. It is in Poland",
-            "No, it isn't It's in Poland",
-            "No, it isn't. It's in Poland"
+            "No, it isn't. It's in Poland."
           ],
-          "placeholder": "Yes, ... / No, ...",
+          "placeholder": "",
           "explanation": "No, it isn't. It's in Poland."
         },
         {
           "id": "exercise-2-c-7-question",
           "type": "text",
-          "prompt": "2c · 7. Gary Oldman / from England? (✓ London) — Write the question.",
           "answers": [
             "Is Gary Oldman from England?"
           ],
-          "placeholder": "Is ...?",
+          "placeholder": "",
           "explanation": "Is Gary Oldman from England?"
         },
         {
           "id": "exercise-2-c-7-answer",
           "type": "text",
-          "prompt": "2c · 7. Write the full answer.",
           "answers": [
-            "Yes he is He is from London",
-            "Yes he is He's from London",
-            "Yes he is. He is from London",
-            "Yes he is. He's from London",
-            "Yes, he is He is from London",
-            "Yes, he is He's from London",
-            "Yes, he is. He is from London",
-            "Yes, he is. He's from London"
+            "Yes, he is. He's from London."
           ],
-          "placeholder": "Yes, ... / No, ...",
+          "placeholder": "",
           "explanation": "Yes, he is. He's from London."
         },
         {
           "id": "exercise-2-c-8-question",
           "type": "text",
-          "prompt": "2c · 8. Geneva / in France? (✗ Switzerland) — Write the question.",
           "answers": [
             "Is Geneva in France?"
           ],
-          "placeholder": "Is ...?",
+          "placeholder": "",
           "explanation": "Is Geneva in France?"
         },
         {
           "id": "exercise-2-c-8-answer",
           "type": "text",
-          "prompt": "2c · 8. Write the full answer.",
           "answers": [
-            "No it is not It is in Switzerland",
-            "No it is not. It is in Switzerland",
-            "No it isn't It's in Switzerland",
-            "No it isn't. It's in Switzerland",
-            "No, it is not It is in Switzerland",
-            "No, it is not. It is in Switzerland",
-            "No, it isn't It's in Switzerland",
-            "No, it isn't. It's in Switzerland"
+            "No, it isn't. It's in Switzerland."
           ],
-          "placeholder": "Yes, ... / No, ...",
+          "placeholder": "",
           "explanation": "No, it isn't. It's in Switzerland."
         },
         {
           "id": "exercise-2-c-9-question",
           "type": "text",
-          "prompt": "2c · 9. Javier Bardem / from Spain? (✓ Las Palmas) — Write the question.",
           "answers": [
             "Is Javier Bardem from Spain?"
           ],
-          "placeholder": "Is ...?",
+          "placeholder": "",
           "explanation": "Is Javier Bardem from Spain?"
         },
         {
           "id": "exercise-2-c-9-answer",
           "type": "text",
-          "prompt": "2c · 9. Write the full answer.",
           "answers": [
-            "Yes he is He is from Las Palmas",
-            "Yes he is He's from Las Palmas",
-            "Yes he is. He is from Las Palmas",
-            "Yes he is. He's from Las Palmas",
-            "Yes, he is He is from Las Palmas",
-            "Yes, he is He's from Las Palmas",
-            "Yes, he is. He is from Las Palmas",
-            "Yes, he is. He's from Las Palmas"
+            "Yes, he is. He's from Las Palmas."
           ],
-          "placeholder": "Yes, ... / No, ...",
+          "placeholder": "",
           "explanation": "Yes, he is. He's from Las Palmas."
         },
         {
           "id": "exercise-2-c-10-question",
           "type": "text",
-          "prompt": "2c · 10. the Louvre / in Italy? (✗ France) — Write the question.",
           "answers": [
             "Is the Louvre in Italy?"
           ],
-          "placeholder": "Is ...?",
+          "placeholder": "",
           "explanation": "Is the Louvre in Italy?"
         },
         {
           "id": "exercise-2-c-10-answer",
           "type": "text",
-          "prompt": "2c · 10. Write the full answer.",
           "answers": [
-            "No it is not It is in France",
-            "No it is not. It is in France",
-            "No it isn't It's in France",
-            "No it isn't. It's in France",
-            "No, it is not It is in France",
-            "No, it is not. It is in France",
-            "No, it isn't It's in France",
-            "No, it isn't. It's in France"
+            "No, it isn't. It's in France."
           ],
-          "placeholder": "Yes, ... / No, ...",
+          "placeholder": "",
           "explanation": "No, it isn't. It's in France."
+        }
+      ],
+      "pairs": [
+        {
+          "number": 3,
+          "source": "Salma Hayek / from Mexico? (✓ Veracruz)",
+          "questionId": "exercise-2-c-3-question",
+          "answerId": "exercise-2-c-3-answer"
+        },
+        {
+          "number": 4,
+          "source": "Naples / in Turkey? (✗ Italy)",
+          "questionId": "exercise-2-c-4-question",
+          "answerId": "exercise-2-c-4-answer"
+        },
+        {
+          "number": 5,
+          "source": "Copacabana / in Brazil? (✓ Rio)",
+          "questionId": "exercise-2-c-5-question",
+          "answerId": "exercise-2-c-5-answer"
+        },
+        {
+          "number": 6,
+          "source": "Lublin / in Russia? (✗ Poland)",
+          "questionId": "exercise-2-c-6-question",
+          "answerId": "exercise-2-c-6-answer"
+        },
+        {
+          "number": 7,
+          "source": "Gary Oldman / from England? (✓ London)",
+          "questionId": "exercise-2-c-7-question",
+          "answerId": "exercise-2-c-7-answer"
+        },
+        {
+          "number": 8,
+          "source": "Geneva / in France? (✗ Switzerland)",
+          "questionId": "exercise-2-c-8-question",
+          "answerId": "exercise-2-c-8-answer"
+        },
+        {
+          "number": 9,
+          "source": "Javier Bardem / from Spain? (✓ Las Palmas)",
+          "questionId": "exercise-2-c-9-question",
+          "answerId": "exercise-2-c-9-answer"
+        },
+        {
+          "number": 10,
+          "source": "the Louvre / in Italy? (✗ France)",
+          "questionId": "exercise-2-c-10-question",
+          "answerId": "exercise-2-c-10-answer"
         }
       ]
     },
     {
       "type": "exercise",
       "id": "exercise-2d",
-      "title": "Задание 2d. Answer the questions about you",
-      "instruction": "Ответьте о себе полными короткими предложениями. Эти ответы сохранятся и будут видны преподавателю, но автоматически не оцениваются.",
+      "label": "2d",
+      "title": "Answer the questions about you.",
       "items": [
         {
           "id": "exercise-2-d-1",
           "type": "manual",
           "prompt": "Are you from England?",
-          "placeholder": "No, I'm not. / Yes, I am.",
-          "scored": false
+          "placeholder": "",
+          "scored": false,
+          "number": 1
         },
         {
           "id": "exercise-2-d-2",
           "type": "manual",
           "prompt": "Where are you from (city)?",
-          "placeholder": "I'm from ...",
-          "scored": false
+          "placeholder": "",
+          "scored": false,
+          "number": 2
         },
         {
           "id": "exercise-2-d-3",
           "type": "manual",
           "prompt": "Where is it?",
-          "placeholder": "It's in ...",
-          "scored": false
+          "placeholder": "",
+          "scored": false,
+          "number": 3
         }
       ]
     }

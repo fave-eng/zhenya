@@ -41,7 +41,7 @@
     const id = taskId(item, `${prefix}-${index + 1}`);
     const type = questionType(item);
     const prompt = escapeHtml(item.prompt || item.question || `Задание ${index + 1}`);
-    const placeholder = escapeHtml(item.placeholder || 'Введите ответ');
+    const placeholder = escapeHtml(item.placeholder !== undefined ? item.placeholder : 'Введите ответ');
     const options = questionOptions(item);
     let control = '';
 
@@ -63,9 +63,10 @@
       ? `<span class="exercise-prompt-label">Число</span><strong class="exercise-prompt-value">${prompt}</strong>`
       : prompt;
 
+    const displayNumber = item.number ?? (index + 1);
     return `<div class="exercise-item" data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">
       <div class="exercise-prompt-row">
-        <span class="exercise-question-number" aria-label="Пункт ${index + 1}">${index + 1}</span>
+        <span class="exercise-question-number" aria-label="Пункт ${escapeHtml(displayNumber)}">${escapeHtml(displayNumber)}</span>
         <span class="exercise-prompt${isStandaloneNumber ? ' is-number-target' : ''}">${promptContent}</span>
       </div>
       ${Array.isArray(item.wordBank) && item.wordBank.length ? `<div class="word-bank">${item.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>` : ''}
@@ -86,6 +87,138 @@
     return questions;
   }
 
+  function itemMap(block) {
+    return new Map(asArray(block?.items).map((item) => [taskId(item, ''), item]));
+  }
+
+  function renderBookExamples(examples) {
+    const rows = asArray(examples);
+    if (!rows.length) return '';
+    return `<div class="book-examples">${rows.map((example) => {
+      if (example && typeof example === 'object') {
+        const source = example.source ? `<strong>${escapeHtml(`${example.number || ''} ${example.source}`.trim())}</strong>` : '';
+        const question = example.question ? `<span>${escapeHtml(example.question)}</span>` : '';
+        const answer = example.answer ? `<span>${escapeHtml(example.answer)}</span>` : '';
+        return `<div class="book-example">${source}${question}${answer}</div>`;
+      }
+      return `<div class="book-example"><span>${escapeHtml(example)}</span></div>`;
+    }).join('')}</div>`;
+  }
+
+  function renderCrosswordBody(block) {
+    const crossword = block.crossword || {};
+    const entries = asArray(crossword.entries);
+    const items = itemMap(block);
+    const cells = new Map();
+    entries.forEach((entry) => {
+      const answer = safeText(entry.answer).toUpperCase();
+      [...answer].forEach((letter, offset) => {
+        const row = Number(entry.row) + (safeText(entry.direction).toLowerCase() === 'down' ? offset : 0);
+        const col = Number(entry.col) + (safeText(entry.direction).toLowerCase() === 'across' ? offset : 0);
+        const key = `${row}-${col}`;
+        const current = cells.get(key) || { row, col, number: '', fixed: false, letter: '' };
+        if (offset === 0) current.number = entry.number;
+        if (entry.fixed) {
+          current.fixed = true;
+          current.letter = letter;
+        }
+        cells.set(key, current);
+      });
+    });
+
+    const renderPhotos = (photos, direction) => `<section class="crossword-photo-section"><div class="crossword-direction">${direction === 'across' ? 'ACROSS →' : 'DOWN ↓'}</div><div class="crossword-photos">${asArray(photos).map((photo) => `<figure class="crossword-photo"><img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt || '')}" loading="lazy"></figure>`).join('')}</div></section>`;
+
+    const renderEntries = (direction) => {
+      const list = entries.filter((entry) => safeText(entry.direction).toLowerCase() === direction);
+      return `<div class="crossword-answer-list"><div class="crossword-answer-heading">${direction === 'across' ? 'ACROSS' : 'DOWN'}</div>${list.map((entry) => {
+        if (entry.fixed) return `<div class="crossword-fixed-answer"><strong>${escapeHtml(entry.number)}</strong><span>${escapeHtml(entry.answer)}</span></div>`;
+        const item = items.get(safeText(entry.itemId));
+        if (!item) return '';
+        const id = taskId(item, entry.itemId);
+        return `<div class="crossword-answer-row" data-question-id="${escapeHtml(id)}" data-question-type="text" data-cw-entry data-cw-row="${Number(entry.row)}" data-cw-col="${Number(entry.col)}" data-cw-direction="${escapeHtml(direction)}" data-cw-length="${safeText(entry.answer).length}">
+          <label><strong>${escapeHtml(entry.number)}</strong><input type="text" data-answer-control autocomplete="off" aria-label="${escapeHtml(`${entry.number} ${direction}`)}"></label>
+          <div class="feedback" data-feedback></div>
+        </div>`;
+      }).join('')}</div>`;
+    };
+
+    const grid = `<div class="crossword-grid-wrap"><div class="crossword-grid" data-crossword style="--cw-cols:${Number(crossword.cols || 12)};--cw-rows:${Number(crossword.rows || 7)}">${[...cells.values()].map((cell) => `<span class="crossword-cell${cell.fixed ? ' is-fixed' : ''}" data-cw-cell="${cell.row}-${cell.col}" style="grid-row:${cell.row};grid-column:${cell.col}">${cell.number ? `<small>${escapeHtml(cell.number)}</small>` : ''}<b data-cw-letter data-fixed="${cell.fixed ? 'true' : 'false'}">${escapeHtml(cell.letter)}</b></span>`).join('')}</div></div>`;
+
+    return `<div class="crossword-work">${renderPhotos(crossword.photos?.across, 'across')}${grid}${renderPhotos(crossword.photos?.down, 'down')}<div class="crossword-answers">${renderEntries('across')}${renderEntries('down')}</div></div>`;
+  }
+
+  function renderPictureGridBody(block) {
+    const items = itemMap(block);
+    return `<div class="picture-exercise-grid">${asArray(block.cards).map((card) => {
+      const image = `<img src="${escapeHtml(card.src)}" alt="${escapeHtml(card.alt || '')}" loading="lazy">`;
+      if (card.example) {
+        return `<div class="picture-exercise-card is-example"><span class="picture-number">${escapeHtml(card.number)}</span>${image}<p>${escapeHtml(card.example)}</p></div>`;
+      }
+      const item = items.get(safeText(card.itemId));
+      if (!item) return '';
+      const id = taskId(item, card.itemId);
+      const options = questionOptions(item);
+      return `<div class="picture-exercise-card" data-question-id="${escapeHtml(id)}" data-question-type="select"><span class="picture-number">${escapeHtml(card.number)}</span>${image}<div class="picture-sentence"><select data-answer-control aria-label="${escapeHtml(item.prompt || '')}"><option value=""></option>${options.map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join('')}</select><span>${escapeHtml(card.tail || '')}</span></div><div class="feedback" data-feedback></div></div>`;
+    }).join('')}</div>`;
+  }
+
+  function renderInlineBlank(item) {
+    if (!item) return '';
+    const id = taskId(item, '');
+    return `<span class="inline-question" data-question-id="${escapeHtml(id)}" data-question-type="text"><input type="text" data-answer-control autocomplete="off" aria-label="Blank"><span class="feedback" data-feedback></span></span>`;
+  }
+
+  function renderConversationsBody(block) {
+    const items = itemMap(block);
+    return `<div class="conversation-list">${asArray(block.conversations).map((conversation) => `<div class="conversation-card"><span class="conversation-number">${escapeHtml(conversation.number)}</span><div>${asArray(conversation.lines).map((line) => `<p><strong>${escapeHtml(line.speaker || '')}</strong> ${asArray(line.segments).map((segment) => segment.blank ? renderInlineBlank(items.get(safeText(segment.blank))) : escapeHtml(segment.text || '')).join('')}</p>`).join('')}</div></div>`).join('')}</div>`;
+  }
+
+  function renderQaPairsBody(block) {
+    const items = itemMap(block);
+    const renderInput = (item, suffix = '') => {
+      if (!item) return '';
+      const id = taskId(item, '');
+      return `<div class="qa-input-line" data-question-id="${escapeHtml(id)}" data-question-type="text"><div><input type="text" data-answer-control autocomplete="off" aria-label="${escapeHtml(item.prompt || 'Answer')}">${suffix ? `<span>${escapeHtml(suffix)}</span>` : ''}</div><div class="feedback" data-feedback></div></div>`;
+    };
+    return `${renderBookExamples(block.examples)}<div class="qa-pair-list">${asArray(block.pairs).map((pair) => `<div class="qa-pair"><div class="qa-source"><strong>${escapeHtml(pair.number)}</strong><span>${escapeHtml(pair.source || '')}</span></div>${renderInput(items.get(safeText(pair.questionId)), '?')}${renderInput(items.get(safeText(pair.answerId)))}</div>`).join('')}</div>`;
+  }
+
+  function renderExerciseBody(block, items) {
+    const layout = safeText(block.layout).toLowerCase();
+    if (layout === 'crossword') return renderCrosswordBody(block);
+    if (layout === 'picture-grid') return renderPictureGridBody(block);
+    if (layout === 'conversations') return renderConversationsBody(block);
+    if (layout === 'qa-pairs') return renderQaPairsBody(block);
+    return `${renderBookExamples(block.examples)}${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, 'exercise'))).join('')}`;
+  }
+
+  function initCrosswords(root) {
+    root.querySelectorAll('[data-crossword]').forEach((grid) => {
+      const host = grid.closest('.crossword-work');
+      if (!host) return;
+      const update = () => {
+        grid.querySelectorAll('[data-cw-letter]').forEach((letter) => {
+          if (letter.dataset.fixed !== 'true') letter.textContent = '';
+        });
+        host.querySelectorAll('[data-cw-entry]').forEach((entry) => {
+          const value = safeText(entry.querySelector('[data-answer-control]')?.value).toUpperCase().replace(/[^A-Z]/g, '');
+          const row = Number(entry.dataset.cwRow);
+          const col = Number(entry.dataset.cwCol);
+          const direction = entry.dataset.cwDirection;
+          const length = Number(entry.dataset.cwLength);
+          for (let index = 0; index < Math.min(value.length, length); index += 1) {
+            const targetRow = row + (direction === 'down' ? index : 0);
+            const targetCol = col + (direction === 'across' ? index : 0);
+            const target = grid.querySelector(`[data-cw-cell="${targetRow}-${targetCol}"] [data-cw-letter]`);
+            if (target && target.dataset.fixed !== 'true') target.textContent = value[index];
+          }
+        });
+      };
+      host.querySelectorAll('[data-cw-entry] [data-answer-control]').forEach((input) => input.addEventListener('input', update));
+      update();
+    });
+  }
+
   function renderBlock(block, index, sectionState) {
     const type = safeText(block?.type, 'content').toLowerCase();
     if (type === 'section') {
@@ -103,7 +236,8 @@
       const exerciseNumber = Number(block.number || sectionState.exercise);
       const items = asArray(block.items);
       const title = cleanNumberedTitle(block.title, `Упражнение ${exerciseNumber}`);
-      return `<article class="card lesson-block exercise-card ${toneClass(exerciseNumber)}" id="lesson-exercise-${exerciseNumber}" data-exercise-id="${escapeHtml(taskId(block, `exercise-${index + 1}`))}"><header class="exercise-card-header"><span class="exercise-kicker">Задание ${exerciseNumber} из ${Number(sectionState.totalExercises || exerciseNumber)}</span><h3>${escapeHtml(title)}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}</header><div class="exercise-card-body">${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, `exercise-${index + 1}`))).join('')}</div></article>`;
+      const kicker = block.label ? escapeHtml(block.label) : `Задание ${exerciseNumber} из ${Number(sectionState.totalExercises || exerciseNumber)}`;
+      return `<article class="card lesson-block exercise-card ${toneClass(exerciseNumber)}" id="lesson-exercise-${exerciseNumber}" data-exercise-id="${escapeHtml(taskId(block, `exercise-${index + 1}`))}"><header class="exercise-card-header"><span class="exercise-kicker">${kicker}</span><h3>${escapeHtml(title)}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}</header><div class="exercise-card-body">${renderExerciseBody(block, items)}</div></article>`;
     }
     if (['text','textarea','select','single','multiple','reorder','translate','manual'].includes(type)) {
       sectionState.exercise = Number(sectionState.exercise || 0) + 1;
@@ -273,6 +407,7 @@
       <article class="card lesson-actions"><div class="lesson-result" id="lesson-result" aria-live="polite"></div><div class="button-row" id="lesson-buttons"></div><div id="submission-status"></div></article>`;
 
     restoreAnswers(root, questions, record.answers || {});
+    initCrosswords(root);
     if (reviewed) {
       const result = evaluate(root, questions, { apply: true });
       document.getElementById('lesson-result').innerHTML = `<h3>Сохранённый результат: ${Number(record.score_correct ?? result.correct)} из ${Number(record.score_total ?? result.total)}</h3><p class="muted">${Number(record.score_percent ?? result.percent)}% правильных ответов</p>`;
