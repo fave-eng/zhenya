@@ -1,6 +1,6 @@
 import { createClient } from 'npm:@supabase/supabase-js@2'
 
-const FUNCTION_VERSION = 'homework-reports-v2'
+const FUNCTION_VERSION = 'homework-reports-v3-lesson-bundle'
 const STUDENT_ID = 'zhenya'
 const STUDENT_NAME = 'Женя'
 const TIME_ZONE = 'Asia/Yekaterinburg'
@@ -179,20 +179,96 @@ async function handleHomeworkReport(
   }
 }
 
-function materialMessage(payload: Record<string, any>): string {
-  const materialType = String(payload.materialType || 'material')
-  const title = String(payload.payload?.title || payload.materialId || 'Новый материал')
-  const typeLabel = materialType === 'homework' ? 'домашняя работа' : materialType === 'grammar' ? 'грамматическая тема' : materialType === 'vocabulary' ? 'словарная тема' : 'учебный материал'
-  const lines = [
-    '🚀 <b>Опубликован новый материал</b>',
-    '',
-    `Для Жени доступна ${typeLabel}:`,
-    `<b>${escapeHtml(title)}</b>`,
-  ]
-  if (payload.payload?.hasVocabulary) lines.push('', '💥 Перед домашней работой повтори новые слова.')
-  if (payload.payload?.hasGrammar) lines.push('', '📐 В урок добавлено объяснение грамматики.')
-  lines.push('', 'Удачи! Непонятные вопросы отметь, чтобы обсудить на следующем занятии ✨')
-  return lines.join('\n')
+function grammarButtonTitle(item: Record<string, unknown>, index: number): string {
+  const fullTitle = String(item.title || `Grammar ${index + 1}`).trim()
+  const shortTitle = fullTitle.split(':')[0].trim()
+  return shortTitle.length > 0 && shortTitle.length <= 34 ? shortTitle : `Grammar ${index + 1}`
+}
+
+function publicHttpUrl(value: unknown): string | null {
+  const raw = String(value || '').trim()
+  if (!raw) return null
+  try {
+    const url = new URL(raw)
+    return ['http:', 'https:'].includes(url.protocol) && Boolean(url.hostname) ? url.toString() : null
+  } catch {
+    return null
+  }
+}
+
+async function claimLessonPublication(
+  admin: ReturnType<typeof createClient>,
+  record: {
+    student_id: string
+    material_type: string
+    material_id: string
+    payload: Record<string, unknown>
+  },
+) {
+  // Homework, vocabulary and grammar can be uploaded in separate commits.
+  // Only one final notification is allowed for each lesson.
+  const { data: sentRows, error: sentLookupError } = await admin
+    .from('material_publications')
+    .select('*')
+    .eq('student_id', record.student_id)
+    .eq('material_type', record.material_type)
+    .eq('material_id', record.material_id)
+    .eq('status', 'sent')
+    .order('created_at', { ascending: true })
+    .limit(1)
+
+  if (sentLookupError) throw sentLookupError
+  const sent = sentRows?.[0]
+  if (sent) return { row: sent, alreadySent: true }
+
+  const { data: existingRows, error: lookupError } = await admin
+    .from('material_publications')
+    .select('*')
+    .eq('student_id', record.student_id)
+    .eq('material_type', record.material_type)
+    .eq('material_id', record.material_id)
+    .order('created_at', { ascending: true })
+    .limit(1)
+
+  if (lookupError) throw lookupError
+  const existing = existingRows?.[0]
+
+  if (existing) {
+    const { data, error } = await admin
+      .from('material_publications')
+      .update({ status: 'pending', payload: record.payload, error_message: null })
+      .eq('id', existing.id)
+      .select()
+      .single()
+    if (error) throw error
+    return { row: data, alreadySent: false }
+  }
+
+  const { data, error } = await admin
+    .from('material_publications')
+    .insert({ ...record, notification_version: 1, status: 'pending' })
+    .select()
+    .single()
+
+  if (error) {
+    if (error.code === '23505') {
+      const { data: racedRows, error: racedError } = await admin
+        .from('material_publications')
+        .select('*')
+        .eq('student_id', record.student_id)
+        .eq('material_type', record.material_type)
+        .eq('material_id', record.material_id)
+        .order('created_at', { ascending: true })
+        .limit(1)
+      if (racedError) throw racedError
+      const raced = racedRows?.[0]
+      if (!raced) throw error
+      return { row: raced, alreadySent: raced.status === 'sent' }
+    }
+    throw error
+  }
+
+  return { row: data, alreadySent: false }
 }
 
 async function handleMaterialPublished(
@@ -210,56 +286,114 @@ async function handleMaterialPublished(
   const studentId = String(payload.studentId || '').trim()
   const materialType = String(payload.materialType || '').trim()
   const materialId = String(payload.materialId || '').trim()
-  const notificationVersion = Math.max(1, Number(payload.notificationVersion || 1))
-  if (studentId !== STUDENT_ID || !materialType || !materialId) {
-    return json({ ok: false, error: 'Некорректные параметры публикации' }, 400)
+  if (studentId !== STUDENT_ID || materialType !== 'lesson_bundle' || !materialId) {
+    return json({ ok: false, error: 'Некорректные параметры публикации урока' }, 400)
   }
 
-  const { data: existing, error: existingError } = await admin
-    .from('material_publications')
-    .select('id,status,telegram_message_id,sent_at')
-    .eq('student_id', studentId)
-    .eq('material_type', materialType)
-    .eq('material_id', materialId)
-    .eq('notification_version', notificationVersion)
-    .maybeSingle()
+  const legacyPayload = payload.payload && typeof payload.payload === 'object' && !Array.isArray(payload.payload)
+    ? payload.payload as Record<string, unknown>
+    : {}
+  const rawHomework = payload.homework && typeof payload.homework === 'object' && !Array.isArray(payload.homework)
+    ? payload.homework as Record<string, unknown>
+    : {
+        id: materialId,
+        title: legacyPayload.title || materialId,
+        subtitle: legacyPayload.subtitle || '',
+        url: legacyPayload.url || '',
+      }
 
-  if (existingError) return json({ ok: false, error: safeError(existingError) }, 500)
-  if (existing?.status === 'sent') {
-    return json({ ok: true, skipped: true, reason: 'already_sent', telegramMessageId: existing.telegram_message_id, sentAt: existing.sent_at })
+  const homeworkUrl = publicHttpUrl(rawHomework.url)
+  if (!homeworkUrl) return json({ ok: false, error: 'A valid homework URL is required' }, 400)
+
+  const rawVocabulary = payload.vocabulary && typeof payload.vocabulary === 'object' && !Array.isArray(payload.vocabulary)
+    ? payload.vocabulary as Record<string, unknown>
+    : null
+  const vocabularyUrl = rawVocabulary ? publicHttpUrl(rawVocabulary.url) : null
+  if (rawVocabulary && !vocabularyUrl) return json({ ok: false, error: 'Invalid vocabulary URL' }, 400)
+
+  const rawGrammar = Array.isArray(payload.grammar) ? payload.grammar : []
+  const grammar: Record<string, unknown>[] = []
+  for (const item of rawGrammar) {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) {
+      return json({ ok: false, error: 'Invalid grammar URL' }, 400)
+    }
+    const topic = item as Record<string, unknown>
+    const url = publicHttpUrl(topic.url)
+    if (!url) return json({ ok: false, error: 'Invalid grammar URL' }, 400)
+    grammar.push({ ...topic, url })
   }
 
-  const publication = {
-    student_id: studentId,
-    material_type: materialType,
-    material_id: materialId,
-    notification_version: notificationVersion,
-    status: 'pending',
-    payload: payload.payload && typeof payload.payload === 'object' ? payload.payload : {},
-    error_message: null,
+  const storedPayload = {
+    homework: { ...rawHomework, url: homeworkUrl },
+    vocabulary: rawVocabulary ? { ...rawVocabulary, url: vocabularyUrl } : null,
+    grammar,
+    publishedAt: legacyPayload.publishedAt || null,
   }
-  const { data: claimed, error: claimError } = await admin
-    .from('material_publications')
-    .upsert(publication, { onConflict: 'student_id,material_type,material_id,notification_version' })
-    .select('id')
-    .single()
-  if (claimError) return json({ ok: false, error: safeError(claimError) }, 500)
+
+  let claim
+  try {
+    claim = await claimLessonPublication(admin, {
+      student_id: studentId,
+      material_type: materialType,
+      material_id: materialId,
+      payload: storedPayload,
+    })
+  } catch (claimError) {
+    return json({ ok: false, error: safeError(claimError) }, 500)
+  }
+
+  if (claim.alreadySent) {
+    return json({ ok: true, skipped: true, alreadySent: true, reason: 'already_sent' })
+  }
 
   try {
     const recipient = await getRecipient(admin, studentId)
-    const url = typeof payload.payload?.url === 'string' && /^https?:\/\//.test(payload.payload.url) ? payload.payload.url : ''
-    const keyboard = url ? [[{ text: 'Открыть материал', url }]] : []
-    const telegramMessage = await sendTelegram(botToken, recipient, materialMessage(payload), keyboard)
+    const title = String(rawHomework.title || legacyPayload.title || materialId)
+    const steps: string[] = []
+    if (rawVocabulary) steps.push('First, learn the new words.')
+    if (grammar.length) steps.push(`${steps.length ? 'Next' : 'First'}, read the grammar.`)
+    steps.push(`${steps.length ? 'Then' : 'Now'}, do the homework.`)
+
+    const text = [
+      'Hi, Zhenya! 👋',
+      'Your new English homework is ready.',
+      `📘 <b>${escapeHtml(title)}</b>`,
+      steps.join('\n'),
+      'Good luck! 🌟',
+    ].join('\n\n')
+
+    const keyboard: Array<Array<{ text: string; url: string }>> = []
+    if (rawVocabulary && vocabularyUrl) {
+      keyboard.push([{ text: '📚 Learn new words', url: vocabularyUrl }])
+    }
+    grammar.forEach((item, index) => {
+      keyboard.push([{
+        text: `📖 ${grammarButtonTitle(item, index)}`,
+        url: String(item.url),
+      }])
+    })
+    keyboard.push([{ text: '📝 Do the homework', url: homeworkUrl }])
+
+    const telegramMessage = await sendTelegram(botToken, recipient, text, keyboard)
     const sentAt = new Date().toISOString()
     const { error: updateError } = await admin
       .from('material_publications')
-      .update({ status: 'sent', telegram_message_id: telegramMessage.message_id, sent_at: sentAt, error_message: null })
-      .eq('id', claimed.id)
+      .update({
+        status: 'sent',
+        telegram_message_id: telegramMessage.message_id || null,
+        sent_at: sentAt,
+        error_message: null,
+      })
+      .eq('id', claim.row.id)
+
     if (updateError) throw updateError
-    return json({ ok: true, skipped: false, telegramMessageId: telegramMessage.message_id, sentAt })
+    return json({ ok: true, skipped: false, telegramMessageId: telegramMessage.message_id || null, sentAt })
   } catch (sendError) {
     const message = safeError(sendError)
-    await admin.from('material_publications').update({ status: 'failed', error_message: message }).eq('id', claimed.id)
+    await admin
+      .from('material_publications')
+      .update({ status: 'failed', error_message: message })
+      .eq('id', claim.row.id)
     return json({ ok: false, error: message }, 502)
   }
 }

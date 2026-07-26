@@ -6,7 +6,7 @@
   "status": "available",
   "publishedAt": "2026-07-26",
   "notification": {
-    "enabled": false,
+    "enabled": true,
     "version": 1
   },
   "blocks": [
