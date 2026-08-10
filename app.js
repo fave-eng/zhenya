@@ -185,11 +185,19 @@
 
   function renderExerciseBody(block, items) {
     const layout = safeText(block.layout).toLowerCase();
-    if (layout === 'crossword') return renderCrosswordBody(block);
-    if (layout === 'picture-grid') return renderPictureGridBody(block);
-    if (layout === 'conversations') return renderConversationsBody(block);
-    if (layout === 'qa-pairs') return renderQaPairsBody(block);
-    return `${renderBookExamples(block.examples)}${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, 'exercise'))).join('')}`;
+    let body = '';
+    if (layout === 'crossword') body = renderCrosswordBody(block);
+    else if (layout === 'picture-grid') body = renderPictureGridBody(block);
+    else if (layout === 'conversations') body = renderConversationsBody(block);
+    else if (layout === 'qa-pairs') body = renderQaPairsBody(block);
+    else {
+      const bank = asArray(block.wordBank);
+      body = `${renderBookExamples(block.examples)}${bank.length ? `<div class="word-bank exercise-word-bank">${bank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>` : ''}${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, 'exercise'))).join('')}`;
+    }
+    const reference = block.referenceImage;
+    if (!reference?.src) return body;
+    const mode = safeText(reference.mode, 'side').toLowerCase() === 'top' ? 'is-top' : 'is-side';
+    return `<div class="exercise-reference-layout ${mode}${items.length ? '' : ' is-reference-only'}"><figure class="exercise-reference"><img src="${escapeHtml(reference.src)}" alt="${escapeHtml(reference.alt || '')}" loading="lazy"></figure>${body ? `<div class="exercise-reference-work">${body}</div>` : ''}</div>`;
   }
 
   function initCrosswords(root) {
@@ -276,6 +284,19 @@
   function isCorrect(item, actual) {
     if (item.scored === false || questionType(item) === 'manual') return null;
     const expected = correctAnswers(item);
+    if (safeText(item.matchMode).toLowerCase() === 'word-set') {
+      const tokens = (value) => safeText(value)
+        .normalize('NFKC')
+        .toLocaleLowerCase('en')
+        .replace(/[’‘`]/g, "'")
+        .split(/[\s,;\n/]+/)
+        .map((part) => normalizeAnswer(part))
+        .filter(Boolean)
+        .sort();
+      const actualSet = [...new Set(tokens(actual))];
+      const expectedSet = [...new Set(asArray(item.setAnswers).flatMap(tokens))];
+      return JSON.stringify(actualSet) === JSON.stringify(expectedSet);
+    }
     if (questionType(item) === 'multiple') {
       const actualSet = [...new Set(asArray(actual).map(normalizeAnswer))].sort();
       const expectedSet = [...new Set(expected.map(normalizeAnswer))].sort();

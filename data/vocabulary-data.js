@@ -595,5 +595,314 @@ window.VOCABULARY_DATA = [
         "section": "useful"
       }
     ]
+  },
+  {
+    "id": "vocab-lesson-3",
+    "number": 3,
+    "title": "Practical English — The classroom",
+    "label": "Домашняя работа №3",
+    "icon": "🧑‍🏫",
+    "type": "lesson",
+    "linkedLessonId": "lesson-3",
+    "page": "vocabulary.html?id=vocab-lesson-3",
+    "sections": [
+      {
+        "id": "classroom",
+        "title": "Classroom objects",
+        "icon": "✏️"
+      },
+      {
+        "id": "instructions",
+        "title": "Classroom instructions",
+        "icon": "💬"
+      },
+      {
+        "id": "useful",
+        "title": "Useful language",
+        "icon": "🗣️"
+      }
+    ],
+    "words": [
+      {
+        "id": "pe1-board",
+        "uniqueKey": "board",
+        "en": "board",
+        "ru": "доска",
+        "transcription": "/bɔːd/",
+        "exampleEn": "Look at the board, please.",
+        "exampleRu": "Посмотрите на доску, пожалуйста.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-laptop",
+        "uniqueKey": "laptop",
+        "en": "laptop",
+        "ru": "ноутбук",
+        "transcription": "/ˈlæptɒp/",
+        "exampleEn": "My laptop is on the table.",
+        "exampleRu": "Мой ноутбук на столе.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-pen",
+        "uniqueKey": "pen",
+        "en": "pen",
+        "ru": "ручка",
+        "transcription": "/pen/",
+        "exampleEn": "I have a pen.",
+        "exampleRu": "У меня есть ручка.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-table",
+        "uniqueKey": "table",
+        "en": "table",
+        "ru": "стол",
+        "transcription": "/ˈteɪbəl/",
+        "exampleEn": "The dictionary is on the table.",
+        "exampleRu": "Словарь на столе.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-door",
+        "uniqueKey": "door",
+        "en": "door",
+        "ru": "дверь",
+        "transcription": "/dɔː/",
+        "exampleEn": "Close the door, please.",
+        "exampleRu": "Закройте дверь, пожалуйста.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-chair",
+        "uniqueKey": "chair",
+        "en": "chair",
+        "ru": "стул",
+        "transcription": "/tʃeə/",
+        "exampleEn": "Sit on the chair.",
+        "exampleRu": "Сядьте на стул.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-window",
+        "uniqueKey": "window",
+        "en": "window",
+        "ru": "окно",
+        "transcription": "/ˈwɪndəʊ/",
+        "exampleEn": "The window is open.",
+        "exampleRu": "Окно открыто.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-dictionary",
+        "uniqueKey": "dictionary",
+        "en": "dictionary",
+        "ru": "словарь",
+        "transcription": "/ˈdɪkʃənəri/",
+        "exampleEn": "Open your dictionary.",
+        "exampleRu": "Откройте словарь.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-bag",
+        "uniqueKey": "bag",
+        "en": "bag",
+        "ru": "сумка; рюкзак",
+        "transcription": "/bæɡ/",
+        "exampleEn": "My book is in my bag.",
+        "exampleRu": "Моя книга в сумке.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-coat",
+        "uniqueKey": "coat",
+        "en": "coat",
+        "ru": "пальто; верхняя одежда",
+        "transcription": "/kəʊt/",
+        "exampleEn": "My coat is on the chair.",
+        "exampleRu": "Моё пальто на стуле.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-piece-paper",
+        "uniqueKey": "piece of paper",
+        "en": "piece of paper",
+        "ru": "листок бумаги",
+        "transcription": "/ˌpiːs əv ˈpeɪpə/",
+        "exampleEn": "Write it on a piece of paper.",
+        "exampleRu": "Напишите это на листке бумаги.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-teacher",
+        "uniqueKey": "teacher",
+        "en": "teacher",
+        "ru": "учитель; преподаватель",
+        "transcription": "/ˈtiːtʃə/",
+        "exampleEn": "Listen to the teacher.",
+        "exampleRu": "Слушайте преподавателя.",
+        "section": "classroom"
+      },
+      {
+        "id": "pe1-spell",
+        "uniqueKey": "spell",
+        "en": "spell",
+        "ru": "произносить / писать по буквам",
+        "transcription": "/spel/",
+        "exampleEn": "How do you spell it?",
+        "exampleRu": "Как это пишется по буквам?",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-repeat",
+        "uniqueKey": "repeat",
+        "en": "repeat",
+        "ru": "повторять",
+        "transcription": "/rɪˈpiːt/",
+        "exampleEn": "Can you repeat that, please?",
+        "exampleRu": "Можете повторить это, пожалуйста?",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-understand",
+        "uniqueKey": "understand",
+        "en": "understand",
+        "ru": "понимать",
+        "transcription": "/ˌʌndəˈstænd/",
+        "exampleEn": "I don’t understand.",
+        "exampleRu": "Я не понимаю.",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-open-books",
+        "uniqueKey": "open your books",
+        "en": "Open your books.",
+        "ru": "Откройте книги.",
+        "transcription": "/ˈəʊpən jɔː bʊks/",
+        "exampleEn": "Open your books, please.",
+        "exampleRu": "Откройте книги, пожалуйста.",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-close-books",
+        "uniqueKey": "close your books",
+        "en": "Close your books.",
+        "ru": "Закройте книги.",
+        "transcription": "/kləʊz jɔː bʊks/",
+        "exampleEn": "Close your books.",
+        "exampleRu": "Закройте книги.",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-look-board",
+        "uniqueKey": "look at the board",
+        "en": "Look at the board.",
+        "ru": "Посмотрите на доску.",
+        "transcription": "/lʊk æt ðə bɔːd/",
+        "exampleEn": "Look at the board, please.",
+        "exampleRu": "Посмотрите на доску, пожалуйста.",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-go-page",
+        "uniqueKey": "go to page",
+        "en": "Go to page ...",
+        "ru": "Откройте / перейдите на страницу…",
+        "transcription": "/ɡəʊ tə peɪdʒ/",
+        "exampleEn": "Go to page 9.",
+        "exampleRu": "Откройте страницу 9.",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-stand-up",
+        "uniqueKey": "stand up",
+        "en": "Stand up.",
+        "ru": "Встаньте.",
+        "transcription": "/stænd ʌp/",
+        "exampleEn": "Stand up, please.",
+        "exampleRu": "Встаньте, пожалуйста.",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-sit-down",
+        "uniqueKey": "sit down",
+        "en": "Sit down.",
+        "ru": "Сядьте.",
+        "transcription": "/sɪt daʊn/",
+        "exampleEn": "Sit down, please.",
+        "exampleRu": "Сядьте, пожалуйста.",
+        "section": "instructions"
+      },
+      {
+        "id": "pe1-excuse-me",
+        "uniqueKey": "excuse me",
+        "en": "Excuse me.",
+        "ru": "Извините; простите.",
+        "transcription": "/ɪkˈskjuːz miː/",
+        "exampleEn": "Excuse me. What’s this in English?",
+        "exampleRu": "Извините. Как это по-английски?",
+        "section": "useful"
+      },
+      {
+        "id": "pe1-sorry",
+        "uniqueKey": "sorry",
+        "en": "Sorry.",
+        "ru": "Извините; простите.",
+        "transcription": "/ˈsɒri/",
+        "exampleEn": "Sorry, I’m late.",
+        "exampleRu": "Извините, я опоздал(а).",
+        "section": "useful"
+      },
+      {
+        "id": "pe1-late",
+        "uniqueKey": "late",
+        "en": "late",
+        "ru": "опоздавший; поздно",
+        "transcription": "/leɪt/",
+        "exampleEn": "Sorry, I’m late.",
+        "exampleRu": "Извините, я опоздал(а).",
+        "section": "useful"
+      },
+      {
+        "id": "pe1-i-dont-know",
+        "uniqueKey": "I don't know",
+        "en": "I don’t know.",
+        "ru": "Я не знаю.",
+        "transcription": "/aɪ dəʊnt nəʊ/",
+        "exampleEn": "I don’t know the answer.",
+        "exampleRu": "Я не знаю ответа.",
+        "section": "useful"
+      },
+      {
+        "id": "pe1-please",
+        "uniqueKey": "please",
+        "en": "please",
+        "ru": "пожалуйста",
+        "transcription": "/pliːz/",
+        "exampleEn": "Repeat that, please.",
+        "exampleRu": "Повторите это, пожалуйста.",
+        "section": "useful"
+      },
+      {
+        "id": "pe1-help",
+        "uniqueKey": "help",
+        "en": "help",
+        "ru": "помощь; помогать",
+        "transcription": "/help/",
+        "exampleEn": "Can you help me?",
+        "exampleRu": "Вы можете мне помочь?",
+        "section": "useful"
+      },
+      {
+        "id": "pe1-whats-english",
+        "uniqueKey": "What's ... in English?",
+        "en": "What’s ... in English?",
+        "ru": "Как будет … по-английски?",
+        "transcription": "/wɒts ... ɪn ˈɪŋɡlɪʃ/",
+        "exampleEn": "What’s grazie in English?",
+        "exampleRu": "Как будет grazie по-английски?",
+        "section": "useful"
+      }
+    ]
   }
 ];

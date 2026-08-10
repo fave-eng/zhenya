@@ -1,0 +1,492 @@
+{
+  "id": "lesson-3",
+  "number": 3,
+  "title": "Practical English — How do you spell it?",
+  "subtitle": "The alphabet · Vocabulary: the classroom",
+  "status": "available",
+  "publishedAt": "2026-08-10",
+  "notification": {
+    "enabled": true,
+    "version": 1
+  },
+  "vocabularyId": "vocab-lesson-3",
+  "grammarIds": [],
+  "totalPoints": 31,
+  "blocks": [
+    {
+      "type": "section",
+      "title": "1 THE ALPHABET"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1a",
+      "label": "1a",
+      "title": "Listen and circle the letter with a different vowel sound.",
+      "referenceImage": {
+        "src": "images/lesson-3/alphabet-1a.png",
+        "alt": "Exercise 1a letter groups and vowel sound pictures",
+        "mode": "side"
+      },
+      "items": [
+        {
+          "id": "exercise-1-a-2",
+          "number": 2,
+          "type": "single",
+          "prompt": "E L N X",
+          "options": [
+            "E",
+            "L",
+            "N",
+            "X"
+          ],
+          "answer": "E",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-1-a-3",
+          "number": 3,
+          "type": "single",
+          "prompt": "A G J K",
+          "options": [
+            "A",
+            "G",
+            "J",
+            "K"
+          ],
+          "answer": "G",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-1-a-4",
+          "number": 4,
+          "type": "single",
+          "prompt": "B H P D",
+          "options": [
+            "B",
+            "H",
+            "P",
+            "D"
+          ],
+          "answer": "H",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-1-a-5",
+          "number": 5,
+          "type": "single",
+          "prompt": "C F L S",
+          "options": [
+            "C",
+            "F",
+            "L",
+            "S"
+          ],
+          "answer": "C",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-1-a-6",
+          "number": 6,
+          "type": "single",
+          "prompt": "A H J Y",
+          "options": [
+            "A",
+            "H",
+            "J",
+            "Y"
+          ],
+          "answer": "Y",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-1-a-7",
+          "number": 7,
+          "type": "single",
+          "prompt": "O Q U W",
+          "options": [
+            "O",
+            "Q",
+            "U",
+            "W"
+          ],
+          "answer": "O",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-1-a-8",
+          "number": 8,
+          "type": "single",
+          "prompt": "F T M S",
+          "options": [
+            "F",
+            "T",
+            "M",
+            "S"
+          ],
+          "answer": "T",
+          "explanation": "Try again."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1b",
+      "label": "1b",
+      "title": "Listen again and repeat the letters.",
+      "items": []
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1c",
+      "label": "1c",
+      "title": "Say the letters in 1–5.",
+      "referenceImage": {
+        "src": "images/lesson-3/alphabet-1c.png",
+        "alt": "NBA, ID, JFK, E.T. and SOS pictures for exercise 1c",
+        "mode": "top"
+      },
+      "items": []
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1d",
+      "label": "1d",
+      "title": "Listen and check.",
+      "items": []
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1e",
+      "label": "1e",
+      "title": "Listen and write the words in the chart.",
+      "referenceImage": {
+        "src": "images/lesson-3/alphabet-1e.png",
+        "alt": "Word list and three-column sound chart for exercise 1e",
+        "mode": "top"
+      },
+      "items": [
+        {
+          "id": "exercise-1-e-1",
+          "number": 1,
+          "type": "text",
+          "prompt": "tree",
+          "matchMode": "word-set",
+          "setAnswers": [
+            "please",
+            "she",
+            "teacher"
+          ],
+          "placeholder": "",
+          "explanation": "Check the words in this column."
+        },
+        {
+          "id": "exercise-1-e-2",
+          "number": 2,
+          "type": "text",
+          "prompt": "egg",
+          "matchMode": "word-set",
+          "setAnswers": [
+            "help",
+            "spell"
+          ],
+          "placeholder": "",
+          "explanation": "hello is the example. Check the other words in this column."
+        },
+        {
+          "id": "exercise-1-e-3",
+          "number": 3,
+          "type": "text",
+          "prompt": "train",
+          "matchMode": "word-set",
+          "setAnswers": [
+            "name",
+            "Spain",
+            "table"
+          ],
+          "placeholder": "",
+          "explanation": "Check the words in this column."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1f",
+      "label": "1f",
+      "title": "Listen and check. Then listen again and repeat the words.",
+      "items": []
+    },
+    {
+      "type": "section",
+      "title": "2 VOCABULARY — the classroom"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-2a",
+      "label": "2a",
+      "title": "Write the words.",
+      "referenceImage": {
+        "src": "images/lesson-3/vocabulary-2a.png",
+        "alt": "Classroom objects for exercise 2a",
+        "mode": "side"
+      },
+      "items": [
+        {
+          "id": "exercise-2-a-2",
+          "number": 2,
+          "type": "text",
+          "prompt": "a l__________",
+          "answers": [
+            "laptop"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-3",
+          "number": 3,
+          "type": "text",
+          "prompt": "a p__________",
+          "answers": [
+            "pen"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-4",
+          "number": 4,
+          "type": "text",
+          "prompt": "a t__________",
+          "answers": [
+            "table"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-5",
+          "number": 5,
+          "type": "text",
+          "prompt": "the d__________",
+          "answers": [
+            "door"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-6",
+          "number": 6,
+          "type": "text",
+          "prompt": "a ch__________",
+          "answers": [
+            "chair"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-7",
+          "number": 7,
+          "type": "text",
+          "prompt": "a w__________",
+          "answers": [
+            "window"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-8",
+          "number": 8,
+          "type": "text",
+          "prompt": "a d__________y",
+          "answers": [
+            "dictionary"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-9",
+          "number": 9,
+          "type": "text",
+          "prompt": "a b__________",
+          "answers": [
+            "bag"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-10",
+          "number": 10,
+          "type": "text",
+          "prompt": "a c__________",
+          "answers": [
+            "coat"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-a-11",
+          "number": 11,
+          "type": "text",
+          "prompt": "a p__________ of p__________",
+          "answers": [
+            "piece of paper"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-2b",
+      "label": "2b",
+      "title": "Complete the classroom expressions with the words from the list.",
+      "wordBank": [
+        "books",
+        "Excuse",
+        "Go",
+        "know",
+        "late",
+        "Look",
+        "Open",
+        "repeat",
+        "Sit",
+        "Stand",
+        "spell",
+        "understand"
+      ],
+      "examples": [
+        "1 I don’t know."
+      ],
+      "items": [
+        {
+          "id": "exercise-2-b-2",
+          "number": 2,
+          "type": "text",
+          "prompt": "Sorry? Can you __________ that, please?",
+          "answers": [
+            "repeat"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-3",
+          "number": 3,
+          "type": "text",
+          "prompt": "__________ at the board, please.",
+          "answers": [
+            "Look"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-4",
+          "number": 4,
+          "type": "text",
+          "prompt": "__________ your books.",
+          "answers": [
+            "Open"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-5",
+          "number": 5,
+          "type": "text",
+          "prompt": "I don’t __________.",
+          "answers": [
+            "understand"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-6",
+          "number": 6,
+          "type": "text",
+          "prompt": "How do you __________ it?",
+          "answers": [
+            "spell"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-7",
+          "number": 7,
+          "type": "text",
+          "prompt": "__________ to page 9.",
+          "answers": [
+            "Go"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-8",
+          "number": 8,
+          "type": "text",
+          "prompt": "Close your __________.",
+          "answers": [
+            "books"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-9",
+          "number": 9,
+          "type": "text",
+          "prompt": "__________ up, please.",
+          "answers": [
+            "Stand"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-10",
+          "number": 10,
+          "type": "text",
+          "prompt": "__________ down.",
+          "answers": [
+            "Sit"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-11",
+          "number": 11,
+          "type": "text",
+          "prompt": "__________ me. What’s grazie in English?",
+          "answers": [
+            "Excuse"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-2-b-12",
+          "number": 12,
+          "type": "text",
+          "prompt": "Sorry, I’m __________.",
+          "answers": [
+            "late"
+          ],
+          "placeholder": "",
+          "explanation": "Try again."
+        }
+      ]
+    }
+  ]
+}

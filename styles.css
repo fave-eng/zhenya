@@ -1906,3 +1906,21 @@ body[data-view="grammar-topic"] .grammar-practice-heading {
   .conversation-card p { line-height: 2.6; }
   .inline-question input { width: 62px; }
 }
+
+
+/* Practical English: workbook fragments stay aligned with their answer fields. */
+.exercise-reference-layout { padding: 18px 0 20px; }
+.exercise-reference-layout.is-side { display:grid; grid-template-columns:minmax(250px,.85fr) minmax(0,1.15fr); gap:22px; align-items:start; }
+.exercise-reference { margin:0; min-width:0; }
+.exercise-reference-layout.is-side .exercise-reference { position:sticky; top:82px; }
+.exercise-reference img { display:block; width:100%; height:auto; border:1px solid #dbe3ef; border-radius:14px; background:#fff; }
+.exercise-reference-work { min-width:0; }
+.exercise-reference-layout.is-top .exercise-reference { max-width:760px; margin:0 auto 16px; }
+.exercise-reference-layout.is-top .exercise-reference-work { max-width:820px; margin:0 auto; }
+.exercise-reference-layout.is-reference-only.is-top .exercise-reference { margin-bottom:0; }
+.exercise-word-bank { margin:14px 0 18px; padding:12px; border:1px solid #dbe3ef; border-radius:14px; background:#f8fafc; }
+@media (max-width:760px) {
+  .exercise-reference-layout.is-side { grid-template-columns:1fr; gap:14px; }
+  .exercise-reference-layout.is-side .exercise-reference { position:static; }
+  .exercise-reference-layout { padding-top:12px; }
+}
