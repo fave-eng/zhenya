@@ -105,6 +105,15 @@
     }).join('')}</div>`;
   }
 
+  function renderExerciseWordBank(block) {
+    const bank = asArray(block?.wordBank);
+    if (!bank.length) return '';
+    const used = new Set(asArray(block?.wordBankUsed).map((word) => normalizeAnswer(word)));
+    const listMode = safeText(block?.wordBankLayout).toLowerCase() === 'list';
+    const className = listMode ? 'exercise-answer-list' : 'word-bank exercise-word-bank';
+    return `<div class="${className}">${bank.map((word) => `<span class="${used.has(normalizeAnswer(word)) ? 'is-example-used' : ''}">${escapeHtml(word)}</span>`).join('')}</div>`;
+  }
+
   function renderCrosswordBody(block) {
     const crossword = block.crossword || {};
     const entries = asArray(crossword.entries);
@@ -165,12 +174,22 @@
   function renderInlineBlank(item) {
     if (!item) return '';
     const id = taskId(item, '');
-    return `<span class="inline-question" data-question-id="${escapeHtml(id)}" data-question-type="text"><input type="text" data-answer-control autocomplete="off" aria-label="Blank"><span class="feedback" data-feedback></span></span>`;
+    const type = questionType(item);
+    const options = questionOptions(item);
+    const control = type === 'select'
+      ? `<select data-answer-control aria-label="${escapeHtml(item.prompt || 'Blank')}"><option value=""></option>${options.map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join('')}</select>`
+      : `<input type="text" data-answer-control autocomplete="off" aria-label="${escapeHtml(item.prompt || 'Blank')}">`;
+    return `<span class="inline-question${type === 'select' ? ' is-select' : ''}" data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">${control}<span class="feedback" data-feedback></span></span>`;
   }
 
   function renderConversationsBody(block) {
     const items = itemMap(block);
-    return `<div class="conversation-list">${asArray(block.conversations).map((conversation) => `<div class="conversation-card"><span class="conversation-number">${escapeHtml(conversation.number)}</span><div>${asArray(conversation.lines).map((line) => `<p><strong>${escapeHtml(line.speaker || '')}</strong> ${asArray(line.segments).map((segment) => segment.blank ? renderInlineBlank(items.get(safeText(segment.blank))) : escapeHtml(segment.text || '')).join('')}</p>`).join('')}</div></div>`).join('')}</div>`;
+    const bank = renderExerciseWordBank(block);
+    const conversations = `<div class="conversation-list">${asArray(block.conversations).map((conversation) => {
+      const number = safeText(conversation.number).trim();
+      return `<div class="conversation-card${number ? '' : ' no-number'}">${number ? `<span class="conversation-number">${escapeHtml(number)}</span>` : ''}<div>${asArray(conversation.lines).map((line) => `<p><strong>${escapeHtml(line.speaker || '')}</strong> ${asArray(line.segments).map((segment) => segment.blank ? renderInlineBlank(items.get(safeText(segment.blank))) : escapeHtml(segment.text || '')).join('')}</p>`).join('')}</div></div>`;
+    }).join('')}</div>`;
+    return `${renderBookExamples(block.examples)}${safeText(block.wordBankPosition).toLowerCase() === 'after' ? conversations + bank : bank + conversations}`;
   }
 
   function renderQaPairsBody(block) {
@@ -191,8 +210,7 @@
     else if (layout === 'conversations') body = renderConversationsBody(block);
     else if (layout === 'qa-pairs') body = renderQaPairsBody(block);
     else {
-      const bank = asArray(block.wordBank);
-      body = `${renderBookExamples(block.examples)}${bank.length ? `<div class="word-bank exercise-word-bank">${bank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>` : ''}${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, 'exercise'))).join('')}`;
+      body = `${renderBookExamples(block.examples)}${renderExerciseWordBank(block)}${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, 'exercise'))).join('')}`;
     }
     const reference = block.referenceImage;
     if (!reference?.src) return body;

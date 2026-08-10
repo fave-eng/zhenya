@@ -904,5 +904,194 @@ window.VOCABULARY_DATA = [
         "section": "useful"
       }
     ]
+  },
+  {
+    "id": "vocab-lesson-4",
+    "number": 4,
+    "title": "Practical English — Hotel & restaurant",
+    "label": "Домашняя работа №4",
+    "icon": "🏨",
+    "type": "lesson",
+    "linkedLessonId": "lesson-4",
+    "page": "vocabulary.html?id=vocab-lesson-4",
+    "sections": [
+      {
+        "id": "hotel",
+        "title": "Checking into a hotel",
+        "icon": "🏨"
+      },
+      {
+        "id": "restaurant",
+        "title": "Booking a table",
+        "icon": "🍽️"
+      },
+      {
+        "id": "phrases",
+        "title": "Useful phrases",
+        "icon": "💬"
+      }
+    ],
+    "words": [
+      {
+        "id": "pe2-reservation",
+        "uniqueKey": "reservation",
+        "en": "reservation",
+        "ru": "бронирование; бронь",
+        "transcription": "/ˌrezəˈveɪʃən/",
+        "exampleEn": "I have a reservation for a room for tonight.",
+        "exampleRu": "У меня забронирован номер на сегодня.",
+        "section": "hotel"
+      },
+      {
+        "id": "pe2-surname",
+        "uniqueKey": "surname",
+        "en": "surname",
+        "ru": "фамилия",
+        "transcription": "/ˈsɜːneɪm/",
+        "exampleEn": "What’s your surname, please?",
+        "exampleRu": "Какая у вас фамилия?",
+        "section": "hotel"
+      },
+      {
+        "id": "pe2-room",
+        "uniqueKey": "room",
+        "en": "room",
+        "ru": "комната; номер в отеле",
+        "transcription": "/ruːm/",
+        "exampleEn": "You’re in room 261.",
+        "exampleRu": "Ваш номер — 261.",
+        "section": "hotel"
+      },
+      {
+        "id": "pe2-evening",
+        "uniqueKey": "evening",
+        "en": "evening",
+        "ru": "вечер",
+        "transcription": "/ˈiːvnɪŋ/",
+        "exampleEn": "Good evening.",
+        "exampleRu": "Добрый вечер.",
+        "section": "hotel"
+      },
+      {
+        "id": "pe2-tonight",
+        "uniqueKey": "tonight",
+        "en": "tonight",
+        "ru": "сегодня вечером; сегодня ночью",
+        "transcription": "/təˈnaɪt/",
+        "exampleEn": "I have a reservation for a room for tonight.",
+        "exampleRu": "У меня забронирован номер на сегодня.",
+        "section": "hotel"
+      },
+      {
+        "id": "pe2-check-into-hotel",
+        "uniqueKey": "check into a hotel",
+        "en": "check into a hotel",
+        "ru": "заселиться в отель",
+        "transcription": "/tʃek ˈɪntuː ə həʊˈtel/",
+        "exampleEn": "I check into the hotel in the evening.",
+        "exampleRu": "Я заселяюсь в отель вечером.",
+        "section": "hotel"
+      },
+      {
+        "id": "pe2-i-have-reservation",
+        "uniqueKey": "I have a reservation",
+        "en": "I have a reservation",
+        "ru": "У меня есть бронь.",
+        "transcription": "/aɪ hæv ə ˌrezəˈveɪʃən/",
+        "exampleEn": "I have a reservation for a room for tonight.",
+        "exampleRu": "У меня забронирован номер на сегодня.",
+        "section": "hotel"
+      },
+      {
+        "id": "pe2-book-table",
+        "uniqueKey": "book a table",
+        "en": "book a table",
+        "ru": "забронировать столик",
+        "transcription": "/bʊk ə ˈteɪbəl/",
+        "exampleEn": "I’d like to book a table.",
+        "exampleRu": "Я хотел(а) бы забронировать столик.",
+        "section": "restaurant"
+      },
+      {
+        "id": "pe2-tomorrow",
+        "uniqueKey": "tomorrow",
+        "en": "tomorrow",
+        "ru": "завтра",
+        "transcription": "/təˈmɒrəʊ/",
+        "exampleEn": "A table for tomorrow, please.",
+        "exampleRu": "Столик на завтра, пожалуйста.",
+        "section": "restaurant"
+      },
+      {
+        "id": "pe2-restaurant",
+        "uniqueKey": "restaurant",
+        "en": "restaurant",
+        "ru": "ресторан",
+        "transcription": "/ˈrestrɒnt/",
+        "exampleEn": "The Green Tree restaurant.",
+        "exampleRu": "Ресторан The Green Tree.",
+        "section": "restaurant"
+      },
+      {
+        "id": "pe2-table-tomorrow",
+        "uniqueKey": "A table for tomorrow, please",
+        "en": "A table for tomorrow, please",
+        "ru": "Столик на завтра, пожалуйста.",
+        "transcription": "/ə ˈteɪbəl fə təˈmɒrəʊ pliːz/",
+        "exampleEn": "A table for tomorrow, please — for four people.",
+        "exampleRu": "Столик на завтра, пожалуйста, на четверых.",
+        "section": "restaurant"
+      },
+      {
+        "id": "pe2-how-many-people",
+        "uniqueKey": "How many people?",
+        "en": "How many people?",
+        "ru": "На сколько человек?",
+        "transcription": "/haʊ ˈmeni ˈpiːpəl/",
+        "exampleEn": "How many people? — Three.",
+        "exampleRu": "На сколько человек? — На троих.",
+        "section": "restaurant"
+      },
+      {
+        "id": "pe2-what-time",
+        "uniqueKey": "What time?",
+        "en": "What time?",
+        "ru": "На какое время?; Во сколько?",
+        "transcription": "/wɒt taɪm/",
+        "exampleEn": "What time? — Seven o’clock.",
+        "exampleRu": "На какое время? — На семь часов.",
+        "section": "restaurant"
+      },
+      {
+        "id": "pe2-thats-right",
+        "uniqueKey": "That's right",
+        "en": "That’s right",
+        "ru": "Верно; всё правильно.",
+        "transcription": "/ðæts raɪt/",
+        "exampleEn": "That’s S-W-E-E-N-E-Y? — That’s right.",
+        "exampleRu": "S-W-E-E-N-E-Y? — Верно.",
+        "section": "phrases"
+      },
+      {
+        "id": "pe2-thats-fine",
+        "uniqueKey": "That's fine",
+        "en": "That’s fine",
+        "ru": "Хорошо; подходит.",
+        "transcription": "/ðæts faɪn/",
+        "exampleEn": "OK, that’s fine.",
+        "exampleRu": "Хорошо, подходит.",
+        "section": "phrases"
+      },
+      {
+        "id": "pe2-thats-great",
+        "uniqueKey": "That's great",
+        "en": "That’s great",
+        "ru": "Отлично.",
+        "transcription": "/ðæts ɡreɪt/",
+        "exampleEn": "Yes, that’s great. Thanks.",
+        "exampleRu": "Да, отлично. Спасибо.",
+        "section": "phrases"
+      }
+    ]
   }
 ];

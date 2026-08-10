@@ -1,0 +1,574 @@
+{
+  "id": "lesson-4",
+  "number": 4,
+  "title": "Practical English — Checking in & booking a table",
+  "subtitle": "Checking into a hotel · Booking a table · Useful phrases",
+  "status": "available",
+  "publishedAt": "2026-08-10",
+  "notification": {
+    "enabled": true,
+    "version": 1
+  },
+  "vocabularyId": "vocab-lesson-4",
+  "grammarIds": [],
+  "totalPoints": 16,
+  "blocks": [
+    {
+      "type": "exercise",
+      "id": "exercise-3",
+      "label": "3",
+      "title": "CHECKING INTO A HOTEL",
+      "instruction": "Complete the conversation with the words from the list.",
+      "layout": "conversations",
+      "referenceImage": {
+        "src": "images/lesson-4/checking-into-a-hotel.png",
+        "alt": "A hotel guest checking in at reception",
+        "mode": "side"
+      },
+      "wordBank": [
+        "evening",
+        "name",
+        "reservation",
+        "spell",
+        "surname",
+        "room"
+      ],
+      "wordBankUsed": [
+        "evening"
+      ],
+      "items": [
+        {
+          "id": "exercise-3-2",
+          "number": 2,
+          "type": "select",
+          "prompt": "2",
+          "options": [
+            "evening",
+            "name",
+            "reservation",
+            "spell",
+            "surname",
+            "room"
+          ],
+          "answer": "reservation",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-3-3",
+          "number": 3,
+          "type": "select",
+          "prompt": "3",
+          "options": [
+            "evening",
+            "name",
+            "reservation",
+            "spell",
+            "surname",
+            "room"
+          ],
+          "answer": "name",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-3-4",
+          "number": 4,
+          "type": "select",
+          "prompt": "4",
+          "options": [
+            "evening",
+            "name",
+            "reservation",
+            "spell",
+            "surname",
+            "room"
+          ],
+          "answer": "spell",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-3-5",
+          "number": 5,
+          "type": "select",
+          "prompt": "5",
+          "options": [
+            "evening",
+            "name",
+            "reservation",
+            "spell",
+            "surname",
+            "room"
+          ],
+          "answer": "surname",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-3-6",
+          "number": 6,
+          "type": "select",
+          "prompt": "6",
+          "options": [
+            "evening",
+            "name",
+            "reservation",
+            "spell",
+            "surname",
+            "room"
+          ],
+          "answer": "room",
+          "explanation": "Try again."
+        }
+      ],
+      "conversations": [
+        {
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "Good ¹ evening." }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "Hello. I have a ² " },
+                { "blank": "exercise-3-2" },
+                { "text": "." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "What’s your ³ " },
+                { "blank": "exercise-3-3" },
+                { "text": ", please?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "Wendy Mahoney." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "How do you ⁴ " },
+                { "blank": "exercise-3-4" },
+                { "text": " your ⁵ " },
+                { "blank": "exercise-3-5" },
+                { "text": "?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "M-A-H-O-N-E-Y." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "Thank you, Ms Mahoney. You’re in ⁶ " },
+                { "blank": "exercise-3-6" },
+                { "text": " 261." }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "Thanks." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-4",
+      "label": "4",
+      "title": "BOOKING A TABLE",
+      "instruction": "Match the questions in the conversation to answers a–e below.",
+      "layout": "conversations",
+      "wordBankLayout": "list",
+      "wordBankPosition": "after",
+      "wordBank": [
+        "a  Three.",
+        "b  A table for Tuesday evening, please.",
+        "c  Yes, that’s great. Thanks.",
+        "d  Steve Anderson.",
+        "e  Seven o’clock."
+      ],
+      "wordBankUsed": [
+        "b  A table for Tuesday evening, please."
+      ],
+      "items": [
+        {
+          "id": "exercise-4-2",
+          "number": 2,
+          "type": "select",
+          "prompt": "2",
+          "options": ["a", "b", "c", "d", "e"],
+          "answer": "e",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-4-3",
+          "number": 3,
+          "type": "select",
+          "prompt": "3",
+          "options": ["a", "b", "c", "d", "e"],
+          "answer": "d",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-4-4",
+          "number": 4,
+          "type": "select",
+          "prompt": "4",
+          "options": ["a", "b", "c", "d", "e"],
+          "answer": "a",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-4-5",
+          "number": 5,
+          "type": "select",
+          "prompt": "5",
+          "options": ["a", "b", "c", "d", "e"],
+          "answer": "c",
+          "explanation": "Try again."
+        }
+      ],
+      "conversations": [
+        {
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "Good morning. How can I help you?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "¹ b" }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "What time?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "² " },
+                { "blank": "exercise-4-2" }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "OK, that’s fine. What’s your name, please?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "³ " },
+                { "blank": "exercise-4-3" }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "OK. How many people?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "⁴ " },
+                { "blank": "exercise-4-4" }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "Thank you, Mr Anderson. So, a table for three on Tuesday at seven?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "⁵ " },
+                { "blank": "exercise-4-5" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-5",
+      "label": "5",
+      "title": "USEFUL PHRASES",
+      "instruction": "Complete the conversations with a phrase from the list.",
+      "layout": "conversations",
+      "wordBank": [
+        "A table for tomorrow, please",
+        "Good morning",
+        "How can I help you",
+        "How do you spell it",
+        "I have a reservation",
+        "Sorry",
+        "Thank you",
+        "That’s right"
+      ],
+      "wordBankUsed": [
+        "How can I help you"
+      ],
+      "items": [
+        {
+          "id": "exercise-5-2",
+          "number": 2,
+          "type": "select",
+          "prompt": "2",
+          "options": [
+            "A table for tomorrow, please",
+            "Good morning",
+            "How can I help you",
+            "How do you spell it",
+            "I have a reservation",
+            "Sorry",
+            "Thank you",
+            "That’s right"
+          ],
+          "answer": "I have a reservation",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-5-3",
+          "number": 3,
+          "type": "select",
+          "prompt": "3",
+          "options": [
+            "A table for tomorrow, please",
+            "Good morning",
+            "How can I help you",
+            "How do you spell it",
+            "I have a reservation",
+            "Sorry",
+            "Thank you",
+            "That’s right"
+          ],
+          "answer": "How do you spell it",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-5-4",
+          "number": 4,
+          "type": "select",
+          "prompt": "4",
+          "options": [
+            "A table for tomorrow, please",
+            "Good morning",
+            "How can I help you",
+            "How do you spell it",
+            "I have a reservation",
+            "Sorry",
+            "Thank you",
+            "That’s right"
+          ],
+          "answer": "That’s right",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-5-5",
+          "number": 5,
+          "type": "select",
+          "prompt": "5",
+          "options": [
+            "A table for tomorrow, please",
+            "Good morning",
+            "How can I help you",
+            "How do you spell it",
+            "I have a reservation",
+            "Sorry",
+            "Thank you",
+            "That’s right"
+          ],
+          "answer": "Good morning",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-5-6",
+          "number": 6,
+          "type": "select",
+          "prompt": "6",
+          "options": [
+            "A table for tomorrow, please",
+            "Good morning",
+            "How can I help you",
+            "How do you spell it",
+            "I have a reservation",
+            "Sorry",
+            "Thank you",
+            "That’s right"
+          ],
+          "answer": "A table for tomorrow, please",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-5-7",
+          "number": 7,
+          "type": "select",
+          "prompt": "7",
+          "options": [
+            "A table for tomorrow, please",
+            "Good morning",
+            "How can I help you",
+            "How do you spell it",
+            "I have a reservation",
+            "Sorry",
+            "Thank you",
+            "That’s right"
+          ],
+          "answer": "Sorry",
+          "explanation": "Try again."
+        },
+        {
+          "id": "exercise-5-8",
+          "number": 8,
+          "type": "select",
+          "prompt": "8",
+          "options": [
+            "A table for tomorrow, please",
+            "Good morning",
+            "How can I help you",
+            "How do you spell it",
+            "I have a reservation",
+            "Sorry",
+            "Thank you",
+            "That’s right"
+          ],
+          "answer": "Thank you",
+          "explanation": "Try again."
+        }
+      ],
+      "conversations": [
+        {
+          "number": 1,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "Good morning. ¹ How can I help you?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "My name’s Liam Sweeney. ² " },
+                { "blank": "exercise-5-2" },
+                { "text": " for a room for tonight." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "OK – Sweeney. ³ " },
+                { "blank": "exercise-5-3" },
+                { "text": "?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "S-W-E-E-N-E-Y." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "That’s S-W-E-E-N-E-Y?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "⁴ " },
+                { "blank": "exercise-5-4" },
+                { "text": "." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "OK, you’re in room 49." }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "⁵ " },
+                { "blank": "exercise-5-5" },
+                { "text": ", The Green Tree restaurant. How can I help you?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "⁶ " },
+                { "blank": "exercise-5-6" },
+                { "text": " – for four people." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "OK. What time?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "7.30." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "⁷ " },
+                { "blank": "exercise-5-7" },
+                { "text": "?" }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                { "text": "7.30." }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                { "text": "⁸ " },
+                { "blank": "exercise-5-8" },
+                { "text": "." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
