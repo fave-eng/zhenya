@@ -129,6 +129,12 @@
       ]
     },
     {
+      "type": "audio",
+      "id": "exercise-1a-audio",
+      "title": "Listen and circle the letter with a different vowel sound.",
+      "src": "audio/English_File_4e_Beginner_WB_1.4.mp3"
+    },
+    {
       "type": "exercise",
       "id": "exercise-1b",
       "label": "1b",
@@ -155,6 +161,12 @@
       "items": []
     },
     {
+      "type": "audio",
+      "id": "exercise-1d-audio",
+      "title": "Listen and check.",
+      "src": "audio/English_File_4e_Beginner_WB_1.6.mp3"
+    },
+    {
       "type": "exercise",
       "id": "exercise-1e",
       "label": "1e",
@@ -177,7 +189,7 @@
             "teacher"
           ],
           "placeholder": "",
-          "explanation": "Check the words in this column."
+          "explanation": "Try again."
         },
         {
           "id": "exercise-1-e-2",
@@ -190,7 +202,7 @@
             "spell"
           ],
           "placeholder": "",
-          "explanation": "hello is the example. Check the other words in this column."
+          "explanation": "Try again."
         },
         {
           "id": "exercise-1-e-3",
@@ -204,7 +216,7 @@
             "table"
           ],
           "placeholder": "",
-          "explanation": "Check the words in this column."
+          "explanation": "Try again."
         }
       ]
     },
@@ -214,6 +226,12 @@
       "label": "1f",
       "title": "Listen and check. Then listen again and repeat the words.",
       "items": []
+    },
+    {
+      "type": "audio",
+      "id": "exercise-1f-audio",
+      "title": "Listen and check. Then listen again and repeat the words.",
+      "src": "audio/English_File_4e_Beginner_WB_1.7.mp3"
     },
     {
       "type": "section",
@@ -368,123 +386,277 @@
         {
           "id": "exercise-2-b-2",
           "number": 2,
-          "type": "text",
+          "type": "select",
           "prompt": "Sorry? Can you __________ that, please?",
           "answers": [
             "repeat"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-3",
           "number": 3,
-          "type": "text",
+          "type": "select",
           "prompt": "__________ at the board, please.",
           "answers": [
             "Look"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-4",
           "number": 4,
-          "type": "text",
+          "type": "select",
           "prompt": "__________ your books.",
           "answers": [
             "Open"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-5",
           "number": 5,
-          "type": "text",
+          "type": "select",
           "prompt": "I don’t __________.",
           "answers": [
             "understand"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-6",
           "number": 6,
-          "type": "text",
+          "type": "select",
           "prompt": "How do you __________ it?",
           "answers": [
             "spell"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-7",
           "number": 7,
-          "type": "text",
+          "type": "select",
           "prompt": "__________ to page 9.",
           "answers": [
             "Go"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-8",
           "number": 8,
-          "type": "text",
+          "type": "select",
           "prompt": "Close your __________.",
           "answers": [
             "books"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-9",
           "number": 9,
-          "type": "text",
+          "type": "select",
           "prompt": "__________ up, please.",
           "answers": [
             "Stand"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-10",
           "number": 10,
-          "type": "text",
+          "type": "select",
           "prompt": "__________ down.",
           "answers": [
             "Sit"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-11",
           "number": 11,
-          "type": "text",
+          "type": "select",
           "prompt": "__________ me. What’s grazie in English?",
           "answers": [
             "Excuse"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         },
         {
           "id": "exercise-2-b-12",
           "number": 12,
-          "type": "text",
+          "type": "select",
           "prompt": "Sorry, I’m __________.",
           "answers": [
             "late"
           ],
           "placeholder": "",
-          "explanation": "Try again."
+          "explanation": "Try again.",
+          "options": [
+            "books",
+            "Excuse",
+            "Go",
+            "know",
+            "late",
+            "Look",
+            "Open",
+            "repeat",
+            "Sit",
+            "Stand",
+            "spell",
+            "understand"
+          ]
         }
       ]
     }
