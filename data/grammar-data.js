@@ -1593,4 +1593,204 @@ window.GRAMMAR_DATA = [
     ],
     "page": "grammar-topic.html?id=grammar-2"
   }
+  ,{
+    "id": "grammar-3",
+    "number": 3,
+    "title": "Verb be (plural): we, you, they",
+    "subtitle": "We’re, you’re, they’re, aren’t, Are…? and short answers",
+    "status": "available",
+    "linkedLessonId": "lesson-5",
+    "passScore": 100,
+    "lockOnPass": true,
+    "checkButtonLabel": "Проверить",
+    "notification": {"enabled": false, "version": 1},
+    "overview": [
+      {"label":"Утверждение","value":"We are / You are / They are → We’re / You’re / They’re"},
+      {"label":"Отрицание","value":"We aren’t / You aren’t / They aren’t"},
+      {"label":"Вопрос","value":"Are + we / you / they + … ?"},
+      {"label":"Короткий ответ","value":"Yes, … are. / No, … aren’t."}
+    ],
+    "explanation": [
+      {
+        "label":"Главная идея",
+        "title":"С we, you и they используется are",
+        "summary":"Глагол be помогает сказать, кто мы или они, откуда люди, где они находятся и в каком состоянии. С местоимениями we, you и they нужна форма are.",
+        "formula":"we / you / they + are + information",
+        "points":[
+          "we — мы; you — ты / вы; they — они.",
+          "Are связывает подлежащее с национальностью, местом, классом, состоянием или другой информацией.",
+          "В русском языке отдельное слово «есть» обычно не произносится, но в английском are нельзя пропускать."
+        ],
+        "examples":[
+          {"en":"We are from Spain.","ru":"Мы из Испании."},
+          {"en":"You are in class 3.","ru":"Вы в классе 3."},
+          {"en":"They are Chinese.","ru":"Они китайцы / китайские."}
+        ],
+        "warning":"Неправильно: They from England. Правильно: They are from England."
+      },
+      {
+        "label":"Утверждение",
+        "title":"Сокращения: we’re, you’re, they’re",
+        "summary":"В разговорной речи и обычном письме are часто сокращается до ’re.",
+        "formula":["We are → We’re","You are → You’re","They are → They’re"],
+        "table":{
+          "headers":["Полная форма","Сокращённая форма","Пример"],
+          "rows":[
+            ["We are","We’re","We’re from Mexico."],
+            ["You are","You’re","You’re teachers."],
+            ["They are","They’re","They’re from Egypt."]
+          ]
+        },
+        "points":[
+          "Апостроф показывает, что часть слова are пропущена.",
+          "После имени нескольких людей тоже можно заменить их на they: Sara and Mikel are… → They’re…",
+          "Jake and I → we: Jake and I are here. → We’re here."
+        ]
+      },
+      {
+        "label":"Отрицание",
+        "title":"Are not → aren’t",
+        "summary":"Для отрицания добавьте not после are. Обычная сокращённая форма — aren’t.",
+        "formula":"we / you / they + aren’t + information",
+        "table":{
+          "headers":["Утверждение","Отрицание"],
+          "rows":[
+            ["We’re from Spain.","We aren’t from Italy."],
+            ["You’re in class 3.","You aren’t in class 2."],
+            ["They’re Chinese.","They aren’t Japanese."]
+          ]
+        },
+        "points":[
+          "aren’t = are not.",
+          "После aren’t не добавляйте ещё одно are.",
+          "С I отрицание другое: I’m not. С he / she / it используется isn’t."
+        ],
+        "warning":"Неправильно: They aren’t are from Turkey. Правильно: They aren’t from Turkey."
+      },
+      {
+        "label":"Вопрос",
+        "title":"В вопросе Are ставится перед подлежащим",
+        "summary":"Чтобы сделать общий вопрос с we, you или they, поставьте Are в начало предложения.",
+        "formula":"Are + we / you / they + information?",
+        "table":{
+          "headers":["Утверждение","Вопрос"],
+          "rows":[
+            ["They are in class 1.","Are they in class 1?"],
+            ["They are from England.","Are they from England?"],
+            ["You are on holiday.","Are you on holiday?"]
+          ]
+        },
+        "steps":[
+          {"title":"Найдите are","text":"В утверждении are стоит после we, you или they."},
+          {"title":"Перенесите are в начало","text":"They are… → Are they…?"},
+          {"title":"Оставьте остальную часть","text":"from England / in class 1 / on holiday."},
+          {"title":"Поставьте вопросительный знак","text":"Are they from England?"}
+        ],
+        "warning":"С глаголом be не используйте do: Are they from England? Не Do they are from England?"
+      },
+      {
+        "label":"Короткие ответы",
+        "title":"Yes, they are. / No, they aren’t.",
+        "summary":"В коротком ответе повторите местоимение и форму be. После Yes используйте полную форму are; после No удобно использовать aren’t.",
+        "table":{
+          "headers":["Вопрос","Да","Нет"],
+          "rows":[
+            ["Are they in class 1?","Yes, they are.","No, they aren’t."],
+            ["Are you on holiday?","Yes, we are.","No, we aren’t."],
+            ["Are we in room 4?","Yes, we are.","No, we aren’t."]
+          ]
+        },
+        "points":[
+          "В положительном коротком ответе are не сокращается: Yes, they are.",
+          "Если вопрос Are you…? задан группе людей, они могут отвечать We are / We aren’t.",
+          "Не повторяйте всю информацию, если нужен короткий ответ."
+        ],
+        "warning":"Неправильно: Yes, they’re. Правильно: Yes, they are."
+      },
+      {
+        "label":"Wh-вопрос",
+        "title":"Where are you from?",
+        "summary":"Если нужен не ответ yes/no, а информация о месте, вопросительное слово Where ставится перед are.",
+        "formula":"Where + are + you / we / they + from?",
+        "examples":[
+          {"en":"Where are you from? — We’re from Spain.","ru":"Откуда вы? — Мы из Испании."},
+          {"en":"Where are they from? — They’re from London.","ru":"Откуда они? — Они из Лондона."}
+        ],
+        "tip":"Порядок слов сохраняется: Where are they from? Не Where they are from?"
+      },
+      {
+        "label":"Сравнение форм",
+        "title":"Не путайте am, is и are",
+        "summary":"Форма be зависит от подлежащего. Это особенно важно в упражнениях, где вместе встречаются I, she, it, we, you и they.",
+        "table":{
+          "headers":["Подлежащее","Утверждение","Отрицание","Вопрос"],
+          "rows":[
+            ["I","I’m","I’m not","Am I…?"],
+            ["he / she / it","he’s / she’s / it’s","isn’t","Is…?"],
+            ["we / you / they","we’re / you’re / they’re","aren’t","Are…?"]
+          ]
+        },
+        "tip":"Сначала найдите подлежащее, затем выберите am, is или are."
+      }
+    ],
+    "commonMistakes": [
+      {"wrong":"They is from England.","right":"They are from England.","reason":"С they используется are."},
+      {"wrong":"We not are on holiday.","right":"We aren’t on holiday.","reason":"Not ставится после are; сокращение — aren’t."},
+      {"wrong":"They’re not students?","right":"Aren’t they students?","reason":"В общем вопросе Are ставится перед подлежащим."},
+      {"wrong":"Yes, they’re.","right":"Yes, they are.","reason":"В положительном коротком ответе are не сокращается."},
+      {"wrong":"Where they are from?","right":"Where are they from?","reason":"После Where ставится are, затем подлежащее."}
+    ],
+    "exercises": [
+      {
+        "id":"grammar-3-exercise-1",
+        "difficulty":"1 · Лёгкое",
+        "title":"Выберите правильную форму be",
+        "instruction":"Выберите один вариант.",
+        "items":[
+          {"id":"g3-1-1","type":"single","prompt":"We ___ from Spain.","options":["are","is","am"],"answer":"are","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-1-2","type":"single","prompt":"They ___ Chinese.","options":["are","is","am"],"answer":"are","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-1-3","type":"single","prompt":"You ___ in class 3.","options":["are","is","am"],"answer":"are","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-1-4","type":"single","prompt":"We ___ from Italy. (negative)","options":["aren’t","isn’t","am not"],"answer":"aren’t","revealCorrect":false,"explanation":"Попробуйте ещё раз."}
+        ]
+      },
+      {
+        "id":"grammar-3-exercise-2",
+        "difficulty":"2 · Среднее",
+        "title":"Напишите сокращённую форму",
+        "instruction":"Перепишите предложение, используя сокращение.",
+        "items":[
+          {"id":"g3-2-1","type":"text","prompt":"We are from Mexico.","answers":["We’re from Mexico"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-2-2","type":"text","prompt":"You are teachers.","answers":["You’re teachers"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-2-3","type":"text","prompt":"They are from Egypt.","answers":["They’re from Egypt"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-2-4","type":"text","prompt":"They are not Japanese.","answers":["They aren’t Japanese"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."}
+        ]
+      },
+      {
+        "id":"grammar-3-exercise-3",
+        "difficulty":"3 · Повышенная сложность",
+        "title":"Выберите вопрос или короткий ответ",
+        "instruction":"Выберите вариант, который подходит по смыслу и грамматике.",
+        "items":[
+          {"id":"g3-3-1","type":"select","prompt":"___ they from England?","options":["Are","Is","Do"],"answer":"Are","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-3-2","type":"select","prompt":"Are they in class 1? — No, ___.","options":["they aren’t","they’re","they isn’t"],"answer":"they aren’t","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-3-3","type":"select","prompt":"Are you on holiday? — Yes, ___.","options":["we are","we’re","we is"],"answer":"we are","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-3-4","type":"select","prompt":"___ are they from? — They’re from London.","options":["Where","Are","What"],"answer":"Where","revealCorrect":false,"explanation":"Попробуйте ещё раз."}
+        ]
+      },
+      {
+        "id":"grammar-3-exercise-4",
+        "difficulty":"4 · Самое сложное",
+        "title":"Постройте предложение самостоятельно",
+        "instruction":"Напишите полное предложение или вопрос.",
+        "items":[
+          {"id":"g3-4-1","type":"textarea","prompt":"Сделайте отрицание: We’re from Spain.","answers":["We aren’t from Spain"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-4-2","type":"textarea","prompt":"Составьте вопрос: They are in class 2.","answers":["Are they in class 2"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-4-3","type":"textarea","prompt":"Дайте короткий отрицательный ответ: Are they from Turkey?","answers":["No, they aren’t"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+          {"id":"g3-4-4","type":"textarea","prompt":"Спросите: «Откуда вы?»","answers":["Where are you from"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."}
+        ]
+      }
+    ],
+    "page":"grammar-topic.html?id=grammar-3"
+  }
+
 ];

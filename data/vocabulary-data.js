@@ -1094,4 +1094,41 @@ window.VOCABULARY_DATA = [
       }
     ]
   }
+  ,{
+    "id": "vocab-lesson-5",
+    "title": "Unit 2A — Nationalities & useful phrases",
+    "label": "Домашняя работа №5",
+    "icon": "🌍",
+    "type": "lesson",
+    "linkedLessonId": "lesson-5",
+    "learnedByTestOnly": true,
+    "sections": [
+      {"id": "nationalities", "title": "Nationalities", "icon": "🌍"},
+      {"id": "class", "title": "Class & travel", "icon": "💬"},
+      {"id": "phrases", "title": "Useful phrases", "icon": "✨"}
+    ],
+    "words": [
+      {"id":"u2a-spanish","uniqueKey":"Spanish","en":"Spanish","ru":"испанец / испанка; испанский","transcription":"/ˈspænɪʃ/","exampleEn":"Maria’s from Spain. She’s Spanish.","exampleRu":"Мария из Испании. Она испанка.","section":"nationalities"},
+      {"id":"u2a-japanese","uniqueKey":"Japanese","en":"Japanese","ru":"японец / японка; японский","transcription":"/ˌdʒæpəˈniːz/","exampleEn":"Kentaro’s from Japan. He’s Japanese.","exampleRu":"Кэнтаро из Японии. Он японец.","section":"nationalities"},
+      {"id":"u2a-british","uniqueKey":"British","en":"British","ru":"британец / британка; британский","transcription":"/ˈbrɪtɪʃ/","exampleEn":"Emma’s from the UK. She’s British.","exampleRu":"Эмма из Великобритании. Она британка.","section":"nationalities"},
+      {"id":"u2a-brazilian","uniqueKey":"Brazilian","en":"Brazilian","ru":"бразилец / бразильянка; бразильский","transcription":"/brəˈzɪliən/","exampleEn":"Bianca’s from Brazil. She’s Brazilian.","exampleRu":"Бьянка из Бразилии. Она бразильянка.","section":"nationalities"},
+      {"id":"u2a-polish","uniqueKey":"Polish","en":"Polish","ru":"поляк / полька; польский","transcription":"/ˈpəʊlɪʃ/","exampleEn":"Jacek’s from Poland. He’s Polish.","exampleRu":"Яцек из Польши. Он поляк.","section":"nationalities"},
+      {"id":"u2a-chinese","uniqueKey":"Chinese","en":"Chinese","ru":"китаец / китаянка; китайский","transcription":"/ˌtʃaɪˈniːz/","exampleEn":"Meiling’s from China. She’s Chinese.","exampleRu":"Мэйлин из Китая. Она китаянка.","section":"nationalities"},
+      {"id":"u2a-russian","uniqueKey":"Russian","en":"Russian","ru":"русский / русская; российский","transcription":"/ˈrʌʃən/","exampleEn":"Nikolay’s from Russia. He’s Russian.","exampleRu":"Николай из России. Он русский.","section":"nationalities"},
+      {"id":"u2a-english","uniqueKey":"English","en":"English","ru":"англичанин / англичанка; английский","transcription":"/ˈɪŋɡlɪʃ/","exampleEn":"William’s from England. He’s English.","exampleRu":"Уильям из Англии. Он англичанин.","section":"nationalities"},
+      {"id":"u2a-mexican","uniqueKey":"Mexican","en":"Mexican","ru":"мексиканец / мексиканка; мексиканский","transcription":"/ˈmeksɪkən/","exampleEn":"Daniela’s from Mexico. She’s Mexican.","exampleRu":"Даниэла из Мексики. Она мексиканка.","section":"nationalities"},
+      {"id":"u2a-egyptian","uniqueKey":"Egyptian","en":"Egyptian","ru":"египтянин / египтянка; египетский","transcription":"/ɪˈdʒɪpʃən/","exampleEn":"Baba’s from Egypt. He’s Egyptian.","exampleRu":"Баба из Египта. Он египтянин.","section":"nationalities"},
+      {"id":"u2a-turkish","uniqueKey":"Turkish","en":"Turkish","ru":"турок / турчанка; турецкий","transcription":"/ˈtɜːkɪʃ/","exampleEn":"Derin’s from Turkey. She’s Turkish.","exampleRu":"Дерин из Турции. Она турчанка.","section":"nationalities"},
+      {"id":"u2a-american","uniqueKey":"American","en":"American","ru":"американец / американка; американский","transcription":"/əˈmerɪkən/","exampleEn":"Mike’s from the United States. He’s American.","exampleRu":"Майк из США. Он американец.","section":"nationalities"},
+      {"id":"u2a-swiss","uniqueKey":"Swiss","en":"Swiss","ru":"швейцарец / швейцарка; швейцарский","transcription":"/swɪs/","exampleEn":"Cédric’s from Switzerland. He’s Swiss.","exampleRu":"Седрик из Швейцарии. Он швейцарец.","section":"nationalities"},
+      {"id":"u2a-nationality","uniqueKey":"nationality","en":"nationality","ru":"национальность","transcription":"/ˌnæʃəˈnæləti/","exampleEn":"What’s your nationality?","exampleRu":"Какая у вас национальность?","section":"nationalities"},
+      {"id":"u2a-student","uniqueKey":"student","en":"student","ru":"ученик; студент","transcription":"/ˈstjuːdənt/","exampleEn":"You aren’t students.","exampleRu":"Вы не ученики.","section":"class"},
+      {"id":"u2a-on-holiday","uniqueKey":"on holiday","en":"on holiday","ru":"в отпуске; на отдыхе","transcription":"/ɒn ˈhɒlədeɪ/","exampleEn":"We’re on holiday.","exampleRu":"Мы в отпуске.","section":"class"},
+      {"id":"u2a-on-business","uniqueKey":"on business","en":"on business","ru":"по делам; в деловой поездке","transcription":"/ɒn ˈbɪznəs/","exampleEn":"We’re here on business.","exampleRu":"Мы здесь по делам.","section":"class"},
+      {"id":"u2a-tourist","uniqueKey":"tourist","en":"tourist","ru":"турист / туристка","transcription":"/ˈtʊərɪst/","exampleEn":"We’re tourists.","exampleRu":"Мы туристы.","section":"class"},
+      {"id":"u2a-free","uniqueKey":"free","en":"free","ru":"свободный; незанятый","transcription":"/friː/","exampleEn":"Are they free?","exampleRu":"Они свободны?","section":"phrases"},
+      {"id":"u2a-have-a-nice-day","uniqueKey":"Have a nice day","en":"Have a nice day","ru":"Хорошего дня!","transcription":"/hæv ə naɪs deɪ/","exampleEn":"Have a nice day!","exampleRu":"Хорошего дня!","section":"phrases"}
+    ]
+  }
+
 ];

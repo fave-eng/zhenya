@@ -40,9 +40,11 @@
   function renderQuestion(item, index, prefix = 'question') {
     const id = taskId(item, `${prefix}-${index + 1}`);
     const type = questionType(item);
-    const prompt = escapeHtml(item.prompt || item.question || `Задание ${index + 1}`);
+    const rawPrompt = safeText(item.prompt || item.question || `Задание ${index + 1}`).trim();
+    const prompt = escapeHtml(rawPrompt);
     const placeholder = escapeHtml(item.placeholder !== undefined ? item.placeholder : 'Введите ответ');
     const options = questionOptions(item);
+    const expectedChars = Math.max(1, Number(item.inputChars || Math.max(0, ...correctAnswers(item).map((answer) => safeText(answer).length))) || 1);
     let control = '';
 
     if (type === 'textarea' || type === 'manual') {
@@ -57,20 +59,22 @@
       control = `<input type="text" data-answer-control placeholder="${placeholder}" autocomplete="off">`;
     }
 
-    const rawPrompt = safeText(item.prompt || item.question || `Задание ${index + 1}`).trim();
+    const inlineMatch = item.inlineBlank && type === 'text' ? rawPrompt.match(/^(.*?)(_+)(.*)$/s) : null;
     const isStandaloneNumber = /^[€$£₽]?\s*\d[\d\s,.]*$/.test(rawPrompt);
     const promptContent = isStandaloneNumber
       ? `<span class="exercise-prompt-label">Число</span><strong class="exercise-prompt-value">${prompt}</strong>`
-      : prompt;
+      : inlineMatch
+        ? `${escapeHtml(inlineMatch[1])}<span class="inline-question inline-prompt-question" style="--inline-chars:${expectedChars}"><input type="text" data-answer-control autocomplete="off" aria-label="${escapeHtml(item.prompt || 'Answer')}"></span>${escapeHtml(inlineMatch[3])}`
+        : prompt;
 
     const displayNumber = item.number ?? (index + 1);
-    return `<div class="exercise-item" data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">
+    return `<div class="exercise-item${inlineMatch ? ' has-inline-prompt-answer' : ''}" data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">
       <div class="exercise-prompt-row">
         <span class="exercise-question-number" aria-label="Пункт ${escapeHtml(displayNumber)}">${escapeHtml(displayNumber)}</span>
         <span class="exercise-prompt${isStandaloneNumber ? ' is-number-target' : ''}">${promptContent}</span>
       </div>
       ${Array.isArray(item.wordBank) && item.wordBank.length ? `<div class="word-bank">${item.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>` : ''}
-      <div class="exercise-control">${control}</div>
+      ${inlineMatch ? '' : `<div class="exercise-control">${control}</div>`}
       <div class="feedback" data-feedback></div>
     </div>`;
   }
@@ -176,10 +180,14 @@
     const id = taskId(item, '');
     const type = questionType(item);
     const options = questionOptions(item);
+    const explicitChars = Math.max(0, Number(item.inputChars) || 0);
+    const sizeClass = explicitChars ? ' is-sized' : '';
+    const sizeStyle = explicitChars ? ` style="--inline-chars:${explicitChars}"` : '';
+    const maxLength = explicitChars ? ` maxlength="${explicitChars}"` : '';
     const control = type === 'select'
       ? `<select data-answer-control aria-label="${escapeHtml(item.prompt || 'Blank')}"><option value=""></option>${options.map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join('')}</select>`
-      : `<input type="text" data-answer-control autocomplete="off" aria-label="${escapeHtml(item.prompt || 'Blank')}">`;
-    return `<span class="inline-question${type === 'select' ? ' is-select' : ''}" data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">${control}<span class="feedback" data-feedback></span></span>`;
+      : `<input type="text" data-answer-control autocomplete="off" aria-label="${escapeHtml(item.prompt || 'Blank')}"${maxLength}>`;
+    return `<span class="inline-question${type === 'select' ? ' is-select' : ''}${sizeClass}"${sizeStyle} data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">${control}<span class="feedback" data-feedback></span></span>`;
   }
 
   function renderConversationsBody(block) {
@@ -202,15 +210,77 @@
     return `${renderBookExamples(block.examples)}<div class="qa-pair-list">${asArray(block.pairs).map((pair) => `<div class="qa-pair"><div class="qa-source"><strong>${escapeHtml(pair.number)}</strong><span>${escapeHtml(pair.source || '')}</span></div>${renderInput(items.get(safeText(pair.questionId)), '?')}${renderInput(items.get(safeText(pair.answerId)))}</div>`).join('')}</div>`;
   }
 
+  function renderStudentAnswerReferences(block) {
+    const config = block?.studentAnswerReferences;
+    const rows = asArray(config?.items);
+    if (!rows.length) return '';
+    return `<aside class="student-answer-reference"><span class="grammar-block-label">${escapeHtml(config.title || '')}</span><ol>${rows.map((row) => {
+      const sourceId = safeText(row.sourceItemId).trim();
+      const value = sourceId
+        ? `<span data-student-answer-ref="${escapeHtml(sourceId)}"></span>`
+        : `<span>${escapeHtml(row.text || '')}</span>`;
+      return `<li><strong>${escapeHtml(row.number || '')}</strong>${value}</li>`;
+    }).join('')}</ol></aside>`;
+  }
+
+  function renderNationalitiesPuzzleBody(block) {
+    const puzzle = block.puzzle || {};
+    const entries = asArray(puzzle.entries);
+    const items = itemMap(block);
+    const cells = new Map();
+    entries.forEach((entry) => {
+      const answer = safeText(entry.answer).toUpperCase();
+      [...answer].forEach((letter, offset) => {
+        const row = Number(entry.row);
+        const col = Number(entry.col) + offset;
+        const key = `${row}-${col}`;
+        const current = cells.get(key) || { row, col, number: '', fixed: false, letter: '' };
+        if (offset === 0) current.number = entry.number;
+        if (entry.fixed) { current.fixed = true; current.letter = letter; }
+        cells.set(key, current);
+      });
+    });
+
+    const mysteryCol = Number(puzzle.mysteryCol || 0);
+    const grid = `<div class="nationality-grid-panel"><div class="nationality-grid-arrow" style="--cw-cols:${Number(puzzle.cols || 13)}"><span style="grid-column:${mysteryCol}">↓</span></div><div class="crossword-grid-wrap"><div class="crossword-grid nationality-grid" data-crossword style="--cw-cols:${Number(puzzle.cols || 13)};--cw-rows:${Number(puzzle.rows || entries.length || 13)}">${[...cells.values()].map((cell) => `<span class="crossword-cell${cell.fixed ? ' is-fixed' : ''}${cell.col === mysteryCol ? ' is-mystery' : ''}" data-cw-cell="${cell.row}-${cell.col}" style="grid-row:${cell.row};grid-column:${cell.col}">${cell.number ? `<small>${escapeHtml(cell.number)}</small>` : ''}<b data-cw-letter data-fixed="${cell.fixed ? 'true' : 'false'}">${escapeHtml(cell.letter)}</b></span>`).join('')}</div></div></div>`;
+
+    const clues = `<div class="nationality-clue-list">${entries.map((entry) => {
+      const lines = asArray(entry.lines);
+      const image = entry.image ? `<img src="${escapeHtml(entry.image)}" alt="" loading="lazy">` : '';
+      if (entry.fixed) {
+        return `<article class="nationality-clue is-example"><span class="nationality-clue-number">${escapeHtml(entry.number)}</span>${image}<div>${lines.map((line) => `<p>${escapeHtml(line)}</p>`).join('')}</div></article>`;
+      }
+      const item = items.get(safeText(entry.itemId));
+      if (!item) return '';
+      const id = taskId(item, entry.itemId);
+      const blankLine = lines.find((line) => /_+/.test(line)) || '';
+      const blankMatch = blankLine.match(/^(.*?)([A-Za-z]+)(_+)([A-Za-z]+)([^A-Za-z]*)$/);
+      const visiblePrefix = blankMatch ? blankMatch[2] : '';
+      const visibleSuffix = blankMatch ? blankMatch[4] : '';
+      const expectedChars = Math.max(1, Number(item.inputChars || Math.max(0, ...correctAnswers(item).map((answer) => safeText(answer).length))) || 1);
+      const renderedLines = lines.map((line) => {
+        const match = line.match(/^(.*?)([A-Za-z]+)(_+)([A-Za-z]+)([^A-Za-z]*)$/);
+        if (!match) return `<p>${escapeHtml(line)}</p>`;
+        return `<p class="nationality-answer-line">${escapeHtml(match[1] + match[2])}<span class="inline-question nationality-inline-question" style="--inline-chars:${expectedChars}"><input type="text" data-answer-control autocomplete="off" maxlength="${expectedChars}" aria-label="${escapeHtml(item.prompt || `Item ${entry.number}`)}"></span>${escapeHtml(match[4] + match[5])}</p>`;
+      }).join('');
+      return `<article class="nationality-clue" data-question-id="${escapeHtml(id)}" data-question-type="text" data-cw-entry data-cw-row="${Number(entry.row)}" data-cw-col="${Number(entry.col)}" data-cw-direction="across" data-cw-length="${safeText(entry.answer).length}" data-cw-prefix="${escapeHtml(visiblePrefix)}" data-cw-suffix="${escapeHtml(visibleSuffix)}"><span class="nationality-clue-number">${escapeHtml(entry.number)}</span>${image}<div class="nationality-clue-copy">${renderedLines}<div class="feedback" data-feedback></div></div></article>`;
+    }).join('')}</div>`;
+
+    const mysteryItem = items.get(safeText(puzzle.mysteryItemId));
+    const mystery = mysteryItem ? `<div class="nationality-mystery">${renderQuestion(mysteryItem, 0, block.id)}</div>` : '';
+    return `<div class="nationality-puzzle-work"><div class="nationality-puzzle-main">${clues}${grid}</div>${mystery}</div>`;
+  }
+
   function renderExerciseBody(block, items) {
     const layout = safeText(block.layout).toLowerCase();
     let body = '';
     if (layout === 'crossword') body = renderCrosswordBody(block);
+    else if (layout === 'nationalities-puzzle') body = renderNationalitiesPuzzleBody(block);
     else if (layout === 'picture-grid') body = renderPictureGridBody(block);
     else if (layout === 'conversations') body = renderConversationsBody(block);
     else if (layout === 'qa-pairs') body = renderQaPairsBody(block);
     else {
-      body = `${renderBookExamples(block.examples)}${renderExerciseWordBank(block)}${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, 'exercise'))).join('')}`;
+      body = `${renderBookExamples(block.examples)}${renderStudentAnswerReferences(block)}${renderExerciseWordBank(block)}${items.map((item, itemIndex) => renderQuestion(item, itemIndex, taskId(block, 'exercise'))).join('')}`;
     }
     const reference = block.referenceImage;
     if (!reference?.src) return body;
@@ -220,28 +290,63 @@
 
   function initCrosswords(root) {
     root.querySelectorAll('[data-crossword]').forEach((grid) => {
-      const host = grid.closest('.crossword-work');
+      const host = grid.closest('.crossword-work, .nationality-puzzle-work');
       if (!host) return;
       const update = () => {
         grid.querySelectorAll('[data-cw-letter]').forEach((letter) => {
           if (letter.dataset.fixed !== 'true') letter.textContent = '';
         });
         host.querySelectorAll('[data-cw-entry]').forEach((entry) => {
-          const value = safeText(entry.querySelector('[data-answer-control]')?.value).toUpperCase().replace(/[^A-Z]/g, '');
+          const typed = safeText(entry.querySelector('[data-answer-control]')?.value).toUpperCase().replace(/[^A-Z]/g, '');
+          const prefix = safeText(entry.dataset.cwPrefix).toUpperCase().replace(/[^A-Z]/g, '');
+          const suffix = safeText(entry.dataset.cwSuffix).toUpperCase().replace(/[^A-Z]/g, '');
           const row = Number(entry.dataset.cwRow);
           const col = Number(entry.dataset.cwCol);
           const direction = entry.dataset.cwDirection;
           const length = Number(entry.dataset.cwLength);
-          for (let index = 0; index < Math.min(value.length, length); index += 1) {
+          const letters = Array.from({ length }, () => '');
+          [...prefix].forEach((letter, index) => { if (index < length) letters[index] = letter; });
+          [...typed].forEach((letter, index) => {
+            const targetIndex = prefix.length + index;
+            if (targetIndex < Math.max(prefix.length, length - suffix.length)) letters[targetIndex] = letter;
+          });
+          [...suffix].forEach((letter, index) => {
+            const targetIndex = length - suffix.length + index;
+            if (targetIndex >= 0 && targetIndex < length) letters[targetIndex] = letter;
+          });
+          letters.forEach((letter, index) => {
+            if (!letter) return;
             const targetRow = row + (direction === 'down' ? index : 0);
             const targetCol = col + (direction === 'across' ? index : 0);
             const target = grid.querySelector(`[data-cw-cell="${targetRow}-${targetCol}"] [data-cw-letter]`);
-            if (target && target.dataset.fixed !== 'true') target.textContent = value[index];
-          }
+            if (target && target.dataset.fixed !== 'true') target.textContent = letter;
+          });
         });
       };
       host.querySelectorAll('[data-cw-entry] [data-answer-control]').forEach((input) => input.addEventListener('input', update));
       update();
+    });
+  }
+
+  function initStudentAnswerReferences(root) {
+    const updateSource = (sourceId) => {
+      const source = root.querySelector(`[data-question-id="${CSS.escape(sourceId)}"]`);
+      if (!source) return;
+      const type = safeText(source.dataset.questionType, 'text');
+      const value = readAnswer(source, type);
+      root.querySelectorAll(`[data-student-answer-ref="${CSS.escape(sourceId)}"]`).forEach((target) => {
+        target.textContent = safeText(value);
+        target.classList.toggle('is-empty', !safeText(value).trim());
+      });
+    };
+    const ids = [...new Set([...root.querySelectorAll('[data-student-answer-ref]')].map((node) => node.dataset.studentAnswerRef).filter(Boolean))];
+    ids.forEach((id) => {
+      updateSource(id);
+      const source = root.querySelector(`[data-question-id="${CSS.escape(id)}"]`);
+      source?.querySelectorAll('[data-answer-control]').forEach((control) => {
+        control.addEventListener('input', () => updateSource(id));
+        control.addEventListener('change', () => updateSource(id));
+      });
     });
   }
 
@@ -263,7 +368,9 @@
       const items = asArray(block.items);
       const title = cleanNumberedTitle(block.title, `Упражнение ${exerciseNumber}`);
       const kicker = block.label ? escapeHtml(block.label) : `Задание ${exerciseNumber} из ${Number(sectionState.totalExercises || exerciseNumber)}`;
-      return `<article class="card lesson-block exercise-card ${toneClass(exerciseNumber)}" id="lesson-exercise-${exerciseNumber}" data-exercise-id="${escapeHtml(taskId(block, `exercise-${index + 1}`))}"><header class="exercise-card-header"><span class="exercise-kicker">${kicker}</span><h3>${escapeHtml(title)}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}</header><div class="exercise-card-body">${renderExerciseBody(block, items)}</div></article>`;
+      const groupClass = block.group ? ` exercise-grouped group-${escapeHtml(block.groupPosition || 'middle')}` : '';
+      const groupAttr = block.group ? ` data-exercise-group="${escapeHtml(block.group)}"` : '';
+      return `<article class="card lesson-block exercise-card ${toneClass(exerciseNumber)}${groupClass}" id="lesson-exercise-${exerciseNumber}" data-exercise-id="${escapeHtml(taskId(block, `exercise-${index + 1}`))}"${groupAttr}><header class="exercise-card-header"><span class="exercise-kicker">${kicker}</span><h3>${escapeHtml(title)}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}</header><div class="exercise-card-body">${renderExerciseBody(block, items)}</div></article>`;
     }
     if (['text','textarea','select','single','multiple','reorder','translate','manual'].includes(type)) {
       sectionState.exercise = Number(sectionState.exercise || 0) + 1;
@@ -341,10 +448,11 @@
     const type = questionType(item);
     if (type === 'single' || type === 'multiple') {
       const expected = new Set(correctAnswers(item).map(normalizeAnswer));
+      const revealCorrect = item.revealCorrect !== false;
       node.querySelectorAll('.option').forEach((option) => {
         const input = option.querySelector('input');
         const selected = input?.checked;
-        if (expected.has(normalizeAnswer(input?.value))) option.classList.add('correct-option');
+        if ((revealCorrect || selected) && expected.has(normalizeAnswer(input?.value))) option.classList.add('correct-option');
         if (selected && !expected.has(normalizeAnswer(input?.value))) option.classList.add('wrong-option');
       });
     } else {
@@ -353,8 +461,13 @@
     }
     const feedback = node.querySelector('[data-feedback]');
     if (feedback) {
-      feedback.className = `feedback show ${correct ? 'good' : 'bad'}`;
-      feedback.textContent = correct ? 'Верно!' : safeText(item.explanation, `Правильный ответ: ${correctAnswers(item).join(' / ')}`);
+      const hiddenWrongFeedback = !correct && item.revealCorrect === false && !safeText(item.explanation).trim();
+      feedback.className = hiddenWrongFeedback ? 'feedback' : `feedback show ${correct ? 'good' : 'bad'}`;
+      feedback.textContent = correct
+        ? 'Верно!'
+        : item.revealCorrect === false
+          ? safeText(item.explanation)
+          : safeText(item.explanation, `Правильный ответ: ${correctAnswers(item).join(' / ')}`);
     }
   }
 
@@ -447,6 +560,7 @@
 
     restoreAnswers(root, questions, record.answers || {});
     initCrosswords(root);
+    initStudentAnswerReferences(root);
     if (reviewed) {
       const result = evaluate(root, questions, { apply: true });
       document.getElementById('lesson-result').innerHTML = `<h3>Сохранённый результат: ${Number(record.score_correct ?? result.correct)} из ${Number(record.score_total ?? result.total)}</h3><p class="muted">${Number(record.score_percent ?? result.percent)}% правильных ответов</p>`;
@@ -688,21 +802,40 @@
     const blocks = exercises.map((exercise,index) => ({ type:'exercise', id: exercise.id || `grammar-exercise-${index+1}`, title: exercise.title || `Задание ${index+1}`, instruction: exercise.instruction, items: asArray(exercise.items).map((item) => ({...item, id: item.id || `${exercise.id || `grammar-exercise-${index+1}`}-${taskId(item, index+1)}`})), difficulty: exercise.difficulty }));
     const questions = flattenQuestions(blocks);
     const local = ctx.progress.getGrammarLocal(id) || {};
-    root.innerHTML = `${grammarExplanation(topic)}<section class="grammar-practice-heading"><span class="eyebrow">Практика</span><h2>Проверьте, как вы поняли тему</h2><p>Выполняйте задания по порядку: сложность постепенно увеличивается.</p></section><div class="grammar-exercises">${blocks.map((block,index) => `<article class="card lesson-block exercise-card ${toneClass(index + 1)}" id="grammar-exercise-${index + 1}"><header class="exercise-card-header"><div class="grammar-exercise-top"><span class="exercise-kicker">Задание ${index + 1} из ${blocks.length}</span><span class="difficulty">${escapeHtml(block.difficulty || `Уровень ${index+1}`)}</span></div><h3>${escapeHtml(cleanNumberedTitle(block.title, `Задание ${index + 1}`))}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}</header><div class="exercise-card-body">${block.items.map((item,itemIndex) => renderQuestion(item,itemIndex,block.id)).join('')}</div></article>`).join('')}</div><article class="card lesson-actions"><div class="lesson-result" id="grammar-result"></div><div class="button-row"><button class="btn btn-primary" id="check-grammar" type="button">Проверить знания</button><a class="btn btn-ghost" href="grammar.html">К списку тем</a></div></article>`;
+    const savedProgress = ctx.progress.getGrammar(id) || {};
+    const passScore = Math.max(0, Math.min(100, Number(topic.passScore ?? 80)));
+    const lockOnPass = Boolean(topic.lockOnPass);
+    root.innerHTML = `${grammarExplanation(topic)}<section class="grammar-practice-heading"><span class="eyebrow">Практика</span><h2>Проверьте, как вы поняли тему</h2><p>Выполняйте задания по порядку: сложность постепенно увеличивается.</p></section><div class="grammar-exercises">${blocks.map((block,index) => `<article class="card lesson-block exercise-card ${toneClass(index + 1)}" id="grammar-exercise-${index + 1}"><header class="exercise-card-header"><div class="grammar-exercise-top"><span class="exercise-kicker">Задание ${index + 1} из ${blocks.length}</span><span class="difficulty">${escapeHtml(block.difficulty || `Уровень ${index+1}`)}</span></div><h3>${escapeHtml(cleanNumberedTitle(block.title, `Задание ${index + 1}`))}</h3>${block.instruction ? `<p class="exercise-instruction">${escapeHtml(block.instruction)}</p>` : ''}</header><div class="exercise-card-body">${block.items.map((item,itemIndex) => renderQuestion(item,itemIndex,block.id)).join('')}</div></article>`).join('')}</div><article class="card lesson-actions"><div class="lesson-result" id="grammar-result"></div><div class="button-row"><button class="btn btn-primary" id="check-grammar" type="button">${escapeHtml(topic.checkButtonLabel || 'Проверить знания')}</button><a class="btn btn-ghost" href="grammar.html">К списку тем</a></div></article>`;
     restoreAnswers(root, questions, local.lastAnswers || {});
+    const lockPassedTopic = () => {
+      if (!lockOnPass || !savedProgress.passed) return;
+      disableAnswers(root, true);
+      const button = document.getElementById('check-grammar');
+      if (button) button.disabled = true;
+    };
     if (local.lastCheckedAt) {
       const result = evaluate(root, questions, { apply: true });
-      document.getElementById('grammar-result').innerHTML = `<h3>Последний результат: ${Number(local.lastScore ?? result.percent)}%</h3><p class="muted">Лучший результат: ${Number(local.bestScore || 0)}%</p>`;
+      document.getElementById('grammar-result').innerHTML = savedProgress.passed && lockOnPass
+        ? `<h3>16 из 16 правильных ответов</h3><p class="muted">Тема изучена.</p>`
+        : `<h3>Последний результат: ${Number(local.lastScore ?? result.percent)}%</h3><p class="muted">Лучший результат: ${Number(local.bestScore || 0)}%</p>`;
     }
+    lockPassedTopic();
     document.getElementById('check-grammar').addEventListener('click', async () => {
       const result = evaluate(root, questions, { apply: true });
       const previous = ctx.progress.getGrammar(id) || {};
       const attempts = Number(previous.attempts || 0) + 1;
       const bestScore = Math.max(Number(previous.best_score || 0), result.percent);
-      const passed = Boolean(previous.passed || result.percent >= 80);
+      const passed = Boolean(previous.passed || result.percent >= passScore);
       const now = new Date().toISOString();
       await ctx.progress.saveGrammar({ topic_id: id, passed, attempts, best_score: bestScore, passed_at: passed ? (previous.passed_at || now) : null, updated_at: now }, { lastAnswers: result.answers, lastScore: result.percent, lastCheckedAt: now, bestScore });
-      document.getElementById('grammar-result').innerHTML = `<h3>Результат: ${result.percent}%</h3><p class="muted">${passed ? 'Тема пройдена.' : 'Повторите правило и попробуйте ещё раз.'} Лучший результат: ${bestScore}%.</p>`;
+      Object.assign(savedProgress, ctx.progress.getGrammar(id) || { passed });
+      document.getElementById('grammar-result').innerHTML = passed && lockOnPass
+        ? `<h3>${result.correct} из ${result.total} правильных ответов</h3><p class="muted">Тема изучена.</p>`
+        : `<h3>Результат: ${result.percent}%</h3><p class="muted">${passed ? 'Тема пройдена.' : 'Повторите правило и попробуйте ещё раз.'} Лучший результат: ${bestScore}%.</p>`;
+      if (passed && lockOnPass) {
+        disableAnswers(root, true);
+        document.getElementById('check-grammar').disabled = true;
+      }
     });
   }
 
@@ -755,7 +888,10 @@
   function renderAllWords(root, topic, ctx) {
     root.innerHTML = `<div class="words-grid">${topic.words.map((word) => {
       const state = ctx.progress.getVocabularyWord(word.wordKey) || {};
-      return `<article class="card word-card ${statusClass(state.status)}" data-word-key="${escapeHtml(word.wordKey)}"><button class="pronounce-btn" type="button" data-speak="${escapeHtml(word.en)}" aria-label="Прослушать произношение">🔊</button><strong>${escapeHtml(word.en)}</strong><span class="translation">${escapeHtml(word.ru)}</span>${word.transcription ? `<span class="transcription">${escapeHtml(word.transcription)}</span>` : ''}${word.exampleEn ? `<p class="muted">${escapeHtml(word.exampleEn)}${word.exampleRu ? ` — ${escapeHtml(word.exampleRu)}` : ''}</p>` : ''}<div class="word-actions"><button class="word-action ${state.status === 'known' ? 'active-known' : ''}" type="button" data-status="known">✓ Знаю</button><button class="word-action ${state.status === 'difficult' ? 'active-difficult' : ''}" type="button" data-status="difficult">★ Трудное</button></div></article>`;
+      const knownAction = topic.learnedByTestOnly
+        ? '<span class="test-only-note">Выучено после правильного ответа в тесте</span>'
+        : `<button class="word-action ${state.status === 'known' ? 'active-known' : ''}" type="button" data-status="known">✓ Знаю</button>`;
+      return `<article class="card word-card ${statusClass(state.status)}" data-word-key="${escapeHtml(word.wordKey)}"><button class="pronounce-btn" type="button" data-speak="${escapeHtml(word.en)}" aria-label="Прослушать произношение">🔊</button><strong>${escapeHtml(word.en)}</strong><span class="translation">${escapeHtml(word.ru)}</span>${word.transcription ? `<span class="transcription">${escapeHtml(word.transcription)}</span>` : ''}${word.exampleEn ? `<p class="muted">${escapeHtml(word.exampleEn)}${word.exampleRu ? ` — ${escapeHtml(word.exampleRu)}` : ''}</p>` : ''}<div class="word-actions">${knownAction}<button class="word-action ${state.status === 'difficult' ? 'active-difficult' : ''}" type="button" data-status="difficult">★ Трудное</button></div></article>`;
     }).join('')}</div>`;
 
     root.querySelectorAll('[data-speak]').forEach((button) => button.addEventListener('click', () => speak(button.dataset.speak, ctx)));
@@ -765,6 +901,7 @@
           const wordKey = card.dataset.wordKey;
           const current = ctx.progress.getVocabularyWord(wordKey) || {};
           const requested = button.dataset.status;
+          if (topic.learnedByTestOnly && requested === 'known') return;
           const status = current.status === requested ? 'new' : requested;
           await ctx.progress.saveVocabularyWord({ word_key: wordKey, status, learned_at: status === 'known' ? (current.learned_at || new Date().toISOString()) : null, updated_at: new Date().toISOString() });
           renderAllWords(root, topic, ctx);
@@ -785,12 +922,13 @@
     const draw = () => {
       const word = queue[index];
       const state = ctx.progress.getVocabularyWord(word.wordKey) || {};
-      root.innerHTML = `<div class="flash-counter">Слово ${index + 1} из ${queue.length}</div><article class="card flashcard"><div><button class="pronounce-btn" id="flash-speak" type="button" aria-label="Прослушать произношение">🔊</button><div class="flash-word">${escapeHtml(word.en)}</div>${word.transcription ? `<p class="muted">${escapeHtml(word.transcription)}</p>` : ''}${showTranslation ? `<div class="flash-translation">${escapeHtml(word.ru)}</div>${word.exampleEn ? `<p class="flash-example">${escapeHtml(word.exampleEn)}${word.exampleRu ? ` — ${escapeHtml(word.exampleRu)}` : ''}</p>` : ''}` : '<p class="muted">Нажмите «Показать перевод».</p>'}</div></article><div class="flash-controls"><button class="btn btn-ghost" id="previous-word" type="button" ${index === 0 ? 'disabled' : ''}>← Назад</button><button class="btn btn-secondary" id="show-translation" type="button">${showTranslation ? 'Скрыть перевод' : 'Показать перевод'}</button><button class="btn btn-ghost" id="next-word" type="button" ${index === queue.length - 1 ? 'disabled' : ''}>Дальше →</button></div><div class="flash-controls"><button class="word-action ${state.status === 'known' ? 'active-known' : ''}" id="mark-known" type="button">✓ Знаю</button><button class="word-action ${state.status === 'difficult' ? 'active-difficult' : ''}" id="mark-difficult" type="button">★ Трудное</button></div>`;
+      root.innerHTML = `<div class="flash-counter">Слово ${index + 1} из ${queue.length}</div><article class="card flashcard"><div><button class="pronounce-btn" id="flash-speak" type="button" aria-label="Прослушать произношение">🔊</button><div class="flash-word">${escapeHtml(word.en)}</div>${word.transcription ? `<p class="muted">${escapeHtml(word.transcription)}</p>` : ''}${showTranslation ? `<div class="flash-translation">${escapeHtml(word.ru)}</div>${word.exampleEn ? `<p class="flash-example">${escapeHtml(word.exampleEn)}${word.exampleRu ? ` — ${escapeHtml(word.exampleRu)}` : ''}</p>` : ''}` : '<p class="muted">Нажмите «Показать перевод».</p>'}</div></article><div class="flash-controls"><button class="btn btn-ghost" id="previous-word" type="button" ${index === 0 ? 'disabled' : ''}>← Назад</button><button class="btn btn-secondary" id="show-translation" type="button">${showTranslation ? 'Скрыть перевод' : 'Показать перевод'}</button><button class="btn btn-ghost" id="next-word" type="button" ${index === queue.length - 1 ? 'disabled' : ''}>Дальше →</button></div><div class="flash-controls">${topic.learnedByTestOnly ? '<span class="test-only-note">Статус «Выучено» даёт только тест</span>' : `<button class="word-action ${state.status === 'known' ? 'active-known' : ''}" id="mark-known" type="button">✓ Знаю</button>`}<button class="word-action ${state.status === 'difficult' ? 'active-difficult' : ''}" id="mark-difficult" type="button">★ Трудное</button></div>`;
       document.getElementById('flash-speak').addEventListener('click', () => speak(word.en, ctx));
       document.getElementById('show-translation').addEventListener('click', () => { showTranslation = !showTranslation; draw(); });
       document.getElementById('previous-word').addEventListener('click', () => { index = Math.max(0,index-1); showTranslation = false; draw(); });
       document.getElementById('next-word').addEventListener('click', () => { index = Math.min(queue.length-1,index+1); showTranslation = false; draw(); });
-      document.getElementById('mark-known').addEventListener('click', async () => {
+      document.getElementById('mark-known')?.addEventListener('click', async () => {
+        if (topic.learnedByTestOnly) return;
         await ctx.progress.saveVocabularyWord({ word_key: word.wordKey, status: state.status === 'known' ? 'new' : 'known', learned_at: state.status === 'known' ? null : (state.learned_at || new Date().toISOString()), updated_at: new Date().toISOString() });
         draw();
       });

@@ -1,0 +1,960 @@
+{
+  "id": "lesson-5",
+  "number": 5,
+  "title": "Unit 2A — Are you on holiday?",
+  "subtitle": "Vocabulary: nationalities · Grammar: verb be (plural): we, you, they · Words and phrases to learn",
+  "status": "available",
+  "publishedAt": "2026-08-18",
+  "notification": {
+    "enabled": true,
+    "version": 1
+  },
+  "vocabularyId": "vocab-lesson-5",
+  "grammarIds": [
+    "grammar-3"
+  ],
+  "blocks": [
+    {
+      "type": "exercise",
+      "id": "exercise-1",
+      "label": "1 VOCABULARY",
+      "title": "nationalities",
+      "instruction": "Complete the puzzle. What’s the mystery word?",
+      "layout": "nationalities-puzzle",
+      "items": [
+        {
+          "id": "exercise-1-2",
+          "number": 2,
+          "type": "text",
+          "prompt": "Kentaro’s from Japan. He’s J_____e.",
+          "answers": [
+            "apanes"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 6
+        },
+        {
+          "id": "exercise-1-3",
+          "number": 3,
+          "type": "text",
+          "prompt": "Emma’s from the UK. She’s B_____h.",
+          "answers": [
+            "ritis"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 5
+        },
+        {
+          "id": "exercise-1-4",
+          "number": 4,
+          "type": "text",
+          "prompt": "Bianca’s from Brazil. She’s Br_____n.",
+          "answers": [
+            "azilia"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 6
+        },
+        {
+          "id": "exercise-1-5",
+          "number": 5,
+          "type": "text",
+          "prompt": "Jacek’s from Poland. He’s P_____h.",
+          "answers": [
+            "olis"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 4
+        },
+        {
+          "id": "exercise-1-6",
+          "number": 6,
+          "type": "text",
+          "prompt": "Meiling’s from China. She’s Ch_____e.",
+          "answers": [
+            "ines"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 4
+        },
+        {
+          "id": "exercise-1-7",
+          "number": 7,
+          "type": "text",
+          "prompt": "Nikolay’s from Russia. He’s R_____n.",
+          "answers": [
+            "ussia"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 5
+        },
+        {
+          "id": "exercise-1-8",
+          "number": 8,
+          "type": "text",
+          "prompt": "William’s from England. He’s E_____h.",
+          "answers": [
+            "nglis"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 5
+        },
+        {
+          "id": "exercise-1-9",
+          "number": 9,
+          "type": "text",
+          "prompt": "Daniela’s from Mexico. She’s M_____n.",
+          "answers": [
+            "exica"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 5
+        },
+        {
+          "id": "exercise-1-10",
+          "number": 10,
+          "type": "text",
+          "prompt": "Baba’s from Egypt. He’s E_____n.",
+          "answers": [
+            "gyptia"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 6
+        },
+        {
+          "id": "exercise-1-11",
+          "number": 11,
+          "type": "text",
+          "prompt": "Derin’s from Turkey. She’s T_____h.",
+          "answers": [
+            "urkis"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 5
+        },
+        {
+          "id": "exercise-1-12",
+          "number": 12,
+          "type": "text",
+          "prompt": "Mike’s from the United States. He’s Am_____n.",
+          "answers": [
+            "erica"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 5
+        },
+        {
+          "id": "exercise-1-13",
+          "number": 13,
+          "type": "text",
+          "prompt": "Cédric’s from Switzerland. He’s Sw_____s.",
+          "answers": [
+            "is"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 2
+        },
+        {
+          "id": "exercise-1-mystery",
+          "type": "text",
+          "prompt": "What’s the mystery word?",
+          "answers": [
+            "nationalities"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "puzzle": {
+        "rows": 13,
+        "cols": 13,
+        "mysteryCol": 7,
+        "mysteryItemId": "exercise-1-mystery",
+        "entries": [
+          {
+            "number": 1,
+            "answer": "SPANISH",
+            "row": 1,
+            "col": 4,
+            "fixed": true,
+            "image": "images/lesson-5/nationality-1.png",
+            "lines": [
+              "Maria’s from Spain.",
+              "She’s Spanish."
+            ]
+          },
+          {
+            "number": 2,
+            "answer": "JAPANESE",
+            "row": 2,
+            "col": 4,
+            "itemId": "exercise-1-2",
+            "image": "images/lesson-5/nationality-2.png",
+            "lines": [
+              "Kentaro’s from Japan.",
+              "He’s J_____e."
+            ]
+          },
+          {
+            "number": 3,
+            "answer": "BRITISH",
+            "row": 3,
+            "col": 4,
+            "itemId": "exercise-1-3",
+            "image": "images/lesson-5/nationality-3.png",
+            "lines": [
+              "Emma’s from the UK.",
+              "She’s B_____h."
+            ]
+          },
+          {
+            "number": 4,
+            "answer": "BRAZILIAN",
+            "row": 4,
+            "col": 3,
+            "itemId": "exercise-1-4",
+            "image": "images/lesson-5/nationality-4.png",
+            "lines": [
+              "Bianca’s from Brazil.",
+              "She’s Br_____n."
+            ]
+          },
+          {
+            "number": 5,
+            "answer": "POLISH",
+            "row": 5,
+            "col": 6,
+            "itemId": "exercise-1-5",
+            "image": "images/lesson-5/nationality-5.png",
+            "lines": [
+              "Jacek’s from Poland.",
+              "He’s P_____h."
+            ]
+          },
+          {
+            "number": 6,
+            "answer": "CHINESE",
+            "row": 6,
+            "col": 4,
+            "itemId": "exercise-1-6",
+            "image": "images/lesson-5/nationality-6.png",
+            "lines": [
+              "Meiling’s from China.",
+              "She’s Ch_____e."
+            ]
+          },
+          {
+            "number": 7,
+            "answer": "RUSSIAN",
+            "row": 7,
+            "col": 2,
+            "itemId": "exercise-1-7",
+            "image": "images/lesson-5/nationality-7.png",
+            "lines": [
+              "Nikolay’s from Russia.",
+              "He’s R_____n."
+            ]
+          },
+          {
+            "number": 8,
+            "answer": "ENGLISH",
+            "row": 8,
+            "col": 4,
+            "itemId": "exercise-1-8",
+            "image": "images/lesson-5/nationality-8.png",
+            "lines": [
+              "William’s from England.",
+              "He’s E_____h."
+            ]
+          },
+          {
+            "number": 9,
+            "answer": "MEXICAN",
+            "row": 9,
+            "col": 4,
+            "itemId": "exercise-1-9",
+            "image": "images/lesson-5/nationality-9.png",
+            "lines": [
+              "Daniela’s from Mexico.",
+              "She’s M_____n."
+            ]
+          },
+          {
+            "number": 10,
+            "answer": "EGYPTIAN",
+            "row": 10,
+            "col": 3,
+            "itemId": "exercise-1-10",
+            "image": "images/lesson-5/nationality-10.png",
+            "lines": [
+              "Baba’s from Egypt.",
+              "He’s E_____n."
+            ]
+          },
+          {
+            "number": 11,
+            "answer": "TURKISH",
+            "row": 11,
+            "col": 3,
+            "itemId": "exercise-1-11",
+            "image": "images/lesson-5/nationality-11.png",
+            "lines": [
+              "Derin’s from Turkey.",
+              "She’s T_____h."
+            ]
+          },
+          {
+            "number": 12,
+            "answer": "AMERICAN",
+            "row": 12,
+            "col": 5,
+            "itemId": "exercise-1-12",
+            "image": "images/lesson-5/nationality-12.png",
+            "lines": [
+              "Mike’s from the United States.",
+              "He’s Am_____n."
+            ]
+          },
+          {
+            "number": 13,
+            "answer": "SWISS",
+            "row": 13,
+            "col": 7,
+            "itemId": "exercise-1-13",
+            "image": "images/lesson-5/nationality-13.png",
+            "lines": [
+              "Cédric’s from Switzerland.",
+              "He’s Sw_____s."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "section",
+      "title": "3 GRAMMAR — verb be (plural): we, you, they"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3a",
+      "label": "3a",
+      "title": "Write positive + and negative − sentences with be. Use contractions.",
+      "examples": [
+        {
+          "source": "1 we / from Spain ✓ Italy ✗",
+          "answer": "We’re from Spain. We aren’t from Italy."
+        }
+      ],
+      "items": [
+        {
+          "id": "exercise-3a-2",
+          "number": 2,
+          "type": "text",
+          "prompt": "you / teachers ✓ students ✗",
+          "answers": [
+            "You’re teachers. You aren’t students"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-3",
+          "number": 3,
+          "type": "text",
+          "prompt": "they / Chinese ✓ Japanese ✗",
+          "answers": [
+            "They’re Chinese. They aren’t Japanese"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-4",
+          "number": 4,
+          "type": "text",
+          "prompt": "we / from Mexico ✓ Brazil ✗",
+          "answers": [
+            "We’re from Mexico. We aren’t from Brazil"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-5",
+          "number": 5,
+          "type": "text",
+          "prompt": "you / in class 3 ✓ class 2 ✗",
+          "answers": [
+            "You’re in class 3. You aren’t in class 2"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-6",
+          "number": 6,
+          "type": "text",
+          "prompt": "they / from Egypt ✓ Turkey ✗",
+          "answers": [
+            "They’re from Egypt. They aren’t from Turkey"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-7",
+          "number": 7,
+          "type": "text",
+          "prompt": "she / room 4 ✓ room 5 ✗",
+          "answers": [
+            "She’s in room 4. She isn’t in room 5"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-8",
+          "number": 8,
+          "type": "text",
+          "prompt": "I / Polish ✓ Russian ✗",
+          "answers": [
+            "I’m Polish. I’m not Russian"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "group": "exercise-3",
+      "groupPosition": "first"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3b",
+      "label": "3b",
+      "title": "Write the sentences with pronouns. Use contractions.",
+      "examples": [
+        {
+          "source": "1 Juan and I are from Spain.",
+          "answer": "We’re from Spain."
+        }
+      ],
+      "items": [
+        {
+          "id": "exercise-3b-2",
+          "number": 2,
+          "type": "text",
+          "prompt": "Sara and Mikel are in class 6.",
+          "answers": [
+            "They’re in class 6"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3b-3",
+          "number": 3,
+          "type": "text",
+          "prompt": "Marina’s on holiday.",
+          "answers": [
+            "She’s on holiday"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3b-4",
+          "number": 4,
+          "type": "text",
+          "prompt": "Rodrigo’s from Brazil.",
+          "answers": [
+            "He’s from Brazil"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3b-5",
+          "number": 5,
+          "type": "text",
+          "prompt": "Jake and I are here on business.",
+          "answers": [
+            "We’re here on business"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3b-6",
+          "number": 6,
+          "type": "text",
+          "prompt": "Toronto is in Canada.",
+          "answers": [
+            "It’s in Canada"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "group": "exercise-3",
+      "groupPosition": "middle"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3c",
+      "label": "3c",
+      "title": "Re-order the words to make questions.",
+      "examples": [
+        {
+          "source": "1 dogs   they   are   your",
+          "answer": "Are they your dogs?"
+        }
+      ],
+      "items": [
+        {
+          "id": "exercise-3c-2",
+          "number": 2,
+          "type": "text",
+          "prompt": "class   in   1   are   they",
+          "answers": [
+            "Are they in class 1"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3c-3",
+          "number": 3,
+          "type": "text",
+          "prompt": "they   England   from   are",
+          "answers": [
+            "Are they from England"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3c-4",
+          "number": 4,
+          "type": "text",
+          "prompt": "Italian   Fernanda   is",
+          "answers": [
+            "Is Fernanda Italian"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3c-5",
+          "number": 5,
+          "type": "text",
+          "prompt": "in   Zurich   is   Switzerland",
+          "answers": [
+            "Is Zurich in Switzerland"
+          ],
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "group": "exercise-3",
+      "groupPosition": "middle"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3d",
+      "label": "3d",
+      "title": "Match the answers to the questions in c.",
+      "studentAnswerReferences": {
+        "title": "questions in c",
+        "items": [
+          {
+            "number": 1,
+            "text": "Are they your dogs?"
+          },
+          {
+            "number": 2,
+            "sourceItemId": "exercise-3c-2"
+          },
+          {
+            "number": 3,
+            "sourceItemId": "exercise-3c-3"
+          },
+          {
+            "number": 4,
+            "sourceItemId": "exercise-3c-4"
+          },
+          {
+            "number": 5,
+            "sourceItemId": "exercise-3c-5"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "source": "a   4",
+          "answer": "Yes, she is."
+        }
+      ],
+      "items": [
+        {
+          "id": "exercise-3d-b",
+          "number": "b",
+          "type": "select",
+          "prompt": "No, they’re in class 2.",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "answer": "2",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3d-c",
+          "number": "c",
+          "type": "select",
+          "prompt": "No, they aren’t.",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "answer": "1",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3d-d",
+          "number": "d",
+          "type": "select",
+          "prompt": "Yes, it is.",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "answer": "5",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3d-e",
+          "number": "e",
+          "type": "select",
+          "prompt": "Yes, they’re from London.",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "answer": "3",
+          "revealCorrect": false
+        }
+      ],
+      "group": "exercise-3",
+      "groupPosition": "middle"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3e",
+      "label": "3e",
+      "title": "Answer the questions about your class.",
+      "items": [
+        {
+          "id": "exercise-3e-1",
+          "number": 1,
+          "type": "text",
+          "scored": false,
+          "prompt": "Are you English?\nNo, we aren’t. We’re ____________________.",
+          "placeholder": "",
+          "inlineBlank": true,
+          "inputChars": 18
+        },
+        {
+          "id": "exercise-3e-2",
+          "number": 2,
+          "type": "text",
+          "scored": false,
+          "prompt": "Where are you from?",
+          "placeholder": ""
+        },
+        {
+          "id": "exercise-3e-3",
+          "number": 3,
+          "type": "text",
+          "scored": false,
+          "prompt": "What room are you in?",
+          "placeholder": ""
+        }
+      ],
+      "group": "exercise-3",
+      "groupPosition": "last"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-4",
+      "label": "4",
+      "title": "WORDS AND PHRASES TO LEARN",
+      "instruction": "Complete the missing words in the conversations.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-4-2a",
+          "type": "text",
+          "prompt": "2 Are",
+          "answers": [
+            "re"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 2
+        },
+        {
+          "id": "exercise-4-2b",
+          "type": "text",
+          "prompt": "2 you",
+          "answers": [
+            "ou"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 2
+        },
+        {
+          "id": "exercise-4-2c",
+          "type": "text",
+          "prompt": "2 on",
+          "answers": [
+            "n"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 1
+        },
+        {
+          "id": "exercise-4-2d",
+          "type": "text",
+          "prompt": "2 holiday",
+          "answers": [
+            "oliday"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 6
+        },
+        {
+          "id": "exercise-4-3a",
+          "type": "text",
+          "prompt": "3 Have",
+          "answers": [
+            "ave"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 3
+        },
+        {
+          "id": "exercise-4-3b",
+          "type": "text",
+          "prompt": "3 nice",
+          "answers": [
+            "ice"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 3
+        },
+        {
+          "id": "exercise-4-3c",
+          "type": "text",
+          "prompt": "3 day",
+          "answers": [
+            "ay"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 2
+        },
+        {
+          "id": "exercise-4-4",
+          "type": "text",
+          "prompt": "4 tourists",
+          "answers": [
+            "ourists"
+          ],
+          "placeholder": "",
+          "revealCorrect": false,
+          "inputChars": 7
+        }
+      ],
+      "conversations": [
+        {
+          "number": 1,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Excuse me. Are they free?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Yes, they are. Please sit down."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Thanks."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "A"
+                },
+                {
+                  "blank": "exercise-4-2a"
+                },
+                {
+                  "text": " y"
+                },
+                {
+                  "blank": "exercise-4-2b"
+                },
+                {
+                  "text": " o"
+                },
+                {
+                  "blank": "exercise-4-2c"
+                },
+                {
+                  "text": " h"
+                },
+                {
+                  "blank": "exercise-4-2d"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Yes, we are. We’re from Spain."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Your cappuccino."
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Thanks."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "H"
+                },
+                {
+                  "blank": "exercise-4-3a"
+                },
+                {
+                  "text": " a n"
+                },
+                {
+                  "blank": "exercise-4-3b"
+                },
+                {
+                  "text": " d"
+                },
+                {
+                  "blank": "exercise-4-3c"
+                },
+                {
+                  "text": "!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Are you on business?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "No, we aren’t. We’re t"
+                },
+                {
+                  "blank": "exercise-4-4"
+                },
+                {
+                  "text": ". We’re on holiday."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "totalPoints": 41
+}
