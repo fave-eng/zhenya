@@ -1,9 +1,7 @@
 import { createClient } from 'npm:@supabase/supabase-js@2'
 
-const FUNCTION_VERSION = 'homework-reports-v3-lesson-bundle'
+const FUNCTION_VERSION = 'homework-reports-v4-topic-friendly-copy'
 const STUDENT_ID = 'zhenya'
-const STUDENT_NAME = 'Женя'
-const TIME_ZONE = 'Asia/Yekaterinburg'
 const encoder = new TextEncoder()
 
 const corsHeaders = {
@@ -45,13 +43,6 @@ function lessonTitle(lessonId: string): string {
   if (lessonId.startsWith('telegram-report-test-')) return 'ТЕСТ: проверка Telegram-отчёта'
   const match = lessonId.match(/^lesson-(\d+)$/)
   return match ? `Домашняя работа №${match[1]}` : lessonId
-}
-
-function formatDate(value: string | null): string {
-  if (!value) return 'не указано'
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) return 'не указано'
-  return date.toLocaleString('ru-RU', { timeZone: TIME_ZONE })
 }
 
 type Recipient = {
@@ -97,22 +88,62 @@ async function sendTelegram(
   return result.result
 }
 
-function homeworkMessage(row: Record<string, any>): string {
+function homeworkMessage(row: Record<string, any>, displayTitle: string): string {
   const correct = Number(row.score_correct || 0)
   const total = Number(row.score_total || 0)
   const scorePercent = Number(row.score_percent ?? (total > 0 ? Math.round((correct / total) * 100) : 0))
-  const mistakes = Math.max(0, total - correct)
   return [
-    '📩 <b>Получена домашняя работа</b>',
+    '✅ <b>Homework completed</b>',
     '',
-    `👩‍🎓 Ученица: <b>${escapeHtml(STUDENT_NAME)}</b>`,
-    `📝 Работа: <b>${escapeHtml(lessonTitle(String(row.lesson_id)))}</b>`,
-    `✅ Результат: <b>${correct} из ${total} (${scorePercent}%)</b>`,
-    `❌ Ошибок: <b>${mistakes}</b>`,
-    `🕒 Отправлено: ${escapeHtml(formatDate(row.submitted_at))}`,
+    `📘 <b>${escapeHtml(displayTitle)}</b>`,
+    `📊 Result: <b>${correct}/${total} (${scorePercent}%)</b>`,
     '',
-    'Ответы ученицы зафиксированы и доступны для проверки.',
+    'Open it on the site to see the answers and mistakes.',
   ].join('\n')
+}
+
+async function homeworkDisplayTitle(
+  admin: ReturnType<typeof createClient>,
+  studentId: string,
+  lessonId: string,
+  requestedTitle = '',
+  requestedSubtitle = '',
+): Promise<string> {
+  const cleanRequestedTitle = requestedTitle.trim()
+  const cleanRequestedSubtitle = requestedSubtitle.trim()
+  const fallback = cleanRequestedTitle
+    ? (cleanRequestedSubtitle ? `${cleanRequestedTitle} · ${cleanRequestedSubtitle}` : cleanRequestedTitle)
+    : lessonTitle(lessonId)
+  const { data, error } = await admin
+    .from('material_publications')
+    .select('payload')
+    .eq('student_id', studentId)
+    .eq('material_type', 'lesson_bundle')
+    .eq('material_id', lessonId)
+    .order('created_at', { ascending: false })
+    .limit(1)
+
+  if (error || !data?.length) return fallback
+  const stored = data[0]?.payload && typeof data[0].payload === 'object' ? data[0].payload as Record<string, any> : {}
+  const homework = stored.homework && typeof stored.homework === 'object' ? stored.homework as Record<string, any> : stored
+  const title = String(homework.title || '').trim()
+  const subtitle = String(homework.subtitle || '').trim()
+  if (!title) return fallback
+  return subtitle ? `${title} · ${subtitle}` : title
+}
+
+const HOMEWORK_GREETINGS = [
+  'Hi! ✨',
+  'Hello! 🌟',
+  'Hey! 👋',
+  'Hi there! ☀️',
+  'Hello there! ✨',
+]
+
+function homeworkGreeting(materialId: string): string {
+  let hash = 0
+  for (const char of materialId) hash = ((hash * 31) + char.codePointAt(0)!) >>> 0
+  return HOMEWORK_GREETINGS[hash % HOMEWORK_GREETINGS.length]
 }
 
 async function handleHomeworkReport(
@@ -123,6 +154,8 @@ async function handleHomeworkReport(
   const studentId = typeof payload.studentId === 'string' ? payload.studentId.trim() : ''
   const lessonId = typeof payload.lessonId === 'string' ? payload.lessonId.trim() : ''
   const submissionId = typeof payload.submissionId === 'string' ? payload.submissionId.trim() : ''
+  const requestedTitle = typeof payload.homeworkTitle === 'string' ? payload.homeworkTitle.trim() : ''
+  const requestedSubtitle = typeof payload.homeworkSubtitle === 'string' ? payload.homeworkSubtitle.trim() : ''
 
   if (studentId !== STUDENT_ID || !lessonId || !submissionId) {
     return json({ ok: false, error: 'Некорректные параметры отчёта' }, 400)
@@ -157,8 +190,9 @@ async function handleHomeworkReport(
   try {
     const siteBaseUrl = (Deno.env.get('SITE_BASE_URL') || '').replace(/\/+$/, '')
     const lessonUrl = siteBaseUrl ? `${siteBaseUrl}/lesson.html?id=${encodeURIComponent(lessonId)}` : ''
-    const keyboard = lessonUrl ? [[{ text: '📝 Открыть домашнюю работу', url: lessonUrl }]] : []
-    const telegramMessage = await sendTelegram(botToken, recipient, homeworkMessage(row), keyboard)
+    const keyboard = lessonUrl ? [[{ text: '📝 Open the homework', url: lessonUrl }]] : []
+    const displayTitle = await homeworkDisplayTitle(admin, studentId, lessonId, requestedTitle, requestedSubtitle)
+    const telegramMessage = await sendTelegram(botToken, recipient, homeworkMessage(row, displayTitle), keyboard)
     const sentAt = new Date().toISOString()
     const { error: updateError } = await admin
       .from('homework_progress')
@@ -351,15 +385,15 @@ async function handleMaterialPublished(
     const title = String(rawHomework.title || legacyPayload.title || materialId)
     const steps: string[] = []
     if (rawVocabulary) steps.push('First, learn the new words.')
-    if (grammar.length) steps.push(`${steps.length ? 'Next' : 'First'}, read the grammar.`)
-    steps.push(`${steps.length ? 'Then' : 'Now'}, do the homework.`)
+    if (grammar.length) steps.push(rawVocabulary ? 'Review the grammar.' : 'First, review the grammar.')
+    steps.push(steps.length ? 'Then, do the homework.' : 'Do the homework.')
 
     const text = [
-      'Hi, Zhenya! 👋',
+      homeworkGreeting(materialId),
       'Your new English homework is ready.',
       `📘 <b>${escapeHtml(title)}</b>`,
       steps.join('\n'),
-      'Good luck! 🌟',
+      'Good luck! ⭐',
     ].join('\n\n')
 
     const keyboard: Array<Array<{ text: string; url: string }>> = []
@@ -368,7 +402,7 @@ async function handleMaterialPublished(
     }
     grammar.forEach((item, index) => {
       keyboard.push([{
-        text: `📖 ${grammarButtonTitle(item, index)}`,
+        text: grammar.length === 1 ? '📘 Grammar' : `📘 ${grammarButtonTitle(item, index)}`,
         url: String(item.url),
       }])
     })
