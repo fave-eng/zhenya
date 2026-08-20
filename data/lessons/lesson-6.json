@@ -1,0 +1,2131 @@
+{
+  "id": "lesson-6",
+  "number": 6,
+  "title": "Unit 2B — That’s my bus!",
+  "subtitle": "Grammar: Wh- and How questions with be · Vocabulary: numbers 11–100, phone numbers · Pronunciation: understanding numbers",
+  "status": "available",
+  "publishedAt": "2026-08-21",
+  "notification": {
+    "enabled": true,
+    "version": 1
+  },
+  "vocabularyId": "vocab-lesson-6",
+  "grammarIds": [
+    "grammar-4"
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "title": "1 GRAMMAR",
+      "text": "Wh- and How questions with be"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1a",
+      "label": "1a",
+      "title": "Complete the questions with a question word and are or ’s.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-1a-2",
+          "type": "text",
+          "prompt": "2",
+          "answers": [
+            "When’s"
+          ],
+          "inputChars": 6,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1a-3",
+          "type": "text",
+          "prompt": "3",
+          "answers": [
+            "Where’s"
+          ],
+          "inputChars": 7,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1a-4",
+          "type": "text",
+          "prompt": "4",
+          "answers": [
+            "What’s"
+          ],
+          "inputChars": 6,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1a-5",
+          "type": "text",
+          "prompt": "5",
+          "answers": [
+            "Where are"
+          ],
+          "inputChars": 9,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1a-6",
+          "type": "text",
+          "prompt": "6",
+          "answers": [
+            "Where are"
+          ],
+          "inputChars": 9,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1a-7",
+          "type": "text",
+          "prompt": "7",
+          "answers": [
+            "How old’s"
+          ],
+          "inputChars": 9,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1a-8",
+          "type": "text",
+          "prompt": "8",
+          "answers": [
+            "What’s"
+          ],
+          "inputChars": 6,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1a-9",
+          "type": "text",
+          "prompt": "9",
+          "answers": [
+            "How are"
+          ],
+          "inputChars": 7,
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "conversations": [
+        {
+          "number": 1,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Who’s Sarah Lawson?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "She’s my English teacher."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1a-2"
+                },
+                {
+                  "text": " the concert?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s on Monday."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1a-3"
+                },
+                {
+                  "text": " she from?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "She’s from Spain."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1a-4"
+                },
+                {
+                  "text": " your phone number?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s 01279 5529284."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1a-5"
+                },
+                {
+                  "text": " you from?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "I’m from Brazil."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1a-6"
+                },
+                {
+                  "text": " Mari and Laura?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "They’re on holiday in Boston."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 7,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1a-7"
+                },
+                {
+                  "text": " Pedro?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "He’s 27."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 8,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1a-8"
+                },
+                {
+                  "text": " your address?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s 47 Bank Street."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 9,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1a-9"
+                },
+                {
+                  "text": " you?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "I’m fine, thanks. And you?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1b",
+      "label": "1b",
+      "title": "Complete the conversation. Write the questions.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-1b-2",
+          "type": "text",
+          "prompt": "2",
+          "answers": [
+            "How do you spell your surname"
+          ],
+          "inputChars": 29,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1b-3",
+          "type": "text",
+          "prompt": "3",
+          "answers": [
+            "Where are you from"
+          ],
+          "inputChars": 18,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1b-4",
+          "type": "text",
+          "prompt": "4",
+          "answers": [
+            "What’s your address"
+          ],
+          "inputChars": 19,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1b-5",
+          "type": "text",
+          "prompt": "5",
+          "answers": [
+            "What’s your phone number"
+          ],
+          "inputChars": 24,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1b-6",
+          "type": "text",
+          "prompt": "6",
+          "answers": [
+            "What’s your email address"
+          ],
+          "inputChars": 25,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1b-7",
+          "type": "text",
+          "prompt": "7",
+          "answers": [
+            "How old are you"
+          ],
+          "inputChars": 15,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-1b-8",
+          "type": "text",
+          "prompt": "8",
+          "answers": [
+            "Are you married"
+          ],
+          "inputChars": 15,
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "conversations": [
+        {
+          "number": 1,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "What’s your name?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "My name’s Brian Halley."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1b-2"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "H-A-L-L-E-Y."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1b-3"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "I’m from the United States."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1b-4"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s 64 Bond Street, New York City."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1b-5"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "My phone number is 784-2913."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1b-6"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s b.halley@gmail.com."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 7,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1b-7"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "I’m 23."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 8,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "blank": "exercise-1b-8"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "No, I’m not. I’m single."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "referenceImage": {
+        "src": "images/lesson-6/grammar-1b-phone-conversation.svg",
+        "alt": "Two people talking on mobile phones during the conversation in exercise 1b",
+        "mode": "side"
+      }
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1c",
+      "label": "1c",
+      "title": "Answer the questions about you.",
+      "items": [
+        {
+          "id": "exercise-1c-1",
+          "type": "text",
+          "prompt": "What’s your phone number?",
+          "scored": false,
+          "number": 1,
+          "placeholder": ""
+        },
+        {
+          "id": "exercise-1c-2",
+          "type": "text",
+          "prompt": "What’s your postcode?",
+          "scored": false,
+          "number": 2,
+          "placeholder": ""
+        },
+        {
+          "id": "exercise-1c-3",
+          "type": "text",
+          "prompt": "Are you single?",
+          "scored": false,
+          "number": 3,
+          "placeholder": ""
+        },
+        {
+          "id": "exercise-1c-4",
+          "type": "text",
+          "prompt": "What’s your surname?",
+          "scored": false,
+          "number": 4,
+          "placeholder": ""
+        },
+        {
+          "id": "exercise-1c-5",
+          "type": "text",
+          "prompt": "What’s your address?",
+          "scored": false,
+          "number": 5,
+          "placeholder": ""
+        },
+        {
+          "id": "exercise-1c-6",
+          "type": "text",
+          "prompt": "How old are you?",
+          "scored": false,
+          "number": 6,
+          "placeholder": ""
+        },
+        {
+          "id": "exercise-1c-7",
+          "type": "text",
+          "prompt": "What’s your email?",
+          "scored": false,
+          "number": 7,
+          "placeholder": ""
+        },
+        {
+          "id": "exercise-1c-8",
+          "type": "text",
+          "prompt": "How do you spell your surname?",
+          "scored": false,
+          "number": 8,
+          "placeholder": ""
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "2 VOCABULARY",
+      "text": "numbers 11–100, phone numbers"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-2a",
+      "label": "2a",
+      "title": "Complete the numbers.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-2a-2-1",
+          "type": "text",
+          "prompt": "15",
+          "answers": [
+            "if"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-2-2",
+          "type": "text",
+          "prompt": "15",
+          "answers": [
+            "ee"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-3-1",
+          "type": "text",
+          "prompt": "90",
+          "answers": [
+            "ne"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-3-2",
+          "type": "text",
+          "prompt": "90",
+          "answers": [
+            "y"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-4-1",
+          "type": "text",
+          "prompt": "70",
+          "answers": [
+            "e"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-4-2",
+          "type": "text",
+          "prompt": "70",
+          "answers": [
+            "e"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-4-3",
+          "type": "text",
+          "prompt": "70",
+          "answers": [
+            "y"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-5-1",
+          "type": "text",
+          "prompt": "12",
+          "answers": [
+            "we"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-5-2",
+          "type": "text",
+          "prompt": "12",
+          "answers": [
+            "e"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-6-1",
+          "type": "text",
+          "prompt": "100",
+          "answers": [
+            "nd"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-6-2",
+          "type": "text",
+          "prompt": "100",
+          "answers": [
+            "ed"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-7-1",
+          "type": "text",
+          "prompt": "80",
+          "answers": [
+            "gh"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-7-2",
+          "type": "text",
+          "prompt": "80",
+          "answers": [
+            "y"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-8-1",
+          "type": "text",
+          "prompt": "11",
+          "answers": [
+            "le"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-8-2",
+          "type": "text",
+          "prompt": "11",
+          "answers": [
+            "en"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-9-1",
+          "type": "text",
+          "prompt": "40",
+          "answers": [
+            "r"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-9-2",
+          "type": "text",
+          "prompt": "40",
+          "answers": [
+            "y"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-10-1",
+          "type": "text",
+          "prompt": "13",
+          "answers": [
+            "i"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-10-2",
+          "type": "text",
+          "prompt": "13",
+          "answers": [
+            "tee"
+          ],
+          "inputChars": 3,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-11-1",
+          "type": "text",
+          "prompt": "60",
+          "answers": [
+            "x"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2a-11-2",
+          "type": "text",
+          "prompt": "60",
+          "answers": [
+            "y"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "conversations": [
+        {
+          "lines": [
+            {
+              "speaker": "1",
+              "segments": [
+                {
+                  "text": "20   t w e n t y"
+                }
+              ]
+            },
+            {
+              "speaker": "2",
+              "segments": [
+                {
+                  "text": "15   f"
+                },
+                {
+                  "blank": "exercise-2a-2-1"
+                },
+                {
+                  "text": "t"
+                },
+                {
+                  "blank": "exercise-2a-2-2"
+                },
+                {
+                  "text": "n"
+                }
+              ]
+            },
+            {
+              "speaker": "3",
+              "segments": [
+                {
+                  "text": "90   ni"
+                },
+                {
+                  "blank": "exercise-2a-3-1"
+                },
+                {
+                  "text": "t"
+                },
+                {
+                  "blank": "exercise-2a-3-2"
+                }
+              ]
+            },
+            {
+              "speaker": "4",
+              "segments": [
+                {
+                  "text": "70   s"
+                },
+                {
+                  "blank": "exercise-2a-4-1"
+                },
+                {
+                  "text": "v"
+                },
+                {
+                  "blank": "exercise-2a-4-2"
+                },
+                {
+                  "text": "nt"
+                },
+                {
+                  "blank": "exercise-2a-4-3"
+                }
+              ]
+            },
+            {
+              "speaker": "5",
+              "segments": [
+                {
+                  "text": "12   t"
+                },
+                {
+                  "blank": "exercise-2a-5-1"
+                },
+                {
+                  "text": "lv"
+                },
+                {
+                  "blank": "exercise-2a-5-2"
+                }
+              ]
+            },
+            {
+              "speaker": "6",
+              "segments": [
+                {
+                  "text": "100   a hu"
+                },
+                {
+                  "blank": "exercise-2a-6-1"
+                },
+                {
+                  "text": "r"
+                },
+                {
+                  "blank": "exercise-2a-6-2"
+                }
+              ]
+            },
+            {
+              "speaker": "7",
+              "segments": [
+                {
+                  "text": "80   ei"
+                },
+                {
+                  "blank": "exercise-2a-7-1"
+                },
+                {
+                  "text": "t"
+                },
+                {
+                  "blank": "exercise-2a-7-2"
+                }
+              ]
+            },
+            {
+              "speaker": "8",
+              "segments": [
+                {
+                  "text": "11   e"
+                },
+                {
+                  "blank": "exercise-2a-8-1"
+                },
+                {
+                  "text": "v"
+                },
+                {
+                  "blank": "exercise-2a-8-2"
+                }
+              ]
+            },
+            {
+              "speaker": "9",
+              "segments": [
+                {
+                  "text": "40   fo"
+                },
+                {
+                  "blank": "exercise-2a-9-1"
+                },
+                {
+                  "text": "t"
+                },
+                {
+                  "blank": "exercise-2a-9-2"
+                }
+              ]
+            },
+            {
+              "speaker": "10",
+              "segments": [
+                {
+                  "text": "13   th"
+                },
+                {
+                  "blank": "exercise-2a-10-1"
+                },
+                {
+                  "text": "r"
+                },
+                {
+                  "blank": "exercise-2a-10-2"
+                },
+                {
+                  "text": "n"
+                }
+              ]
+            },
+            {
+              "speaker": "11",
+              "segments": [
+                {
+                  "text": "60   si"
+                },
+                {
+                  "blank": "exercise-2a-11-1"
+                },
+                {
+                  "text": "t"
+                },
+                {
+                  "blank": "exercise-2a-11-2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-2b",
+      "label": "2b",
+      "title": "Write the numbers.",
+      "examples": [
+        {
+          "source": "1 forty-seven",
+          "answer": "47"
+        }
+      ],
+      "items": [
+        {
+          "id": "exercise-2b-2",
+          "type": "text",
+          "prompt": "nineteen",
+          "answers": [
+            "19"
+          ],
+          "inputChars": 2,
+          "number": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-3",
+          "type": "text",
+          "prompt": "thirty-eight",
+          "answers": [
+            "38"
+          ],
+          "inputChars": 2,
+          "number": 3,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-4",
+          "type": "text",
+          "prompt": "fifty-nine",
+          "answers": [
+            "59"
+          ],
+          "inputChars": 2,
+          "number": 4,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-5",
+          "type": "text",
+          "prompt": "seventy-two",
+          "answers": [
+            "72"
+          ],
+          "inputChars": 2,
+          "number": 5,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-6",
+          "type": "text",
+          "prompt": "fourteen",
+          "answers": [
+            "14"
+          ],
+          "inputChars": 2,
+          "number": 6,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-7",
+          "type": "text",
+          "prompt": "ninety-one",
+          "answers": [
+            "91"
+          ],
+          "inputChars": 2,
+          "number": 7,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-8",
+          "type": "text",
+          "prompt": "sixteen",
+          "answers": [
+            "16"
+          ],
+          "inputChars": 2,
+          "number": 8,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-9",
+          "type": "text",
+          "prompt": "twenty-three",
+          "answers": [
+            "23"
+          ],
+          "inputChars": 2,
+          "number": 9,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-10",
+          "type": "text",
+          "prompt": "eighteen",
+          "answers": [
+            "18"
+          ],
+          "inputChars": 2,
+          "number": 10,
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "3 PRONUNCIATION",
+      "text": "understanding numbers"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3a",
+      "label": "3a",
+      "title": "Listen and complete the phone numbers.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-3a-1-1",
+          "type": "text",
+          "prompt": "Phone number 1",
+          "answers": [
+            "9"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-1-2",
+          "type": "text",
+          "prompt": "Phone number 1",
+          "answers": [
+            "2"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-1-3",
+          "type": "text",
+          "prompt": "Phone number 1",
+          "answers": [
+            "5"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-1-4",
+          "type": "text",
+          "prompt": "Phone number 1",
+          "answers": [
+            "4"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-1-5",
+          "type": "text",
+          "prompt": "Phone number 1",
+          "answers": [
+            "0"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-1-6",
+          "type": "text",
+          "prompt": "Phone number 1",
+          "answers": [
+            "1"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-1-7",
+          "type": "text",
+          "prompt": "Phone number 1",
+          "answers": [
+            "3"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-2-1",
+          "type": "text",
+          "prompt": "Phone number 2",
+          "answers": [
+            "0"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-2-2",
+          "type": "text",
+          "prompt": "Phone number 2",
+          "answers": [
+            "2"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-2-3",
+          "type": "text",
+          "prompt": "Phone number 2",
+          "answers": [
+            "5"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-2-4",
+          "type": "text",
+          "prompt": "Phone number 2",
+          "answers": [
+            "6"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-2-5",
+          "type": "text",
+          "prompt": "Phone number 2",
+          "answers": [
+            "8"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-2-6",
+          "type": "text",
+          "prompt": "Phone number 2",
+          "answers": [
+            "7"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-3-1",
+          "type": "text",
+          "prompt": "Phone number 3",
+          "answers": [
+            "2"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-3-2",
+          "type": "text",
+          "prompt": "Phone number 3",
+          "answers": [
+            "8"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-3-3",
+          "type": "text",
+          "prompt": "Phone number 3",
+          "answers": [
+            "6"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-3-4",
+          "type": "text",
+          "prompt": "Phone number 3",
+          "answers": [
+            "9"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-3-5",
+          "type": "text",
+          "prompt": "Phone number 3",
+          "answers": [
+            "7"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "conversations": [
+        {
+          "lines": [
+            {
+              "speaker": "1",
+              "segments": [
+                {
+                  "text": "0"
+                },
+                {
+                  "blank": "exercise-3a-1-1"
+                },
+                {
+                  "text": "2"
+                },
+                {
+                  "blank": "exercise-3a-1-2"
+                },
+                {
+                  "text": "7"
+                },
+                {
+                  "blank": "exercise-3a-1-3"
+                },
+                {
+                  "blank": "exercise-3a-1-4"
+                },
+                {
+                  "text": "4"
+                },
+                {
+                  "blank": "exercise-3a-1-5"
+                },
+                {
+                  "blank": "exercise-3a-1-6"
+                },
+                {
+                  "text": "3"
+                },
+                {
+                  "blank": "exercise-3a-1-7"
+                }
+              ]
+            },
+            {
+              "speaker": "2",
+              "segments": [
+                {
+                  "blank": "exercise-3a-2-1"
+                },
+                {
+                  "text": "17"
+                },
+                {
+                  "blank": "exercise-3a-2-2"
+                },
+                {
+                  "text": "9"
+                },
+                {
+                  "blank": "exercise-3a-2-3"
+                },
+                {
+                  "blank": "exercise-3a-2-4"
+                },
+                {
+                  "text": "21"
+                },
+                {
+                  "blank": "exercise-3a-2-5"
+                },
+                {
+                  "blank": "exercise-3a-2-6"
+                }
+              ]
+            },
+            {
+              "speaker": "3",
+              "segments": [
+                {
+                  "text": "0"
+                },
+                {
+                  "blank": "exercise-3a-3-1"
+                },
+                {
+                  "blank": "exercise-3a-3-2"
+                },
+                {
+                  "text": "35"
+                },
+                {
+                  "blank": "exercise-3a-3-3"
+                },
+                {
+                  "text": "8"
+                },
+                {
+                  "blank": "exercise-3a-3-4"
+                },
+                {
+                  "text": "1"
+                },
+                {
+                  "blank": "exercise-3a-3-5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "audio",
+      "id": "exercise-3a-audio",
+      "title": "2.3 Listen and complete the phone numbers.",
+      "src": "audio/English_File_4e_Beginner_WB_2.3.mp3"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3b",
+      "label": "3b",
+      "title": "Listen again and repeat the phone numbers.",
+      "items": []
+    },
+    {
+      "type": "audio",
+      "id": "exercise-3b-audio",
+      "title": "2.3 Listen again and repeat the phone numbers.",
+      "src": "audio/English_File_4e_Beginner_WB_2.3.mp3"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3c",
+      "label": "3c",
+      "title": "Listen and write the numbers.",
+      "examples": [
+        {
+          "source": "1 17 London Road"
+        }
+      ],
+      "items": [
+        {
+          "id": "exercise-3c-2",
+          "type": "text",
+          "prompt": "I’m ___.",
+          "answers": [
+            "23"
+          ],
+          "inputChars": 2,
+          "number": 2,
+          "placeholder": "",
+          "revealCorrect": false,
+          "inlineBlank": true
+        },
+        {
+          "id": "exercise-3c-3",
+          "type": "text",
+          "prompt": "anne.davis___@gmail.com",
+          "answers": [
+            "77"
+          ],
+          "inputChars": 2,
+          "number": 3,
+          "placeholder": "",
+          "revealCorrect": false,
+          "inlineBlank": true
+        },
+        {
+          "id": "exercise-3c-4",
+          "type": "text",
+          "prompt": "You’re in room ___.",
+          "answers": [
+            "65"
+          ],
+          "inputChars": 2,
+          "number": 4,
+          "placeholder": "",
+          "revealCorrect": false,
+          "inlineBlank": true
+        },
+        {
+          "id": "exercise-3c-5",
+          "type": "text",
+          "prompt": "SW___4RJ",
+          "answers": [
+            "12"
+          ],
+          "inputChars": 2,
+          "number": 5,
+          "placeholder": "",
+          "revealCorrect": false,
+          "inlineBlank": true
+        }
+      ]
+    },
+    {
+      "type": "audio",
+      "id": "exercise-3c-audio",
+      "title": "2.4 Listen and write the numbers.",
+      "src": "audio/English_File_4e_Beginner_WB_2.4.mp3"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3d",
+      "label": "3d",
+      "title": "Listen again and repeat the numbers.",
+      "items": []
+    },
+    {
+      "type": "audio",
+      "id": "exercise-3d-audio",
+      "title": "2.4 Listen again and repeat the numbers.",
+      "src": "audio/English_File_4e_Beginner_WB_2.4.mp3"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-4",
+      "label": "4",
+      "title": "WORDS AND PHRASES TO LEARN",
+      "instruction": "Complete the missing words in the conversations.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-4-1a",
+          "type": "text",
+          "prompt": "exercise-4-1a",
+          "answers": [
+            "ow"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-1b",
+          "type": "text",
+          "prompt": "exercise-4-1b",
+          "answers": [
+            "ld"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-1c",
+          "type": "text",
+          "prompt": "exercise-4-1c",
+          "answers": [
+            "hose"
+          ],
+          "inputChars": 4,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-1d",
+          "type": "text",
+          "prompt": "exercise-4-1d",
+          "answers": [
+            "lass"
+          ],
+          "inputChars": 4,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-1e",
+          "type": "text",
+          "prompt": "exercise-4-1e",
+          "answers": [
+            "ood"
+          ],
+          "inputChars": 3,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-1f",
+          "type": "text",
+          "prompt": "exercise-4-1f",
+          "answers": [
+            "ooking"
+          ],
+          "inputChars": 6,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2a",
+          "type": "text",
+          "prompt": "exercise-4-2a",
+          "answers": [
+            "ow"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2b",
+          "type": "text",
+          "prompt": "exercise-4-2b",
+          "answers": [
+            "re"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2c",
+          "type": "text",
+          "prompt": "exercise-4-2c",
+          "answers": [
+            "ou"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2d",
+          "type": "text",
+          "prompt": "exercise-4-2d",
+          "answers": [
+            "ine"
+          ],
+          "inputChars": 3,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2e",
+          "type": "text",
+          "prompt": "exercise-4-2e",
+          "answers": [
+            "is"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2f",
+          "type": "text",
+          "prompt": "exercise-4-2f",
+          "answers": [
+            "ee"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2g",
+          "type": "text",
+          "prompt": "exercise-4-2g",
+          "answers": [
+            "ou"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2h",
+          "type": "text",
+          "prompt": "exercise-4-2h",
+          "answers": [
+            "ater"
+          ],
+          "inputChars": 4,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-3a",
+          "type": "text",
+          "prompt": "exercise-4-3a",
+          "answers": [
+            "n"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-3b",
+          "type": "text",
+          "prompt": "exercise-4-3b",
+          "answers": [
+            "he"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-3c",
+          "type": "text",
+          "prompt": "exercise-4-3c",
+          "answers": [
+            "outh"
+          ],
+          "inputChars": 4,
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "conversations": [
+        {
+          "number": 1,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Who’s she?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Jenny."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "H"
+                },
+                {
+                  "blank": "exercise-4-1a"
+                },
+                {
+                  "text": " o"
+                },
+                {
+                  "blank": "exercise-4-1b"
+                },
+                {
+                  "text": " is she?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "She’s 21."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "W"
+                },
+                {
+                  "blank": "exercise-4-1c"
+                },
+                {
+                  "text": " c"
+                },
+                {
+                  "blank": "exercise-4-1d"
+                },
+                {
+                  "text": " is she in?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "She’s in my class."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "She’s very g"
+                },
+                {
+                  "blank": "exercise-4-1e"
+                },
+                {
+                  "text": "-l"
+                },
+                {
+                  "blank": "exercise-4-1f"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Hi, Tom. H"
+                },
+                {
+                  "blank": "exercise-4-2a"
+                },
+                {
+                  "text": " a"
+                },
+                {
+                  "blank": "exercise-4-2b"
+                },
+                {
+                  "text": " y"
+                },
+                {
+                  "blank": "exercise-4-2c"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "I’m f"
+                },
+                {
+                  "blank": "exercise-4-2d"
+                },
+                {
+                  "text": ", thanks."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Th"
+                },
+                {
+                  "blank": "exercise-4-2e"
+                },
+                {
+                  "text": " is Jenny."
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Nice to meet you."
+                }
+              ]
+            },
+            {
+              "speaker": "C",
+              "segments": [
+                {
+                  "text": "Nice to meet you, too. That’s my bus."
+                }
+              ]
+            },
+            {
+              "speaker": "",
+              "segments": [
+                {
+                  "text": "S"
+                },
+                {
+                  "blank": "exercise-4-2f"
+                },
+                {
+                  "text": " y"
+                },
+                {
+                  "blank": "exercise-4-2g"
+                },
+                {
+                  "text": " l"
+                },
+                {
+                  "blank": "exercise-4-2h"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Where are you from?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Bournemouth."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Where’s Bournemouth?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s i"
+                },
+                {
+                  "blank": "exercise-4-3a"
+                },
+                {
+                  "text": " t"
+                },
+                {
+                  "blank": "exercise-4-3b"
+                },
+                {
+                  "text": " s"
+                },
+                {
+                  "blank": "exercise-4-3c"
+                },
+                {
+                  "text": " of England."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "totalPoints": 84
+}

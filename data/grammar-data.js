@@ -1792,5 +1792,494 @@ window.GRAMMAR_DATA = [
     ],
     "page":"grammar-topic.html?id=grammar-3"
   }
+,
+{
+  "id": "grammar-4",
+  "number": 4,
+  "title": "Wh- and How questions with be",
+  "subtitle": "Who, What, Where, When, Whose, How и How old с am / is / are",
+  "status": "available",
+  "linkedLessonId": "lesson-6",
+  "passScore": 100,
+  "lockOnPass": true,
+  "checkButtonLabel": "Проверить",
+  "notification": {
+    "enabled": false,
+    "version": 1
+  },
+  "overview": [
+    {
+      "label": "Порядок",
+      "value": "Question word + am / is / are + subject + … ?"
+    },
+    {
+      "label": "is → ’s",
+      "value": "Who’s · What’s · Where’s · When’s · How old’s"
+    },
+    {
+      "label": "are",
+      "value": "Where are you…? · How are you?"
+    },
+    {
+      "label": "Без do",
+      "value": "С be не используются do / does"
+    }
+  ],
+  "explanation": [
+    {
+      "label": "Главная идея",
+      "title": "Wh- и How-вопросы с be спрашивают конкретную информацию",
+      "summary": "Когда в предложении используется глагол be (am / is / are), вопросительное слово ставится перед формой be. Do / does не нужны.",
+      "formula": "Question word + am / is / are + subject + … ?",
+      "points": [
+        "Who — кто; What — что / какой; Where — где / откуда; When — когда; Whose — чей; How — как; How old — сколько лет.",
+        "После вопросительного слова выберите форму be по подлежащему: am с I, is с he/she/it и одним человеком или предметом, are с you/we/they и несколькими людьми.",
+        "В вопросах Where … from? предлог from остаётся в конце."
+      ],
+      "examples": [
+        {
+          "en": "Where are you from?",
+          "ru": "Откуда вы?"
+        },
+        {
+          "en": "How old is Pedro?",
+          "ru": "Сколько лет Педро?"
+        },
+        {
+          "en": "When is the concert?",
+          "ru": "Когда концерт?"
+        }
+      ],
+      "warning": "Не используйте do / does с be: Where are you from? — не Where do you are from?"
+    },
+    {
+      "label": "Утверждение и отрицание",
+      "title": "Сначала уверенно выбирайте am / is / are",
+      "summary": "Те же формы be работают в утверждениях и отрицаниях. Это помогает правильно построить вопрос.",
+      "formula": [
+        "I am / I’m · I’m not",
+        "he / she / it is · isn’t",
+        "you / we / they are · aren’t"
+      ],
+      "table": {
+        "headers": [
+          "Подлежащее",
+          "Утверждение",
+          "Отрицание"
+        ],
+        "rows": [
+          [
+            "I",
+            "I’m 23.",
+            "I’m not married."
+          ],
+          [
+            "he / she / it",
+            "She’s from Spain.",
+            "She isn’t from Brazil."
+          ],
+          [
+            "you / we / they",
+            "They’re in Boston.",
+            "They aren’t at home."
+          ]
+        ]
+      },
+      "examples": [
+        {
+          "en": "She’s 21.",
+          "ru": "Ей 21."
+        },
+        {
+          "en": "I’m not married. I’m single.",
+          "ru": "Я не женат / не замужем. Я свободен / свободна."
+        }
+      ]
+    },
+    {
+      "label": "Порядок слов",
+      "title": "В вопросе форма be идёт перед подлежащим",
+      "summary": "Возьмите обычное предложение, перенесите am / is / are перед подлежащим и, если нужна конкретная информация, добавьте вопросительное слово в самое начало.",
+      "formula": [
+        "She is from Spain. → Where is she from?",
+        "They are in Boston. → Where are they?",
+        "The concert is on Monday. → When is the concert?"
+      ],
+      "steps": [
+        {
+          "title": "Выберите вопросительное слово",
+          "text": "Что нужно узнать: человека, место, время, возраст, принадлежность или состояние?"
+        },
+        {
+          "title": "Поставьте be",
+          "text": "После вопросительного слова поставьте am, is или are."
+        },
+        {
+          "title": "Поставьте подлежащее",
+          "text": "Where + is + she …? / Where + are + you …?"
+        },
+        {
+          "title": "Добавьте оставшуюся часть",
+          "text": "Where is she from? / What is your address?"
+        }
+      ]
+    },
+    {
+      "label": "Сокращение ’s",
+      "title": "is часто сокращается до ’s",
+      "summary": "После Who, What, Where, When и How old форма is часто сокращается до ’s. В учебном материале используются формы Who’s, What’s, Where’s, When’s и How old’s.",
+      "formula": [
+        "Who is → Who’s",
+        "What is → What’s",
+        "Where is → Where’s",
+        "When is → When’s",
+        "How old is → How old’s"
+      ],
+      "examples": [
+        {
+          "en": "Who’s Sarah Lawson?",
+          "ru": "Кто такая Сара Лоусон?"
+        },
+        {
+          "en": "What’s your address?",
+          "ru": "Какой у вас адрес?"
+        },
+        {
+          "en": "Where’s she from?",
+          "ru": "Откуда она?"
+        },
+        {
+          "en": "When’s the concert?",
+          "ru": "Когда концерт?"
+        },
+        {
+          "en": "How old’s Pedro?",
+          "ru": "Сколько лет Педро?"
+        }
+      ],
+      "tip": "С you / we / they нужна форма are, поэтому: Where are you from? и How are you?"
+    },
+    {
+      "label": "Whose",
+      "title": "Whose спрашивает о принадлежности",
+      "summary": "Whose означает «чей / чья / чьё / чьи». После него обычно стоит существительное, а затем вопрос с be.",
+      "formula": "Whose + noun + am / is / are + subject + … ?",
+      "examples": [
+        {
+          "en": "Whose class is she in?",
+          "ru": "В чьей она группе?"
+        },
+        {
+          "en": "Whose bag is this?",
+          "ru": "Чья это сумка?"
+        }
+      ],
+      "warning": "Who’s = who is («кто?»), а whose = «чей?». Они звучат одинаково, но пишутся и используются по-разному."
+    },
+    {
+      "label": "How",
+      "title": "How и How old задают разные вопросы",
+      "summary": "How спрашивает о состоянии или способе, а How old — о возрасте.",
+      "table": {
+        "headers": [
+          "Форма",
+          "Значение",
+          "Пример"
+        ],
+        "rows": [
+          [
+            "How are you?",
+            "Как вы? / Как дела?",
+            "I’m fine, thanks."
+          ],
+          [
+            "How old are you?",
+            "Сколько вам лет?",
+            "I’m 23."
+          ],
+          [
+            "How old is Pedro?",
+            "Сколько лет Педро?",
+            "He’s 27."
+          ]
+        ]
+      },
+      "warning": "Не говорите How many years are you? В обычном английском возраст спрашивают How old are you?"
+    },
+    {
+      "label": "Общие вопросы",
+      "title": "Если вопросительного слова нет, начинайте с be",
+      "summary": "Для вопроса с ответом yes / no поставьте am / is / are перед подлежащим.",
+      "formula": "Am / Is / Are + subject + … ?",
+      "examples": [
+        {
+          "en": "Are you married? — No, I’m not.",
+          "ru": "Вы женаты / замужем? — Нет."
+        },
+        {
+          "en": "Is she from Spain? — Yes, she is.",
+          "ru": "Она из Испании? — Да."
+        }
+      ],
+      "points": [
+        "В положительном коротком ответе не сокращайте is/are: Yes, she is.",
+        "В отрицательном ответе возможны isn’t / aren’t или полные формы is not / are not."
+      ]
+    },
+    {
+      "label": "Типичные ошибки",
+      "title": "Проверьте три вещи перед отправкой",
+      "summary": "Главные ошибки — лишний do, неверная форма be и порядок слов как в утверждении.",
+      "table": {
+        "headers": [
+          "Неправильно",
+          "Правильно"
+        ],
+        "rows": [
+          [
+            "Where you are from?",
+            "Where are you from?"
+          ],
+          [
+            "Where does she is from?",
+            "Where is she from?"
+          ],
+          [
+            "How old are Pedro?",
+            "How old is Pedro?"
+          ],
+          [
+            "What are your address?",
+            "What is / What’s your address?"
+          ]
+        ]
+      },
+      "tip": "Алгоритм: вопросительное слово → am/is/are → подлежащее → остальная часть."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "grammar-4-exercise-1",
+      "difficulty": "1 · Лёгкое",
+      "title": "Выберите правильное начало вопроса",
+      "instruction": "Выберите один вариант.",
+      "items": [
+        {
+          "id": "g4-1-1",
+          "type": "single",
+          "prompt": "___ the concert? — It’s on Monday.",
+          "options": [
+            "When’s",
+            "Where’s",
+            "How are"
+          ],
+          "answer": "When’s",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-1-2",
+          "type": "single",
+          "prompt": "___ she from? — She’s from Spain.",
+          "options": [
+            "Where’s",
+            "What’s",
+            "Who’s"
+          ],
+          "answer": "Where’s",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-1-3",
+          "type": "single",
+          "prompt": "___ you from? — I’m from Brazil.",
+          "options": [
+            "Where are",
+            "Where is",
+            "What are"
+          ],
+          "answer": "Where are",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-1-4",
+          "type": "single",
+          "prompt": "___ you? — I’m fine, thanks.",
+          "options": [
+            "How are",
+            "How old are",
+            "Where are"
+          ],
+          "answer": "How are",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-4-exercise-2",
+      "difficulty": "2 · Среднее",
+      "title": "Напишите вопрос по ответу",
+      "instruction": "Напишите полный вопрос.",
+      "items": [
+        {
+          "id": "g4-2-1",
+          "type": "text",
+          "prompt": "It’s 47 Bank Street.",
+          "answers": [
+            "What’s your address"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-2-2",
+          "type": "text",
+          "prompt": "He’s 27.",
+          "answers": [
+            "How old’s Pedro"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-2-3",
+          "type": "text",
+          "prompt": "They’re on holiday in Boston.",
+          "answers": [
+            "Where are Mari and Laura"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-2-4",
+          "type": "text",
+          "prompt": "No, I’m not. I’m single.",
+          "answers": [
+            "Are you married"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-4-exercise-3",
+      "difficulty": "3 · Повышенная сложность",
+      "title": "Выберите правильную структуру",
+      "instruction": "Выберите грамматически правильный вопрос.",
+      "items": [
+        {
+          "id": "g4-3-1",
+          "type": "select",
+          "prompt": "Спросите, откуда она.",
+          "options": [
+            "Where is she from?",
+            "Where she is from?",
+            "Where does she is from?"
+          ],
+          "answer": "Where is she from?",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-3-2",
+          "type": "select",
+          "prompt": "Спросите возраст человека.",
+          "options": [
+            "How old is he?",
+            "How is old he?",
+            "How many years is he?"
+          ],
+          "answer": "How old is he?",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-3-3",
+          "type": "select",
+          "prompt": "Спросите, чей это класс.",
+          "options": [
+            "Whose class is this?",
+            "Who’s class is this?",
+            "Whose is class this?"
+          ],
+          "answer": "Whose class is this?",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-3-4",
+          "type": "select",
+          "prompt": "Спросите, как дела у собеседника.",
+          "options": [
+            "How are you?",
+            "How you are?",
+            "What are you?"
+          ],
+          "answer": "How are you?",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-4-exercise-4",
+      "difficulty": "4 · Самое сложное",
+      "title": "Постройте вопрос самостоятельно",
+      "instruction": "Напишите полный вопрос.",
+      "items": [
+        {
+          "id": "g4-4-1",
+          "type": "textarea",
+          "prompt": "Спросите: «Какой у вас номер телефона?»",
+          "answers": [
+            "What’s your phone number",
+            "What is your phone number"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-4-2",
+          "type": "textarea",
+          "prompt": "Спросите: «Какой у вас адрес электронной почты?»",
+          "answers": [
+            "What’s your email address",
+            "What is your email address"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-4-3",
+          "type": "textarea",
+          "prompt": "Составьте вопрос к ответу: She’s from Spain.",
+          "answers": [
+            "Where’s she from",
+            "Where is she from"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g4-4-4",
+          "type": "textarea",
+          "prompt": "Составьте вопрос к ответу: The concert is on Monday.",
+          "answers": [
+            "When’s the concert",
+            "When is the concert"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    }
+  ],
+  "page": "grammar-topic.html?id=grammar-4"
+}
 
 ];

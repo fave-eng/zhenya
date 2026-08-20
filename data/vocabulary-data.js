@@ -1130,5 +1130,284 @@ window.VOCABULARY_DATA = [
       {"id":"u2a-have-a-nice-day","uniqueKey":"Have a nice day","en":"Have a nice day","ru":"Хорошего дня!","transcription":"/hæv ə naɪs deɪ/","exampleEn":"Have a nice day!","exampleRu":"Хорошего дня!","section":"phrases"}
     ]
   }
+,
+{
+  "id": "vocab-lesson-6",
+  "title": "Unit 2B — Personal information & numbers",
+  "label": "Домашняя работа №6",
+  "icon": "🚌",
+  "type": "lesson",
+  "linkedLessonId": "lesson-6",
+  "learnedByTestOnly": true,
+  "sections": [
+    {
+      "id": "numbers",
+      "title": "Numbers 11–19",
+      "icon": "🔢"
+    },
+    {
+      "id": "personal",
+      "title": "Personal information",
+      "icon": "🪪"
+    },
+    {
+      "id": "questions",
+      "title": "Questions & phrases",
+      "icon": "💬"
+    }
+  ],
+  "words": [
+    {
+      "id": "u2b-eleven",
+      "uniqueKey": "eleven",
+      "en": "eleven",
+      "ru": "одиннадцать",
+      "transcription": "/ɪˈlevən/",
+      "exampleEn": "Room eleven.",
+      "exampleRu": "Комната одиннадцать.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-twelve",
+      "uniqueKey": "twelve",
+      "en": "twelve",
+      "ru": "двенадцать",
+      "transcription": "/twelv/",
+      "exampleEn": "The number is twelve.",
+      "exampleRu": "Число — двенадцать.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-thirteen",
+      "uniqueKey": "thirteen",
+      "en": "thirteen",
+      "ru": "тринадцать",
+      "transcription": "/ˌθɜːˈtiːn/",
+      "exampleEn": "I’m thirteen.",
+      "exampleRu": "Мне тринадцать.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-fourteen",
+      "uniqueKey": "fourteen",
+      "en": "fourteen",
+      "ru": "четырнадцать",
+      "transcription": "/ˌfɔːˈtiːn/",
+      "exampleEn": "Write fourteen.",
+      "exampleRu": "Напишите четырнадцать.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-fifteen",
+      "uniqueKey": "fifteen",
+      "en": "fifteen",
+      "ru": "пятнадцать",
+      "transcription": "/ˌfɪfˈtiːn/",
+      "exampleEn": "The answer is fifteen.",
+      "exampleRu": "Ответ — пятнадцать.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-sixteen",
+      "uniqueKey": "sixteen",
+      "en": "sixteen",
+      "ru": "шестнадцать",
+      "transcription": "/ˌsɪkˈstiːn/",
+      "exampleEn": "She’s sixteen.",
+      "exampleRu": "Ей шестнадцать.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-seventeen",
+      "uniqueKey": "seventeen",
+      "en": "seventeen",
+      "ru": "семнадцать",
+      "transcription": "/ˌsevənˈtiːn/",
+      "exampleEn": "Seventeen London Road.",
+      "exampleRu": "Лондон-роуд, 17.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-eighteen",
+      "uniqueKey": "eighteen",
+      "en": "eighteen",
+      "ru": "восемнадцать",
+      "transcription": "/ˌeɪˈtiːn/",
+      "exampleEn": "The number is eighteen.",
+      "exampleRu": "Число — восемнадцать.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-nineteen",
+      "uniqueKey": "nineteen",
+      "en": "nineteen",
+      "ru": "девятнадцать",
+      "transcription": "/ˌnaɪnˈtiːn/",
+      "exampleEn": "Write nineteen.",
+      "exampleRu": "Напишите девятнадцать.",
+      "section": "numbers"
+    },
+    {
+      "id": "u2b-phone-number",
+      "uniqueKey": "phone number",
+      "en": "phone number",
+      "ru": "номер телефона",
+      "transcription": "/ˈfəʊn ˌnʌmbə/",
+      "exampleEn": "What’s your phone number?",
+      "exampleRu": "Какой у вас номер телефона?",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-address",
+      "uniqueKey": "address",
+      "en": "address",
+      "ru": "адрес",
+      "transcription": "/əˈdres/",
+      "exampleEn": "What’s your address?",
+      "exampleRu": "Какой у вас адрес?",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-email-address",
+      "uniqueKey": "email address",
+      "en": "email address",
+      "ru": "адрес электронной почты",
+      "transcription": "/ˈiːmeɪl əˌdres/",
+      "exampleEn": "What’s your email address?",
+      "exampleRu": "Какой у вас адрес электронной почты?",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-postcode",
+      "uniqueKey": "postcode",
+      "en": "postcode",
+      "ru": "почтовый индекс",
+      "transcription": "/ˈpəʊstkəʊd/",
+      "exampleEn": "What’s your postcode?",
+      "exampleRu": "Какой у вас почтовый индекс?",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-married",
+      "uniqueKey": "married",
+      "en": "married",
+      "ru": "женат; замужем",
+      "transcription": "/ˈmærid/",
+      "exampleEn": "Are you married?",
+      "exampleRu": "Вы женаты / замужем?",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-single",
+      "uniqueKey": "single",
+      "en": "single",
+      "ru": "не женат; не замужем",
+      "transcription": "/ˈsɪŋɡəl/",
+      "exampleEn": "No, I’m not. I’m single.",
+      "exampleRu": "Нет. Я не женат / не замужем.",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-class",
+      "uniqueKey": "class",
+      "en": "class",
+      "ru": "класс; учебная группа",
+      "transcription": "/klɑːs/",
+      "exampleEn": "She’s in my class.",
+      "exampleRu": "Она в моей группе.",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-concert",
+      "uniqueKey": "concert",
+      "en": "concert",
+      "ru": "концерт",
+      "transcription": "/ˈkɒnsət/",
+      "exampleEn": "When’s the concert?",
+      "exampleRu": "Когда концерт?",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-bus",
+      "uniqueKey": "bus",
+      "en": "bus",
+      "ru": "автобус",
+      "transcription": "/bʌs/",
+      "exampleEn": "That’s my bus.",
+      "exampleRu": "Это мой автобус.",
+      "section": "personal"
+    },
+    {
+      "id": "u2b-whose",
+      "uniqueKey": "whose",
+      "en": "whose",
+      "ru": "чей; чья; чьё; чьи",
+      "transcription": "/huːz/",
+      "exampleEn": "Whose class is she in?",
+      "exampleRu": "В чьей она группе?",
+      "section": "questions"
+    },
+    {
+      "id": "u2b-when",
+      "uniqueKey": "when",
+      "en": "when",
+      "ru": "когда",
+      "transcription": "/wen/",
+      "exampleEn": "When’s the concert?",
+      "exampleRu": "Когда концерт?",
+      "section": "questions"
+    },
+    {
+      "id": "u2b-how-old",
+      "uniqueKey": "How old are you?",
+      "en": "How old are you?",
+      "ru": "Сколько вам лет?",
+      "transcription": "/haʊ əʊld ɑː juː/",
+      "exampleEn": "How old are you? — I’m 23.",
+      "exampleRu": "Сколько вам лет? — Мне 23.",
+      "section": "questions"
+    },
+    {
+      "id": "u2b-how-are-you",
+      "uniqueKey": "How are you?",
+      "en": "How are you?",
+      "ru": "Как вы?; Как дела?",
+      "transcription": "/haʊ ɑː juː/",
+      "exampleEn": "How are you? — I’m fine, thanks.",
+      "exampleRu": "Как дела? — Хорошо, спасибо.",
+      "section": "questions"
+    },
+    {
+      "id": "u2b-good-looking",
+      "uniqueKey": "good-looking",
+      "en": "good-looking",
+      "ru": "привлекательный; хорошо выглядящий",
+      "transcription": "/ˌɡʊd ˈlʊkɪŋ/",
+      "exampleEn": "She’s very good-looking.",
+      "exampleRu": "Она очень привлекательная.",
+      "section": "questions"
+    },
+    {
+      "id": "u2b-see-you-later",
+      "uniqueKey": "See you later",
+      "en": "See you later",
+      "ru": "Увидимся позже",
+      "transcription": "/siː juː ˈleɪtə/",
+      "exampleEn": "See you later.",
+      "exampleRu": "Увидимся позже.",
+      "section": "questions"
+    },
+    {
+      "id": "u2b-in-the-south",
+      "uniqueKey": "in the south",
+      "en": "in the south",
+      "ru": "на юге",
+      "transcription": "/ɪn ðə saʊθ/",
+      "exampleEn": "It’s in the south of England.",
+      "exampleRu": "Это на юге Англии.",
+      "section": "questions"
+    }
+  ]
+}
 
 ];
