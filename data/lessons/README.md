@@ -18,7 +18,6 @@ data/lessons/lesson-2.json
   "title": "Название урока",
   "subtitle": "Краткое описание",
   "status": "available",
-  "publishedAt": "2026-07-20",
   "notification": {
     "enabled": true,
     "version": 1
@@ -37,6 +36,12 @@ data/lessons/lesson-2.json
 ```
 
 Статусы: `available`, `completed`, `locked`, `draft`.
+
+## Публикация и уведомление
+
+Дата публикации в файлах уроков не используется. Урок можно загрузить и проверить заранее.
+Уведомление ученику отправляется только вручную через GitHub Actions (`workflow_dispatch`) с конкретным `lesson_id`.
+Простая загрузка файлов в GitHub уведомление не отправляет.
 
 ## Блоки урока
 

@@ -51,22 +51,14 @@ function pageUrl(baseUrl, page, fallback) {
   return url.toString()
 }
 
-function isPublished(lesson) {
-  const status = String(lesson.status || '').toLowerCase()
-  if (!['available', 'published'].includes(status)) return false
-  if (!lesson.publishedAt) return true
-  const published = new Date(lesson.publishedAt)
-  return Number.isFinite(published.getTime()) && published.getTime() <= Date.now()
-}
-
 const siteBaseUrl = normaliseBaseUrl(requiredEnv('SITE_BASE_URL'))
 const projectId = requiredEnv('SUPABASE_PROJECT_ID')
 const notifySecret = requiredEnv('NOTIFY_WEBHOOK_SECRET')
 const selectedLessonId = requiredEnv('LESSON_ID')
 const lesson = loadLesson(selectedLessonId)
 
-if (lesson.id !== selectedLessonId || !isPublished(lesson)) {
-  throw new Error(`Lesson ${selectedLessonId} was not found or is not published`)
+if (lesson.id !== selectedLessonId) {
+  throw new Error(`Lesson id mismatch: requested ${selectedLessonId}, file contains ${lesson.id || 'no id'}`)
 }
 
 const vocabularyData = loadWindowArray('data/vocabulary-data.js', 'VOCABULARY_DATA')
@@ -123,7 +115,6 @@ const payload = {
   payload: {
     title: homework.title,
     subtitle: homework.subtitle,
-    publishedAt: lesson.publishedAt || null,
     url: homework.url,
   },
 }

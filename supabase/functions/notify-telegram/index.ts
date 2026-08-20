@@ -361,7 +361,6 @@ async function handleMaterialPublished(
     homework: { ...rawHomework, url: homeworkUrl },
     vocabulary: rawVocabulary ? { ...rawVocabulary, url: vocabularyUrl } : null,
     grammar,
-    publishedAt: legacyPayload.publishedAt || null,
   }
 
   let claim

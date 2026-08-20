@@ -4,7 +4,6 @@
   "title": "Practical English — Checking in & booking a table",
   "subtitle": "Checking into a hotel · Booking a table · Useful phrases",
   "status": "available",
-  "publishedAt": "2026-08-10",
   "notification": {
     "enabled": true,
     "version": 1
@@ -124,59 +123,95 @@
             {
               "speaker": "A",
               "segments": [
-                { "text": "Good ¹ evening." }
+                {
+                  "text": "Good ¹ evening."
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "Hello. I have a ² " },
-                { "blank": "exercise-3-2" },
-                { "text": "." }
+                {
+                  "text": "Hello. I have a ² "
+                },
+                {
+                  "blank": "exercise-3-2"
+                },
+                {
+                  "text": "."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "What’s your ³ " },
-                { "blank": "exercise-3-3" },
-                { "text": ", please?" }
+                {
+                  "text": "What’s your ³ "
+                },
+                {
+                  "blank": "exercise-3-3"
+                },
+                {
+                  "text": ", please?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "Wendy Mahoney." }
+                {
+                  "text": "Wendy Mahoney."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "How do you ⁴ " },
-                { "blank": "exercise-3-4" },
-                { "text": " your ⁵ " },
-                { "blank": "exercise-3-5" },
-                { "text": "?" }
+                {
+                  "text": "How do you ⁴ "
+                },
+                {
+                  "blank": "exercise-3-4"
+                },
+                {
+                  "text": " your ⁵ "
+                },
+                {
+                  "blank": "exercise-3-5"
+                },
+                {
+                  "text": "?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "M-A-H-O-N-E-Y." }
+                {
+                  "text": "M-A-H-O-N-E-Y."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "Thank you, Ms Mahoney. You’re in ⁶ " },
-                { "blank": "exercise-3-6" },
-                { "text": " 261." }
+                {
+                  "text": "Thank you, Ms Mahoney. You’re in ⁶ "
+                },
+                {
+                  "blank": "exercise-3-6"
+                },
+                {
+                  "text": " 261."
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "Thanks." }
+                {
+                  "text": "Thanks."
+                }
               ]
             }
           ]
@@ -208,7 +243,13 @@
           "number": 2,
           "type": "select",
           "prompt": "2",
-          "options": ["a", "b", "c", "d", "e"],
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ],
           "answer": "e",
           "explanation": "Try again."
         },
@@ -217,7 +258,13 @@
           "number": 3,
           "type": "select",
           "prompt": "3",
-          "options": ["a", "b", "c", "d", "e"],
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ],
           "answer": "d",
           "explanation": "Try again."
         },
@@ -226,7 +273,13 @@
           "number": 4,
           "type": "select",
           "prompt": "4",
-          "options": ["a", "b", "c", "d", "e"],
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ],
           "answer": "a",
           "explanation": "Try again."
         },
@@ -235,7 +288,13 @@
           "number": 5,
           "type": "select",
           "prompt": "5",
-          "options": ["a", "b", "c", "d", "e"],
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ],
           "answer": "c",
           "explanation": "Try again."
         }
@@ -246,65 +305,93 @@
             {
               "speaker": "A",
               "segments": [
-                { "text": "Good morning. How can I help you?" }
+                {
+                  "text": "Good morning. How can I help you?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "¹ b" }
+                {
+                  "text": "¹ b"
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "What time?" }
+                {
+                  "text": "What time?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "² " },
-                { "blank": "exercise-4-2" }
+                {
+                  "text": "² "
+                },
+                {
+                  "blank": "exercise-4-2"
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "OK, that’s fine. What’s your name, please?" }
+                {
+                  "text": "OK, that’s fine. What’s your name, please?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "³ " },
-                { "blank": "exercise-4-3" }
+                {
+                  "text": "³ "
+                },
+                {
+                  "blank": "exercise-4-3"
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "OK. How many people?" }
+                {
+                  "text": "OK. How many people?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "⁴ " },
-                { "blank": "exercise-4-4" }
+                {
+                  "text": "⁴ "
+                },
+                {
+                  "blank": "exercise-4-4"
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "Thank you, Mr Anderson. So, a table for three on Tuesday at seven?" }
+                {
+                  "text": "Thank you, Mr Anderson. So, a table for three on Tuesday at seven?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "⁵ " },
-                { "blank": "exercise-4-5" }
+                {
+                  "text": "⁵ "
+                },
+                {
+                  "blank": "exercise-4-5"
+                }
               ]
             }
           ]
@@ -466,49 +553,75 @@
             {
               "speaker": "A",
               "segments": [
-                { "text": "Good morning. ¹ How can I help you?" }
+                {
+                  "text": "Good morning. ¹ How can I help you?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "My name’s Liam Sweeney. ² " },
-                { "blank": "exercise-5-2" },
-                { "text": " for a room for tonight." }
+                {
+                  "text": "My name’s Liam Sweeney. ² "
+                },
+                {
+                  "blank": "exercise-5-2"
+                },
+                {
+                  "text": " for a room for tonight."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "OK – Sweeney. ³ " },
-                { "blank": "exercise-5-3" },
-                { "text": "?" }
+                {
+                  "text": "OK – Sweeney. ³ "
+                },
+                {
+                  "blank": "exercise-5-3"
+                },
+                {
+                  "text": "?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "S-W-E-E-N-E-Y." }
+                {
+                  "text": "S-W-E-E-N-E-Y."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "That’s S-W-E-E-N-E-Y?" }
+                {
+                  "text": "That’s S-W-E-E-N-E-Y?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "⁴ " },
-                { "blank": "exercise-5-4" },
-                { "text": "." }
+                {
+                  "text": "⁴ "
+                },
+                {
+                  "blank": "exercise-5-4"
+                },
+                {
+                  "text": "."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "OK, you’re in room 49." }
+                {
+                  "text": "OK, you’re in room 49."
+                }
               ]
             }
           ]
@@ -519,51 +632,81 @@
             {
               "speaker": "A",
               "segments": [
-                { "text": "⁵ " },
-                { "blank": "exercise-5-5" },
-                { "text": ", The Green Tree restaurant. How can I help you?" }
+                {
+                  "text": "⁵ "
+                },
+                {
+                  "blank": "exercise-5-5"
+                },
+                {
+                  "text": ", The Green Tree restaurant. How can I help you?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "⁶ " },
-                { "blank": "exercise-5-6" },
-                { "text": " – for four people." }
+                {
+                  "text": "⁶ "
+                },
+                {
+                  "blank": "exercise-5-6"
+                },
+                {
+                  "text": " – for four people."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "OK. What time?" }
+                {
+                  "text": "OK. What time?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "7.30." }
+                {
+                  "text": "7.30."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "⁷ " },
-                { "blank": "exercise-5-7" },
-                { "text": "?" }
+                {
+                  "text": "⁷ "
+                },
+                {
+                  "blank": "exercise-5-7"
+                },
+                {
+                  "text": "?"
+                }
               ]
             },
             {
               "speaker": "B",
               "segments": [
-                { "text": "7.30." }
+                {
+                  "text": "7.30."
+                }
               ]
             },
             {
               "speaker": "A",
               "segments": [
-                { "text": "⁸ " },
-                { "blank": "exercise-5-8" },
-                { "text": "." }
+                {
+                  "text": "⁸ "
+                },
+                {
+                  "blank": "exercise-5-8"
+                },
+                {
+                  "text": "."
+                }
               ]
             }
           ]

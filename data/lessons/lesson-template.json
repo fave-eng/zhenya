@@ -6,12 +6,11 @@
   "status": "draft",
   "vocabularyId": "vocab-lesson-2",
   "grammarIds": [],
-  "publishedAt": "2026-07-27",
   "totalPoints": 0,
   "notification": {
     "enabled": true,
     "version": 1
   },
-  "templateNote": "Следующую домашнюю работу нужно сохранить как lesson-2.json. Для каждого нового урока одновременно меняйте номер в имени файла, id, number, vocabularyId и linkedLessonId в словаре.",
+  "templateNote": "Следующую домашнюю работу сохраняйте с новым lesson ID. Уведомление ученику отправляется только вручную через GitHub Actions workflow_dispatch с lesson_id; дата публикации в JSON не используется.",
   "blocks": []
 }
