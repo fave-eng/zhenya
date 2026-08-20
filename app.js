@@ -193,9 +193,18 @@
   function renderConversationsBody(block) {
     const items = itemMap(block);
     const bank = renderExerciseWordBank(block);
+    const renderConversationSegment = (segment) => {
+      if (segment.blank) return renderInlineBlank(items.get(safeText(segment.blank)));
+      if (Object.prototype.hasOwnProperty.call(segment, 'exampleBlank')) {
+        const value = safeText(segment.exampleBlank);
+        const chars = Math.max(1, Number(segment.inputChars) || value.length || 1);
+        return `<span class="inline-question is-sized" style="--inline-chars:${chars}"><input type="text" value="${escapeHtml(value)}" readonly tabindex="-1" aria-label="Пример: ${escapeHtml(value)}"></span>`;
+      }
+      return escapeHtml(segment.text || '');
+    };
     const conversations = `<div class="conversation-list">${asArray(block.conversations).map((conversation) => {
       const number = safeText(conversation.number).trim();
-      return `<div class="conversation-card${number ? '' : ' no-number'}">${number ? `<span class="conversation-number">${escapeHtml(number)}</span>` : ''}<div>${asArray(conversation.lines).map((line) => `<p><strong>${escapeHtml(line.speaker || '')}</strong> ${asArray(line.segments).map((segment) => segment.blank ? renderInlineBlank(items.get(safeText(segment.blank))) : escapeHtml(segment.text || '')).join('')}</p>`).join('')}</div></div>`;
+      return `<div class="conversation-card${number ? '' : ' no-number'}">${number ? `<span class="conversation-number">${escapeHtml(number)}</span>` : ''}<div>${asArray(conversation.lines).map((line) => `<p><strong>${escapeHtml(line.speaker || '')}</strong> ${asArray(line.segments).map(renderConversationSegment).join('')}</p>`).join('')}</div></div>`;
     }).join('')}</div>`;
     return `${renderBookExamples(block.examples)}${safeText(block.wordBankPosition).toLowerCase() === 'after' ? conversations + bank : bank + conversations}`;
   }

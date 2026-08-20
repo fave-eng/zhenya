@@ -123,7 +123,11 @@
               "speaker": "A",
               "segments": [
                 {
-                  "text": "Who’s Sarah Lawson?"
+                  "exampleBlank": "Who’s",
+                  "inputChars": 6
+                },
+                {
+                  "text": " Sarah Lawson?"
                 }
               ]
             },
@@ -469,6 +473,14 @@
               "speaker": "A",
               "segments": [
                 {
+                  "text": "Thank you."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
                   "blank": "exercise-1b-3"
                 },
                 {
@@ -513,6 +525,14 @@
         {
           "number": 5,
           "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Thank you."
+                }
+              ]
+            },
             {
               "speaker": "A",
               "segments": [
@@ -565,6 +585,14 @@
               "speaker": "A",
               "segments": [
                 {
+                  "text": "Thank you."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
                   "blank": "exercise-1b-7"
                 },
                 {
@@ -606,12 +634,7 @@
             }
           ]
         }
-      ],
-      "referenceImage": {
-        "src": "images/lesson-6/grammar-1b-phone-conversation.svg",
-        "alt": "Two people talking on mobile phones during the conversation in exercise 1b",
-        "mode": "side"
-      }
+      ]
     },
     {
       "type": "exercise",
