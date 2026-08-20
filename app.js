@@ -491,6 +491,14 @@
     return { answers, correct, total, percent };
   }
 
+  function hasAnyHomeworkAnswer(answers) {
+    if (!answers || typeof answers !== 'object') return false;
+    return Object.values(answers).some((value) => {
+      if (Array.isArray(value)) return value.some((item) => safeText(item).trim() !== '');
+      return safeText(value).trim() !== '';
+    });
+  }
+
   function restoreAnswers(root, questions, answers) {
     questions.forEach(({ item, id }) => {
       const node = root.querySelector(`[data-question-id="${CSS.escape(id)}"]`);
@@ -549,7 +557,7 @@
     const sectionState = { value: 0, exercise: 0, totalExercises: roadmapExercises.length };
     const record = ctx.progress.getHomework(id) || {};
     const finalStatus = ['submitted_pending_report','submitted'].includes(record.status);
-    const reviewed = Boolean(record.checked_at);
+    const reviewed = Boolean(record.checked_at) && hasAnyHomeworkAnswer(record.answers);
 
     root.innerHTML = `<article class="card lesson-intro"><div><span class="eyebrow">Домашняя работа №${Number(lesson.number || 0)}</span><h2>${escapeHtml(lesson.title)}</h2><p>${escapeHtml(lesson.subtitle || '')}</p></div><span class="lesson-points">${questions.filter(({item}) => item.scored !== false && questionType(item) !== 'manual').length} проверяемых ответов</span></article>
       ${materialLinks(lesson, ctx.content)}
@@ -580,6 +588,32 @@
     const checkAndSave = async () => {
       const result = evaluate(root, questions, { apply: true });
       const now = new Date().toISOString();
+      const started = hasAnyHomeworkAnswer(result.answers);
+
+      if (!started) {
+        // Просмотр домашней работы учителем (или учеником) без ответов
+        // не должен создавать черновик и не считается началом работы.
+        if (safeText(record.lesson_id) === id && (record.status || 'draft') === 'draft') {
+          const cleared = {
+            ...record,
+            lesson_id: id,
+            status: 'draft',
+            answers: result.answers,
+            score_correct: null,
+            score_total: null,
+            score_percent: null,
+            checked_at: null,
+            updated_at: now,
+            report_status: 'not_sent'
+          };
+          const saved = await ctx.progress.saveHomework(cleared);
+          Object.assign(record, saved);
+        }
+        document.getElementById('lesson-result').innerHTML = '<p class="muted">Работа ещё не начата. Введите или выберите хотя бы один ответ.</p>';
+        renderButtons();
+        return result;
+      }
+
       const next = {
         ...record,
         lesson_id: id,
@@ -600,7 +634,7 @@
     };
 
     const submit = async () => {
-      if (!record.checked_at) { ctx.toast('Сначала нажмите «Проверить ответы».'); return; }
+      if (!record.checked_at || !hasAnyHomeworkAnswer(record.answers)) { ctx.toast('Сначала ответьте хотя бы на один вопрос и нажмите «Проверить ответы».'); return; }
       if (!window.confirm('После отправки изменить ответы будет невозможно. Отправить домашнее задание?')) return;
       const result = evaluate(root, questions, { apply: true });
       const now = new Date().toISOString();
@@ -682,7 +716,8 @@
         document.getElementById('retry-report')?.addEventListener('click', retryReport);
         return;
       }
-      buttons.innerHTML = `<button class="btn btn-primary" id="check-lesson" type="button">Проверить ответы</button><button class="btn btn-secondary" id="submit-lesson" type="button" ${record.checked_at ? '' : 'disabled'}>Отправить учителю</button>`;
+      const canSubmit = Boolean(record.checked_at) && hasAnyHomeworkAnswer(record.answers);
+      buttons.innerHTML = `<button class="btn btn-primary" id="check-lesson" type="button">Проверить ответы</button><button class="btn btn-secondary" id="submit-lesson" type="button" ${canSubmit ? '' : 'disabled'}>Отправить учителю</button>`;
       document.getElementById('check-lesson')?.addEventListener('click', checkAndSave);
       document.getElementById('submit-lesson')?.addEventListener('click', submit);
     };
@@ -698,11 +733,23 @@
           timer = window.setTimeout(async () => {
             const result = evaluate(root, questions, { apply: Boolean(record.checked_at) });
             const now = new Date().toISOString();
+            const started = hasAnyHomeworkAnswer(result.answers);
+            const existingDraft = safeText(record.lesson_id) === id && (record.status || 'draft') === 'draft';
+
+            // До первого реального ответа ничего не сохраняем: одно только
+            // открытие/просмотр страницы не создаёт черновик.
+            if (!started && !existingDraft) return;
+
             const next = { ...record, lesson_id: id, status: 'draft', answers: result.answers, updated_at: now };
-            if (record.checked_at) Object.assign(next, { score_correct: result.correct, score_total: result.total, score_percent: result.percent, checked_at: now });
+            if (started && record.checked_at) {
+              Object.assign(next, { score_correct: result.correct, score_total: result.total, score_percent: result.percent, checked_at: now });
+            } else if (!started) {
+              Object.assign(next, { score_correct: null, score_total: null, score_percent: null, checked_at: null });
+            }
             const saved = await ctx.progress.saveHomework(next);
             Object.assign(record, saved);
-            if (record.checked_at) document.getElementById('lesson-result').innerHTML = `<h3>Результат: ${result.correct} из ${result.total}</h3><p class="muted">${result.percent}% правильных ответов</p>`;
+            if (started && record.checked_at) document.getElementById('lesson-result').innerHTML = `<h3>Результат: ${result.correct} из ${result.total}</h3><p class="muted">${result.percent}% правильных ответов</p>`;
+            renderButtons();
           }, 500);
         });
       });
@@ -1031,6 +1078,13 @@
     .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
   const byId = (id) => document.getElementById(id);
   const asArray = (value) => Array.isArray(value) ? value : [];
+  const hasAnyHomeworkAnswer = (answers) => {
+    if (!answers || typeof answers !== 'object') return false;
+    return Object.values(answers).some((value) => {
+      if (Array.isArray(value)) return value.some((item) => safeText(item).trim() !== '');
+      return safeText(value).trim() !== '';
+    });
+  };
   const dateMs = (value) => {
     const parsed = Date.parse(value || '');
     return Number.isFinite(parsed) ? parsed : 0;
@@ -1517,7 +1571,7 @@
       if (record.report_status === 'failed') return { label: 'Работа завершена, отчёт не доставлен', tone: 'bad' };
       return { label: 'Ответы зафиксированы, отчёт отправляется', tone: 'warn' };
     }
-    if (Object.keys(record.answers || {}).length) return { label: 'Черновик сохранён', tone: 'info' };
+    if (hasAnyHomeworkAnswer(record.answers)) return { label: 'Черновик сохранён', tone: 'info' };
     return { label: 'Не начато', tone: '' };
   }
 
@@ -1541,7 +1595,7 @@
 
   function lessonCard(lesson, record, completed = false) {
     const status = recordStatus(record);
-    const result = Number(record?.score_total || 0) > 0 ? `<span class="badge info">${Number(record.score_correct || 0)} из ${Number(record.score_total || 0)} · ${Number(record.score_percent || 0)}%</span>` : '';
+    const result = hasAnyHomeworkAnswer(record?.answers) && Number(record?.score_total || 0) > 0 ? `<span class="badge info">${Number(record.score_correct || 0)} из ${Number(record.score_total || 0)} · ${Number(record.score_percent || 0)}%</span>` : '';
     const date = record?.submitted_at ? `<span class="badge">${escapeHtml(new Date(record.submitted_at).toLocaleString('ru-RU'))}</span>` : '';
     const locked = lesson.status === 'locked';
     const vocabularyTopic = ContentService.vocabulary.find((item) => item.id === lesson.vocabularyId || item.linkedLessonId === lesson.id);
