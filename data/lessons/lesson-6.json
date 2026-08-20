@@ -1605,13 +1605,22 @@
       "id": "exercise-3b",
       "label": "3b",
       "title": "Listen again and repeat the phone numbers.",
-      "items": []
-    },
-    {
-      "type": "audio",
-      "id": "exercise-3b-audio",
-      "title": "2.3 Listen again and repeat the phone numbers.",
-      "src": "audio/English_File_4e_Beginner_WB_2.3.mp3"
+      "items": [
+        {
+          "id": "exercise-3b-done",
+          "type": "multiple",
+          "prompt": "Отметьте, когда выполните повторение.",
+          "options": [
+            {
+              "value": "done",
+              "label": "Выполнила повторение"
+            }
+          ],
+          "scored": false,
+          "completionOnly": true,
+          "number": "✓"
+        }
+      ]
     },
     {
       "type": "exercise",
@@ -1689,13 +1698,22 @@
       "id": "exercise-3d",
       "label": "3d",
       "title": "Listen again and repeat the numbers.",
-      "items": []
-    },
-    {
-      "type": "audio",
-      "id": "exercise-3d-audio",
-      "title": "2.4 Listen again and repeat the numbers.",
-      "src": "audio/English_File_4e_Beginner_WB_2.4.mp3"
+      "items": [
+        {
+          "id": "exercise-3d-done",
+          "type": "multiple",
+          "prompt": "Отметьте, когда выполните повторение.",
+          "options": [
+            {
+              "value": "done",
+              "label": "Выполнила повторение"
+            }
+          ],
+          "scored": false,
+          "completionOnly": true,
+          "number": "✓"
+        }
+      ]
     },
     {
       "type": "exercise",

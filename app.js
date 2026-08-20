@@ -451,6 +451,10 @@
     clearReview(node);
     if (correct === null) {
       const feedback = node.querySelector('[data-feedback]');
+      if (item.completionOnly) {
+        if (feedback) { feedback.className = 'feedback'; feedback.textContent = ''; }
+        return;
+      }
       if (feedback) { feedback.className = 'feedback show good'; feedback.textContent = 'Ответ сохранён. Его проверит преподаватель.'; }
       return;
     }
