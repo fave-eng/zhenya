@@ -89,6 +89,9 @@
 
   function explainFunctionFailure(result) {
     const message = String(result?.data?.error || result?.data?.message || result?.data?.raw || '').trim();
+    if (result?.status === 400 && /Неизвестное действие|Unknown diagnostics request/i.test(message)) {
+      return 'В Supabase развёрнута старая notify-telegram без диагностики. Загрузите обновлённую функцию и снова запустите workflow «1 - Настройка Telegram».';
+    }
     if (result?.status === 404) return 'Edge Function notify-telegram не найдена или не задеплоена.';
     if (result?.status === 401 && /Unauthorized diagnostics request/i.test(message)) {
       const version = result?.data?.diagnosticVersion ? ` Версия функции: ${result.data.diagnosticVersion}.` : '';
