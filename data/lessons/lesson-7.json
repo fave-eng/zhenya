@@ -20,8 +20,8 @@
       "title": "Complete the crossword.",
       "layout": "crossword",
       "referenceImage": {
-        "src": "images/lesson-7/crossword-small-things.svg",
-        "alt": "Numbered small things for the crossword",
+        "src": "images/lesson-7/crossword-small-things-scan.png",
+        "alt": "Original workbook scan with numbered small things and the crossword",
         "mode": "side"
       },
       "items": [
@@ -101,7 +101,7 @@
     },
     {
       "type":"exercise","id":"exercise-2c","label":"2c","title":"Write questions and answers.","layout":"qa-pairs",
-      "referenceImage":{"src":"images/lesson-7/grammar-2c-objects.svg","alt":"Dictionary, keys, photo, pens, ID card, door, table and coats","mode":"side"},
+      "referenceImage":{"src":"images/lesson-7/grammar-2c-objects-scan.png","alt":"Original workbook scan: dictionary, keys, photo, three pens, ID card, door, table and two coats","mode":"side"},
       "examples":[{"number":"1","question":"What is it?","answer":"It’s a dictionary."}],
       "items":[
         {"id":"ex2c-2q","type":"text","prompt":"Question 2","answers":["What are they"],"revealCorrect":false},{"id":"ex2c-2a","type":"text","prompt":"Answer 2","answers":["They’re keys","They are keys"],"revealCorrect":false},
@@ -123,7 +123,12 @@
     {"type":"section","title":"3 PRONUNCIATION","text":"/z/ and /s/, plural endings"},
     {
       "type":"exercise","id":"exercise-3a","label":"3a","title":"Listen and repeat the words and sounds.",
-      "referenceImage":{"src":"images/lesson-7/pronunciation-3a.svg","alt":"Plural ending sounds with example words","mode":"top"},"items":[]
+      "examples":[
+        {"number":"1","source":"/z/","answer":"names · bags"},
+        {"number":"2","source":"/s/","answer":"books · students"},
+        {"number":"3","source":"/ɪz/","answer":"addresses · purses"}
+      ],
+      "items":[]
     },
     {"type":"audio","id":"exercise-3a-audio","title":"3.1 Listen and repeat the words and sounds.","src":"audio/English_File_4e_Beginner_WB_3.1.mp3"},
     {
