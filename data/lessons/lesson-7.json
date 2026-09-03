@@ -69,7 +69,6 @@
     {"type":"section","title":"2 GRAMMAR","text":"singular and plural nouns, a / an"},
     {
       "type":"exercise","id":"exercise-2a","label":"2a","title":"Write a or an.",
-      "referenceImage":{"src":"images/lesson-7/grammar-2a-word-list.svg","alt":"Words for exercises 2a and 2b","mode":"side"},
       "examples":[{"number":"1","source":"a camera"}],
       "items":[
         {"id":"ex2a-2","number":2,"type":"text","prompt":"___ umbrella","answers":["an"],"inlineBlank":true,"inputChars":2,"revealCorrect":false},
