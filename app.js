@@ -54,7 +54,9 @@
     } else if (type === 'single') {
       control = `<div class="option-list">${options.map((option, optionIndex) => `<label class="option"><input type="radio" name="${escapeHtml(id)}" value="${escapeHtml(option.value)}" data-answer-control><span>${escapeHtml(option.label)}</span></label>`).join('')}</div>`;
     } else if (type === 'multiple') {
-      control = `<div class="option-list">${options.map((option) => `<label class="option"><input type="checkbox" value="${escapeHtml(option.value)}" data-answer-control><span>${escapeHtml(option.label)}</span></label>`).join('')}</div>`;
+      const maxSelections = Math.max(0, Number(item.maxSelections) || 0);
+      const optionClass = safeText(item.optionStyle).toLowerCase() === 'chips' ? ' is-chip-list' : '';
+      control = `<div class="option-list${optionClass}"${maxSelections ? ` data-max-selections="${maxSelections}"` : ''}>${options.map((option) => `<label class="option"><input type="checkbox" value="${escapeHtml(option.value)}" data-answer-control><span>${escapeHtml(option.label)}</span></label>`).join('')}</div>`;
     } else {
       control = `<input type="text" data-answer-control placeholder="${placeholder}" autocomplete="off">`;
     }
@@ -68,11 +70,11 @@
         : prompt;
 
     const displayNumber = item.number ?? (index + 1);
-    return `<div class="exercise-item${inlineMatch ? ' has-inline-prompt-answer' : ''}" data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">
-      <div class="exercise-prompt-row">
+    return `<div class="exercise-item${inlineMatch ? ' has-inline-prompt-answer' : ''}${item.hidePrompt ? ' has-hidden-prompt' : ''}" data-question-id="${escapeHtml(id)}" data-question-type="${escapeHtml(type)}">
+      ${item.hidePrompt ? '' : `<div class="exercise-prompt-row">
         <span class="exercise-question-number" aria-label="Пункт ${escapeHtml(displayNumber)}">${escapeHtml(displayNumber)}</span>
         <span class="exercise-prompt${isStandaloneNumber ? ' is-number-target' : ''}">${promptContent}</span>
-      </div>
+      </div>`}
       ${Array.isArray(item.wordBank) && item.wordBank.length ? `<div class="word-bank">${item.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>` : ''}
       ${inlineMatch ? '' : `<div class="exercise-control">${control}</div>`}
       <div class="feedback" data-feedback></div>
@@ -359,6 +361,19 @@
     });
   }
 
+  function initSelectionLimits(root) {
+    root.querySelectorAll('[data-max-selections]').forEach((group) => {
+      const limit = Math.max(1, Number(group.dataset.maxSelections) || 1);
+      group.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+        input.addEventListener('change', () => {
+          const checked = [...group.querySelectorAll('input[type="checkbox"]:checked')];
+          if (checked.length > limit) input.checked = false;
+          group.classList.toggle('is-at-limit', checked.length >= limit);
+        });
+      });
+    });
+  }
+
   function renderBlock(block, index, sectionState) {
     const type = safeText(block?.type, 'content').toLowerCase();
     if (type === 'section') {
@@ -582,6 +597,7 @@
     restoreAnswers(root, questions, record.answers || {});
     initCrosswords(root);
     initStudentAnswerReferences(root);
+    initSelectionLimits(root);
     if (reviewed) {
       const result = evaluate(root, questions, { apply: true });
       document.getElementById('lesson-result').innerHTML = `<h3>Сохранённый результат: ${Number(record.score_correct ?? result.correct)} из ${Number(record.score_total ?? result.total)}</h3><p class="muted">${Number(record.score_percent ?? result.percent)}% правильных ответов</p>`;

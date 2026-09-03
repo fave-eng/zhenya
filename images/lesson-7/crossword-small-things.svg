@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 930" role="img" aria-labelledby="title desc">
+  <title id="title">Small things crossword picture clues</title>
+  <desc id="desc">Fifteen numbered everyday objects. Number one is the completed watch example.</desc>
+  <style>
+    .bg{fill:#f8fafc}.card{fill:#fff;stroke:#cbd5e1;stroke-width:2}.n{fill:#334155}.nt{font:700 16px Arial,sans-serif;fill:#fff;text-anchor:middle}.icon{font:54px Apple Color Emoji,Segoe UI Emoji,sans-serif;text-anchor:middle}.label{font:700 18px Arial,sans-serif;fill:#334155;text-anchor:middle}.head{font:800 25px Arial,sans-serif;fill:#172033}.sub{font:16px Arial,sans-serif;fill:#64748b}
+  </style>
+  <rect class="bg" width="720" height="930" rx="28"/>
+  <text class="head" x="36" y="48">1 VOCABULARY · small things</text>
+  <text class="sub" x="36" y="76">Use the numbered pictures to complete the crossword.</text>
+  <g transform="translate(30 100)">
+    <g transform="translate(0 0)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">1</text><text class="icon" x="103" y="77">⌚</text><text class="label" x="103" y="116">WATCH · example</text></g>
+    <g transform="translate(227 0)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">2</text><text class="icon" x="103" y="88">▣</text></g>
+    <g transform="translate(454 0)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">3</text><text class="icon" x="103" y="88">🖼️</text></g>
+    <g transform="translate(0 157)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">4</text><text class="icon" x="103" y="88">📱</text></g>
+    <g transform="translate(227 157)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">5</text><text class="icon" x="103" y="88">☂️</text></g>
+    <g transform="translate(454 157)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">6</text><text class="icon" x="103" y="88">👜</text></g>
+    <g transform="translate(0 314)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">7</text><text class="icon" x="103" y="88">👛</text></g>
+    <g transform="translate(227 314)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">8</text><text class="icon" x="103" y="88">✏️</text></g>
+    <g transform="translate(454 314)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">9</text><text class="icon" x="103" y="88">💳</text></g>
+    <g transform="translate(0 471)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">10</text><text class="icon" x="103" y="88">📷</text></g>
+    <g transform="translate(227 471)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">11</text><text class="icon" x="103" y="88">📰</text></g>
+    <g transform="translate(454 471)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">12</text><text class="icon" x="103" y="88">👓</text></g>
+    <g transform="translate(0 628)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">13</text><text class="icon" x="103" y="88">🔌</text></g>
+    <g transform="translate(227 628)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">14</text><text class="icon" x="103" y="88">🪪</text></g>
+    <g transform="translate(454 628)"><rect class="card" width="205" height="135" rx="18"/><circle class="n" cx="25" cy="25" r="17"/><text class="nt" x="25" y="31">15</text><text class="icon" x="103" y="88">🔑</text></g>
+  </g>
+</svg>

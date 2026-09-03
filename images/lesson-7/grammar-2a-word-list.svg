@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 720" role="img" aria-labelledby="title">
+  <title id="title">Words for a, an and plural exercises</title>
+  <style>.bg{fill:#fff;stroke:#cbd5e1;stroke-width:2}.h{font:800 26px Arial,sans-serif;fill:#172033}.s{font:17px Arial,sans-serif;fill:#64748b}.num{font:700 18px Arial,sans-serif;fill:#64748b}.word{font:700 22px Arial,sans-serif;fill:#24324a}.line{stroke:#cbd5e1;stroke-width:2}</style>
+  <rect class="bg" x="2" y="2" width="556" height="716" rx="24"/>
+  <text class="h" x="34" y="52">2a · Write a or an.</text><text class="s" x="34" y="82">Use the same nouns in 2b to write the plurals.</text>
+  <g transform="translate(36 120)">
+    <g><text class="num" y="0">1</text><text class="word" x="42" y="0">a camera</text></g>
+    <g transform="translate(0 52)"><text class="num">2</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">umbrella</text></g>
+    <g transform="translate(0 104)"><text class="num">3</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">book</text></g>
+    <g transform="translate(0 156)"><text class="num">4</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">watch</text></g>
+    <g transform="translate(0 208)"><text class="num">5</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">email</text></g>
+    <g transform="translate(0 260)"><text class="num">6</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">country</text></g>
+    <g transform="translate(0 312)"><text class="num">7</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">city</text></g>
+    <g transform="translate(0 364)"><text class="num">8</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">key</text></g>
+    <g transform="translate(0 416)"><text class="num">9</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">address</text></g>
+    <g transform="translate(0 468)"><text class="num">10</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">laptop</text></g>
+    <g transform="translate(0 520)"><text class="num">11</text><line class="line" x1="42" y1="4" x2="100" y2="4"/><text class="word" x="116">debit card</text></g>
+  </g>
+</svg>

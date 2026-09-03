@@ -1,0 +1,156 @@
+{
+  "id": "lesson-7",
+  "number": 7,
+  "title": "Unit 3A — Where are my keys?",
+  "subtitle": "Vocabulary: small things · Grammar: singular and plural nouns, a / an · Pronunciation: /z/ and /s/, plural endings",
+  "status": "available",
+  "notification": { "enabled": true, "version": 1 },
+  "vocabularyId": "vocab-lesson-7",
+  "grammarIds": ["grammar-5"],
+  "blocks": [
+    {
+      "type": "section",
+      "title": "1 VOCABULARY",
+      "text": "small things"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-1",
+      "label": "1 VOCABULARY",
+      "title": "Complete the crossword.",
+      "layout": "crossword",
+      "referenceImage": {
+        "src": "images/lesson-7/crossword-small-things.svg",
+        "alt": "Numbered small things for the crossword",
+        "mode": "side"
+      },
+      "items": [
+        {"id":"ex1-2","type":"text","prompt":"2 down","answers":["tablet"],"revealCorrect":false},
+        {"id":"ex1-4d","type":"text","prompt":"4 down","answers":["passport"],"revealCorrect":false},
+        {"id":"ex1-6","type":"text","prompt":"6 down","answers":["bag"],"revealCorrect":false},
+        {"id":"ex1-7","type":"text","prompt":"7 down","answers":["wallet"],"revealCorrect":false},
+        {"id":"ex1-9","type":"text","prompt":"9 down","answers":["credit card","creditcard"],"revealCorrect":false},
+        {"id":"ex1-10","type":"text","prompt":"10 down","answers":["camera"],"revealCorrect":false},
+        {"id":"ex1-11d","type":"text","prompt":"11 down","answers":["notebook"],"revealCorrect":false},
+        {"id":"ex1-12","type":"text","prompt":"12 down","answers":["glasses"],"revealCorrect":false},
+        {"id":"ex1-3","type":"text","prompt":"3 across","answers":["photo"],"revealCorrect":false},
+        {"id":"ex1-4a","type":"text","prompt":"4 across","answers":["phone"],"revealCorrect":false},
+        {"id":"ex1-5","type":"text","prompt":"5 across","answers":["umbrella"],"revealCorrect":false},
+        {"id":"ex1-8","type":"text","prompt":"8 across","answers":["pencil"],"revealCorrect":false},
+        {"id":"ex1-11a","type":"text","prompt":"11 across","answers":["newspaper"],"revealCorrect":false},
+        {"id":"ex1-13","type":"text","prompt":"13 across","answers":["charger"],"revealCorrect":false},
+        {"id":"ex1-14","type":"text","prompt":"14 across","answers":["ID card","idcard"],"revealCorrect":false},
+        {"id":"ex1-15","type":"text","prompt":"15 across","answers":["key"],"revealCorrect":false}
+      ],
+      "crossword": {
+        "rows": 21,
+        "cols": 10,
+        "entries": [
+          {"number":1,"answer":"WATCH","row":12,"col":1,"direction":"down","fixed":true},
+          {"number":2,"answer":"TABLET","row":12,"col":2,"direction":"down","itemId":"ex1-2"},
+          {"number":4,"answer":"PASSPORT","row":12,"col":3,"direction":"down","itemId":"ex1-4d"},
+          {"number":6,"answer":"BAG","row":12,"col":4,"direction":"down","itemId":"ex1-6"},
+          {"number":7,"answer":"WALLET","row":12,"col":5,"direction":"down","itemId":"ex1-7"},
+          {"number":9,"answer":"CREDITCARD","row":12,"col":6,"direction":"down","itemId":"ex1-9"},
+          {"number":10,"answer":"CAMERA","row":12,"col":7,"direction":"down","itemId":"ex1-10"},
+          {"number":11,"answer":"NOTEBOOK","row":12,"col":8,"direction":"down","itemId":"ex1-11d"},
+          {"number":12,"answer":"GLASSES","row":12,"col":9,"direction":"down","itemId":"ex1-12"},
+          {"number":3,"answer":"PHOTO","row":1,"col":1,"direction":"across","itemId":"ex1-3"},
+          {"number":4,"answer":"PHONE","row":2,"col":1,"direction":"across","itemId":"ex1-4a"},
+          {"number":5,"answer":"UMBRELLA","row":3,"col":1,"direction":"across","itemId":"ex1-5"},
+          {"number":8,"answer":"PENCIL","row":4,"col":1,"direction":"across","itemId":"ex1-8"},
+          {"number":11,"answer":"NEWSPAPER","row":5,"col":1,"direction":"across","itemId":"ex1-11a"},
+          {"number":13,"answer":"CHARGER","row":6,"col":1,"direction":"across","itemId":"ex1-13"},
+          {"number":14,"answer":"IDCARD","row":7,"col":1,"direction":"across","itemId":"ex1-14"},
+          {"number":15,"answer":"KEY","row":8,"col":1,"direction":"across","itemId":"ex1-15"}
+        ]
+      }
+    },
+    {"type":"section","title":"2 GRAMMAR","text":"singular and plural nouns, a / an"},
+    {
+      "type":"exercise","id":"exercise-2a","label":"2a","title":"Write a or an.",
+      "referenceImage":{"src":"images/lesson-7/grammar-2a-word-list.svg","alt":"Words for exercises 2a and 2b","mode":"side"},
+      "examples":[{"number":"1","source":"a camera"}],
+      "items":[
+        {"id":"ex2a-2","number":2,"type":"text","prompt":"___ umbrella","answers":["an"],"inlineBlank":true,"inputChars":2,"revealCorrect":false},
+        {"id":"ex2a-3","number":3,"type":"text","prompt":"___ book","answers":["a"],"inlineBlank":true,"inputChars":1,"revealCorrect":false},
+        {"id":"ex2a-4","number":4,"type":"text","prompt":"___ watch","answers":["a"],"inlineBlank":true,"inputChars":1,"revealCorrect":false},
+        {"id":"ex2a-5","number":5,"type":"text","prompt":"___ email","answers":["an"],"inlineBlank":true,"inputChars":2,"revealCorrect":false},
+        {"id":"ex2a-6","number":6,"type":"text","prompt":"___ country","answers":["a"],"inlineBlank":true,"inputChars":1,"revealCorrect":false},
+        {"id":"ex2a-7","number":7,"type":"text","prompt":"___ city","answers":["a"],"inlineBlank":true,"inputChars":1,"revealCorrect":false},
+        {"id":"ex2a-8","number":8,"type":"text","prompt":"___ key","answers":["a"],"inlineBlank":true,"inputChars":1,"revealCorrect":false},
+        {"id":"ex2a-9","number":9,"type":"text","prompt":"___ address","answers":["an"],"inlineBlank":true,"inputChars":2,"revealCorrect":false},
+        {"id":"ex2a-10","number":10,"type":"text","prompt":"___ laptop","answers":["a"],"inlineBlank":true,"inputChars":1,"revealCorrect":false},
+        {"id":"ex2a-11","number":11,"type":"text","prompt":"___ debit card","answers":["a"],"inlineBlank":true,"inputChars":1,"revealCorrect":false}
+      ]
+    },
+    {
+      "type":"exercise","id":"exercise-2b","label":"2b","title":"Write the plurals of the words in a.",
+      "examples":[{"number":"1","source":"camera","answer":"cameras"}],
+      "items":[
+        {"id":"ex2b-2","number":2,"type":"text","prompt":"umbrella","answers":["umbrellas"],"revealCorrect":false},
+        {"id":"ex2b-3","number":3,"type":"text","prompt":"book","answers":["books"],"revealCorrect":false},
+        {"id":"ex2b-4","number":4,"type":"text","prompt":"watch","answers":["watches"],"revealCorrect":false},
+        {"id":"ex2b-5","number":5,"type":"text","prompt":"email","answers":["emails"],"revealCorrect":false},
+        {"id":"ex2b-6","number":6,"type":"text","prompt":"country","answers":["countries"],"revealCorrect":false},
+        {"id":"ex2b-7","number":7,"type":"text","prompt":"city","answers":["cities"],"revealCorrect":false},
+        {"id":"ex2b-8","number":8,"type":"text","prompt":"key","answers":["keys"],"revealCorrect":false},
+        {"id":"ex2b-9","number":9,"type":"text","prompt":"address","answers":["addresses"],"revealCorrect":false},
+        {"id":"ex2b-10","number":10,"type":"text","prompt":"laptop","answers":["laptops"],"revealCorrect":false},
+        {"id":"ex2b-11","number":11,"type":"text","prompt":"debit card","answers":["debit cards"],"revealCorrect":false}
+      ]
+    },
+    {
+      "type":"exercise","id":"exercise-2c","label":"2c","title":"Write questions and answers.","layout":"qa-pairs",
+      "referenceImage":{"src":"images/lesson-7/grammar-2c-objects.svg","alt":"Dictionary, keys, photo, pens, ID card, door, table and coats","mode":"side"},
+      "examples":[{"number":"1","question":"What is it?","answer":"It’s a dictionary."}],
+      "items":[
+        {"id":"ex2c-2q","type":"text","prompt":"Question 2","answers":["What are they"],"revealCorrect":false},{"id":"ex2c-2a","type":"text","prompt":"Answer 2","answers":["They’re keys","They are keys"],"revealCorrect":false},
+        {"id":"ex2c-3q","type":"text","prompt":"Question 3","answers":["What is it","What’s it"],"revealCorrect":false},{"id":"ex2c-3a","type":"text","prompt":"Answer 3","answers":["It’s a photo","It is a photo"],"revealCorrect":false},
+        {"id":"ex2c-4q","type":"text","prompt":"Question 4","answers":["What are they"],"revealCorrect":false},{"id":"ex2c-4a","type":"text","prompt":"Answer 4","answers":["They’re pens","They are pens"],"revealCorrect":false},
+        {"id":"ex2c-5q","type":"text","prompt":"Question 5","answers":["What is it","What’s it"],"revealCorrect":false},{"id":"ex2c-5a","type":"text","prompt":"Answer 5","answers":["It’s an ID card","It is an ID card"],"revealCorrect":false},
+        {"id":"ex2c-6q","type":"text","prompt":"Question 6","answers":["What is it","What’s it"],"revealCorrect":false},{"id":"ex2c-6a","type":"text","prompt":"Answer 6","answers":["It’s a door","It is a door"],"revealCorrect":false},
+        {"id":"ex2c-7q","type":"text","prompt":"Question 7","answers":["What is it","What’s it"],"revealCorrect":false},{"id":"ex2c-7a","type":"text","prompt":"Answer 7","answers":["It’s a table","It is a table"],"revealCorrect":false},
+        {"id":"ex2c-8q","type":"text","prompt":"Question 8","answers":["What are they"],"revealCorrect":false},{"id":"ex2c-8a","type":"text","prompt":"Answer 8","answers":["They’re coats","They are coats"],"revealCorrect":false}
+      ],
+      "pairs":[
+        {"number":2,"source":"","questionId":"ex2c-2q","answerId":"ex2c-2a"},{"number":3,"source":"","questionId":"ex2c-3q","answerId":"ex2c-3a"},{"number":4,"source":"","questionId":"ex2c-4q","answerId":"ex2c-4a"},{"number":5,"source":"","questionId":"ex2c-5q","answerId":"ex2c-5a"},{"number":6,"source":"","questionId":"ex2c-6q","answerId":"ex2c-6a"},{"number":7,"source":"","questionId":"ex2c-7q","answerId":"ex2c-7a"},{"number":8,"source":"","questionId":"ex2c-8q","answerId":"ex2c-8a"}
+      ]
+    },
+    {
+      "type":"exercise","id":"exercise-2d","label":"2d","title":"What’s in your bag? Write five things.",
+      "items":[{"id":"ex2d-open","type":"manual","prompt":"Write five things.","placeholder":"a wallet, ...","scored":false}]
+    },
+    {"type":"section","title":"3 PRONUNCIATION","text":"/z/ and /s/, plural endings"},
+    {
+      "type":"exercise","id":"exercise-3a","label":"3a","title":"Listen and repeat the words and sounds.",
+      "referenceImage":{"src":"images/lesson-7/pronunciation-3a.svg","alt":"Plural ending sounds with example words","mode":"top"},"items":[]
+    },
+    {"type":"audio","id":"exercise-3a-audio","title":"3.1 Listen and repeat the words and sounds.","src":"audio/English_File_4e_Beginner_WB_3.1.mp3"},
+    {
+      "type":"exercise","id":"exercise-3b","label":"3b","title":"Listen and circle three words with /ɪz/.",
+      "items":[{"id":"ex3b","type":"multiple","prompt":"Listen and circle three words with /ɪz/.","hidePrompt":true,"options":["pieces","classes","coats","glasses","laptops","pencils","phones","wallets"],"answers":["pieces","classes","glasses"],"maxSelections":3,"optionStyle":"chips","revealCorrect":false}]
+    },
+    {"type":"audio","id":"exercise-3b-audio","title":"3.2 Listen and circle three words with /ɪz/.","src":"audio/English_File_4e_Beginner_WB_3.2.mp3"},
+    {
+      "type":"exercise","id":"exercise-3c","label":"3c","title":"Listen again and repeat the words.",
+      "items":[{"id":"ex3c-done","type":"multiple","prompt":"Отметьте, когда выполните повторение.","options":[{"value":"done","label":"Выполнила повторение"}],"scored":false,"completionOnly":true,"number":"✓"}]
+    },
+    {"type":"section","title":"4 WORDS AND PHRASES TO LEARN","text":"Complete the conversations with a phrase from the list."},
+    {
+      "type":"exercise","id":"exercise-4","label":"4 WORDS AND PHRASES TO LEARN","title":"Complete the conversations with a phrase from the list.","layout":"conversations",
+      "wordBank":["Oh no","What are they","What’s in your bag","Where are my glasses"],"wordBankUsed":["Oh no"],
+      "items":[
+        {"id":"ex4-2","type":"text","prompt":"2","answers":["Where are my glasses"],"revealCorrect":false},
+        {"id":"ex4-3","type":"text","prompt":"3","answers":["What’s in your bag","What is in your bag"],"revealCorrect":false},
+        {"id":"ex4-4","type":"text","prompt":"4","answers":["What are they"],"revealCorrect":false}
+      ],
+      "conversations":[
+        {"number":1,"lines":[{"speaker":"A","segments":[{"text":"Where’s your bag?"}]},{"speaker":"B","segments":[{"exampleBlank":"Oh no","inputChars":5},{"text":"! It’s in the car!"}]}]},
+        {"number":2,"lines":[{"speaker":"A","segments":[{"blank":"ex4-2"},{"text":"?"}]},{"speaker":"B","segments":[{"text":"They’re in your bag."}]}]},
+        {"number":3,"lines":[{"speaker":"A","segments":[{"text":"Excuse me, sir. "},{"blank":"ex4-3"},{"text":"?"}]},{"speaker":"B","segments":[{"text":"I have a wallet, a book, and an umbrella."}]}]},
+        {"number":4,"lines":[{"speaker":"A","segments":[{"blank":"ex4-4"},{"text":"?"}]},{"speaker":"B","segments":[{"text":"I think they’re credit cards."}]}]}
+      ]
+    }
+  ]
+}

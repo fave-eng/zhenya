@@ -2010,6 +2010,21 @@ body[data-view="grammar-topic"] .grammar-practice-heading {
 .test-only-note { color: #64748b; font-size: .8rem; line-height: 1.35; }
 .exercise-prompt { white-space: pre-line; }
 
+/* Unit 3A: compact word choices for the plural-ending listening task. */
+.option-list.is-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.option-list.is-chip-list .option {
+  flex: 0 1 auto;
+  min-width: 112px;
+  border-radius: 999px;
+}
+.option-list.is-chip-list.is-at-limit .option:not(:has(input:checked)) {
+  opacity: .64;
+}
+
 @media (max-width: 980px) {
   .nationality-puzzle-main { grid-template-columns: 1fr; }
   .nationality-grid-panel { position: static; order: -1; }

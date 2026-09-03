@@ -1409,5 +1409,46 @@ window.VOCABULARY_DATA = [
     }
   ]
 }
+,
+{
+  "id": "vocab-lesson-7",
+  "title": "Unit 3A — Small things & useful phrases",
+  "label": "Домашняя работа №7",
+  "icon": "🔑",
+  "type": "lesson",
+  "linkedLessonId": "lesson-7",
+  "learnedByTestOnly": true,
+  "sections": [
+    {"id":"small-things","title":"Small things","icon":"🎒"},
+    {"id":"more-nouns","title":"More nouns","icon":"📚"},
+    {"id":"phrases","title":"Useful phrases","icon":"💬"}
+  ],
+  "words": [
+    {"id":"u3a-tablet","uniqueKey":"tablet","en":"tablet","ru":"планшет","transcription":"/ˈtæblət/","exampleEn":"My tablet is in my bag.","exampleRu":"Мой планшет в сумке.","section":"small-things"},
+    {"id":"u3a-passport","uniqueKey":"passport","en":"passport","ru":"паспорт","transcription":"/ˈpɑːspɔːt/","exampleEn":"Where is my passport?","exampleRu":"Где мой паспорт?","section":"small-things"},
+    {"id":"u3a-wallet","uniqueKey":"wallet","en":"wallet","ru":"кошелёк","transcription":"/ˈwɒlɪt/","exampleEn":"It’s a wallet.","exampleRu":"Это кошелёк.","section":"small-things"},
+    {"id":"u3a-credit-card","uniqueKey":"credit card","en":"credit card","ru":"кредитная карта","transcription":"/ˈkredɪt kɑːd/","exampleEn":"They’re credit cards.","exampleRu":"Это кредитные карты.","section":"small-things"},
+    {"id":"u3a-camera","uniqueKey":"camera","en":"camera","ru":"фотоаппарат; камера","transcription":"/ˈkæmərə/","exampleEn":"It’s a camera.","exampleRu":"Это фотоаппарат.","section":"small-things"},
+    {"id":"u3a-notebook","uniqueKey":"notebook","en":"notebook","ru":"блокнот; тетрадь","transcription":"/ˈnəʊtbʊk/","exampleEn":"The key is on the notebook.","exampleRu":"Ключ лежит на блокноте.","section":"small-things"},
+    {"id":"u3a-glasses","uniqueKey":"glasses","en":"glasses","ru":"очки","transcription":"/ˈɡlɑːsɪz/","exampleEn":"Where are my glasses?","exampleRu":"Где мои очки?","section":"small-things"},
+    {"id":"u3a-photo","uniqueKey":"photo","en":"photo","ru":"фотография","transcription":"/ˈfəʊtəʊ/","exampleEn":"It’s a photo.","exampleRu":"Это фотография.","section":"small-things"},
+    {"id":"u3a-phone","uniqueKey":"phone","en":"phone","ru":"телефон","transcription":"/fəʊn/","exampleEn":"My phone is on the table.","exampleRu":"Мой телефон на столе.","section":"small-things"},
+    {"id":"u3a-umbrella","uniqueKey":"umbrella","en":"umbrella","ru":"зонт","transcription":"/ʌmˈbrelə/","exampleEn":"I have an umbrella.","exampleRu":"У меня есть зонт.","section":"small-things"},
+    {"id":"u3a-pencil","uniqueKey":"pencil","en":"pencil","ru":"карандаш","transcription":"/ˈpensl/","exampleEn":"It’s a pencil.","exampleRu":"Это карандаш.","section":"small-things"},
+    {"id":"u3a-newspaper","uniqueKey":"newspaper","en":"newspaper","ru":"газета","transcription":"/ˈnjuːzpeɪpə/","exampleEn":"The newspaper is in my bag.","exampleRu":"Газета в моей сумке.","section":"small-things"},
+    {"id":"u3a-charger","uniqueKey":"charger","en":"charger","ru":"зарядное устройство","transcription":"/ˈtʃɑːdʒə/","exampleEn":"Where is my charger?","exampleRu":"Где моё зарядное устройство?","section":"small-things"},
+    {"id":"u3a-id-card","uniqueKey":"ID card","en":"ID card","ru":"удостоверение личности","transcription":"/ˌaɪ ˈdiː kɑːd/","exampleEn":"It’s an ID card.","exampleRu":"Это удостоверение личности.","section":"small-things"},
+    {"id":"u3a-key","uniqueKey":"key","en":"key","ru":"ключ","transcription":"/kiː/","exampleEn":"They’re keys.","exampleRu":"Это ключи.","section":"small-things"},
+    {"id":"u3a-book","uniqueKey":"book","en":"book","ru":"книга","transcription":"/bʊk/","exampleEn":"It’s a book.","exampleRu":"Это книга.","section":"more-nouns"},
+    {"id":"u3a-watch","uniqueKey":"watch","en":"watch","ru":"наручные часы","transcription":"/wɒtʃ/","exampleEn":"It’s a watch.","exampleRu":"Это наручные часы.","section":"more-nouns"},
+    {"id":"u3a-email","uniqueKey":"email","en":"email","ru":"электронное письмо","transcription":"/ˈiːmeɪl/","exampleEn":"It’s an email.","exampleRu":"Это электронное письмо.","section":"more-nouns"},
+    {"id":"u3a-country","uniqueKey":"country","en":"country","ru":"страна","transcription":"/ˈkʌntri/","exampleEn":"It’s a country.","exampleRu":"Это страна.","section":"more-nouns"},
+    {"id":"u3a-city","uniqueKey":"city","en":"city","ru":"город","transcription":"/ˈsɪti/","exampleEn":"It’s a big city.","exampleRu":"Это большой город.","section":"more-nouns"},
+    {"id":"u3a-debit-card","uniqueKey":"debit card","en":"debit card","ru":"дебетовая карта","transcription":"/ˈdebɪt kɑːd/","exampleEn":"It’s a debit card.","exampleRu":"Это дебетовая карта.","section":"more-nouns"},
+    {"id":"u3a-oh-no","uniqueKey":"Oh no","en":"Oh no","ru":"О нет!","transcription":"/əʊ nəʊ/","exampleEn":"Oh no! It’s in the car!","exampleRu":"О нет! Она в машине!","section":"phrases"},
+    {"id":"u3a-what-are-they","uniqueKey":"What are they","en":"What are they?","ru":"Что это? (о нескольких предметах)","transcription":"/wɒt ə ðeɪ/","exampleEn":"What are they? — They’re keys.","exampleRu":"Что это? — Это ключи.","section":"phrases"},
+    {"id":"u3a-where-glasses","uniqueKey":"Where are my glasses","en":"Where are my glasses?","ru":"Где мои очки?","transcription":"/weər ə maɪ ˈɡlɑːsɪz/","exampleEn":"Where are my glasses? — They’re in your bag.","exampleRu":"Где мои очки? — Они в твоей сумке.","section":"phrases"}
+  ]
+}
 
 ];

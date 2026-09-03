@@ -2281,5 +2281,91 @@ window.GRAMMAR_DATA = [
   ],
   "page": "grammar-topic.html?id=grammar-4"
 }
+,
+{
+  "id": "grammar-5",
+  "number": 5,
+  "title": "Singular and plural nouns, a / an",
+  "subtitle": "Артикли a / an и формы множественного числа",
+  "status": "available",
+  "linkedLessonId": "lesson-7",
+  "passScore": 100,
+  "lockOnPass": true,
+  "checkButtonLabel": "Проверить",
+  "notification": {"enabled":false,"version":1},
+  "overview": [
+    {"label":"Один предмет","value":"a camera · an umbrella"},
+    {"label":"Несколько","value":"books · watches · cities"},
+    {"label":"Вопрос","value":"What is it? · What are they?"},
+    {"label":"Для зачёта","value":"16 правильных ответов из 16"}
+  ],
+  "explanation": [
+    {
+      "label":"a / an","title":"Выбирайте артикль по первому звуку следующего слова",
+      "summary":"Перед одним исчисляемым существительным используйте a или an. A ставится перед согласным звуком, an — перед гласным.",
+      "formula":"a + consonant sound · an + vowel sound",
+      "points":["a camera, a book, a key","an umbrella, an email, an address","Артикль не используется перед существительным во множественном числе."],
+      "examples":[{"en":"It’s a camera.","ru":"Это фотоаппарат."},{"en":"It’s an ID card.","ru":"Это удостоверение личности."}]
+    },
+    {
+      "label":"Множественное число","title":"Обычно добавляйте -s",
+      "summary":"Большинство существительных образует множественное число с помощью окончания -s.",
+      "formula":"noun + s",
+      "points":["book → books","camera → cameras","key → keys"],
+      "warning":"После согласной + y буква y меняется на ies: city → cities, country → countries."
+    },
+    {
+      "label":"Окончание -es","title":"После шипящих звуков добавляйте -es",
+      "summary":"Слова на -s, -ss, -sh, -ch, -x обычно получают окончание -es.",
+      "formula":"watch → watches · address → addresses",
+      "examples":[{"en":"two watches","ru":"двое наручных часов"},{"en":"three addresses","ru":"три адреса"}]
+    },
+    {
+      "label":"Вопросы","title":"Согласуйте вопрос и ответ с количеством предметов",
+      "summary":"Для одного предмета используйте it, для нескольких — they.",
+      "table":{"headers":["Количество","Вопрос","Ответ"],"rows":[["один","What is it?","It’s a photo."],["несколько","What are they?","They’re keys."]]},
+      "tip":"It’s = it is; they’re = they are."
+    }
+  ],
+  "exercises": [
+    {
+      "id":"grammar-5-exercise-1","difficulty":"1 · Базовый уровень","title":"Выберите a или an","instruction":"Выберите правильный артикль.",
+      "items":[
+        {"id":"g5-1-1","type":"select","prompt":"___ umbrella","options":["a","an"],"answer":"an","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-1-2","type":"select","prompt":"___ camera","options":["a","an"],"answer":"a","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-1-3","type":"select","prompt":"___ email","options":["a","an"],"answer":"an","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-1-4","type":"select","prompt":"___ debit card","options":["a","an"],"answer":"a","revealCorrect":false,"explanation":"Попробуйте ещё раз."}
+      ]
+    },
+    {
+      "id":"grammar-5-exercise-2","difficulty":"2 · Средний уровень","title":"Образуйте множественное число","instruction":"Напишите форму множественного числа.",
+      "items":[
+        {"id":"g5-2-1","type":"text","prompt":"book","answers":["books"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-2-2","type":"text","prompt":"watch","answers":["watches"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-2-3","type":"text","prompt":"city","answers":["cities"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-2-4","type":"text","prompt":"address","answers":["addresses"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."}
+      ]
+    },
+    {
+      "id":"grammar-5-exercise-3","difficulty":"3 · Повышенная сложность","title":"It или they?","instruction":"Выберите правильную форму вопроса или ответа.",
+      "items":[
+        {"id":"g5-3-1","type":"select","prompt":"___ is it? — It’s a photo.","options":["What","What are","Where"],"answer":"What","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-3-2","type":"select","prompt":"What are they? — ___ keys.","options":["They’re","It’s","They"],"answer":"They’re","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-3-3","type":"select","prompt":"What is it? — ___ ID card.","options":["It’s an","It’s a","They’re an"],"answer":"It’s an","revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-3-4","type":"select","prompt":"___ are they? — They’re coats.","options":["What","What is","Where is"],"answer":"What","revealCorrect":false,"explanation":"Попробуйте ещё раз."}
+      ]
+    },
+    {
+      "id":"grammar-5-exercise-4","difficulty":"4 · Самое сложное","title":"Напишите полный ответ","instruction":"Напишите вопрос или ответ полностью.",
+      "items":[
+        {"id":"g5-4-1","type":"textarea","prompt":"Спросите об одном предмете.","answers":["What is it","What’s it"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-4-2","type":"textarea","prompt":"Ответьте: What is it? (an umbrella)","answers":["It’s an umbrella","It is an umbrella"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-4-3","type":"textarea","prompt":"Спросите о нескольких предметах.","answers":["What are they"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."},
+        {"id":"g5-4-4","type":"textarea","prompt":"Ответьте: What are they? (credit cards)","answers":["They’re credit cards","They are credit cards"],"revealCorrect":false,"explanation":"Попробуйте ещё раз."}
+      ]
+    }
+  ],
+  "page":"grammar-topic.html?id=grammar-5"
+}
 
 ];
