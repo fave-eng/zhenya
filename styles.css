@@ -2042,7 +2042,20 @@ body[data-view="grammar-topic"] .grammar-practice-heading {
 .exercise-reference-layout { padding: 18px 0 20px; }
 .exercise-reference-layout.is-side { display:grid; grid-template-columns:minmax(250px,.85fr) minmax(0,1.15fr); gap:22px; align-items:start; }
 .exercise-reference { margin:0; min-width:0; }
-.exercise-reference-layout.is-side .exercise-reference { position:sticky; top:82px; }
+.exercise-card:has(.exercise-reference-layout.is-side) { overflow:clip; }
+.exercise-reference-layout.is-side .exercise-reference {
+  position:sticky;
+  top:82px;
+  max-height:calc(100vh - 102px);
+}
+.exercise-reference-layout.is-side .exercise-reference img {
+  width:auto;
+  max-width:100%;
+  max-height:calc(100vh - 102px);
+  margin:0 auto;
+  object-fit:contain;
+  object-position:top center;
+}
 .exercise-reference img { display:block; width:100%; height:auto; border:1px solid #dbe3ef; border-radius:14px; background:#fff; }
 .exercise-reference-work { min-width:0; }
 .exercise-reference-layout.is-top .exercise-reference { max-width:760px; margin:0 auto 16px; }
@@ -2063,7 +2076,8 @@ body[data-view="grammar-topic"] .grammar-practice-heading {
 .exercise-answer-list span { line-height: 1.45; }
 @media (max-width:760px) {
   .exercise-reference-layout.is-side { grid-template-columns:1fr; gap:14px; }
-  .exercise-reference-layout.is-side .exercise-reference { position:static; }
+  .exercise-reference-layout.is-side .exercise-reference { position:static; max-height:none; }
+  .exercise-reference-layout.is-side .exercise-reference img { width:100%; max-height:none; }
   .exercise-reference-layout { padding-top:12px; }
 }
 

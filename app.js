@@ -52,11 +52,11 @@
     } else if (type === 'select') {
       control = `<select data-answer-control><option value="">Выберите ответ</option>${options.map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join('')}</select>`;
     } else if (type === 'single') {
-      control = `<div class="option-list">${options.map((option, optionIndex) => `<label class="option"><input type="radio" name="${escapeHtml(id)}" value="${escapeHtml(option.value)}" data-answer-control><span>${escapeHtml(option.label)}</span></label>`).join('')}</div>`;
+      control = `<div class="option-list">${options.map((option, optionIndex) => `<label class="option"><input type="radio" name="${escapeHtml(id)}" value="${escapeHtml(option.value)}" data-answer-control autocomplete="off"><span>${escapeHtml(option.label)}</span></label>`).join('')}</div>`;
     } else if (type === 'multiple') {
       const maxSelections = Math.max(0, Number(item.maxSelections) || 0);
       const optionClass = safeText(item.optionStyle).toLowerCase() === 'chips' ? ' is-chip-list' : '';
-      control = `<div class="option-list${optionClass}"${maxSelections ? ` data-max-selections="${maxSelections}"` : ''}>${options.map((option) => `<label class="option"><input type="checkbox" value="${escapeHtml(option.value)}" data-answer-control><span>${escapeHtml(option.label)}</span></label>`).join('')}</div>`;
+      control = `<div class="option-list${optionClass}"${maxSelections ? ` data-max-selections="${maxSelections}"` : ''}>${options.map((option) => `<label class="option"><input type="checkbox" value="${escapeHtml(option.value)}" data-answer-control autocomplete="off"><span>${escapeHtml(option.label)}</span></label>`).join('')}</div>`;
     } else {
       control = `<input type="text" data-answer-control placeholder="${placeholder}" autocomplete="off">`;
     }
