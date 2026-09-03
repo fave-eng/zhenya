@@ -131,8 +131,9 @@
         const row = Number(entry.row) + (safeText(entry.direction).toLowerCase() === 'down' ? offset : 0);
         const col = Number(entry.col) + (safeText(entry.direction).toLowerCase() === 'across' ? offset : 0);
         const key = `${row}-${col}`;
-        const current = cells.get(key) || { row, col, number: '', fixed: false, letter: '' };
+        const current = cells.get(key) || { row, col, number: '', fixed: false, letter: '', directions: new Set() };
         if (offset === 0) current.number = entry.number;
+        current.directions.add(safeText(entry.direction).toLowerCase());
         if (entry.fixed) {
           current.fixed = true;
           current.letter = letter;
@@ -151,13 +152,22 @@
         if (!item) return '';
         const id = taskId(item, entry.itemId);
         return `<div class="crossword-answer-row" data-question-id="${escapeHtml(id)}" data-question-type="text" data-cw-entry data-cw-row="${Number(entry.row)}" data-cw-col="${Number(entry.col)}" data-cw-direction="${escapeHtml(direction)}" data-cw-length="${safeText(entry.answer).length}">
-          <label><strong>${escapeHtml(entry.number)}</strong><input type="text" data-answer-control autocomplete="off" aria-label="${escapeHtml(`${entry.number} ${direction}`)}"></label>
+          <input type="hidden" data-answer-control>
+          <div class="crossword-entry-label"><strong>${escapeHtml(entry.number)}</strong><span>${direction === 'across' ? 'ACROSS' : 'DOWN'}</span></div>
           <div class="feedback" data-feedback></div>
         </div>`;
       }).join('')}</div>`;
     };
 
-    const grid = `<div class="crossword-grid-wrap"><div class="crossword-grid" data-crossword style="--cw-cols:${Number(crossword.cols || 12)};--cw-rows:${Number(crossword.rows || 7)}">${[...cells.values()].map((cell) => `<span class="crossword-cell${cell.fixed ? ' is-fixed' : ''}" data-cw-cell="${cell.row}-${cell.col}" style="grid-row:${cell.row};grid-column:${cell.col}">${cell.number ? `<small>${escapeHtml(cell.number)}</small>` : ''}<b data-cw-letter data-fixed="${cell.fixed ? 'true' : 'false'}">${escapeHtml(cell.letter)}</b></span>`).join('')}</div></div>`;
+    const orderedCells = [...cells.values()].sort((a, b) => a.row - b.row || a.col - b.col);
+    const grid = `<div class="crossword-grid-wrap"><div class="crossword-grid" data-crossword style="--cw-cols:${Number(crossword.cols || 12)};--cw-rows:${Number(crossword.rows || 7)}">${orderedCells.map((cell) => {
+      const directions = [...cell.directions];
+      const directionAttrs = directions.map((direction) => ` data-cw-${direction}="true"`).join('');
+      const content = cell.fixed
+        ? `<b data-cw-fixed-letter="${escapeHtml(cell.letter)}">${escapeHtml(cell.letter)}</b>`
+        : `<input type="text" maxlength="1" autocomplete="off" autocapitalize="characters" spellcheck="false" data-cw-cell-input aria-label="Crossword cell ${cell.row}, ${cell.col}">`;
+      return `<span class="crossword-cell${cell.fixed ? ' is-fixed' : ''}" data-cw-cell="${cell.row}-${cell.col}"${directionAttrs} style="grid-row:${cell.row};grid-column:${cell.col}">${cell.number ? `<small>${escapeHtml(cell.number)}</small>` : ''}${content}</span>`;
+    }).join('')}</div><p class="crossword-grid-note">Введите по одной букве в каждую клетку. Буквы в пересечениях относятся к обоим словам.</p></div>`;
 
     return `<div class="crossword-work">${renderPhotos(crossword.photos?.across, 'across')}${grid}${renderPhotos(crossword.photos?.down, 'down')}<div class="crossword-answers">${renderEntries('across')}${renderEntries('down')}</div></div>`;
   }
@@ -303,39 +313,89 @@
     root.querySelectorAll('[data-crossword]').forEach((grid) => {
       const host = grid.closest('.crossword-work, .nationality-puzzle-work');
       if (!host) return;
-      const update = () => {
-        grid.querySelectorAll('[data-cw-letter]').forEach((letter) => {
-          if (letter.dataset.fixed !== 'true') letter.textContent = '';
+      const entries = [...host.querySelectorAll('[data-cw-entry]')];
+      let activeDirection = 'across';
+      const cellAt = (row, col) => grid.querySelector(`[data-cw-cell="${row}-${col}"]`);
+      const entryCells = (entry) => {
+        const row = Number(entry.dataset.cwRow);
+        const col = Number(entry.dataset.cwCol);
+        const direction = entry.dataset.cwDirection;
+        const length = Number(entry.dataset.cwLength);
+        return Array.from({ length }, (_, index) => cellAt(
+          row + (direction === 'down' ? index : 0),
+          col + (direction === 'across' ? index : 0)
+        ));
+      };
+      const cellLetter = (cell) => safeText(
+        cell?.querySelector('[data-cw-cell-input]')?.value || cell?.querySelector('[data-cw-fixed-letter]')?.dataset.cwFixedLetter
+      ).toUpperCase().replace(/[^A-Z]/g, '').slice(-1);
+
+      // Restore a saved, possibly unfinished word into the shared cells.
+      entries.forEach((entry) => {
+        const saved = safeText(entry.querySelector('[data-answer-control]')?.value).toUpperCase();
+        if (!saved) return;
+        entryCells(entry).forEach((cell, index) => {
+          const letter = saved[index];
+          const input = cell?.querySelector('[data-cw-cell-input]');
+          if (input && /[A-Z]/.test(letter || '') && !input.value) input.value = letter;
         });
-        host.querySelectorAll('[data-cw-entry]').forEach((entry) => {
-          const typed = safeText(entry.querySelector('[data-answer-control]')?.value).toUpperCase().replace(/[^A-Z]/g, '');
-          const prefix = safeText(entry.dataset.cwPrefix).toUpperCase().replace(/[^A-Z]/g, '');
-          const suffix = safeText(entry.dataset.cwSuffix).toUpperCase().replace(/[^A-Z]/g, '');
-          const row = Number(entry.dataset.cwRow);
-          const col = Number(entry.dataset.cwCol);
-          const direction = entry.dataset.cwDirection;
-          const length = Number(entry.dataset.cwLength);
-          const letters = Array.from({ length }, () => '');
-          [...prefix].forEach((letter, index) => { if (index < length) letters[index] = letter; });
-          [...typed].forEach((letter, index) => {
-            const targetIndex = prefix.length + index;
-            if (targetIndex < Math.max(prefix.length, length - suffix.length)) letters[targetIndex] = letter;
-          });
-          [...suffix].forEach((letter, index) => {
-            const targetIndex = length - suffix.length + index;
-            if (targetIndex >= 0 && targetIndex < length) letters[targetIndex] = letter;
-          });
-          letters.forEach((letter, index) => {
-            if (!letter) return;
-            const targetRow = row + (direction === 'down' ? index : 0);
-            const targetCol = col + (direction === 'across' ? index : 0);
-            const target = grid.querySelector(`[data-cw-cell="${targetRow}-${targetCol}"] [data-cw-letter]`);
-            if (target && target.dataset.fixed !== 'true') target.textContent = letter;
-          });
+      });
+
+      const syncEntries = (emit = false) => {
+        entries.forEach((entry) => {
+          const cells = entryCells(entry);
+          const hasTypedLetter = cells.some((cell) => safeText(cell?.querySelector('[data-cw-cell-input]')?.value).trim());
+          const answer = hasTypedLetter ? cells.map((cell) => cellLetter(cell) || '_').join('') : '';
+          const control = entry.querySelector('[data-answer-control]');
+          if (!control || control.value === answer) return;
+          control.value = answer;
+          if (emit) control.dispatchEvent(new Event('input', { bubbles: true }));
         });
       };
-      host.querySelectorAll('[data-cw-entry] [data-answer-control]').forEach((input) => input.addEventListener('input', update));
-      update();
+
+      const move = (cell, rowDelta, colDelta) => {
+        const [row, col] = safeText(cell?.dataset.cwCell).split('-').map(Number);
+        let nextRow = row + rowDelta;
+        let nextCol = col + colDelta;
+        while (nextRow > 0 && nextCol > 0) {
+          const next = cellAt(nextRow, nextCol);
+          if (!next) return;
+          const input = next.querySelector('[data-cw-cell-input]');
+          if (input) { input.focus(); input.select(); return; }
+          nextRow += rowDelta;
+          nextCol += colDelta;
+        }
+      };
+
+      grid.querySelectorAll('[data-cw-cell-input]').forEach((input) => {
+        input.addEventListener('focus', () => {
+          const cell = input.closest('[data-cw-cell]');
+          if (cell.dataset.cwAcross !== 'true' && cell.dataset.cwDown === 'true') activeDirection = 'down';
+          if (cell.dataset.cwDown !== 'true' && cell.dataset.cwAcross === 'true') activeDirection = 'across';
+        });
+        input.addEventListener('input', () => {
+          input.value = safeText(input.value).toUpperCase().replace(/[^A-Z]/g, '').slice(-1);
+          const cell = input.closest('[data-cw-cell]');
+          syncEntries(true);
+          if (!input.value) return;
+          if (activeDirection === 'down' && cell.dataset.cwDown === 'true') move(cell, 1, 0);
+          else move(cell, 0, 1);
+        });
+        input.addEventListener('keydown', (event) => {
+          const cell = input.closest('[data-cw-cell]');
+          const arrows = { ArrowLeft:[0,-1], ArrowRight:[0,1], ArrowUp:[-1,0], ArrowDown:[1,0] };
+          if (arrows[event.key]) {
+            event.preventDefault();
+            activeDirection = event.key === 'ArrowUp' || event.key === 'ArrowDown' ? 'down' : 'across';
+            move(cell, ...arrows[event.key]);
+          } else if (event.key === 'Backspace' && !input.value) {
+            event.preventDefault();
+            if (activeDirection === 'down' && cell.dataset.cwDown === 'true') move(cell, -1, 0);
+            else move(cell, 0, -1);
+          }
+        });
+      });
+      syncEntries(false);
     });
   }
 
@@ -535,7 +595,7 @@
   }
 
   function disableAnswers(root, disabled = true) {
-    root.querySelectorAll('[data-answer-control]').forEach((control) => { control.disabled = disabled; control.readOnly = disabled; });
+    root.querySelectorAll('[data-answer-control], [data-cw-cell-input]').forEach((control) => { control.disabled = disabled; control.readOnly = disabled; });
   }
 
   function formatDate(value) {

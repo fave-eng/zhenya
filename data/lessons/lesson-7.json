@@ -4,7 +4,7 @@
   "title": "Unit 3A — Where are my keys?",
   "subtitle": "Vocabulary: small things · Grammar: singular and plural nouns, a / an · Pronunciation: /z/ and /s/, plural endings",
   "status": "available",
-  "notification": { "enabled": true, "version": 2 },
+  "notification": { "enabled": true, "version": 3 },
   "vocabularyId": "vocab-lesson-7",
   "grammarIds": ["grammar-5"],
   "blocks": [
@@ -18,6 +18,7 @@
       "id": "exercise-1",
       "label": "1 VOCABULARY",
       "title": "Complete the crossword.",
+      "instruction": "Введите буквы прямо в клетки кроссворда. Пересекающиеся слова используют общую букву.",
       "layout": "crossword",
       "referenceImage": {
         "src": "images/lesson-7/crossword-small-things-scan.png",
@@ -43,26 +44,26 @@
         {"id":"ex1-15","type":"text","prompt":"15 across","answers":["key"],"revealCorrect":false}
       ],
       "crossword": {
-        "rows": 21,
-        "cols": 10,
+        "rows": 18,
+        "cols": 19,
         "entries": [
-          {"number":1,"answer":"WATCH","row":12,"col":1,"direction":"down","fixed":true},
-          {"number":2,"answer":"TABLET","row":12,"col":2,"direction":"down","itemId":"ex1-2"},
-          {"number":4,"answer":"PASSPORT","row":12,"col":3,"direction":"down","itemId":"ex1-4d"},
-          {"number":6,"answer":"BAG","row":12,"col":4,"direction":"down","itemId":"ex1-6"},
-          {"number":7,"answer":"WALLET","row":12,"col":5,"direction":"down","itemId":"ex1-7"},
-          {"number":9,"answer":"CREDITCARD","row":12,"col":6,"direction":"down","itemId":"ex1-9"},
-          {"number":10,"answer":"CAMERA","row":12,"col":7,"direction":"down","itemId":"ex1-10"},
-          {"number":11,"answer":"NOTEBOOK","row":12,"col":8,"direction":"down","itemId":"ex1-11d"},
-          {"number":12,"answer":"GLASSES","row":12,"col":9,"direction":"down","itemId":"ex1-12"},
-          {"number":3,"answer":"PHOTO","row":1,"col":1,"direction":"across","itemId":"ex1-3"},
-          {"number":4,"answer":"PHONE","row":2,"col":1,"direction":"across","itemId":"ex1-4a"},
-          {"number":5,"answer":"UMBRELLA","row":3,"col":1,"direction":"across","itemId":"ex1-5"},
-          {"number":8,"answer":"PENCIL","row":4,"col":1,"direction":"across","itemId":"ex1-8"},
-          {"number":11,"answer":"NEWSPAPER","row":5,"col":1,"direction":"across","itemId":"ex1-11a"},
-          {"number":13,"answer":"CHARGER","row":6,"col":1,"direction":"across","itemId":"ex1-13"},
-          {"number":14,"answer":"IDCARD","row":7,"col":1,"direction":"across","itemId":"ex1-14"},
-          {"number":15,"answer":"KEY","row":8,"col":1,"direction":"across","itemId":"ex1-15"}
+          {"number":1,"answer":"WATCH","row":1,"col":15,"direction":"down","fixed":true},
+          {"number":2,"answer":"TABLET","row":1,"col":18,"direction":"down","itemId":"ex1-2"},
+          {"number":4,"answer":"PASSPORT","row":5,"col":14,"direction":"down","itemId":"ex1-4d"},
+          {"number":6,"answer":"BAG","row":6,"col":9,"direction":"down","itemId":"ex1-6"},
+          {"number":7,"answer":"WALLET","row":7,"col":19,"direction":"down","itemId":"ex1-7"},
+          {"number":9,"answer":"CREDITCARD","row":9,"col":17,"direction":"down","itemId":"ex1-9"},
+          {"number":10,"answer":"CAMERA","row":10,"col":11,"direction":"down","itemId":"ex1-10"},
+          {"number":11,"answer":"NOTEBOOK","row":11,"col":6,"direction":"down","itemId":"ex1-11d"},
+          {"number":12,"answer":"GLASSES","row":12,"col":3,"direction":"down","itemId":"ex1-12"},
+          {"number":3,"answer":"PHOTO","row":3,"col":12,"direction":"across","itemId":"ex1-3"},
+          {"number":4,"answer":"PHONE","row":5,"col":14,"direction":"across","itemId":"ex1-4a"},
+          {"number":5,"answer":"UMBRELLA","row":6,"col":7,"direction":"across","itemId":"ex1-5"},
+          {"number":8,"answer":"PENCIL","row":9,"col":14,"direction":"across","itemId":"ex1-8"},
+          {"number":11,"answer":"NEWSPAPER","row":11,"col":6,"direction":"across","itemId":"ex1-11a"},
+          {"number":13,"answer":"CHARGER","row":14,"col":1,"direction":"across","itemId":"ex1-13"},
+          {"number":14,"answer":"IDCARD","row":15,"col":15,"direction":"across","itemId":"ex1-14"},
+          {"number":15,"answer":"KEY","row":18,"col":6,"direction":"across","itemId":"ex1-15"}
         ]
       }
     },
