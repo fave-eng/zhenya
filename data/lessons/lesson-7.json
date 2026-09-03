@@ -4,7 +4,7 @@
   "title": "Unit 3A — Where are my keys?",
   "subtitle": "Vocabulary: small things · Grammar: singular and plural nouns, a / an · Pronunciation: /z/ and /s/, plural endings",
   "status": "available",
-  "notification": { "enabled": true, "version": 3 },
+  "notification": { "enabled": true, "version": 4 },
   "vocabularyId": "vocab-lesson-7",
   "grammarIds": ["grammar-5"],
   "blocks": [
@@ -21,8 +21,8 @@
       "instruction": "Введите буквы прямо в клетки кроссворда. Пересекающиеся слова используют общую букву.",
       "layout": "crossword",
       "referenceImage": {
-        "src": "images/lesson-7/crossword-small-things-scan.png",
-        "alt": "Original workbook scan with numbered small things and the crossword",
+        "src": "images/lesson-7/crossword-objects-scan.png",
+        "alt": "Original workbook objects numbered for the crossword, without a duplicate grid",
         "mode": "side"
       },
       "items": [
