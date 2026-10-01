@@ -1802,5 +1802,109 @@ window.VOCABULARY_DATA = [
     }
   ]
 }
+,
+{
+  "id": "vocab-lesson-9",
+  "title": "Unit 3B — Souvenirs (continued)",
+  "label": "Домашняя работа №9",
+  "icon": "💬",
+  "type": "lesson",
+  "linkedLessonId": "lesson-9",
+  "learnedByTestOnly": true,
+  "sections": [
+    {
+      "id": "shopping-phrases",
+      "title": "Shopping phrases",
+      "icon": "🛍️"
+    },
+    {
+      "id": "position-words",
+      "title": "Position words",
+      "icon": "📍"
+    }
+  ],
+  "words": [
+    {
+      "id": "u3b2-how-much-this-mug",
+      "uniqueKey": "how much is this mug",
+      "en": "How much is this mug?",
+      "ru": "Сколько стоит эта кружка?",
+      "transcription": "/haʊ mʌtʃ ɪz ðɪs mʌɡ/",
+      "exampleEn": "How much is this mug? — It’s £5.00.",
+      "exampleRu": "Сколько стоит эта кружка? — 5 фунтов.",
+      "section": "shopping-phrases"
+    },
+    {
+      "id": "u3b2-how-much-these-key-rings",
+      "uniqueKey": "how much are these key rings",
+      "en": "How much are these key rings?",
+      "ru": "Сколько стоят эти брелоки?",
+      "transcription": "/haʊ mʌtʃ ɑː ðiːz kiː rɪŋz/",
+      "exampleEn": "How much are these key rings? — They’re €2.50.",
+      "exampleRu": "Сколько стоят эти брелоки? — 2,50 евро.",
+      "section": "shopping-phrases"
+    },
+    {
+      "id": "u3b2-is-this-your-phone",
+      "uniqueKey": "is this your phone",
+      "en": "Is this your phone?",
+      "ru": "Это ваш телефон?",
+      "transcription": "/ɪz ðɪs jɔː fəʊn/",
+      "exampleEn": "Is this your phone? — Oh yes, it is.",
+      "exampleRu": "Это ваш телефон? — О да.",
+      "section": "shopping-phrases"
+    },
+    {
+      "id": "u3b2-thank-you-very-much",
+      "uniqueKey": "thank you very much",
+      "en": "Thank you very much.",
+      "ru": "Большое спасибо.",
+      "transcription": "/θæŋk juː ˈveri mʌtʃ/",
+      "exampleEn": "Thank you very much. — You’re welcome.",
+      "exampleRu": "Большое спасибо. — Пожалуйста.",
+      "section": "shopping-phrases"
+    },
+    {
+      "id": "u3b2-youre-welcome",
+      "uniqueKey": "you're welcome",
+      "en": "You’re welcome.",
+      "ru": "Пожалуйста; не за что.",
+      "transcription": "/jɔː ˈwelkəm/",
+      "exampleEn": "Thank you very much. — You’re welcome.",
+      "exampleRu": "Большое спасибо. — Не за что.",
+      "section": "shopping-phrases"
+    },
+    {
+      "id": "u3b2-here",
+      "uniqueKey": "here",
+      "en": "here",
+      "ru": "здесь; сюда",
+      "transcription": "/hɪə/",
+      "exampleEn": "No, my bag’s here.",
+      "exampleRu": "Нет, моя сумка здесь.",
+      "section": "position-words"
+    },
+    {
+      "id": "u3b2-there",
+      "uniqueKey": "there",
+      "en": "there",
+      "ru": "там; туда",
+      "transcription": "/ðeə/",
+      "exampleEn": "Is that your bag there?",
+      "exampleRu": "Та сумка там ваша?",
+      "section": "position-words"
+    },
+    {
+      "id": "u3b2-over-there",
+      "uniqueKey": "over there",
+      "en": "over there",
+      "ru": "вон там",
+      "transcription": "/ˌəʊvə ˈðeə/",
+      "exampleEn": "What’s that over there?",
+      "exampleRu": "Что это вон там?",
+      "section": "position-words"
+    }
+  ]
+}
 
 ];

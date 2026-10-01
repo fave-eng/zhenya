@@ -1,0 +1,801 @@
+{
+  "id": "lesson-9",
+  "number": 9,
+  "title": "Unit 3B — Souvenirs (continued)",
+  "subtitle": "Grammar practice · Pronunciation: /ð/ and sentence rhythm · Words and phrases to learn",
+  "status": "available",
+  "notification": {
+    "enabled": true,
+    "version": 1
+  },
+  "vocabularyId": "vocab-lesson-9",
+  "grammarIds": [
+    "grammar-6"
+  ],
+  "totalPoints": 16,
+  "blocks": [
+    {
+      "type": "section",
+      "title": "2 GRAMMAR",
+      "text": "this / that / these / those"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-2c",
+      "label": "2c",
+      "title": "Complete the conversations with typical souvenirs from your country and the price.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-2c-2a",
+          "type": "manual",
+          "prompt": "Souvenir 2",
+          "placeholder": "",
+          "scored": false,
+          "inputChars": 16
+        },
+        {
+          "id": "exercise-2c-2b",
+          "type": "manual",
+          "prompt": "Price 2",
+          "placeholder": "",
+          "scored": false,
+          "inputChars": 8
+        },
+        {
+          "id": "exercise-2c-3a",
+          "type": "manual",
+          "prompt": "Souvenir 3",
+          "placeholder": "",
+          "scored": false,
+          "inputChars": 16
+        },
+        {
+          "id": "exercise-2c-3b",
+          "type": "manual",
+          "prompt": "Price 3",
+          "placeholder": "",
+          "scored": false,
+          "inputChars": 8
+        },
+        {
+          "id": "exercise-2c-4a",
+          "type": "manual",
+          "prompt": "Souvenir 4",
+          "placeholder": "",
+          "scored": false,
+          "inputChars": 16
+        },
+        {
+          "id": "exercise-2c-4b",
+          "type": "manual",
+          "prompt": "Price 4",
+          "placeholder": "",
+          "scored": false,
+          "inputChars": 8
+        }
+      ],
+      "conversations": [
+        {
+          "number": "1",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Excuse me. What are those?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "They’re "
+                },
+                {
+                  "exampleBlank": "key rings",
+                  "inputChars": 9
+                },
+                {
+                  "text": "."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "How much are they?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "They’re "
+                },
+                {
+                  "exampleBlank": "€3.50",
+                  "inputChars": 5
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Excuse me. What’s that?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s a(n) "
+                },
+                {
+                  "blank": "exercise-2c-2a"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "How much is it?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s "
+                },
+                {
+                  "blank": "exercise-2c-2b"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Excuse me. What are these?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "They’re "
+                },
+                {
+                  "blank": "exercise-2c-3a"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "How much are they?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "They’re "
+                },
+                {
+                  "blank": "exercise-2c-3b"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Excuse me. What’s this?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s a(n) "
+                },
+                {
+                  "blank": "exercise-2c-4a"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "How much is it?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s "
+                },
+                {
+                  "blank": "exercise-2c-4b"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "3 PRONUNCIATION",
+      "text": "/ð/ and sentence rhythm"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3a",
+      "label": "3a",
+      "title": "3.3 Listen and complete the sentences.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-3a-2",
+          "type": "text",
+          "prompt": "2",
+          "answers": [
+            "that"
+          ],
+          "inputChars": 4,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-3",
+          "type": "text",
+          "prompt": "3",
+          "answers": [
+            "Those"
+          ],
+          "inputChars": 5,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-4a",
+          "type": "text",
+          "prompt": "4a",
+          "answers": [
+            "These"
+          ],
+          "inputChars": 5,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-4b",
+          "type": "text",
+          "prompt": "4b",
+          "answers": [
+            "books"
+          ],
+          "inputChars": 5,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-5a",
+          "type": "text",
+          "prompt": "5a",
+          "answers": [
+            "this"
+          ],
+          "inputChars": 4,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-3a-5b",
+          "type": "text",
+          "prompt": "5b",
+          "answers": [
+            "phone"
+          ],
+          "inputChars": 5,
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "conversations": [
+        {
+          "number": "1",
+          "lines": [
+            {
+              "speaker": "",
+              "segments": [
+                {
+                  "exampleBlank": "This",
+                  "inputChars": 4
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "exampleBlank": "is my",
+                  "inputChars": 5
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "exampleBlank": "mother",
+                  "inputChars": 6
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "lines": [
+            {
+              "speaker": "",
+              "segments": [
+                {
+                  "text": "What’s "
+                },
+                {
+                  "blank": "exercise-3a-2"
+                },
+                {
+                  "text": " over there?"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "lines": [
+            {
+              "speaker": "",
+              "segments": [
+                {
+                  "blank": "exercise-3a-3"
+                },
+                {
+                  "text": " are my keys."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "lines": [
+            {
+              "speaker": "",
+              "segments": [
+                {
+                  "blank": "exercise-3a-4a"
+                },
+                {
+                  "text": " are your "
+                },
+                {
+                  "blank": "exercise-3a-4b"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "5",
+          "lines": [
+            {
+              "speaker": "",
+              "segments": [
+                {
+                  "text": "Is "
+                },
+                {
+                  "blank": "exercise-3a-5a"
+                },
+                {
+                  "text": " your "
+                },
+                {
+                  "blank": "exercise-3a-5b"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "audio",
+      "id": "exercise-3a-audio",
+      "title": "3.3 Listen and complete the sentences.",
+      "src": "audio/English_File_4e_Beginner_WB_3.3.mp3"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-3b",
+      "label": "3b",
+      "title": "3.3 Listen again and repeat the sentences. Copy the rhythm.",
+      "items": [
+        {
+          "id": "exercise-3b-done",
+          "type": "multiple",
+          "prompt": "I repeated.",
+          "options": [
+            {
+              "value": "done",
+              "label": "I repeated"
+            }
+          ],
+          "scored": false,
+          "completionOnly": true,
+          "number": "✓"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "4 WORDS AND PHRASES TO LEARN"
+    },
+    {
+      "type": "exercise",
+      "id": "exercise-4",
+      "label": "4",
+      "title": "WORDS AND PHRASES TO LEARN",
+      "instruction": "Complete the missing words in the conversations.",
+      "layout": "conversations",
+      "items": [
+        {
+          "id": "exercise-4-2a",
+          "type": "text",
+          "prompt": "exercise-4-2a",
+          "answers": [
+            "s"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2b",
+          "type": "text",
+          "prompt": "exercise-4-2b",
+          "answers": [
+            "our"
+          ],
+          "inputChars": 3,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2c",
+          "type": "text",
+          "prompt": "exercise-4-2c",
+          "answers": [
+            "ou’re",
+            "ou're"
+          ],
+          "inputChars": 5,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-2d",
+          "type": "text",
+          "prompt": "exercise-4-2d",
+          "answers": [
+            "elcome"
+          ],
+          "inputChars": 6,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-3a",
+          "type": "text",
+          "prompt": "exercise-4-3a",
+          "answers": [
+            "ere"
+          ],
+          "inputChars": 3,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-3b",
+          "type": "text",
+          "prompt": "exercise-4-3b",
+          "answers": [
+            "ere"
+          ],
+          "inputChars": 3,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-4a",
+          "type": "text",
+          "prompt": "exercise-4-4a",
+          "answers": [
+            "ow"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-4b",
+          "type": "text",
+          "prompt": "exercise-4-4b",
+          "answers": [
+            "uch"
+          ],
+          "inputChars": 3,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-4c",
+          "type": "text",
+          "prompt": "exercise-4-4c",
+          "answers": [
+            "s"
+          ],
+          "inputChars": 1,
+          "placeholder": "",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-4-4d",
+          "type": "text",
+          "prompt": "exercise-4-4d",
+          "answers": [
+            "at",
+            "is"
+          ],
+          "inputChars": 2,
+          "placeholder": "",
+          "revealCorrect": false
+        }
+      ],
+      "conversations": [
+        {
+          "number": "1",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "exampleBlank": "How",
+                  "inputChars": 3
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "exampleBlank": "much",
+                  "inputChars": 4
+                },
+                {
+                  "text": " "
+                },
+                {
+                  "exampleBlank": "are",
+                  "inputChars": 3
+                },
+                {
+                  "text": " these key rings?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "They’re €2.50."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "I"
+                },
+                {
+                  "blank": "exercise-4-2a"
+                },
+                {
+                  "text": " this y"
+                },
+                {
+                  "blank": "exercise-4-2b"
+                },
+                {
+                  "text": " phone?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Oh yes, it is. Thank you very much."
+                }
+              ]
+            },
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Y"
+                },
+                {
+                  "blank": "exercise-4-2c"
+                },
+                {
+                  "text": " w"
+                },
+                {
+                  "blank": "exercise-4-2d"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Is that your bag th"
+                },
+                {
+                  "blank": "exercise-4-3a"
+                },
+                {
+                  "text": "?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "No, my bag’s h"
+                },
+                {
+                  "blank": "exercise-4-3b"
+                },
+                {
+                  "text": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "H"
+                },
+                {
+                  "blank": "exercise-4-4a"
+                },
+                {
+                  "text": " m"
+                },
+                {
+                  "blank": "exercise-4-4b"
+                },
+                {
+                  "text": " i"
+                },
+                {
+                  "blank": "exercise-4-4c"
+                },
+                {
+                  "text": " th"
+                },
+                {
+                  "blank": "exercise-4-4d"
+                },
+                {
+                  "text": " mug?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "It’s £5.00."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
