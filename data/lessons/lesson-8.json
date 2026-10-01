@@ -12,7 +12,7 @@
   "grammarIds": [
     "grammar-6"
   ],
-  "totalPoints": 16,
+  "totalPoints": 21,
   "blocks": [
     {
       "type": "section",
@@ -25,8 +25,8 @@
       "label": "1",
       "title": "Match the words in the list to the pictures.",
       "referenceImage": {
-        "src": "images/lesson-8/souvenirs.svg",
-        "alt": "Eight numbered souvenir pictures for exercise 1",
+        "src": "images/lesson-8/souvenirs-workbook.png",
+        "alt": "Original workbook image for exercise 1: souvenirs pictures",
         "mode": "side"
       },
       "wordBank": [
@@ -283,8 +283,8 @@
       "groupPosition": "last",
       "layout": "conversations",
       "referenceImage": {
-        "src": "images/lesson-8/grammar-2b-scenes.svg",
-        "alt": "Three numbered scenes for grammar exercise 2b",
+        "src": "images/lesson-8/grammar-2b-scenes-workbook.png",
+        "alt": "Original workbook scenes for exercise 2b, items 1 to 8",
         "mode": "side"
       },
       "wordBank": [
@@ -323,6 +323,76 @@
             "those"
           ],
           "answer": "those",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-4",
+          "number": 4,
+          "type": "select",
+          "prompt": "4",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "these",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-5",
+          "number": 5,
+          "type": "select",
+          "prompt": "5",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "that",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-6",
+          "number": 6,
+          "type": "select",
+          "prompt": "6",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "these",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-7",
+          "number": 7,
+          "type": "select",
+          "prompt": "7",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "that",
+          "revealCorrect": false
+        },
+        {
+          "id": "exercise-2b-8",
+          "number": 8,
+          "type": "select",
+          "prompt": "8",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "these",
           "revealCorrect": false
         }
       ],
@@ -382,6 +452,125 @@
                 },
                 {
                   "text": " are £10."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Are "
+                },
+                {
+                  "blank": "exercise-2b-4"
+                },
+                {
+                  "text": " your keys?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Yes, they are. Thank you!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "5",
+          "lines": [
+            {
+              "speaker": "",
+              "segments": [
+                {
+                  "text": "Look! "
+                },
+                {
+                  "blank": "exercise-2b-5"
+                },
+                {
+                  "text": "’s Martin from our English class."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "6",
+          "lines": [
+            {
+              "speaker": "",
+              "segments": [
+                {
+                  "text": "Wow. "
+                },
+                {
+                  "blank": "exercise-2b-6"
+                },
+                {
+                  "text": " are good glasses!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "7",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "I like "
+                },
+                {
+                  "blank": "exercise-2b-7"
+                },
+                {
+                  "text": " cap."
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "Yes, it’s very nice."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "8",
+          "lines": [
+            {
+              "speaker": "A",
+              "segments": [
+                {
+                  "text": "Are "
+                },
+                {
+                  "blank": "exercise-2b-8"
+                },
+                {
+                  "text": " teddies £5?"
+                }
+              ]
+            },
+            {
+              "speaker": "B",
+              "segments": [
+                {
+                  "text": "No, they’re £10."
                 }
               ]
             }
