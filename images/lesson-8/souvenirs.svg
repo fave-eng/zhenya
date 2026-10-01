@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 980" role="img" aria-labelledby="title desc">
+  <title id="title">Numbered souvenir pictures</title>
+  <desc id="desc">Eight numbered drawings arranged in two columns and four rows.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#64748b" flood-opacity=".18"/>
+    </filter>
+    <linearGradient id="soft" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#e2e8f0"/></linearGradient>
+    <style>
+      .panel{fill:#fff;stroke:#dbe3ef;stroke-width:2}.num{font:700 24px system-ui,sans-serif;fill:#334155}.obj{fill:url(#soft);stroke:#64748b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.dark{fill:#94a3b8;stroke:#64748b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.line{fill:none;stroke:#64748b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.detail{fill:none;stroke:#475569;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.stripe{fill:#94a3b8}.eye{fill:#334155}.softfill{fill:#cbd5e1;stroke:#64748b;stroke-width:4}
+    </style>
+  </defs>
+  <rect width="760" height="980" rx="26" fill="#f8fafc"/>
+  <!-- panels -->
+  <g>
+    <rect class="panel" x="24" y="24" width="344" height="214" rx="20"/>
+    <rect class="panel" x="392" y="24" width="344" height="214" rx="20"/>
+    <rect class="panel" x="24" y="262" width="344" height="214" rx="20"/>
+    <rect class="panel" x="392" y="262" width="344" height="214" rx="20"/>
+    <rect class="panel" x="24" y="500" width="344" height="214" rx="20"/>
+    <rect class="panel" x="392" y="500" width="344" height="214" rx="20"/>
+    <rect class="panel" x="24" y="738" width="344" height="214" rx="20"/>
+    <rect class="panel" x="392" y="738" width="344" height="214" rx="20"/>
+  </g>
+  <!-- 1 cap -->
+  <g transform="translate(24 24)"><text class="num" x="20" y="38">1</text><g filter="url(#shadow)" transform="translate(68 50)"><path class="dark" d="M36 92c10-50 42-76 92-76 50 0 87 26 103 75-50 13-102 15-155 5-14-2-27-3-40-4z"/><path class="obj" d="M36 92c37 5 77 8 119 6 22-1 49-4 76-8-22 28-52 43-89 45-44 2-79-10-106-43z"/><path class="detail" d="M129 20c4 17 5 38 2 64"/></g></g>
+  <!-- 2 key ring -->
+  <g transform="translate(392 24)"><text class="num" x="20" y="38">2</text><g filter="url(#shadow)" transform="translate(102 38)"><circle class="line" cx="118" cy="34" r="24"/><path class="line" d="M118 58v28"/><rect class="softfill" x="58" y="82" width="120" height="100" rx="22"/><path class="detail" d="M86 119l18-14 14 18 14-18 20 14"/><circle class="eye" cx="103" cy="132" r="4"/><circle class="eye" cx="137" cy="132" r="4"/><path class="detail" d="M113 148q10 10 20 0"/></g></g>
+  <!-- 3 plate -->
+  <g transform="translate(24 262)"><text class="num" x="20" y="38">3</text><g filter="url(#shadow)" transform="translate(60 75)"><ellipse class="obj" cx="112" cy="72" rx="104" ry="48"/><ellipse class="line" cx="112" cy="66" rx="73" ry="29"/><path class="line" d="M18 79c17 31 50 47 94 47s77-16 94-47"/></g></g>
+  <!-- 4 teddy -->
+  <g transform="translate(392 262)"><text class="num" x="20" y="38">4</text><g filter="url(#shadow)" transform="translate(83 37)"><circle class="dark" cx="58" cy="45" r="27"/><circle class="dark" cx="154" cy="45" r="27"/><circle class="obj" cx="106" cy="73" r="57"/><ellipse class="obj" cx="106" cy="142" rx="70" ry="63"/><circle class="eye" cx="87" cy="66" r="5"/><circle class="eye" cx="125" cy="66" r="5"/><ellipse class="softfill" cx="106" cy="90" rx="26" ry="20"/><circle class="eye" cx="106" cy="84" r="5"/><path class="detail" d="M96 99q10 10 20 0"/><ellipse class="dark" cx="42" cy="164" rx="31" ry="23"/><ellipse class="dark" cx="170" cy="164" rx="31" ry="23"/></g></g>
+  <!-- 5 mug -->
+  <g transform="translate(24 500)"><text class="num" x="20" y="38">5</text><g filter="url(#shadow)" transform="translate(75 52)"><path class="obj" d="M30 25h140v125c0 22-18 40-40 40H70c-22 0-40-18-40-40z"/><path class="line" d="M170 53h27c32 0 42 31 34 57-7 24-28 33-61 29"/><path class="stripe" d="M34 55h132v21H34zM34 96h132v21H34zM34 137h132v21H34z"/></g></g>
+  <!-- 6 scarf -->
+  <g transform="translate(392 500)"><text class="num" x="20" y="38">6</text><g filter="url(#shadow)" transform="translate(88 44)"><path class="dark" d="M57 22c38-17 86-12 112 15 22 23 14 51-16 68-20 12-38 16-55 13 23-10 38-24 37-39-2-21-31-31-58-24-22 6-34 21-26 38 6 13 22 18 41 16-30 17-64 12-78-9-18-27 1-60 43-78z"/><path class="obj" d="M87 112l-28 87 43 10 30-91z"/><path class="obj" d="M129 113l38 82 41-18-44-88z"/><path class="detail" d="M66 193l-7 17m20-13-5 17m89-20 8 15m9-22 8 14"/></g></g>
+  <!-- 7 T-shirt -->
+  <g transform="translate(24 738)"><text class="num" x="20" y="38">7</text><g filter="url(#shadow)" transform="translate(74 41)"><path class="obj" d="M77 20h74l22 20 54 28-28 48-37-20v98H66V96l-37 20L1 68l54-28z"/><path class="line" d="M92 20c5 20 40 20 44 0"/></g></g>
+  <!-- 8 football shirt -->
+  <g transform="translate(392 738)"><text class="num" x="20" y="38">8</text><g filter="url(#shadow)" transform="translate(74 41)"><path class="obj" d="M77 20h74l22 20 54 28-28 48-37-20v98H66V96l-37 20L1 68l54-28z"/><path class="line" d="M92 20l22 22 22-22"/><path class="stripe" d="M76 41h18v151H76zM110 42h18v150h-18zM144 41h18v151h-18z"/><path class="detail" d="M165 51l36 19m-139-19L26 70"/></g></g>
+</svg>

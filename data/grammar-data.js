@@ -2281,5 +2281,919 @@ window.GRAMMAR_DATA = [
   ],
   "page": "grammar-topic.html?id=grammar-4"
 }
+,
+{
+  "id": "grammar-5",
+  "number": 5,
+  "title": "Singular and plural nouns, a / an",
+  "subtitle": "Один или несколько предметов: a / an, формы множественного числа и вопросы What is it? / What are they?",
+  "status": "available",
+  "linkedLessonId": "lesson-7",
+  "passScore": 100,
+  "lockOnPass": true,
+  "checkButtonLabel": "Проверить",
+  "notification": {
+    "enabled": false,
+    "version": 1
+  },
+  "overview": [
+    {
+      "label": "1 предмет",
+      "value": "a book · an umbrella · It’s a key."
+    },
+    {
+      "label": "Несколько",
+      "value": "books · umbrellas · They’re keys."
+    },
+    {
+      "label": "a / an",
+      "value": "a + consonant sound · an + vowel sound"
+    },
+    {
+      "label": "Вопрос",
+      "value": "What is it? · What are they?"
+    }
+  ],
+  "explanation": [
+    {
+      "label": "Главная идея",
+      "title": "Форма существительного показывает: один предмет или несколько",
+      "summary": "С существительным в единственном числе говорим об одном предмете. Во множественном числе — о двух и более. С одним исчисляемым предметом обычно нужен a или an.",
+      "formula": [
+        "a / an + singular noun",
+        "plural noun: usually noun + -s"
+      ],
+      "examples": [
+        {
+          "en": "a key → keys",
+          "ru": "ключ → ключи"
+        },
+        {
+          "en": "an umbrella → umbrellas",
+          "ru": "зонт → зонты"
+        },
+        {
+          "en": "a camera → cameras",
+          "ru": "камера → камеры"
+        }
+      ],
+      "warning": "Не ставьте a / an перед существительным во множественном числе: keys, не a keys."
+    },
+    {
+      "label": "a / an",
+      "title": "Выбирайте a или an по звуку в начале следующего слова",
+      "summary": "Используйте a перед согласным звуком и an перед гласным звуком. Смотрите прежде всего на произношение, а не только на первую букву.",
+      "table": {
+        "headers": [
+          "Форма",
+          "Когда",
+          "Примеры"
+        ],
+        "rows": [
+          [
+            "a",
+            "перед согласным звуком",
+            "a book · a watch · a key · a laptop"
+          ],
+          [
+            "an",
+            "перед гласным звуком",
+            "an umbrella · an email · an address · an ID card"
+          ]
+        ]
+      },
+      "examples": [
+        {
+          "en": "It’s a photo.",
+          "ru": "Это фотография."
+        },
+        {
+          "en": "It’s an ID card.",
+          "ru": "Это ID-карта."
+        }
+      ],
+      "tip": "Буква не всегда решает выбор. Например, an ID card: название буквы I начинается с гласного звука /aɪ/."
+    },
+    {
+      "label": "Множественное число",
+      "title": "В большинстве случаев добавьте -s",
+      "summary": "Для обычных существительных множественное число образуется окончанием -s.",
+      "formula": [
+        "book → books",
+        "camera → cameras",
+        "key → keys",
+        "umbrella → umbrellas"
+      ],
+      "points": [
+        "После большинства слов добавляйте -s.",
+        "Если слово заканчивается на гласную + y, просто добавляйте -s: key → keys.",
+        "Артикль a / an во множественном числе исчезает: a key → keys."
+      ]
+    },
+    {
+      "label": "-es",
+      "title": "После -s, -ss, -sh, -ch, -x и часто -z добавляйте -es",
+      "summary": "Так окончание легче произнести: появляется дополнительный слог /ɪz/.",
+      "formula": [
+        "watch → watches",
+        "address → addresses",
+        "class → classes"
+      ],
+      "examples": [
+        {
+          "en": "one watch → two watches",
+          "ru": "одни часы → двое часов / две пары часов"
+        },
+        {
+          "en": "one address → two addresses",
+          "ru": "один адрес → два адреса"
+        }
+      ],
+      "tip": "Это связано и с произношением окончания: watches, addresses, classes произносятся с /ɪz/."
+    },
+    {
+      "label": "-y → -ies",
+      "title": "Если перед y стоит согласная, y меняется на i + es",
+      "summary": "У слов типа city и country перед y стоит согласная, поэтому во множественном числе получаем -ies.",
+      "formula": [
+        "city → cities",
+        "country → countries"
+      ],
+      "warning": "Если перед y гласная, y не меняется: key → keys, не keies."
+    },
+    {
+      "label": "It / They",
+      "title": "С одним предметом используйте it, с несколькими — they",
+      "summary": "Форма be тоже меняется: it is / it’s для одного предмета, they are / they’re для нескольких.",
+      "table": {
+        "headers": [
+          "",
+          "Один предмет",
+          "Несколько предметов"
+        ],
+        "rows": [
+          [
+            "Утверждение",
+            "It’s a key.",
+            "They’re keys."
+          ],
+          [
+            "Отрицание",
+            "It isn’t a key.",
+            "They aren’t keys."
+          ],
+          [
+            "Вопрос",
+            "Is it a key?",
+            "Are they keys?"
+          ],
+          [
+            "Короткий ответ",
+            "Yes, it is. / No, it isn’t.",
+            "Yes, they are. / No, they aren’t."
+          ]
+        ]
+      },
+      "examples": [
+        {
+          "en": "What is it? — It’s a photo.",
+          "ru": "Что это? — Это фотография."
+        },
+        {
+          "en": "What are they? — They’re pens.",
+          "ru": "Что это? — Это ручки."
+        }
+      ]
+    },
+    {
+      "label": "Исключения",
+      "title": "Некоторые частые слова образуют множественное число не по общему правилу",
+      "summary": "Их формы нужно запомнить отдельно. В Unit 3A основная практика — регулярные формы, но эти исключения часто встречаются в английском.",
+      "table": {
+        "headers": [
+          "Singular",
+          "Plural"
+        ],
+        "rows": [
+          [
+            "man",
+            "men"
+          ],
+          [
+            "woman",
+            "women"
+          ],
+          [
+            "child",
+            "children"
+          ],
+          [
+            "person",
+            "people"
+          ]
+        ]
+      }
+    },
+    {
+      "label": "Типичные ошибки",
+      "title": "Проверяйте число, артикль и окончание",
+      "summary": "Перед отправкой ответа быстро проверьте, говорите ли вы об одном или нескольких предметах.",
+      "table": {
+        "headers": [
+          "Неправильно",
+          "Правильно"
+        ],
+        "rows": [
+          [
+            "a umbrella",
+            "an umbrella"
+          ],
+          [
+            "an book",
+            "a book"
+          ],
+          [
+            "two watchs",
+            "two watches"
+          ],
+          [
+            "two citys",
+            "two cities"
+          ],
+          [
+            "They’re a keys.",
+            "They’re keys."
+          ]
+        ]
+      },
+      "tip": "Алгоритм: один или несколько? → нужен ли a/an? → если plural, выберите -s / -es / -ies → проверьте it/is или they/are."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "grammar-5-exercise-1",
+      "difficulty": "1 · Лёгкое",
+      "title": "Выберите a или an",
+      "instruction": "Выберите один вариант.",
+      "items": [
+        {
+          "id": "g5-1-1",
+          "type": "single",
+          "prompt": "___ umbrella",
+          "options": [
+            "a",
+            "an"
+          ],
+          "answer": "an",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-1-2",
+          "type": "single",
+          "prompt": "___ book",
+          "options": [
+            "a",
+            "an"
+          ],
+          "answer": "a",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-1-3",
+          "type": "single",
+          "prompt": "___ ID card",
+          "options": [
+            "a",
+            "an"
+          ],
+          "answer": "an",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-1-4",
+          "type": "single",
+          "prompt": "___ email",
+          "options": [
+            "a",
+            "an"
+          ],
+          "answer": "an",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-5-exercise-2",
+      "difficulty": "2 · Среднее",
+      "title": "Напишите форму множественного числа",
+      "instruction": "Напишите только форму во множественном числе.",
+      "items": [
+        {
+          "id": "g5-2-1",
+          "type": "text",
+          "prompt": "watch",
+          "answers": [
+            "watches"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-2-2",
+          "type": "text",
+          "prompt": "city",
+          "answers": [
+            "cities"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-2-3",
+          "type": "text",
+          "prompt": "key",
+          "answers": [
+            "keys"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-2-4",
+          "type": "text",
+          "prompt": "address",
+          "answers": [
+            "addresses"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-5-exercise-3",
+      "difficulty": "3 · Повышенная сложность",
+      "title": "Выберите правильную форму по контексту",
+      "instruction": "Выберите вариант, который подходит к ситуации.",
+      "items": [
+        {
+          "id": "g5-3-1",
+          "type": "select",
+          "prompt": "You see two keys.",
+          "options": [
+            "It’s a key.",
+            "They’re keys.",
+            "They’re a keys."
+          ],
+          "answer": "They’re keys.",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-3-2",
+          "type": "select",
+          "prompt": "You see one ID card.",
+          "options": [
+            "It’s a ID card.",
+            "It’s an ID card.",
+            "They’re ID cards."
+          ],
+          "answer": "It’s an ID card.",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-3-3",
+          "type": "select",
+          "prompt": "You don’t know what the two objects are.",
+          "options": [
+            "What is it?",
+            "What are they?",
+            "Are it they?"
+          ],
+          "answer": "What are they?",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-3-4",
+          "type": "select",
+          "prompt": "There are two watches on the table.",
+          "options": [
+            "They’re watches.",
+            "They’re watchs.",
+            "It’s a watch."
+          ],
+          "answer": "They’re watches.",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-5-exercise-4",
+      "difficulty": "4 · Самое сложное",
+      "title": "Постройте ответ самостоятельно",
+      "instruction": "Напишите полное предложение или вопрос.",
+      "items": [
+        {
+          "id": "g5-4-1",
+          "type": "textarea",
+          "prompt": "Ответьте на вопрос: What is it? (photo)",
+          "answers": [
+            "It’s a photo",
+            "It's a photo",
+            "It is a photo"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-4-2",
+          "type": "textarea",
+          "prompt": "Ответьте на вопрос: What are they? (coat)",
+          "answers": [
+            "They’re coats",
+            "They're coats",
+            "They are coats"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-4-3",
+          "type": "textarea",
+          "prompt": "Спросите, что это за несколько предметов.",
+          "answers": [
+            "What are they"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g5-4-4",
+          "type": "textarea",
+          "prompt": "Напишите: «Это не ключи. Это кредитные карты.»",
+          "answers": [
+            "They aren’t keys. They’re credit cards",
+            "They aren't keys. They're credit cards",
+            "They are not keys. They are credit cards",
+            "They aren’t keys, they’re credit cards",
+            "They aren't keys, they're credit cards"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    }
+  ]
+}
+,
+{
+  "id": "grammar-6",
+  "number": 6,
+  "title": "this / that / these / those",
+  "subtitle": "Как указать на один или несколько предметов рядом и на расстоянии",
+  "status": "available",
+  "linkedLessonId": "lesson-8",
+  "passScore": 100,
+  "lockOnPass": true,
+  "checkButtonLabel": "Проверить",
+  "notification": {
+    "enabled": false,
+    "version": 1
+  },
+  "overview": [
+    {
+      "label": "Один · рядом",
+      "value": "this"
+    },
+    {
+      "label": "Один · далеко",
+      "value": "that"
+    },
+    {
+      "label": "Несколько · рядом",
+      "value": "these"
+    },
+    {
+      "label": "Несколько · далеко",
+      "value": "those"
+    }
+  ],
+  "explanation": [
+    {
+      "label": "Главная идея",
+      "title": "Сначала определите число, затем расстояние",
+      "summary": "this, that, these и those помогают показать, о каком предмете или предметах мы говорим. Выбор зависит от двух вещей: один предмет или несколько, и находится он рядом или дальше от говорящего.",
+      "table": {
+        "headers": [
+          "",
+          "Рядом",
+          "Дальше"
+        ],
+        "rows": [
+          [
+            "Один предмет",
+            "this",
+            "that"
+          ],
+          [
+            "Несколько предметов",
+            "these",
+            "those"
+          ]
+        ]
+      },
+      "examples": [
+        {
+          "en": "This is a mug.",
+          "ru": "Это кружка рядом со мной."
+        },
+        {
+          "en": "That is a plate.",
+          "ru": "Это / та тарелка дальше от меня."
+        },
+        {
+          "en": "These are postcards.",
+          "ru": "Это открытки рядом."
+        },
+        {
+          "en": "Those are T-shirts.",
+          "ru": "Это / те футболки дальше."
+        }
+      ],
+      "tip": "Удобная схема: one + near → this; one + far → that; plural + near → these; plural + far → those."
+    },
+    {
+      "label": "Форма be",
+      "title": "this и that идут с is, these и those — с are",
+      "summary": "Число определяет форму глагола be. Для одного предмета используйте is, для нескольких — are.",
+      "table": {
+        "headers": [
+          "Форма",
+          "Утверждение",
+          "Отрицание"
+        ],
+        "rows": [
+          [
+            "this",
+            "This is my cap.",
+            "This isn’t my cap."
+          ],
+          [
+            "that",
+            "That is your mug.",
+            "That isn’t your mug."
+          ],
+          [
+            "these",
+            "These are my postcards.",
+            "These aren’t my postcards."
+          ],
+          [
+            "those",
+            "Those are your keys.",
+            "Those aren’t your keys."
+          ]
+        ]
+      },
+      "warning": "Не смешивайте число: this are и these is — неверно."
+    },
+    {
+      "label": "Вопросы",
+      "title": "В вопросе поставьте is / are перед this, that, these или those",
+      "summary": "Для вопроса меняем порядок: Is this...? / Is that...? / Are these...? / Are those...?",
+      "table": {
+        "headers": [
+          "Вопрос",
+          "Короткий ответ"
+        ],
+        "rows": [
+          [
+            "Is this your scarf?",
+            "Yes, it is. / No, it isn’t."
+          ],
+          [
+            "Is that your teddy?",
+            "Yes, it is. / No, it isn’t."
+          ],
+          [
+            "Are these your postcards?",
+            "Yes, they are. / No, they aren’t."
+          ],
+          [
+            "Are those your keys?",
+            "Yes, they are. / No, they aren’t."
+          ]
+        ]
+      },
+      "examples": [
+        {
+          "en": "What is this? / What’s this?",
+          "ru": "Что это? — один предмет рядом."
+        },
+        {
+          "en": "What is that? / What’s that?",
+          "ru": "Что это? — один предмет дальше."
+        },
+        {
+          "en": "What are these?",
+          "ru": "Что это? — несколько предметов рядом."
+        },
+        {
+          "en": "What are those?",
+          "ru": "Что это? — несколько предметов дальше."
+        }
+      ]
+    },
+    {
+      "label": "Сокращения",
+      "title": "That is часто сокращается до That’s",
+      "summary": "В разговорной речи That is → That’s. Формы these are и those are обычно не сокращают таким же способом перед существительным.",
+      "formula": [
+        "That is a lovely picture. → That’s a lovely picture.",
+        "This is my mug.",
+        "These are my photos.",
+        "Those are my postcards."
+      ],
+      "tip": "В заданиях обращайте внимание не только на this/that/these/those, но и на is/are."
+    },
+    {
+      "label": "this / that и it",
+      "title": "this / that указывают на предмет, it говорит о уже понятном предмете",
+      "summary": "Когда показываем или впервые идентифицируем предмет, часто используем this / that. После этого можно использовать it. Для нескольких предметов аналогично: these / those → they.",
+      "examples": [
+        {
+          "en": "Is this a Manchester United shirt? — No, it’s Manchester City.",
+          "ru": "Это футболка Manchester United? — Нет, это Manchester City."
+        },
+        {
+          "en": "Are those your keys? — Yes, they are.",
+          "ru": "Те ключи твои? — Да."
+        }
+      ]
+    },
+    {
+      "label": "Типичные ошибки",
+      "title": "Проверьте число и расстояние",
+      "summary": "Перед ответом задайте себе два вопроса: один или несколько? рядом или дальше?",
+      "table": {
+        "headers": [
+          "Неправильно",
+          "Правильно"
+        ],
+        "rows": [
+          [
+            "This are my photos.",
+            "These are my photos."
+          ],
+          [
+            "Those is my bag.",
+            "That is my bag."
+          ],
+          [
+            "Are this your keys?",
+            "Are these your keys?"
+          ],
+          [
+            "These is £10.",
+            "These are £10."
+          ]
+        ]
+      },
+      "tip": "После выбора this/that/these/those сразу проверьте: is для единственного числа, are для множественного."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "grammar-6-exercise-1",
+      "difficulty": "1 · Лёгкое",
+      "title": "Выберите правильное слово",
+      "instruction": "Выберите this, that, these или those по числу и расстоянию.",
+      "items": [
+        {
+          "id": "g6-1-1",
+          "type": "single",
+          "prompt": "one thing near",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "this",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-1-2",
+          "type": "single",
+          "prompt": "one thing far",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "that",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-1-3",
+          "type": "single",
+          "prompt": "two or more things near",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "these",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-1-4",
+          "type": "single",
+          "prompt": "two or more things far",
+          "options": [
+            "this",
+            "that",
+            "these",
+            "those"
+          ],
+          "answer": "those",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-6-exercise-2",
+      "difficulty": "2 · Среднее",
+      "title": "Вставьте this, that, these или those",
+      "instruction": "Напишите одно слово.",
+      "items": [
+        {
+          "id": "g6-2-1",
+          "type": "text",
+          "prompt": "___ is my mug here.",
+          "answers": [
+            "This"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-2-2",
+          "type": "text",
+          "prompt": "___ is your cap over there.",
+          "answers": [
+            "That"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-2-3",
+          "type": "text",
+          "prompt": "___ are my postcards here on the table.",
+          "answers": [
+            "These"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-2-4",
+          "type": "text",
+          "prompt": "___ are the T-shirts over there.",
+          "answers": [
+            "Those"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-6-exercise-3",
+      "difficulty": "3 · Повышенная сложность",
+      "title": "Выберите правильную фразу по ситуации",
+      "instruction": "Выберите полный вариант, который подходит к контексту.",
+      "items": [
+        {
+          "id": "g6-3-1",
+          "type": "select",
+          "prompt": "You are holding one football shirt.",
+          "options": [
+            "Is this a Manchester United shirt?",
+            "Are these a Manchester United shirt?",
+            "Is that a Manchester United shirt?"
+          ],
+          "answer": "Is this a Manchester United shirt?",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-3-2",
+          "type": "select",
+          "prompt": "You point to several T-shirts on the other side of the shop.",
+          "options": [
+            "This is £10.",
+            "Those are £10.",
+            "These is £10."
+          ],
+          "answer": "Those are £10.",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-3-3",
+          "type": "select",
+          "prompt": "Two postcards are in your hands.",
+          "options": [
+            "These are my postcards.",
+            "Those is my postcards.",
+            "This are my postcards."
+          ],
+          "answer": "These are my postcards.",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-3-4",
+          "type": "select",
+          "prompt": "You point to one teddy on a shelf across the room.",
+          "options": [
+            "What are these?",
+            "What is that?",
+            "What is this?"
+          ],
+          "answer": "What is that?",
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    },
+    {
+      "id": "grammar-6-exercise-4",
+      "difficulty": "4 · Самое сложное",
+      "title": "Постройте предложение или вопрос самостоятельно",
+      "instruction": "Напишите полное предложение или вопрос.",
+      "items": [
+        {
+          "id": "g6-4-1",
+          "type": "textarea",
+          "prompt": "Спросите о вещи рядом: «Что это?»",
+          "answers": [
+            "What is this",
+            "What’s this",
+            "What's this"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-4-2",
+          "type": "textarea",
+          "prompt": "Спросите о нескольких вещах вдали: «Что это?»",
+          "answers": [
+            "What are those"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-4-3",
+          "type": "textarea",
+          "prompt": "Напишите: «Эти открытки мои.»",
+          "answers": [
+            "These postcards are mine",
+            "These are my postcards"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        },
+        {
+          "id": "g6-4-4",
+          "type": "textarea",
+          "prompt": "Спросите: «Те ключи твои?»",
+          "answers": [
+            "Are those your keys"
+          ],
+          "revealCorrect": false,
+          "explanation": "Попробуйте ещё раз."
+        }
+      ]
+    }
+  ]
+}
 
 ];

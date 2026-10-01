@@ -1409,5 +1409,398 @@ window.VOCABULARY_DATA = [
     }
   ]
 }
+,
+{
+  "id": "vocab-lesson-7",
+  "title": "Unit 3A — Small things",
+  "label": "Домашняя работа №7",
+  "icon": "🔑",
+  "type": "lesson",
+  "linkedLessonId": "lesson-7",
+  "learnedByTestOnly": true,
+  "sections": [
+    {
+      "id": "things",
+      "title": "Small things",
+      "icon": "🎒"
+    },
+    {
+      "id": "cards",
+      "title": "Cards & everyday items",
+      "icon": "💳"
+    },
+    {
+      "id": "phrases",
+      "title": "Useful phrases",
+      "icon": "💬"
+    }
+  ],
+  "words": [
+    {
+      "id": "u3a-tablet",
+      "uniqueKey": "tablet",
+      "en": "tablet",
+      "ru": "планшет",
+      "transcription": "/ˈtæblət/",
+      "exampleEn": "My tablet is in my bag.",
+      "exampleRu": "Мой планшет в сумке.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-passport",
+      "uniqueKey": "passport",
+      "en": "passport",
+      "ru": "паспорт",
+      "transcription": "/ˈpɑːspɔːt/",
+      "exampleEn": "Where is my passport?",
+      "exampleRu": "Где мой паспорт?",
+      "section": "things"
+    },
+    {
+      "id": "u3a-wallet",
+      "uniqueKey": "wallet",
+      "en": "wallet",
+      "ru": "кошелёк",
+      "transcription": "/ˈwɒlɪt/",
+      "exampleEn": "It’s a wallet.",
+      "exampleRu": "Это кошелёк.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-credit-card",
+      "uniqueKey": "credit card",
+      "en": "credit card",
+      "ru": "кредитная карта",
+      "transcription": "/ˈkredɪt kɑːd/",
+      "exampleEn": "I think they’re credit cards.",
+      "exampleRu": "Думаю, это кредитные карты.",
+      "section": "cards"
+    },
+    {
+      "id": "u3a-camera",
+      "uniqueKey": "camera",
+      "en": "camera",
+      "ru": "камера; фотоаппарат",
+      "transcription": "/ˈkæmərə/",
+      "exampleEn": "It’s a camera.",
+      "exampleRu": "Это фотоаппарат.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-notebook",
+      "uniqueKey": "notebook",
+      "en": "notebook",
+      "ru": "блокнот; тетрадь",
+      "transcription": "/ˈnəʊtbʊk/",
+      "exampleEn": "My notebook is on the table.",
+      "exampleRu": "Мой блокнот на столе.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-glasses",
+      "uniqueKey": "glasses",
+      "en": "glasses",
+      "ru": "очки",
+      "transcription": "/ˈɡlɑːsɪz/",
+      "exampleEn": "Where are my glasses?",
+      "exampleRu": "Где мои очки?",
+      "section": "things"
+    },
+    {
+      "id": "u3a-photo",
+      "uniqueKey": "photo",
+      "en": "photo",
+      "ru": "фотография",
+      "transcription": "/ˈfəʊtəʊ/",
+      "exampleEn": "It’s a photo.",
+      "exampleRu": "Это фотография.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-phone",
+      "uniqueKey": "phone",
+      "en": "phone",
+      "ru": "телефон",
+      "transcription": "/fəʊn/",
+      "exampleEn": "My phone is in my bag.",
+      "exampleRu": "Мой телефон в сумке.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-umbrella",
+      "uniqueKey": "umbrella",
+      "en": "umbrella",
+      "ru": "зонт",
+      "transcription": "/ʌmˈbrelə/",
+      "exampleEn": "I have an umbrella.",
+      "exampleRu": "У меня есть зонт.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-pencil",
+      "uniqueKey": "pencil",
+      "en": "pencil",
+      "ru": "карандаш",
+      "transcription": "/ˈpensəl/",
+      "exampleEn": "It’s a pencil.",
+      "exampleRu": "Это карандаш.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-newspaper",
+      "uniqueKey": "newspaper",
+      "en": "newspaper",
+      "ru": "газета",
+      "transcription": "/ˈnjuːzpeɪpə/",
+      "exampleEn": "The newspaper is on the table.",
+      "exampleRu": "Газета на столе.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-charger",
+      "uniqueKey": "charger",
+      "en": "charger",
+      "ru": "зарядное устройство",
+      "transcription": "/ˈtʃɑːdʒə/",
+      "exampleEn": "Where is my charger?",
+      "exampleRu": "Где моя зарядка?",
+      "section": "things"
+    },
+    {
+      "id": "u3a-id-card",
+      "uniqueKey": "ID card",
+      "en": "ID card",
+      "ru": "удостоверение личности; ID-карта",
+      "transcription": "/ˌaɪˈdiː kɑːd/",
+      "exampleEn": "It’s an ID card.",
+      "exampleRu": "Это ID-карта.",
+      "section": "cards"
+    },
+    {
+      "id": "u3a-key",
+      "uniqueKey": "key",
+      "en": "key",
+      "ru": "ключ",
+      "transcription": "/kiː/",
+      "exampleEn": "They’re keys.",
+      "exampleRu": "Это ключи.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-purse",
+      "uniqueKey": "purse",
+      "en": "purse",
+      "ru": "кошелёк; женский кошелёк",
+      "transcription": "/pɜːs/",
+      "exampleEn": "The purse is in the bag.",
+      "exampleRu": "Кошелёк в сумке.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-debit-card",
+      "uniqueKey": "debit card",
+      "en": "debit card",
+      "ru": "дебетовая карта",
+      "transcription": "/ˈdebɪt kɑːd/",
+      "exampleEn": "It’s a debit card.",
+      "exampleRu": "Это дебетовая карта.",
+      "section": "cards"
+    },
+    {
+      "id": "u3a-email",
+      "uniqueKey": "email",
+      "en": "email",
+      "ru": "электронное письмо; email",
+      "transcription": "/ˈiːmeɪl/",
+      "exampleEn": "It’s an email.",
+      "exampleRu": "Это электронное письмо.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-book",
+      "uniqueKey": "book",
+      "en": "book",
+      "ru": "книга",
+      "transcription": "/bʊk/",
+      "exampleEn": "It’s a book.",
+      "exampleRu": "Это книга.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-watch",
+      "uniqueKey": "watch",
+      "en": "watch",
+      "ru": "наручные часы",
+      "transcription": "/wɒtʃ/",
+      "exampleEn": "It’s a watch.",
+      "exampleRu": "Это наручные часы.",
+      "section": "things"
+    },
+    {
+      "id": "u3a-oh-no",
+      "uniqueKey": "Oh no",
+      "en": "Oh no",
+      "ru": "О нет",
+      "transcription": "/əʊ nəʊ/",
+      "exampleEn": "Oh no! It’s in the car!",
+      "exampleRu": "О нет! Это в машине!",
+      "section": "phrases"
+    },
+    {
+      "id": "u3a-where-glasses",
+      "uniqueKey": "Where are my glasses",
+      "en": "Where are my glasses?",
+      "ru": "Где мои очки?",
+      "transcription": "/weər ɑː maɪ ˈɡlɑːsɪz/",
+      "exampleEn": "Where are my glasses? — They’re in your bag.",
+      "exampleRu": "Где мои очки? — Они в твоей сумке.",
+      "section": "phrases"
+    },
+    {
+      "id": "u3a-whats-in-bag",
+      "uniqueKey": "What's in your bag",
+      "en": "What’s in your bag?",
+      "ru": "Что у вас в сумке?",
+      "transcription": "/wɒts ɪn jɔː bæɡ/",
+      "exampleEn": "What’s in your bag?",
+      "exampleRu": "Что у вас в сумке?",
+      "section": "phrases"
+    },
+    {
+      "id": "u3a-what-are-they",
+      "uniqueKey": "What are they",
+      "en": "What are they?",
+      "ru": "Что это? (о нескольких предметах)",
+      "transcription": "/wɒt ɑː ðeɪ/",
+      "exampleEn": "What are they? — They’re keys.",
+      "exampleRu": "Что это? — Это ключи.",
+      "section": "phrases"
+    }
+  ]
+}
+,
+{
+  "id": "vocab-lesson-8",
+  "title": "Unit 3B — Souvenirs",
+  "label": "Домашняя работа №8",
+  "icon": "🎁",
+  "type": "lesson",
+  "linkedLessonId": "lesson-8",
+  "learnedByTestOnly": true,
+  "sections": [
+    {
+      "id": "souvenirs",
+      "title": "Souvenirs",
+      "icon": "🎁"
+    },
+    {
+      "id": "extras",
+      "title": "Useful words",
+      "icon": "💬"
+    }
+  ],
+  "words": [
+    {
+      "id": "u3b-souvenir",
+      "uniqueKey": "souvenir",
+      "en": "souvenir",
+      "ru": "сувенир",
+      "transcription": "/ˌsuːvəˈnɪə/",
+      "exampleEn": "This is a souvenir from London.",
+      "exampleRu": "Это сувенир из Лондона.",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-cap",
+      "uniqueKey": "cap",
+      "en": "cap",
+      "ru": "кепка",
+      "transcription": "/kæp/",
+      "exampleEn": "This cap is a souvenir.",
+      "exampleRu": "Эта кепка — сувенир.",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-football-shirt",
+      "uniqueKey": "football shirt",
+      "en": "football shirt",
+      "ru": "футбольная футболка; игровая майка",
+      "transcription": "/ˈfʊtbɔːl ʃɜːt/",
+      "exampleEn": "Is this a Manchester United shirt?",
+      "exampleRu": "Это футболка Manchester United?",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-key-ring",
+      "uniqueKey": "key ring",
+      "en": "key ring",
+      "ru": "брелок для ключей",
+      "transcription": "/ˈkiː rɪŋ/",
+      "exampleEn": "That key ring is nice.",
+      "exampleRu": "Тот брелок красивый.",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-mug",
+      "uniqueKey": "mug",
+      "en": "mug",
+      "ru": "кружка",
+      "transcription": "/mʌɡ/",
+      "exampleEn": "This is my mug.",
+      "exampleRu": "Это моя кружка.",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-plate",
+      "uniqueKey": "plate",
+      "en": "plate",
+      "ru": "тарелка",
+      "transcription": "/pleɪt/",
+      "exampleEn": "That plate is a souvenir.",
+      "exampleRu": "Та тарелка — сувенир.",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-scarf",
+      "uniqueKey": "scarf",
+      "en": "scarf",
+      "ru": "шарф",
+      "transcription": "/skɑːf/",
+      "exampleEn": "This scarf is warm.",
+      "exampleRu": "Этот шарф тёплый.",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-teddy",
+      "uniqueKey": "teddy",
+      "en": "teddy",
+      "ru": "плюшевый мишка",
+      "transcription": "/ˈtedi/",
+      "exampleEn": "That teddy is for my friend.",
+      "exampleRu": "Тот плюшевый мишка для моего друга.",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-t-shirt",
+      "uniqueKey": "T-shirt",
+      "en": "T-shirt",
+      "ru": "футболка",
+      "transcription": "/ˈtiː ʃɜːt/",
+      "exampleEn": "Those T-shirts are £10.",
+      "exampleRu": "Те футболки стоят 10 фунтов.",
+      "section": "souvenirs"
+    },
+    {
+      "id": "u3b-postcard",
+      "uniqueKey": "postcard",
+      "en": "postcard",
+      "ru": "открытка",
+      "transcription": "/ˈpəʊstkɑːd/",
+      "exampleEn": "Those are my postcards.",
+      "exampleRu": "Это мои открытки.",
+      "section": "extras"
+    }
+  ]
+}
 
 ];
